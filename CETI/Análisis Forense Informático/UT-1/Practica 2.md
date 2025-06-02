@@ -80,7 +80,70 @@ Tan solo encuentro este servicio, el cual crea y mantiene conexiones de red de c
 Sacaré el hash de este archivo de la misma forma que saque el del anterior apartado y lo almacenaré en el fichero hash.txt que es donde se almacenarán todos los hashes de todas las pruebas.
 ![3 6](https://github.com/user-attachments/assets/d4424eb2-e063-48d9-871a-a9abd91f5f18)
 
+---
+
+### Almacenar lista de procesos en ejecución
+
+Para esto usaré la herramienta **pslist64.exe** y el resultado que me de lo pasaré a un archivo llamado **procesos_en_ejecución_en_memoria.txt**
+
+![4 1](https://github.com/user-attachments/assets/c911070b-fb07-48c7-9a02-551408b832e7)
 
 
+Veo el contenido del archivo:
+![4 0 1](https://github.com/user-attachments/assets/051a7b10-21e7-4841-a136-dfc098e6cb33)
+
+
+Y obtengo su hash, almacenándolo en el archivo hash.txt
+![4 2](https://github.com/user-attachments/assets/0d4e791c-5009-486f-9a34-012b36d00bee)
+
+---
+
+### Almacenar usuarios logueados
+
+Con la herramienta **psloggedon64.exe** puedo ver que usuarios han iniciado sesión en el sistema:
+
+![5 0 1](https://github.com/user-attachments/assets/42dfa932-2b95-4be8-9cd5-baa80e80d23e)
+
+
+Obtengo su hash y lo guardo.
+![5 1](https://github.com/user-attachments/assets/09ba9f1a-19bb-4a8f-bf82-5aa99a23d64e)
+
+
+![5 2](https://github.com/user-attachments/assets/2fcfb8ab-12bd-471e-99cc-ddb904846c1f)
+
+
+Con el comando `net user` puedo que usuarios hay en el sistema, comparándolos con la información del archivo generado:
+
+![5 4](https://github.com/user-attachments/assets/a62c8e9c-42db-4894-9a60-6724c562a45f)
+
+
+---
+
+### Almacenar configuraciones de la tarjeta de red
+
+Esto lo haré con la herramienta **promisdetect.exe.**
+![6 1](https://github.com/user-attachments/assets/1753a54b-41c7-4cac-8e9c-5c39c18a1862)
+
+
+Saco el hash del archivo generado y lo compruebo:
+![6 2](https://github.com/user-attachments/assets/f92c84bb-388a-4cfd-a3d4-94bd87c284be)
+![6 3](https://github.com/user-attachments/assets/7d369ab1-8603-46c1-9eb7-70c8bdcf841e)
+
+--- 
+
+### Almacenar tablas ARP
+
+Para poder obtener las tablas ARP usaré el comando `arp -a` y el resultado lo pasaré a un archivo.
+
+![7 1](https://github.com/user-attachments/assets/4a152617-7230-4401-a75b-34338a7ab6d1)
+
+
+Y de este archivo generado, obtengo su hash, el cual compruebo.
+![7 2](https://github.com/user-attachments/assets/84668fdf-3a3a-4f75-80ed-83ca88da02cc)
+![7 3](https://github.com/user-attachments/assets/a40ffe4a-57d8-45ee-b9dd-2eaca2b91916)
+
+---
+
+### Almacenar estado de las tablas NetBIOS
 
 
