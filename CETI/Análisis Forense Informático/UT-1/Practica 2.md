@@ -1,72 +1,42 @@
-
 ## Índice
-- [[Practica 1#Índice|Índice]]
-- [[Practica 1#Algoritmos|Algoritmos]]
-- [[Practica 1#Ejercicio de paginación|Ejercicio de paginación]]
-- [[Practica 1#Ejercicio de segmentación|Ejercicio de segmentación]]
 
 
-### Algoritmos
+## Introducción
+
+En esta práctica se va a obtener diferente tipo de información de un equipo Windows 10 mediante el uso de diferentes herramientas de análisis forense. 
+Antes de empezar, creo un archivo donde pongo la fecha y hora del comienzo del análisis creando un hash para el mismo.
+
+![1 2](https://github.com/user-attachments/assets/420d400c-7264-4d8a-aece-40b295220d22)
+
+![1 3](https://github.com/user-attachments/assets/f0fc67bf-b6a6-4b07-934d-ec9a00f5f7a6)
 
 
-
-### Ejercicio de paginación
-
-Tenemos un sistema operativo de 32 bits en el que la asignación de memoria se realiza mediante paginación. 
-Cada página/marco ocupa 1 MB. De los 32 bits de la dirección de memoria, se usan 12 bits para especificar la página. 
-Se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de páginas:
-
-| Página | Marco |
-| ------ | ----- |
-| 0x59B  | 0x123 |
-| 0x59C  | 0xA05 |
-| 0x59D  | 0x59F |
-| 0x59E  | 0x799 |
-| 0x59F  | 0xF8B |
-| 0x59A0 | 0x22D |
-
-Dada la dirección lógica 0x59F2A5A0, obtener la dirección física correspondiente:
-- 0xF8B2A5A0
-
-Dada la dirección lógica 0x5A02A59F, obtener la dirección física correspondiente.
-- 0x22DA59F
-
-Dada la dirección lógica 0x59C4DE87, obtener la dirección física correspondiente
-- 0xA054DE87
-
-### Ejercicio de segmentación
-
-En un sistema de de 32 bits se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de segmentos (el tamaño viene expresado de forma relativa la base):
-
-| Segmento | Base       | Tamaño     | Límite     |
-| -------- | ---------- | ---------- | ---------- |
-| 0xA321   | 0x85434520 | 0x00005218 | 0x85439738 |
-| 0xA322   | 0xBA41002E | 0x00003FD1 | 0xBA413FFF |
-| 0xA323   | 0x226A5722 | 0x00004D3D | 0x226AA45F |
-| 0xA324   | 0xF01809AC | 0x00000053 | 0xF01809FF |
-| 0xA325   | 0x226CA460 | 0x0000AAFF | 0x226D4F5F |
-| 0xA326   | 0x4951B4D8 | 0x0000F424 | 0x4952A8FC |
-
-**Obtener las direcciones físicas absolutas donde termina cada segmento**
-
-**Dada la dirección lógica 0xA3231265, obtener la dirección física correspondiente.**
-
-- 4D3D-1265= 15064 Está dentro del segmento 
-- 226A5722+1265 = 226A6987 
-- Su dirección física sería 0x226A6987
-
-**Dada la dirección lógica 0xA3240265, obtener la dirección física correspondiente.**
-
-- 53-0265= -212 
-- Se sale del segmento
-
-**Dada la dirección lógica 0xA325AAFA, obtener la dirección física correspondiente.**
-
-- AAFF – AAFA = 5 Esta dentro del segmento 
-- 226CA460 + AAFA = 226D 4F5A 
-- Su dirección física sería 0x226D4F5A
+![1 4](https://github.com/user-attachments/assets/41c151b8-280c-4ede-a316-6fabeced7a70)
 
 
+---
+### Obtener volcado de RAM
+Para esta primera obtención voy a usar la herramienta **DumpIt.txt**
 
+![1 5](https://github.com/user-attachments/assets/ce38ce06-70f7-4936-8fb4-3de94f34633b)
+
+
+Ya ejecutada, tan solo hemos de confirmar la adquisición de la memoria y la herramienta empezará a funcionar:
+![1 6](https://github.com/user-attachments/assets/b168c975-bfb8-463e-8d65-cfd69281f681)
+
+
+![1 7](https://github.com/user-attachments/assets/e4580c52-5f6f-4c7f-a906-80ec44084113)
+
+
+Después de esperar unos minutos ya tenemos nuestro volcado de memoria.
+![1 8](https://github.com/user-attachments/assets/dc1ed20a-12f3-471c-b125-1dad2fe63f6a)
+
+
+Del cual obtengo el hash
+
+![1 9](https://github.com/user-attachments/assets/971ad78b-abe7-4526-87e0-a764cd6d5060)
+
+
+![1 10](https://github.com/user-attachments/assets/b5673202-fe5a-4bbd-9112-3264632497b3)
 
 
