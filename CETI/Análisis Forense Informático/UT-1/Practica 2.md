@@ -10,7 +10,6 @@ Antes de empezar, creo un archivo donde pongo la fecha y hora del comienzo del a
 
 ![1 3](https://github.com/user-attachments/assets/f0fc67bf-b6a6-4b07-934d-ec9a00f5f7a6)
 
-
 ![1 4](https://github.com/user-attachments/assets/41c151b8-280c-4ede-a316-6fabeced7a70)
 
 
@@ -38,5 +37,23 @@ Del cual obtengo el hash
 
 
 ![1 10](https://github.com/user-attachments/assets/b5673202-fe5a-4bbd-9112-3264632497b3)
+
+---
+### Obtener archivos de paginación y segmentación
+
+Originalmente esta parte se debía de hacer con las herramientas TotalCommander o PureSync, pero no pude realizarlo, así que arranque el equipo Windows 10 con una ISO de Ubuntu 24.04.
+
+
+![2 3](https://github.com/user-attachments/assets/2f7109ba-27fd-48cf-bf3d-b6e240625a74)
+
+
+Localizo los archivos y los copio a mi unidad USB.
+
+![2 5](https://github.com/user-attachments/assets/419e51a6-717d-45d9-826a-cb4408acc165)
+
+
+Con el comando `certutil -hashfile sha256 >> f:\hash.txt` obtengo su hash y lo almaceno.
+
+![2 6](https://github.com/user-attachments/assets/5c4e9310-93dc-46f5-a0c2-b3a13f8430e1)
 
 
