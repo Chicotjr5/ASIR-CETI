@@ -1,8 +1,8 @@
 ## Índice
 
+- [Introducción](#introducción)
 - [Realiza las siguientes restas en binario](#realiza-las-siguientes-restas-en-binario)
 - [Realiza las tablas de la verdad de las siguientes operaciones lógicas](#realiza-las-tablas-de-la-verdad-de-las-siguientes-operaciones-lógicas)
-- [Introducción](#introducción)
 
 ### Introducción
 
