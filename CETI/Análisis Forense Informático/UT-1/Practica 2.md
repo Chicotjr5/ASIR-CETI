@@ -146,4 +146,85 @@ Y de este archivo generado, obtengo su hash, el cual compruebo.
 
 ### Almacenar estado de las tablas NetBIOS
 
+Para esto usaré el comando `nbtstat -s, nbtstat -A 10.0.2.15 y nbtstat -c` y lo pasaré todo al mismo archivo.
+![8 1](https://github.com/user-attachments/assets/914496b1-59c0-4a57-a6f9-f8b0c6efff25)
+
+
+De este archivo genero un hash y lo compruebo.
+![8 2](https://github.com/user-attachments/assets/80136846-5d26-4774-8eea-43568c7c4697)
+
+![8 3](https://github.com/user-attachments/assets/0832ab93-07b0-46c2-b00e-34a7ac26406e)
+
+---
+
+### Almacenar configuraciones de las interfaces de red
+
+Con un `ipconfig /all`  se pueden ver todas las interfaces de red.
+
+![9 1](https://github.com/user-attachments/assets/3a78ae7b-40c0-4ed5-8ce5-5f2a1fa87ce9)
+
+
+![9 2 1](https://github.com/user-attachments/assets/f51cd980-0c53-4f4d-bf08-a399c15940ff)
+
+
+Obtengo el hash y lo guardo en el archivo hash.txt.
+
+![9 2](https://github.com/user-attachments/assets/971a34d4-7b26-4d59-9b54-8f909264c3aa)
+
+
+![9 3](https://github.com/user-attachments/assets/5a10fb64-028e-4a35-b1cf-de14c9d6bc46)
+
+
+---
+
+### Almacenar las consultas dns
+
+Con un nslookup Google.com podemos ver las consultas dns que se han realizado en el equipo hacia el dominio de Google.com.
+
+![10 1](https://github.com/user-attachments/assets/1e8a5914-ead0-4850-ae3d-61de765a50b9)
+
+
+Obtengo su hash y lo almaceno.
+
+![10 2](https://github.com/user-attachments/assets/a7f85b56-b9d1-441c-b194-ab873d462844)
+
+
+![10 3](https://github.com/user-attachments/assets/07f90764-175b-448c-b622-85607735e080)
+
+
+---
+
+### Almacenar estado de las conexiones
+
+Para ver el estado de todas las conexiones del equipo ejecuto un `netstat -an`.
+
+![11 1](https://github.com/user-attachments/assets/f0712f73-7868-43a4-9fff-7117226eaa05)
+
+
+Se pueden observar 2 conexiones que están **ESTABLISHED** las cuales apuntas a 1 sitio web. 
+
+Obtengo el hash del archivo generado.
+
+![11 3](https://github.com/user-attachments/assets/6c4d7a8f-c3ae-4fcc-aae6-3d6ed1357ea1)
+
+
+![11 3](https://github.com/user-attachments/assets/3e624703-253b-49b7-8417-fc7da4bbc8a7)
+
+---
+
+### Almacenar las carpetas compartidas
+
+Para terminar, debo recoger información sobre las carpetas compartidas en el equipo, lo cual se hace con el comando `net share`.
+
+![12 1](https://github.com/user-attachments/assets/5871957a-1c1d-4179-b76c-6222540e6d64)
+
+
+Obtengo el hash y lo almaceno:
+![12 2](https://github.com/user-attachments/assets/d1d975cb-9b2b-4dd8-8f08-f703fd739c8f)
+
+
+Y por último, vuelvo a obtener la hora y fecha.
+
+![13 2](https://github.com/user-attachments/assets/8754b90d-838b-4657-b32e-0bf730c9ed33)
+
 
