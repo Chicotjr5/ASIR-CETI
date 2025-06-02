@@ -106,6 +106,7 @@ Con la herramienta **psloggedon64.exe** puedo ver que usuarios han iniciado sesi
 
 
 Obtengo su hash y lo guardo.
+
 ![5 1](https://github.com/user-attachments/assets/09ba9f1a-19bb-4a8f-bf82-5aa99a23d64e)
 
 
