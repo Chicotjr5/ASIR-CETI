@@ -5,7 +5,7 @@
 
 ### Realiza las siguientes restas en binario
 
-##### A) 453(octal)-2768(octal)
+##### A) 453(octal)-276(octal)
 
 | Octal | Decimal | Binario   |
 | ----- | ------- | --------- |
