@@ -27,4 +27,4 @@ Al abrirlos, vemos que su contenido es diferente:
 Entramos a la línea de comandos de Powershell y calculamos el hash SHA1 de cada archivo. 
 La línea de comandos utilizada es la siguiente:
 
-`Get-FileHash .\shattered-1.pdf -Algorithm SHA1 > fichero1.txt
+`Get-FileHash .\shattered-1.pdf -Algorithm SHA1 > fichero1.txt`
