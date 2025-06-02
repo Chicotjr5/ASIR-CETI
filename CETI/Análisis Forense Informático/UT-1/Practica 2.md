@@ -52,8 +52,35 @@ Localizo los archivos y los copio a mi unidad USB.
 ![2 5](https://github.com/user-attachments/assets/419e51a6-717d-45d9-826a-cb4408acc165)
 
 
-Con el comando `certutil -hashfile sha256 >> f:\hash.txt` obtengo su hash y lo almaceno.
+Con el comando `certutil -hashfile <archivo.sys> sha256 >> f:\hash.txt` obtengo su hash y lo almaceno.
 
 ![2 6](https://github.com/user-attachments/assets/5c4e9310-93dc-46f5-a0c2-b3a13f8430e1)
+
+---
+
+### Almacenar servicios en ejecución
+
+Para recoger los servicios dentro de un archivo, ejecutaré con comandos la herramienta PsService64.exe. y le diré que redireccione el resultado de la ejecución a un archivo llamado procesos.txt.
+
+![3 2](https://github.com/user-attachments/assets/394b5f25-b8dd-45b8-8293-fd5a6c006966)
+
+
+Si abro el archivo veré todos los procesos:
+
+![3 3](https://github.com/user-attachments/assets/f23e9852-c854-4e8b-95b2-ad8ad7e9d571)
+
+
+Si dentro del archivo busco los servicios con la palabra “remote / remoto “y encuentro alguno que este “Running” (en ejecución) se podría encontrar alguna prueba de que hay una conexión remota en ejecución ahora mismo.
+
+![3 5](https://github.com/user-attachments/assets/5325407d-4108-4536-a2a7-09bc0849b8d3)
+
+
+Tan solo encuentro este servicio, el cual crea y mantiene conexiones de red de cliente con servidores remotos con el protocolo SMB. 
+
+Sacaré el hash de este archivo de la misma forma que saque el del anterior apartado y lo almacenaré en el fichero hash.txt que es donde se almacenarán todos los hashes de todas las pruebas.
+![3 6](https://github.com/user-attachments/assets/d4424eb2-e063-48d9-871a-a9abd91f5f18)
+
+
+
 
 
