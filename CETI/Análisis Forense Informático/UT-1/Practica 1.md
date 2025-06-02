@@ -1,72 +1,66 @@
-
 ## Índice
-- [[Practica 1#Índice|Índice]]
-- [[Practica 1#Algoritmos|Algoritmos]]
-- [[Practica 1#Ejercicio de paginación|Ejercicio de paginación]]
-- [[Practica 1#Ejercicio de segmentación|Ejercicio de segmentación]]
 
+- [Introducción](#introduccion)
+- [Parte 1](#parte-1)
+- [Parte 2](#parte-2)
 
-### Algoritmos
+## Introducción
 
+- En esta práctica se trata la rotura del hash SHA-1 descargando 2 ficheros con un contenido diferente, pero que contienen el mismo hash.
+- Además se verán diferentes formas de generar un hash SHA-256
 
+---
+### Parte 1
 
-### Ejercicio de paginación
+#### Descargar ficheros
 
-Tenemos un sistema operativo de 32 bits en el que la asignación de memoria se realiza mediante paginación. 
-Cada página/marco ocupa 1 MB. De los 32 bits de la dirección de memoria, se usan 12 bits para especificar la página. 
-Se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de páginas:
-
-| Página | Marco |
-| ------ | ----- |
-| 0x59B  | 0x123 |
-| 0x59C  | 0xA05 |
-| 0x59D  | 0x59F |
-| 0x59E  | 0x799 |
-| 0x59F  | 0xF8B |
-| 0x59A0 | 0x22D |
-
-Dada la dirección lógica 0x59F2A5A0, obtener la dirección física correspondiente:
-- 0xF8B2A5A0
-
-Dada la dirección lógica 0x5A02A59F, obtener la dirección física correspondiente.
-- 0x22DA59F
-
-Dada la dirección lógica 0x59C4DE87, obtener la dirección física correspondiente
-- 0xA054DE87
-
-### Ejercicio de segmentación
-
-En un sistema de de 32 bits se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de segmentos (el tamaño viene expresado de forma relativa la base):
-
-| Segmento | Base       | Tamaño     | Límite     |
-| -------- | ---------- | ---------- | ---------- |
-| 0xA321   | 0x85434520 | 0x00005218 | 0x85439738 |
-| 0xA322   | 0xBA41002E | 0x00003FD1 | 0xBA413FFF |
-| 0xA323   | 0x226A5722 | 0x00004D3D | 0x226AA45F |
-| 0xA324   | 0xF01809AC | 0x00000053 | 0xF01809FF |
-| 0xA325   | 0x226CA460 | 0x0000AAFF | 0x226D4F5F |
-| 0xA326   | 0x4951B4D8 | 0x0000F424 | 0x4952A8FC |
-
-**Obtener las direcciones físicas absolutas donde termina cada segmento**
-
-**Dada la dirección lógica 0xA3231265, obtener la dirección física correspondiente.**
-
-- 4D3D-1265= 15064 Está dentro del segmento 
-- 226A5722+1265 = 226A6987 
-- Su dirección física sería 0x226A6987
-
-**Dada la dirección lógica 0xA3240265, obtener la dirección física correspondiente.**
-
-- 53-0265= -212 
-- Se sale del segmento
-
-**Dada la dirección lógica 0xA325AAFA, obtener la dirección física correspondiente.**
-
-- AAFF – AAFA = 5 Esta dentro del segmento 
-- 226CA460 + AAFA = 226D 4F5A 
-- Su dirección física sería 0x226D4F5A
+Accedemos a la página https://shattered.io/ y nos descargamos los 2 documentos.
 
 
 
+Al abrirlos, vemos que su contenido es diferente:
+![1 2 1](https://github.com/user-attachments/assets/50fbdeb3-8931-4dff-a9de-b24c726b8229)
+
+
+![1 2 2](https://github.com/user-attachments/assets/59bd266e-4c32-4cc0-a5ef-e490dc637c81)
+
+
+
+#### Comprobar la rotura de SHA-1
+
+Entramos a la línea de comandos de Powershell y calculamos el hash SHA1 de cada archivo. 
+La línea de comandos utilizada es la siguiente:
+
+`Get-FileHash .\shattered-1.pdf -Algorithm SHA1 > fichero1.txt`
+
+`Get-FileHash .\shattered-2.pdf -Algorithm SHA1 > fichero2.txt`
+
+![1 3](https://github.com/user-attachments/assets/862b9d26-e5d6-46df-af2c-e870e0bb99fa)
+
+
+
+Hacemos un cat a cada uno de los ficheros que se han generado y observamos que el hash generado ha sido el mismo.
+
+![1 4](https://github.com/user-attachments/assets/ebb640b4-bc73-4d77-93e7-188fbdcb564f)
+
+---
+### Parte 2
+
+Ahora voy a generar 2 archivos diferentes y crearé un hash SHA-256 para cada archivo, después los modificaré y volveré a generar su hash para ver si ha cambiado o no.
+
+Visualizo el contenido de ambos ficheros y genero su hash:
+
+![2 1](https://github.com/user-attachments/assets/7294b96f-b03a-4532-b03c-58df8467a658)
+
+
+
+Si cambio el contenido del fichero, también cambia su hash:
+![2 2](https://github.com/user-attachments/assets/c45a537d-c830-49bf-903d-3ad5b256e19a)
+
+
+Otras herramientas que se pueden usar para generar un hash son:
+
+[Sitio web](https://codebeautify.org/sha256-hash-generator)
+[Herramienta descargable](https://www.nirsoft.net/utils/hash_my_files.html)
 
 
