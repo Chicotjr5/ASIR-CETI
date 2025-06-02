@@ -42,3 +42,25 @@ La línea de comandos utilizada es la siguiente:
 Hacemos un cat a cada uno de los ficheros que se han generado y observamos que el hash generado ha sido el mismo.
 
 ![1 4](https://github.com/user-attachments/assets/ebb640b4-bc73-4d77-93e7-188fbdcb564f)
+
+---
+### Parte 2
+
+Ahora voy a generar 2 archivos diferentes y crearé un hash SHA-256 para cada archivo, después los modificaré y volveré a generar su hash para ver si ha cambiado o no.
+
+Visualizo el contenido de ambos ficheros y genero su hash:
+
+![2 1](https://github.com/user-attachments/assets/7294b96f-b03a-4532-b03c-58df8467a658)
+
+
+
+Si cambio el contenido del fichero, también cambia su hash:
+![2 2](https://github.com/user-attachments/assets/c45a537d-c830-49bf-903d-3ad5b256e19a)
+
+
+Otras herramientas que se pueden usar para generar un hash son:
+
+[Sitio web](https://codebeautify.org/sha256-hash-generator)
+[Herramienta descargable](https://www.nirsoft.net/utils/hash_my_files.html)
+
+
