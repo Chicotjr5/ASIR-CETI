@@ -2,6 +2,12 @@
 
 - [Realiza las siguientes restas en binario](#realiza-las-siguientes-restas-en-binario)
 - [Realiza las tablas de la verdad de las siguientes operaciones lógicas](#realiza-las-tablas-de-la-verdad-de-las-siguientes-operaciones-lógicas)
+- [Introducción](@introducción)
+
+### Introducción
+
+En esta práctica se realizan restas de numeros en diferentes sistemas de enumeración (octal, decimal, hexadecimal) para realizar su resta en binario.
+Además de que se realizan operaciones lógicas
 
 ### Realiza las siguientes restas en binario
 
