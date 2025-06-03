@@ -5,7 +5,7 @@
 - [Extraer los procesos](#extraer-los-procesos)
 - [Extraer las conexiones de red](#extraer-las-conexiones-de-red)
 - [Extraer información sobre los ficheros abiertos](#extraer-información-sobre-los-ficheros-abiertos)
-- [Extraer información sobre los últimos inicios de sesión](#extraer-información-sobre-los-ultimos-inicios-de-sesion)
+- [Extraer información sobre los últimos inicios de sesión](#extraer-información-sobre-los-últimos-inicios-de-sesion)
 - [Extraer el área de paginación](#extraer-el-área-de-paginación)
 - [Extraer la contraseña de usuario](#extraer-la-contraseña-de-usuario)
 - [Obtener hash del kernel](#obtener-hash-del-kernel)
