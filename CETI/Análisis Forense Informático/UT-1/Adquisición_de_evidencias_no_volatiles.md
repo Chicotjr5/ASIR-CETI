@@ -1,7 +1,32 @@
 ## Índice
 
-- Introducción
-- Obtener imagen del disco
+- [Introducción](#introducción)
+- [Obtener imagen del disco](#obtener-imagen-del-disco)
+- [Extracción tabla MFT](#extracción-tabla-mft)
+- [Almacenar hardware de la máquina](#almacenar-hardware-de-la-máquina)
+- [Almacenamiento del contenido de la papelera de reciclaje](#almacenamiento-del-contenido-de-la-papelera-de-reciclaje)
+- [Almacenamiento de ficheros log](#almacenamiento-de-ficheros-log)
+- [Almacenamiento del fichero hosts](#almacenamiento-del-fichero-hosts)
+- [Almacenamiento de las variables de entorno](#almacenamiento-de-las-variables-de-entorno)
+- [Almacenamiento de tareas programadas](#almacenamiento-de-tareas-programadas)
+- [Almacenamiento del log del firewall](#almacenamiento-del-log-del-firewall)
+- [Almacenamiento de los accesos directos](#almacenamiento-de-los-accesos-directos)
+- [Almacenamiento de las búsquedas realizadas en los navegadores](#almacenamiento-de-las-búsquedas-realizadas-en-los-navegadores)
+- [Almacenamiento del historial de navegación](#almacenamiento-del-historial-de-navegación)
+- [Almacenamiento del portapapeles](#almacenamiento-del-portapapeles)
+- [Almacenamiento del histórico de comandos de consola](#almacenamiento-del-histórico-de-comandos-de-consola)
+- [Almacenamiento de la estructura de archivos y carpetas ordenados](#almacenamiento-de-la-estructura-de-archivos-y-carpetas-ordenados)
+- [Almacenamiento de usuarios, contraseñas para acceso a recursos](#almacenamiento-de-usuarios-contraseñas-para-acceso-a-recursos)
+- [Almacenamiento de contraseñas de los navegadores](#almacenamiento-de-contraseñas-de-los-navegadores)
+- [Almacenamiento de contraseñas de gestores de correo electrónico](#almacenamiento-de-contraseñas-de-gestores-de-correo-electrónico)
+- [Almacenamiento de redes Wifi](#almacenamiento-de-redes-wifi)
+- [Almacenamiento del software de inicio Windows](#almacenamiento-del-software-de-inicio-windows)
+- [Almacenamiento y verificación de alguna variable de los registros](#almacenamiento-y-verificación-de-alguna-variable-de-los-registros)
+- [Almacenamiento de información sobre dispositivos USB conectados](#almacenamiento-de-información-sobre-dispositivos-usb-conectados)
+- [Almacenamiento información USB desde el registro de Windows](#almacenamiento-información-usb-desde-el-registro-de-windows)
+- [Almacenamiento de reglas de excepciones en cortafuegos](#almacenamiento-de-reglas-de-excepciones-en-cortafuegos)
+- [Almacenamiento de la asociación extensión y programa que los abre](#almacenamiento-de-la-asociación-extensión-y-programa-que-los-abre)
+- [Almacenamiento del registro. Lista de aplicaciones instaladas](#almacenamiento-del-registro-lista-de-aplicaciones-instaladas)
 
 ## Introducción
 
