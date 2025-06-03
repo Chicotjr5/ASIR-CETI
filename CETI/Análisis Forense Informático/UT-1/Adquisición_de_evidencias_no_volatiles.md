@@ -87,6 +87,7 @@ Accedo a cada directorio y veo su contenido:
 ![4 3](https://github.com/user-attachments/assets/b0aebfa4-daf8-49a9-bc2d-ff558dd754a9)
 
 ↓
+
 ![4 4](https://github.com/user-attachments/assets/2e10a78f-375f-4a43-80e6-ecc4bc62b5bd)
 
 
@@ -94,7 +95,6 @@ Accedo a cada directorio y veo su contenido:
 También accedo desde el **Explorador de Archivos**:
 
 ![4 6](https://github.com/user-attachments/assets/89609482-aecd-4d56-9256-b920efad6835)
-
 
 ↓ 
 
