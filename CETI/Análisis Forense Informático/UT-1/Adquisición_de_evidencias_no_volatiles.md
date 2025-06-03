@@ -64,6 +64,7 @@ Almaceno la información en el archivo **Tabla_MFT.txt**
 Para obtener la información del hardware de la máquina, voy a usar 2 herramientas:
 
 PsInfo.exe
+
 ![3 1](https://github.com/user-attachments/assets/d9bb0f6b-18fe-4aa2-94d1-3eab9c4c70b5)
 
 
