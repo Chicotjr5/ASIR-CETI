@@ -41,21 +41,25 @@ Para verlos ejecuto el comando:
 
 `ls -lh /var/log`
 
-![[1.1.png]]
+![1 1](https://github.com/user-attachments/assets/c436ea94-f4ef-4f51-827b-8b657a17adb5)
+
 
 Para obtener todos los logs ejecuto el comando:
 
 `rsync -a /var/log`
 
-![[Pasted image 20250603233211.png]]
+![1 3](https://github.com/user-attachments/assets/2b309937-10cf-4e70-be91-c963e520f969)
+
 
 Y visualizo su contenido:
 
-![[1.4.png]]
+![1 4](https://github.com/user-attachments/assets/8c45e0d3-49d4-4b8f-886d-9e292c49d618)
+
 
 `tar -cvzf logs.tar.gz logs`
 
-![[1.7.1.png]]
+![1 7 1](https://github.com/user-attachments/assets/5aedfdd4-548f-4d07-9abb-1b5090a1746d)
+
 
 ---
 
@@ -65,13 +69,15 @@ La información del sistema se encuentra los directorios **/etc/os-release /etc/
 
 `cat /etc/os-release & /etc/lsb-release & /etc/issue`
 
-![[2.1.png]]
+![2 1](https://github.com/user-attachments/assets/dae68b61-b109-449a-8be3-c9dd9ddecd44)
+
 
 Además de que con el comando **hostnamectl** también se puede ver información relacionada con el sistema.
 
 `hostnamectl`
 
-![[2.3.png]]
+![2 3](https://github.com/user-attachments/assets/f4208da9-ec70-4042-b22e-9f619a8d24c1)
+
 
 ---
 
@@ -81,7 +87,8 @@ Esta información es muy sencilla de obtener, puesto que se encuentra en el arch
 
 `cat /etc/hostname`
 
-![[3.1 1.png]]
+![3 1](https://github.com/user-attachments/assets/e3566475-1613-43f1-995d-9eee570b243a)
+
 
 ---
 
@@ -91,7 +98,7 @@ Esta información también es fácil de obtener, debido a que se encuentra en el
 
 `cat /etc/hosts`
 
-![[4.1.png]]
+![4 1](https://github.com/user-attachments/assets/ce030361-e334-4a90-b13a-5063fa147763)
 
 ---
 
@@ -101,20 +108,23 @@ Esto son 3 puntos diferentes, pero yo los hice a la vez (obtuve todo pensando si
 
 Toda la información de los usuarios se encuentra en el archivo **/etc/passwd.**
 
-![[5.1.png]]
+![5 1](https://github.com/user-attachments/assets/905b3aa0-fcd5-4624-98d9-88c61b29e354)
+
 
 
 Sus contraseñas se encuentran cifradas en el archivo **/etc/shadow**
 
 `cat /etc/shadow`
 
-![[5.2.1.png]]
+![5 2 1](https://github.com/user-attachments/assets/90c42566-06a7-46d4-9092-222c6bf2deb9)
+
 
 Y la información de los grupos se encuentran en el archivo **/etc/groups**
 
 `cat /etc/group`
 
-![[5.2.png]]
+![5 2](https://github.com/user-attachments/assets/b56eac41-1282-4005-9971-54c5321d21a9)
+
 
 
 ---
@@ -126,13 +136,15 @@ Para obtenerla de forma legible hay que usar el comando **last -f** pasándole c
 
 `last -f /var/log/wtmp`
 
-![[8.1 1.png]]
+![8 1](https://github.com/user-attachments/assets/5ff7fc33-a55d-47db-bd35-88660c78ff85)
+
 
 Redirijo la salida de este comando a un archivo para guardar la información pero en vez de usar un simple cat uso el comando:
 
 `cp –preserve=timestamps /var/log/wtmp wtmp.txt`
 
-![[8.3.png]]
+![8 3](https://github.com/user-attachments/assets/003c338c-84d4-44e9-885e-88953ff5758b)
+
 
 Así se mantienen la fecha y hora originales de modificación y acceso del archivo copiado.
 
@@ -140,7 +152,8 @@ Otra forma de visualizar el contenido de este archivo es con el comando **utmpdu
 
 `utmpdump wtmp.txt`
 
-![[9.1 1.png]]
+![9 1](https://github.com/user-attachments/assets/4f92b2da-515e-4a19-94ec-900c4bd9c9e7)
+
 
 Este comando se usa para convertir archivos binarios de logs de sesiones a un formato más legible, así que podría ser otra forma de obtener esta información (para almacenarla en un archivo).
 
@@ -152,7 +165,8 @@ El historial de comandos se encuentra dentro del directorio personal de cada usu
 
 `cat /home/usuario/.bash_history`
 
-![[11.2 1.png]]
+![11 2](https://github.com/user-attachments/assets/f4c6d588-9b4f-4a92-a89f-ff9eacd0536c)
+
 
 ---
 
@@ -163,7 +177,8 @@ Así que para ver las conexiones remotas ssh uso el comando:
 
 `cat /var/log/auth.log | grep “sshd”`
 
-![[12.1.png]]
+![12 1](https://github.com/user-attachments/assets/287d6800-3a23-45b8-9b41-fc4ba6d9d8ff)
+
 
 Observo que se han intentado 2 conexiones por SSH desde un equipo externo hacia este equipo. 
 
@@ -172,7 +187,8 @@ Si el caso fuera al revés (un usuario de este equipo se ha conectado a otro equ
 
 Estas se encuentran en el directorio **/~.ssh/authorized_keys**.
 
-![[12.4.1.png]]
+![12 4 1](https://github.com/user-attachments/assets/8255bc96-5660-467f-8ce5-40168d576abf)
+
 
 Aunque no hay nada dentro del archivo
 
@@ -187,20 +203,23 @@ Los scripts de inicio de init.d se encuentran en **/etc/init.d**
 
 `ls -la /etc/init.d/`
 
-![[12.4.png]]
+![12 4](https://github.com/user-attachments/assets/476c4102-cc98-4dd2-bf40-4fdb4d268d72)
+
 
 
 Y los de **systemd** de encuentran en **/etc/systemd/system**
 
 `ls -la /etc/systemd/system`
 
-![[13.2 1.png]]
+![13 2](https://github.com/user-attachments/assets/69dea1cf-73b4-4456-9779-707dbbac0e16)
+
 
 Obtengo todos estos scripts con el comando:
 
 `tar –preserve-permissions -cvzf inicio_backup.tar.gz /etc/init.d /etc/systemd/system /lib/systemd/system`
 
-![[13.3.png]]
+![13 3](https://github.com/user-attachments/assets/7ff327c7-7102-44cd-a71c-af2de4f032bb)
+
 
 ---
 
@@ -210,19 +229,22 @@ Las tareas programadas se encuentran en el archivo **/etc/crontab**.
 
 `cat /etc/crontab`
 
-![[14.1.png]]
+![14 1](https://github.com/user-attachments/assets/8272fad9-31a3-4c3e-ab49-264e3153bb3b)
+
 
 Pero estas no son todas las tareas programadas del sistema, estas se encuentran en el directorio **/etc/cron.d**
 
 `ls -la /etc/cron.d`
 
-![[14.3 1.png]]
+![14 3](https://github.com/user-attachments/assets/c5494ec7-5d40-45ab-8926-7e96d375e918)
+
 
 Para poder obtener el contenido de estos directorios ejecuto el comando:
 
 `tar -cvzf tareas_programadas.tar.gz /etc/cron.d /etc/cron.daily /etc/cron.weekly /etc/cron.hourly /etc/cron.monthly`
 
-![[14.4.1.png]]
+![14 4 1](https://github.com/user-attachments/assets/25ad849c-fe4b-4d19-a9c3-43765e34a957)
+
 
 ---
 
@@ -232,13 +254,15 @@ La información sobre los archivos/programas que se han creado, abierto reciente
 
 La información de este archivo está en formato XML.
 
-![[15.1 1.png]]
+![15 1](https://github.com/user-attachments/assets/befbdfe3-a646-4ebd-a000-1a7d737e056f)
+
 
 Para ver los ficheros que han sido abiertos recientemente por el usuario puedo f iltrar la información del fichero por bookmark
 
 `grep "<bookmark href=" ~/.local/share/recently.used.xbeled.xbel>"`
 
-![[15.2.png]]
+![15 2](https://github.com/user-attachments/assets/0a33f6e0-9ead-4439-88ec-4214bfe91745)
+
 
 ---
 
@@ -248,7 +272,8 @@ Para poder ver los ficheros recientes abiertos con LibreOffice hay que ver el co
 
 `cat /home/usuario/snap/libreoffice/334/.config/libreoffice/4/user/registry/modifications.xcu | grep "HistoryItem"`
 
-![[16.1 1.png]]
+![16 1](https://github.com/user-attachments/assets/cfc7e9ed-070d-45f7-8b94-748d83dcc49d)
+
 
 ---
 
@@ -259,7 +284,8 @@ Copio el directorio con el comando **tar** donde se puede ver todos los archivos
 
 `tar -cvzf thumbnails.tar.gz /home/usuario/.cache/thumbnails`
 
-![[17.2.1.png]]
+![17 2 1](https://github.com/user-attachments/assets/a329e91c-5997-437c-a86b-c6d2cfb02b47)
+
 
 ---
 
@@ -267,7 +293,8 @@ Copio el directorio con el comando **tar** donde se puede ver todos los archivos
 
 Para poder encontrar estas localizaciones, navego hasta el directorio **/home/usuario/.cache/tracer3/files/errors** y observo el siguiente contenido:
 
-![[18.1 1.png]]
+![18 1](https://github.com/user-attachments/assets/326c24ee-22db-4dff-ade5-ee3725829661)
+
 
 ---
 
@@ -275,7 +302,8 @@ Para poder encontrar estas localizaciones, navego hasta el directorio **/home/us
 
 Se deberían de encontrar en la ubicación **/etc/NetworkManager/system-connections** pero en mi caso, está vacío:
 
-![[19.1 1.png]]
+![19 1](https://github.com/user-attachments/assets/87d40957-27e8-4f68-9319-3c133e3e144e)
+
 
 ---
 
@@ -283,7 +311,8 @@ Se deberían de encontrar en la ubicación **/etc/NetworkManager/system-connecti
 
 Al igual que en el apartado anterior, esta información se debería de encontrar en **/home/usuario/.config/goa-1.0** pero al ver el contenido del directorio, no hay nada.
 
-![[20.1 1.png]]
+![20 1](https://github.com/user-attachments/assets/45669d85-130e-4e35-b9a4-a7d76531b421)
+
 
 
 ---
@@ -294,13 +323,15 @@ Para obtener información sobre el tiempo de uso del equipo, usuarios conectados
 
 `uptime`
 
-![[21.1 1.png]]
+![21 1](https://github.com/user-attachments/assets/cf4667de-10b5-41b1-928b-d9ca131b17b4)
+
 
 Pero quedarse solo con este comando sería quedarse corto, así que también usaré los comandos who y w.
 
 `uptime & who & w`
 
-![[21.2.png]]
+![21 2](https://github.com/user-attachments/assets/c95ca8a5-0c41-42fc-bb95-c81654f51117)
+
 
 ---
 
@@ -314,7 +345,8 @@ Otros parámetros para usar con este comando, con los que sacar otro tipo de inf
 -  -s
 -  -n
 
-![[22.1 1.png]]
+![22 1](https://github.com/user-attachments/assets/54d48929-ee45-495b-b375-8be717959272)
+
 
 ---
 
@@ -324,16 +356,19 @@ Para ver todas las particiones del sistema, se pueden usar varios comandos:
 
 `fdisk -l`
 
-![[23.1 1.png]]
+![23 1](https://github.com/user-attachments/assets/97353dc0-276f-4419-aa00-6b06f66db616)
+
 
 
 `blkid`
 
-![[23.2.png]]
+![23 2](https://github.com/user-attachments/assets/2feeeadc-074f-4177-bfb5-65793c5e88fb)
+
 
 `lsblk`
 
-![[23.3.png]]
+![23 3](https://github.com/user-attachments/assets/0844f1ed-d0e4-4945-a0d1-2d9b8679d47d)
+
 
 ---
 
@@ -343,14 +378,16 @@ Con el comando **mount -l** se puede ver información sobre los sistemas de arch
 
 `mount -l`
 
-![[24.1 1.png]]
+![24 1](https://github.com/user-attachments/assets/7def32d9-c241-4366-81c4-c7d895500583)
+
 
 
 Otro comando con el que ver los sistemas de archivos es el comando **df -h**
 
 `df -h`
 
-![[24.2 1.png]]
+![24 2](https://github.com/user-attachments/assets/64140d73-d6dd-4b58-b2fb-fd647eac4265)
+
 
 ---
 
@@ -360,41 +397,50 @@ En caso de que el disco de la maquina este cifrado, deberemos de hacer una clona
 Para obtener esa copia voy a usar la herramienta **CAINE.** 
 Preparo las 2 máquinas virtuales para que estén dentro de la misma red interna.
 
-![[25.1 1.png]]
+![25 1](https://github.com/user-attachments/assets/22828307-64a4-478c-8125-b72b03234568)
+
 
 ↓
 
-![[25.2 1.png]]
+![25 2](https://github.com/user-attachments/assets/c66e8d34-77dc-40b6-973b-d96125ac8134)
+
 
 Arranco la máquina virtual de CAINE
 
-![[25.3 1.png]]
+![25 3](https://github.com/user-attachments/assets/beaaafaf-6948-4c2b-9d91-34963c3b830b)
+
 
 Una vez accedo al SO realizo su configuración de red para que se pueda conectar al equipo Ubuntu:
 
-![[25.4.png]]
+![25 4](https://github.com/user-attachments/assets/9c280d10-f03d-4876-9d9f-bb5d6bf56207)
+
 
 Pruebo que hay conexión entre ambas máquinas:
 
-![[25.5.png]]
+![25 5](https://github.com/user-attachments/assets/6abc97c9-b49d-4761-b7f7-c6d276d23db6)
+
 
 Antes de hacer la copia debo de desbloquear el disco, debido a que este está en estado “Solo lectura”
 
-![[25.6.1.png]]
+![25 6 1](https://github.com/user-attachments/assets/ecdc3f93-8b12-420f-bd40-639a8d12f1bb)
+
 
 ↓
 
-![[25.6.2.png]]
+![25 6 2](https://github.com/user-attachments/assets/ffcb2604-4b78-4ede-8f52-e82c6d4997bb)
+
 
 Abro una terminal y con el comando **lsblk** veo los discos de la máquina Ubuntu:
 
-![[25.6 1.png]]
+![25 6](https://github.com/user-attachments/assets/41c0567e-4b5a-4ff2-8379-635d5f1ae4b0)
+
 
 Antes de copiarlo, he de hacer otra cosa, que es crear una partición en el disco del equipo CAINE. En mi caso he usado fdisk.
 
 `fdisk /dev/sda`
 
-![[25.7.png]]
+![25 7](https://github.com/user-attachments/assets/8bc4b0b1-a587-43e7-b3bf-7c4b63b15c55)
+
 
 
 Las opciones que he configurado han sido: 
@@ -405,28 +451,33 @@ Las opciones que he configurado han sido:
 
 Y con **w** guardo los cambios realizados:
 
-![[25.9 1.png]]
+![25 9](https://github.com/user-attachments/assets/6ce17792-9a2c-4d43-a83b-d73180a4ee4c)
+
 
 Para formatear esa partición uso el comando: 
 
 `mkfs.ntfs /dev/sda1`
 
-![[25.10.png]]
+![25 10](https://github.com/user-attachments/assets/eebf236a-7022-4d6e-ab1a-803f044720be)
+
 
 El último paso para preparar la copia del disco es abrir el puerto 12000 para que desde Ubuntu mandemos la copia a la máquina CAINE.
 
 `nc -l -p 12000 > marcos_ubuntu.img`
 
-![[25.11.png]]
+![25 11](https://github.com/user-attachments/assets/ed504afb-c28f-4204-84fd-a9e0569c7618)
+
 
 En Ubuntu ejecuto el comando:
 
 `dd if=/dev/sda conv=sync,noerror | nc 192.168.1.101 12000`
 
-![[25.11.1.png]]
+![25 11 1](https://github.com/user-attachments/assets/4ac22593-5757-4ebf-9877-7f399a942981)
+
 
 Con un **ls -lh** veo que se ha creado la imagen del disco:
 
 `ls -lh`
 
-![[25.13.png]]
+![25 13](https://github.com/user-attachments/assets/1d398173-8ac1-4d49-a92d-c634a76628b9)
+
