@@ -21,13 +21,16 @@
 En esta práctica se va a recopilar información de un equipo Ubuntu 24.04 mediante el uso de diferentes herramientas y con el uso de comandos del mismo sistema.
 
 Antes de nada, paso la fecha actual al fichero inicio.txt.
-![[1.1 3.png]]
+![1 1](https://github.com/user-attachments/assets/fb19ebb1-d77d-473a-8c6c-afbce503b262)
+
 
 Obtengo el hash de este archivo y se lo paso al archivo hash.txt
 
-![[1.2 1.png]]
+![1 2](https://github.com/user-attachments/assets/fd53893c-0622-40a0-b1b1-104758ce4421)
 
-![[1.3 3.png]]
+
+![1 3](https://github.com/user-attachments/assets/089e1acc-b310-4411-a445-9b49bd440f74)
+
 
 ---
 ### Capturar la RAM
@@ -36,25 +39,30 @@ La obtengo con el comando:
 
 `insmod lime-6.8.0-51-generic.ko Path=/media/usuario/AF/Guardar_informacion/memdump.raw format=raw`
 
-![[2.1 1.png]]
+![2 1](https://github.com/user-attachments/assets/93c76ce6-ed23-46aa-978b-184dbc7bcf68)
+
 
 Ya con la memoria extraída, obtengo su hash y se lo paso al archivo hash.txt.
 `sha256sum memdump.raw >> /media/usuario/AF/hash.txt`
-![[2.3 1.png]]
+![2 3](https://github.com/user-attachments/assets/94a350ba-b951-4a56-98b3-6b68da019290)
 
-![[2.4 1.png]]
+
+![2 4](https://github.com/user-attachments/assets/82aa3a1e-9181-4d61-8a72-fe799c36705a)
+
 
 
 Esta es una forma de obtener una captura de la memoria RAM, pero también se puede usando la herramienta avml que también tengo instalada en mi USB forense.
 
 `sudo ./target/release/avml /media/usuario/AF/Guardar_informacion/memdump2.raw`
 
-![[3.1.png]]
+![3 1](https://github.com/user-attachments/assets/9b77b125-2635-4829-96a5-b568120c935c)
+
 
 Obtengo el hash de memdump2.raw y se lo paso al archivo hash.txt:
+![3 3](https://github.com/user-attachments/assets/3542d682-849c-4ade-a19d-436bef400b9f)
 
-![[3.3 1.png]]
-![[3.4.png]]
+![3 4](https://github.com/user-attachments/assets/021fedda-52a3-4445-8fb9-4db0b82f06ab)
+
 
 ---
 ### Extraer los procesos
@@ -64,17 +72,21 @@ Para poder obtener los procesos paso el resultado de la ejecución de los comand
 `ps > procesos.txt`
 `top >> procesos.txt`
 
-![[4.1 1.png]]
+![4 1](https://github.com/user-attachments/assets/b52e1e10-cfa0-4013-b967-37732e6a925c)
+
 
 Y procedo a visualizar el contenido de **procesos.txt** 
 
-![[4.2 1.png]]
+![4 2](https://github.com/user-attachments/assets/0e97a81e-7d1b-45da-8ff4-15b098ed2022)
+
 
 
 Obtengo el hash y lo paso a hash.txt.
 
-![[4.3.png]]
-![[4.4.png]]
+![4 3](https://github.com/user-attachments/assets/c7bbee78-d3e1-4761-ac1c-aa86dccae12d)
+
+![4 4](https://github.com/user-attachments/assets/bbaa4ef7-cdca-4d9b-9166-94f1617505be)
+
 
 ---
 ### Extraer las conexiones de red
