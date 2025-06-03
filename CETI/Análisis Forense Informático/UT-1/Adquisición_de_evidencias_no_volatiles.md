@@ -408,7 +408,7 @@ Esta información se guarda en el archivo **C:\Windows\INF\setupapi.dev.log** as
 Dentro del registro se guarda información sobre los USB que han sido conectados en el equipo. Esta información se guarda en las siguientes rutas: 
 
 - **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USB**
-- **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USBSTOR\**
+- **HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Enum\USBSTOR**
 
 ![25 1](https://github.com/user-attachments/assets/af665957-9ef4-4aa4-b472-16c6482f9880)
 
