@@ -1,20 +1,20 @@
 ## Índice
 
 - [Introducción](#introducción)
-- [Capturar la TAM](#capturar-la-ram)
-- [Extraer los procesos](#)
-- [Extraer las conexiones de red](#)
-- [Extraer información sobre los ficheros abiertos](#)
-- [Extraer información sobre los últimos inicios de sesión](#)
-- [Extraer el área de paginación](#)
-- [Extraer la contraseña de usuario](#)
-- [Obtener hash del kernel](#)
-- [Extraer procesos de inicialización del sistema](#)
-- [Extraer los cambios en los niveles de ejecución](#)
-- [Extraer la información de las tarjetas de red en modo promiscuo](#)
-- [Extraer información de logs de autenticación](#)
-- [Extraer información de las aplicaciones](#)
-- [Extraer información de los usuarios sudoers](#)
+- [Capturar la RAM](#capturar-la-ram)
+- [Extraer los procesos](#extraer-los-procesos)
+- [Extraer las conexiones de red](#extraer-las-conexiones-de-red)
+- [Extraer información sobre los ficheros abiertos](#extraer-informacion-sobre-los-ficheros-abiertos)
+- [Extraer información sobre los últimos inicios de sesión](#extraer-informacion-sobre-los-ultimos-inicios-de-sesion)
+- [Extraer el área de paginación](#extraer-el-area-de-paginacion)
+- [Extraer la contraseña de usuario](#extraer-la-contraseña-de-usuario)
+- [Obtener hash del kernel](#obtener-hash-del-kernel)
+- [Extraer procesos de inicialización del sistema](#extraer-procesos-de-inicializacion-del-sistema)
+- [Extraer los cambios en los niveles de ejecución](#extraer-los-cambios-en-los-niveles-de-ejecucion)
+- [Extraer la información de las tarjetas de red en modo promiscuo](#extraer-la-informacion-de-las-tarjetas-de-red-en-modo-promiscuo)
+- [Extraer información de logs de autenticación](#extraer-informacion-de-logs-de-autenticacion)
+- [Extraer información de las aplicaciones](#extraer-informacion-de-las-aplicaciones)
+- [Extraer información de los usuarios sudoers](#extraer-informacion-de-los-usuarios-sudoers)
 
 ## Introducción
 
@@ -175,12 +175,7 @@ Busco esa cadena en **memdump.raw** y le paso el resultado al archivo **Contrase
 
 `strings memdump.raw | grep -i "<hash de la contraseña>"`
 
-![9 3 1](https://github.com/user-attachments/assets/4a8720fd-b56f-4478-87b8-8ef5f20ee114)
-
-
-![9 3](https://github.com/user-attachments/assets/da155653-1937-4d73-ba79-66f7574ed64a)
-
-
+![9 2](https://github.com/user-attachments/assets/48d73aa1-8a2f-4169-9008-de96eac173b9)
 
 Obtengo su hash y lo paso a hash.txt
 
