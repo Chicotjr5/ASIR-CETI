@@ -5,9 +5,9 @@ Se encuentran clasificadas por Año>Asignatura>Unidad y en formato Markdown.
 
 Ire subiendo las prácticas poco a poco, ya que he de convertirlas a formato Markdown a mano, para tener el mejor resultado posible.
 
+En un futuro traducire el contenido al Inglés.
 
 **Se agradece la ayuda**
-
 
 ---
 
@@ -15,5 +15,7 @@ This repository contains all the internships, projects, and assignments I comple
 They are organized by Year > Subject > Unit and in Markdown format.
 
 I will be uploading the internships little by little, as I have to convert them to Markdown manually to achieve the best possible results.
+
+In the future I will translate the content into English.
 
 **Help appreciated**
