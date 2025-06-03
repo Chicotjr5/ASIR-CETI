@@ -372,7 +372,7 @@ Para ver todas las particiones del sistema, se pueden usar varios comandos:
 
 ---
 
-### Obtenemos la lista de sistemas de archivos actualmente montados en el sistema. Contendrá información sobre los puntos de montaje y los dispositivos asociados
+### Obtenemos la lista de sistemas de archivos actualmente montados en el sistema
 
 Con el comando **mount -l** se puede ver información sobre los sistemas de archivos del equipo:
 
