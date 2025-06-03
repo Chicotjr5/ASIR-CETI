@@ -1,7 +1,7 @@
 ## Índice
 
 - [Introducción](#introducción)
-- [Capturar la TAM](#)
+- [Capturar la TAM](#capturar-la-ram)
 - [Extraer los procesos](#)
 - [Extraer las conexiones de red](#)
 - [Extraer información sobre los ficheros abiertos](#)
@@ -44,6 +44,7 @@ La obtengo con el comando:
 
 Ya con la memoria extraída, obtengo su hash y se lo paso al archivo hash.txt.
 `sha256sum memdump.raw >> /media/usuario/AF/hash.txt`
+
 ![2 3](https://github.com/user-attachments/assets/94a350ba-b951-4a56-98b3-6b68da019290)
 
 
@@ -95,11 +96,15 @@ Para extraer las conexiones de red ejecuto el comando **netstat** y el resultado
 
 `netstat > ConexionesRed.txt`
 
-![[5.1 1.png]]
+![5 1](https://github.com/user-attachments/assets/063556de-616e-4e3e-818c-a36c038d3510)
+
 
 Obtengo su hash y lo paso a hash.txt
 
-![[5.2 1.png]]![[5.3.png]]
+![5 2](https://github.com/user-attachments/assets/5979e1b6-f561-445c-b907-e8129eff2b5f)
+
+![5 3](https://github.com/user-attachments/assets/38b02918-2055-4b8c-93b0-88b5c75f2370)
+
 
 ---
 ### Extraer información sobre los ficheros abiertos
@@ -108,12 +113,14 @@ Para obtener esta información, ejecuto el comando **losf -i** y le paso el resu
 
 `lsof -i > FicherosAbiertos.txt`
 
-![[6.1 1.png]]
+![6 1](https://github.com/user-attachments/assets/243814a6-56c6-420a-8d06-9a48285db15e)
+
 
 Obtengo su hash y lo paso a hash.txt
-![[6.2 1.png]]
+![6 2](https://github.com/user-attachments/assets/e0431115-1cc4-4e9e-8e80-4ae6edb7cb48)
 
-![[6.3 1.png]]
+![6 3](https://github.com/user-attachments/assets/89aae118-d3bb-4b82-93ae-38662875d8d4)
+
 
 ---
 ### Extraer información sobre los últimos inicios de sesión
@@ -122,12 +129,14 @@ Con el comando **lastlog** se puede ver cuando accedió por última vez cada usu
 
 `lastlog > UltimosLogs.txt`
 
-![[7.1 1.png]]
+![7 1](https://github.com/user-attachments/assets/7c88e833-7e79-482d-b187-3d55c289a7a2)
+
 
 Obtengo su hash y lo paso a hash.txt
 
-![[7.2 1.png]]
-![[7.3 1.png]]
+![7 2](https://github.com/user-attachments/assets/9f3fe941-d8d1-4324-bff8-11a2075a914d)
+
+![7 3](https://github.com/user-attachments/assets/e4ba5ec4-d1a6-48aa-a188-e906aa8825ee)
 
 ---
 
@@ -141,14 +150,14 @@ Como existe, uso el siguiente comando para extraerlo:
 
 `Dd if=/swap.img of=/media/usuario/AF/Guardar_informacion/paginación.img bs=1M`
 
-![[8.1 1.png]]
+![8 1](https://github.com/user-attachments/assets/be164cf1-d071-4371-b05f-decb56c284e8)
 
 
 Obtengo su hash y lo paso a hash.txt
 
-![[8.2 1.png]]
+![8 2](https://github.com/user-attachments/assets/83d7feeb-af0a-4261-a30c-624d475b5bd6)
 
-![[8.3 1.png]]
+![8 3](https://github.com/user-attachments/assets/280bf896-2889-4bbc-a0e0-69abc88e0c16)
 
 ---
 ### Extraer la contraseña del usuario
@@ -159,29 +168,35 @@ Obtengo el hash de la contraseña del usuario:
 
 `grep <nombre del usuario> /etc/shadow`
 
-![[9.1 1.png]]
+![9 1](https://github.com/user-attachments/assets/2d90f1ef-430d-4a71-9864-138c79300691)
+
 
 Busco esa cadena en **memdump.raw** y le paso el resultado al archivo **Contraseñas.txt**.
 
 `strings memdump.raw | grep -i "<hash de la contraseña>"`
 
-![[9.3 1.png]]
+![9 3 1](https://github.com/user-attachments/assets/4a8720fd-b56f-4478-87b8-8ef5f20ee114)
 
-![[9.3.1.png]]
+
+![9 3](https://github.com/user-attachments/assets/da155653-1937-4d73-ba79-66f7574ed64a)
+
 
 
 Obtengo su hash y lo paso a hash.txt
 
-![[9.4.png]]
-![[9.5.png]]
+![9 4](https://github.com/user-attachments/assets/13e0ced8-1c4c-4348-898a-74734ff57869)
+
+![9 5](https://github.com/user-attachments/assets/788ee653-36d2-42fa-a8c5-edf307f741e3)
 
 ---
 ### Obtener hash del kernel
 
 El kernel de Linux se encuentra en **/boot/vmlinuz-6.8.0-51-generic** así que saco su hash y se lo paso al archivo hash.txt.
 
-![[11.1 1.png]]
-![[11.2 2.png]]
+![11 1](https://github.com/user-attachments/assets/315a5c91-c729-4494-b86b-7162956c3a13)
+
+![11 2](https://github.com/user-attachments/assets/b1c420b6-6ba7-4677-9d2c-6690781dd491)
+
 
 ---
 ### Extraer procesos de inicialización del sistema
@@ -190,34 +205,42 @@ Para ver estos procesos uso el comando **dmesg** y paso su resultado al fichero 
 
 `dmesg > ProcesosInicio.txt`
 
-![[12.1 1.png]]
+![12 1](https://github.com/user-attachments/assets/ca0a63ad-cb1f-45a4-a271-039b5116c935)
+
 
 Para comprobar la información de este archivo y ver que no hay nada fuera de lo normal, uso el comando:
 
 `grep -iE “eth|wlan |net|network|link|mac” ProcesosInicio.txt`
 
-![[12.2.1.png]]
+![12 2 1](https://github.com/user-attachments/assets/dd6ef6e4-ec16-47de-b0d3-1f89551c8de1)
+
 
 Obtengo su hash y lo paso al archivo hash.txt
 
-![[12.2 1.png]]![[12.3.png]]
+![12 2](https://github.com/user-attachments/assets/2e218e9e-5d3f-4b44-b23f-59ef1e55a969)
+
+
+![12 3](https://github.com/user-attachments/assets/64923cad-9f18-47bc-b7f8-0ca2c9385eec)
 
 ---
+
 ### Extraer los cambios en los niveles de ejecución
 
 Para ver los cambios en los niveles de ejecución hay que filtrar el contenido del archivo **/var/log/syslog** por **“state level”** y el resultado lo paso al archivo **NivelesEjecucion.txt**.
 
 `grep "state level" /var/log/syslog > NivelesEjecucion.txt`
 
-![[13.1.png]]
+![13 1](https://github.com/user-attachments/assets/ca59a82b-1a1d-479c-99df-0cf0a0799107)
+
 
 Obtengo su hash y lo paso al archivo hash.txt
 
-![[13.2 1.png]]
+![13 2](https://github.com/user-attachments/assets/1799ab85-0c9c-4008-95d9-7df04c6c4cf0)
 
-![[13.3.png]]
+![13 3](https://github.com/user-attachments/assets/ca48cfe1-26ea-4c6f-825b-7c3672bfb600)
 
 ---
+
 ### Extraer la información de las tarjetas de red en modo promiscuo
 
 Esta información también se encuentra en **/var/log/syslog** solo que ahora voy a filtrar la información y pasando el resultado al archivo **TarjetasRed.txt**.
@@ -226,7 +249,8 @@ Para poder filtrar la información, uso el comando:
 
 `grep -iE “(eth|wlan|enp|ens).*promisc”`
 
-![[14.1.png]]
+![14 1](https://github.com/user-attachments/assets/3cf12b32-57d5-44c4-9985-6345e6527686)
+
 Esta vez no ha sacado nada de información.
 
 ---
@@ -238,29 +262,34 @@ Esta información se encuentra en **/var/log/auth.log** y filtraré y almacenar�
 Uso el comando: 
 `grep -a -i “sudo” /var/log/auth.log | grep -i "pts" > LogsAutentica.txt`
 
-![[15.1.png]]
+![15 1](https://github.com/user-attachments/assets/71951fa3-c394-40c5-bf63-1a4659e4ae21)
 
 Obtengo el hash y lo almaceno en hash.txt
 
-![[15.2.png]]![[15.3.png]]
+![15 2](https://github.com/user-attachments/assets/04d9f750-2f42-4bde-91a0-055f50c778dc)
+
+![15 3](https://github.com/user-attachments/assets/fc3e67af-5e89-4a08-804d-55bb99a89977)
 
 ---
 
 ### Extraer información de las aplicaciones
-
 
 Ahora he de obtener información sobre las aplicaciones que se han instalado, ejecutado, eliminado, actualizado etc. 
 Para ello tengo que filtrar la salida del archivo **/var/log/dpkg.log** con el comando:
 
 `grep -iE “install|remove|upgrade” /var/log/dpkg.log > AplicacionesEstado.txt`
 
-![[16.1.png]]
+![16 1](https://github.com/user-attachments/assets/640eddf2-380a-4c64-b969-f8f9da6386d4)
+
 
 Obtengo el hash y lo almaceno en hash.txt
-![[16.2.png]]
-![[16.3.png]]
+
+![16 1](https://github.com/user-attachments/assets/ea23fc35-15c6-4193-b114-804ef373adb9)
+
+![16 3](https://github.com/user-attachments/assets/f31d4997-6fee-4393-916f-d8f611ea46e7)
 
 ---
+
 ### Extraer información de los usuarios sudoers
 
 Esta información se encuentra en **/etc/sudoers** voy a filtrarla y  almacenarla en el archivo **UserSudoers.txt**
@@ -269,11 +298,14 @@ Uso el comando:
 
 `cat /etc/sudoers | grep -i "sudo > UserSudoers.txt"`
 
-![[17.1.png]]
+![17 1](https://github.com/user-attachments/assets/c0ef1b0d-32a7-4faa-a3d5-bb0167a15b9c)
+
 
 Calculo el hash del archivo y lo almaceno en hash.txt
 
-![[17.2.png]]
+![17 2](https://github.com/user-attachments/assets/9bd8ec3d-abf6-4f15-bb96-a1d1b31fe5ad)
 
-![[17.3.png]]
+
+![17 3](https://github.com/user-attachments/assets/3f655857-2b3e-428c-851d-070b69d6665a)
+
 
