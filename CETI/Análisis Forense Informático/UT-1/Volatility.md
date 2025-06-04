@@ -20,10 +20,6 @@
 - [¿Qué se había escrito en el block de notas (notepad.exe) cuando la memoria fue capturada?](#qué-se-había-escrito-en-el-block-de-notas-notepadexe-cuando-la-memoria-fue-capturada)
 - [¿Cuál es el nombre corto del archivo en el registro 59045?](#cuál-es-el-nombre-corto-del-archivo-en-el-registro-59045)
 - [Este ordenador fue explotado con meterpreter ¿Cuál fue el PID infectado?](#este-ordenador-fue-explotado-con-meterpreter-cuál-fue-el-pid-infectado)
-- [Utiliza dos pluggins que no hayas usado en el ejercicio e indica que estás mostrando](#utiliza-dos-pluggins-que-no-hayas-usado-en-el-ejercicio-e-indica-que-estás-mostrando)
-- [Conclusiones](#conclusiones)
-- [Tabla de incidencias](#tabla-de-incidencias)
-
 
 ## Introducción
 
