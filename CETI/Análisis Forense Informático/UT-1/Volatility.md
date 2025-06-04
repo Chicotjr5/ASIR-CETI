@@ -23,6 +23,8 @@
 
 En esta práctica se va a usar la herramienta de **volatility** con la cual se analizará una memoria RAM extraida de un equipo para buscar información comprometedora.
 
+---
+
 ### Instalación
 
 Para poder instalar volatility, se usa el siguiente script:
