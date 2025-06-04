@@ -1,7 +1,25 @@
 ## Índice
 
-- Introducción
-- 
+- [Introducción](#introducción)
+- [Obtener imagen de disco](#obtener-imagen-de-disco)
+- [Crear caso en Autopsy](#crear-caso-en-autopsy)
+- [Analizar datos obtenidos](#analizar-datos-obtenidos)
+  - [Data Source](#data-source)
+  - [Lista de ficheros agrupados por su extensión](#lista-de-ficheros-agrupados-por-su-extension)
+  - [Documentos generados desde MSOffice](#documentos-generados-desde-msoffice)
+  - [Ficheros eliminados](#ficheros-eliminados)
+  - [Agrupación de ficheros por tamaño](#agrupacion-de-ficheros-por-tamano)
+  - [Ficheros sin coincidencia de extensión con tipo](#ficheros-sin-coincidencia-de-extension-con-tipo)
+  - [Documentos que se han abierto recientemente (Data Artifacts)](#documentos-que-se-han-abierto-recientemente-data-artifacts)
+  - [Páginas web marcadas como favoritas](#paginas-web-marcadas-como-favoritas)
+  - [Archivos sospechosos](#archivos-sospechosos)
+  - [OS Accounts](#os-accounts)
+- [Línea de tiempo](#linea-de-tiempo)
+  - [Acotación a unos meses (por ejemplo medio año) donde más actividad se vea](#acotacion-a-unos-meses-por-ejemplo-medio-ano-donde-mas-actividad-se-vea)
+  - [Acotación a días (por ejemplo 3 días)](#acotacion-a-dias-por-ejemplo-3-dias)
+  - [Acotación a horas de un día y posteriormente a minutos de una de las horas elegidas](#acotacion-a-horas-de-un-dia-y-posteriormente-a-minutos-de-una-de-las-horas-elegidas)
+- [Generar un informe](#generar-un-informe)
+
 
 ## Introducción
 
