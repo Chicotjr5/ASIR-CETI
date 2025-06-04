@@ -166,7 +166,7 @@ Estos son los archivos que cuentan con las extensiones:
 Dentro de **File Views** se encuentra la categoría **Deleted** que son aquellos ficheros que se han eliminado.
 Estos son archivos que se eliminaron tanto en la papelera de reciclaje, como los que se eliminaron directamente
 
-![[3.7.png]]![3 7](https://github.com/user-attachments/assets/e3fb3785-c884-4390-8513-f260ce8f8d8b)
+![3 7](https://github.com/user-attachments/assets/e3fb3785-c884-4390-8513-f260ce8f8d8b)
 
 ↓
 
