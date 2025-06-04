@@ -4,7 +4,6 @@
 - [Obtener imagen de disco](#obtener-imagen-de-disco)
 - [Crear caso en Autopsy](#crear-caso-en-autopsy)
 - [Analizar datos obtenidos](#analizar-datos-obtenidos)
-  - [Data Source](#data-source)
   - [Lista de ficheros agrupados por su extensión](#lista-de-ficheros-agrupados-por-su-extensión)
   - [Documentos generados desde MSOffice](#documentos-generados-desde-msoffice)
   - [Ficheros eliminados](#ficheros-eliminados)
