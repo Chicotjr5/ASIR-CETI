@@ -117,7 +117,7 @@ Algunos no los ejecuto porque no son necesarios y solo consumirían tiempo.
 
 Una vez terminado el análisis, se obtiene toda la información del disco
 
-![[3.3 2.png]]![3 3](https://github.com/user-attachments/assets/d54db86d-969e-4529-a6b0-fa0beac82e9d)
+![3 3](https://github.com/user-attachments/assets/d54db86d-969e-4529-a6b0-fa0beac82e9d)
 
 
 ---
