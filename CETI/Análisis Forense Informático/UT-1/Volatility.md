@@ -226,7 +226,7 @@ En este caso es **PAGE_READONLY**
 
 ---
 
-### ¿Qué protección tiene la memoria VAD (Virtual Address Description) en la dirección inicio 0x00000000033c0000 y f inalización 0x00000000033dffff?
+### ¿Qué protección tiene la memoria VAD (Virtual Address Description) en la dirección inicio 0x00000000033c0000 y finalización 0x00000000033dffff?
 
 `python2 /opt/volatility/vol.py -f 1.-Memory.dump –profile=WinSP1x64 vadinfo | grep -A 10 “0x00000000033c0000”`
 
