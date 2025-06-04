@@ -1,7 +1,7 @@
 
 ## Índice
 - [Introducción](#introducción)
-- [Instalación Volatility](#instalación-volatility)
+- [Instalación](#instalación)
 - [Comprueba que el hash SHA1 del volcado de memoria coincide con c95e8cc8c946f95a109ea8e47a6800de10a27abd. ¿Cuál es su hash SHA256?](#comprueba-que-el-hash-sha1-del-volcado-de-memoria-coincide-con-c95e8cc8c946f95a109ea8e47a6800de10a27abd-cuál-es-su-hash-sha256)
 - [¿Cuál es el perfil más apropiado de Volatility para este volcado de memoria?](#cuál-es-el-perfil-más-apropiado-de-volatility-para-este-volcado-de-memoria)
 - [¿Cuál es el ID del proceso que está usando el notepad.exe?](#cuál-es-el-id-del-proceso-que-está-usando-el-notepadexe)
