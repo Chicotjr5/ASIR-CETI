@@ -1,72 +1,86 @@
-
 ## Índice
-- [[Practica 1#Índice|Índice]]
-- [[Practica 1#Algoritmos|Algoritmos]]
-- [[Practica 1#Ejercicio de paginación|Ejercicio de paginación]]
-- [[Practica 1#Ejercicio de segmentación|Ejercicio de segmentación]]
+
+- [Introducción](#introducción)
+- [Primera toma de contacto](#primera-toma-de-contacto)
+- [Acceder al móvil](#acceder-al-móvil)
+- [Borrar patrón de desbloqueo del móvil](#borrar-patrón-de-desbloqueo-del-móvil)
+
+## Introducción
+En esta práctica se va a instalar adb. 
+Esta es una herramienta de línea de comandos que nos permite comunicarnos con nuestro dispositivo móvil y realizar multitud de acciones: 
+
+- Acceso y navegación por el sistema de archivos 
+- Control remoto del móvil 
+- Ejecución de comandos
+
+---
+
+### Primera toma de contacto
+Para instalarlo en nuestro equipo, vamos al siguiente [**enlace**](https://developer.android.com/tools/releases/platform-tools?hl=es-419#downloads)) y lo descargamos.
+Para usarlo, nuestro móvil ha de estar conectado al equipo vía cable USB y tenemos que abrir un terminal
+
+Para comprobar que nuestro dispositivo esta realmente conectado y es visible por adb ejecuto:
+
+`adb devices`
+
+![[2.1.1.png]]
+
+↓
+
+![[2.2.png]]
+
+Para ver si estoy como **root** o no ejecuto:
+
+`adb root`
+
+![[2.2 1.png]]
 
 
-### Algoritmos
+En mi caso, el dispositivo no esta rooteado.
+
+---
+
+### Acceder al móvil
+
+Con adb se puede acceder a la **shell** del móvil y desde allí, podemos navegar por el sistema y ejecutar algunos comandos.
+
+`adb shell`
+
+![[3.1.png]]
 
 
-
-### Ejercicio de paginación
-
-Tenemos un sistema operativo de 32 bits en el que la asignación de memoria se realiza mediante paginación. 
-Cada página/marco ocupa 1 MB. De los 32 bits de la dirección de memoria, se usan 12 bits para especificar la página. 
-Se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de páginas:
-
-| Página | Marco |
-| ------ | ----- |
-| 0x59B  | 0x123 |
-| 0x59C  | 0xA05 |
-| 0x59D  | 0x59F |
-| 0x59E  | 0x799 |
-| 0x59F  | 0xF8B |
-| 0x59A0 | 0x22D |
-
-Dada la dirección lógica 0x59F2A5A0, obtener la dirección física correspondiente:
-- 0xF8B2A5A0
-
-Dada la dirección lógica 0x5A02A59F, obtener la dirección física correspondiente.
-- 0x22DA59F
-
-Dada la dirección lógica 0x59C4DE87, obtener la dirección física correspondiente
-- 0xA054DE87
-
-### Ejercicio de segmentación
-
-En un sistema de de 32 bits se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de segmentos (el tamaño viene expresado de forma relativa la base):
-
-| Segmento | Base       | Tamaño     | Límite     |
-| -------- | ---------- | ---------- | ---------- |
-| 0xA321   | 0x85434520 | 0x00005218 | 0x85439738 |
-| 0xA322   | 0xBA41002E | 0x00003FD1 | 0xBA413FFF |
-| 0xA323   | 0x226A5722 | 0x00004D3D | 0x226AA45F |
-| 0xA324   | 0xF01809AC | 0x00000053 | 0xF01809FF |
-| 0xA325   | 0x226CA460 | 0x0000AAFF | 0x226D4F5F |
-| 0xA326   | 0x4951B4D8 | 0x0000F424 | 0x4952A8FC |
-
-**Obtener las direcciones físicas absolutas donde termina cada segmento**
-
-**Dada la dirección lógica 0xA3231265, obtener la dirección física correspondiente.**
-
-- 4D3D-1265= 15064 Está dentro del segmento 
-- 226A5722+1265 = 226A6987 
-- Su dirección física sería 0x226A6987
-
-**Dada la dirección lógica 0xA3240265, obtener la dirección física correspondiente.**
-
-- 53-0265= -212 
-- Se sale del segmento
-
-**Dada la dirección lógica 0xA325AAFA, obtener la dirección física correspondiente.**
-
-- AAFF – AAFA = 5 Esta dentro del segmento 
-- 226CA460 + AAFA = 226D 4F5A 
-- Su dirección física sería 0x226D4F5A
+Si por ejemplo hago un **ls** puedo ver la estructura de directorios:
 
 
+![[3.2.png]]
 
+
+En un principio, se puede acceder a todos (o casi todos) los directorios del móvil, pero en aquellos directorios donde se necesitan permisos de root, no podemos acceder.
+
+![[3.3.png]]
+
+Pero habrá otras que si y de hecho, podemos extraer información, como en el siguiente caso:
+
+`adb pull /system/media/wallpaper/walppaper_group/00MoltenGlass`
+
+![[3.4 1.png]]
+
+Y aquí tenemos el contenido de ese directorio:
+
+![[3.5.png]]
+
+---
+
+### Borrar patrón de desbloqueo del móvil
+
+El archivo que contiene el patrón de desbloqueo es el **/data/system/gesture.key** pero debido a nuestra falta de privilegios, no podemos acceder a él, por lo que no podemos borrarlo tampoco.
+
+![[3.6.png]]
+
+↓
+
+![[3.7.png]]
+
+La forma de borrar esa clave sería rooteando el teléfono, que en mi caso al tener un **Xiaomi Redmi Note 9**, debería de hacerlo con la aplicación **MI Unlock**.
 
 
