@@ -1,72 +1,74 @@
-
 ## Índice
-- [[Practica 1#Índice|Índice]]
-- [[Practica 1#Algoritmos|Algoritmos]]
-- [[Practica 1#Ejercicio de paginación|Ejercicio de paginación]]
-- [[Practica 1#Ejercicio de segmentación|Ejercicio de segmentación]]
+
+- [Introducción](#introducción)
+- [Rootear Huawei P8 Lite](#rootear-huawei-p8-lite)
+- [Rootear Xiaomi Redmi Note 9](#rootear-xiaomi-redmi-note-9)
+
+## Introducción
+
+En esta práctica se va a intentar rootear 2 dispositivos móviles, un Huawei P8 Lite y un Xiaomi Redmi Note 9 mediante el uso de diferentes herramientas nativas y de 3º.
+
+---
+
+### Rootear Huawei P8 Lite
+
+Rootear un móvil es un proceso algo complicado y tedioso y de hecho, algunos móviles ya no se pueden rootear o requieren de mucha suerte y herramientas específicas.
 
 
-### Algoritmos
+Generalmente, para poder rootear un móvil, este ha de tener el **bootloader desbloqueado**, lo que diferentes acciones que no se podrían hacer de forma normal. 
+Para poder comprobar si el **bootloader** de un móvil esta desbloqueado o no:
 
 
+`adb reboot bootloader`
+`fastboot oem get-bootinfo`
 
-### Ejercicio de paginación
+![[4.3.png]]
 
-Tenemos un sistema operativo de 32 bits en el que la asignación de memoria se realiza mediante paginación. 
-Cada página/marco ocupa 1 MB. De los 32 bits de la dirección de memoria, se usan 12 bits para especificar la página. 
-Se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de páginas:
+Como se puede observar, en el caso de mi **Huawei P8 Lite 2017** se encuentra bloqueado.
 
-| Página | Marco |
-| ------ | ----- |
-| 0x59B  | 0x123 |
-| 0x59C  | 0xA05 |
-| 0x59D  | 0x59F |
-| 0x59E  | 0x799 |
-| 0x59F  | 0xF8B |
-| 0x59A0 | 0x22D |
+Intente desbloquearlo usando la herramienta **DR Fone** pero esta me dijo que mi dispositivo ya no se puede rootear:
 
-Dada la dirección lógica 0x59F2A5A0, obtener la dirección física correspondiente:
-- 0xF8B2A5A0
+![[5.5.png]]
 
-Dada la dirección lógica 0x5A02A59F, obtener la dirección física correspondiente.
-- 0x22DA59F
+Además de que estuve buscando guías en internet y todas las que estaban disponibles hace un tiempo ya no lo están, por lo que no podré usar este móvil para la práctica. 
+Tampoco funciono con la herramienta **Kingo Root** ya que esta detecta el dispositivo e intenta el rooteo, pero falla:
 
-Dada la dirección lógica 0x59C4DE87, obtener la dirección física correspondiente
-- 0xA054DE87
+![[1.1.png]]
 
-### Ejercicio de segmentación
+↓
 
-En un sistema de de 32 bits se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de segmentos (el tamaño viene expresado de forma relativa la base):
+![[1.2.png]]
 
-| Segmento | Base       | Tamaño     | Límite     |
-| -------- | ---------- | ---------- | ---------- |
-| 0xA321   | 0x85434520 | 0x00005218 | 0x85439738 |
-| 0xA322   | 0xBA41002E | 0x00003FD1 | 0xBA413FFF |
-| 0xA323   | 0x226A5722 | 0x00004D3D | 0x226AA45F |
-| 0xA324   | 0xF01809AC | 0x00000053 | 0xF01809FF |
-| 0xA325   | 0x226CA460 | 0x0000AAFF | 0x226D4F5F |
-| 0xA326   | 0x4951B4D8 | 0x0000F424 | 0x4952A8FC |
+---
 
-**Obtener las direcciones físicas absolutas donde termina cada segmento**
+### Rootear Xiaomi Redmi Note 9
 
-**Dada la dirección lógica 0xA3231265, obtener la dirección física correspondiente.**
+Con la herramienta DR fone no pude rootear el Xiaomi tampoco, debido a que dice que solo es compatible con móviles de Samsung:
 
-- 4D3D-1265= 15064 Está dentro del segmento 
-- 226A5722+1265 = 226A6987 
-- Su dirección física sería 0x226A6987
-
-**Dada la dirección lógica 0xA3240265, obtener la dirección física correspondiente.**
-
-- 53-0265= -212 
-- Se sale del segmento
-
-**Dada la dirección lógica 0xA325AAFA, obtener la dirección física correspondiente.**
-
-- AAFF – AAFA = 5 Esta dentro del segmento 
-- 226CA460 + AAFA = 226D 4F5A 
-- Su dirección física sería 0x226D4F5A
+![[6.2.png]]
 
 
+Así que use la aplicación **Mi Unlock** la cual la proporciona la propia Xiaomi y sirve para desbloquear el **fastboot**. 
+Lo primero que hay que hacer es instalar el driver necesario para que el PC reconozca el dispositivo y luego arrancar la herramienta:
 
+![[6.3.png]]
 
+Mientras tanto, **iniciaremos el móvil en modo Fastboot** y el móvil será reconocido por la herramienta:
 
+![[6.4.png]]
+
+El rooteo de un movil tiene como consecuencia la perdida de la información del mismo, además de que este podría quedar inutilizable.
+
+![[6.5.png]]
+
+Pero al iniciar el desbloqueo, me dice que no y que espere 1 SEMANA para volver a intentarlo:
+
+![[6.6.png]]
+
+Con **kingoapp** tampoco funciono y es que paso lo mismo que con el Huawei, se detecta el dispositivo, pero falla el rooteo
+
+![[7.1.png]]
+
+↓
+
+![[7.2.png]]
