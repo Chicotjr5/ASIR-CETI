@@ -9,7 +9,7 @@
 - [Guardar una captura de pantalla del móvil y guardarla en su memoria](#guardar-una-captura-de-pantalla-del-móvil-y-guardarla-en-su-memoria)
 - [Paquetes instalados en el teléfono](#paquetes-instalados-en-el-teléfono)
 - [Información de servicios del sistema](#información-de-servicios-del-sistema)
-- [Extraer el contenido de alguna APK](#extraer-el-contenido-de-alguna-apk)
+- [Extrae el contenido de alguna APK](#extrae-el-contenido-de-alguna-apk)
 - [Obtener el estado de los dispositivos de entrada del sistema y el procesamiento de eventos de entrada](#obtener-el-estado-de-los-dispositivos-de-entrada-del-sistema-y-el-procesamiento-de-eventos-de-entrada)
 - [Uso de la memoria](#uso-de-la-memoria)
 - [Visualizar información más detallada del paquete](#visualizar-información-más-detallada-del-paquete)
