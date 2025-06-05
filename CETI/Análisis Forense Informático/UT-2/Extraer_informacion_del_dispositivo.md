@@ -1,6 +1,20 @@
 ## Índice
 - [Introducción](#introducción)
-- 
+- [Extracción de archivos log](#extracción-de-archivos-log)
+- [Obtén toda la información del sistema](#obtén-toda-la-información-del-sistema)
+- [Envío de archivo desde el PC al dispositivo conectado](#envío-de-archivo-desde-el-pc-al-dispositivo-conectado)
+- [Envío de archivo desde Android al PC](#envío-de-archivo-desde-android-al-pc)
+- [Instalar y desinstalar archivo APK](#instalar-y-desinstalar-archivo-apk)
+- [Controlar el dispositivo en modo texto](#controlar-el-dispositivo-en-modo-texto)
+- [Guardar una captura de pantalla del móvil y guardarla en su memoria](#guardar-una-captura-de-pantalla-del-móvil-y-guardarla-en-su-memoria)
+- [Paquetes instalados en el teléfono](#paquetes-instalados-en-el-teléfono)
+- [Información de servicios del sistema](#información-de-servicios-del-sistema)
+- [Extraer el contenido de alguna APK](#extraer-el-contenido-de-alguna-apk)
+- [Obtener el estado de los dispositivos de entrada del sistema y el procesamiento de eventos de entrada](#obtener-el-estado-de-los-dispositivos-de-entrada-del-sistema-y-el-procesamiento-de-eventos-de-entrada)
+- [Uso de la memoria](#uso-de-la-memoria)
+- [Visualizar información más detallada del paquete](#visualizar-información-más-detallada-del-paquete)
+- [Realizar una copia bit a bit con ADB](#realizar-una-copia-bit-a-bit-con-adb)
+
 
 ## Introducción
 
