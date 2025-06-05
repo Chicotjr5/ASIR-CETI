@@ -1,72 +1,234 @@
-
 ## Índice
-- [[Practica 1#Índice|Índice]]
-- [[Practica 1#Algoritmos|Algoritmos]]
-- [[Practica 1#Ejercicio de paginación|Ejercicio de paginación]]
-- [[Practica 1#Ejercicio de segmentación|Ejercicio de segmentación]]
+- [Introducción](#introducción)
+- 
+
+## Introducción
+
+En esta práctica se va a realizar una extracción de evidencias usando la herramienta ADB.
+
+---
+
+### Extracción de archivos log
+
+El comando para poder extraer los logs será **adb logcat** el cual se puede combinar con algunos atributos:
+
+- V
+	- Detallado
+- D
+	- Información de depuración
+- I
+	- Mensajes informativos
+- W
+	- Advertencias sobre posibles problemas
+- E
+	- Errores que pueden afectar a la ejecución
+- F
+	- Fallos críticos que pueden causar un cierre
+
+Si ejecutamos el comando sin ningún parámetro, el resultado se verá así:
+
+`adb logcat`
+
+![[3.2 1.png]]
 
 
-### Algoritmos
+`adb logcat -s Systemserver:I > log2.txt` 
+
+Este comando filtra los logs para que solo saque los mensajes que ha generado el proceso Systemserver y los mande al fichero log2.txt.
+
+![[3.3 1.png]]
+
+`adb logcat *:W > log3.txt`
+
+Este comando captura todos los logs de nivel **Warning** o superior y los pasa al archivo log3.txt.
+
+![[3.5 1.png]]
+
+`adb logcat +:E > log4.txt`
+
+![[3.7 1.png]]
+
+---
+
+### Obten toda la información del sistema
+
+El comando **adb bugreport** permite crear un fichero comprimido con todo tipo de información del sistema:
+
+`adb bugreport`
+
+![[4.2.png]]
+
+---
+
+### Envío de archivo desde el PC al dispositivo conectado
+
+`adb push punto5.txt /sdcard/punto5.txt`
+
+![[5.1.png]]
+
+Si veo el contenido del directorio **/sdcard** se puede observar que el archivo se ha guardado:
+
+![[5.2.png]]
+
+---
+
+### Envío de archivo desde Android al PC
+
+`adb pull /sdcard/pokemon_negro.nds`
+
+![[6.1.png]]
+
+↓
+
+![[6.2 1.png]]
+
+---
+
+### Instalar y desinstalar archivo apk
+
+`adb install “Youtube Premium v19.44.39.apk”`
+
+![[8.1.png]]
+
+Al querer desinstalarlo, me daba un error:
+
+`adb uninstall “Youtube Premium v19.44.39.apk”`
+
+![[9.1.png]]
 
 
+---
 
-### Ejercicio de paginación
+### Controlar el dispositivo en modo texto
 
-Tenemos un sistema operativo de 32 bits en el que la asignación de memoria se realiza mediante paginación. 
-Cada página/marco ocupa 1 MB. De los 32 bits de la dirección de memoria, se usan 12 bits para especificar la página. 
-Se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de páginas:
+`adb shell`
 
-| Página | Marco |
-| ------ | ----- |
-| 0x59B  | 0x123 |
-| 0x59C  | 0xA05 |
-| 0x59D  | 0x59F |
-| 0x59E  | 0x799 |
-| 0x59F  | 0xF8B |
-| 0x59A0 | 0x22D |
+![[10.1.png]]
 
-Dada la dirección lógica 0x59F2A5A0, obtener la dirección física correspondiente:
-- 0xF8B2A5A0
+Este comando permite que interactuemos con el móvil como si fuera un terminar de Linux (de hecho, es muy similar a un sistema Linux, porque Android está basado en este sistema). 
+Este comando lo use en anteriores puntos, como por ejemplo, para poder obtener un archivo del móvil y pasarlo a Android o en el punto donde hay que pasarlo del PC al móvil.
 
-Dada la dirección lógica 0x5A02A59F, obtener la dirección física correspondiente.
-- 0x22DA59F
+---
 
-Dada la dirección lógica 0x59C4DE87, obtener la dirección física correspondiente
-- 0xA054DE87
+### Guardar una captura de pantalla del móvil y guardarla en su memoria
 
-### Ejercicio de segmentación
+`screencap -p /sdcard/capturilla.png`
 
-En un sistema de de 32 bits se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de segmentos (el tamaño viene expresado de forma relativa la base):
+![[11.1 1.png]]
 
-| Segmento | Base       | Tamaño     | Límite     |
-| -------- | ---------- | ---------- | ---------- |
-| 0xA321   | 0x85434520 | 0x00005218 | 0x85439738 |
-| 0xA322   | 0xBA41002E | 0x00003FD1 | 0xBA413FFF |
-| 0xA323   | 0x226A5722 | 0x00004D3D | 0x226AA45F |
-| 0xA324   | 0xF01809AC | 0x00000053 | 0xF01809FF |
-| 0xA325   | 0x226CA460 | 0x0000AAFF | 0x226D4F5F |
-| 0xA326   | 0x4951B4D8 | 0x0000F424 | 0x4952A8FC |
+Para ver que realmente este comando ha tomado una captura de pantalla del móvil, obtengo el archivo con un **adb pull**.
 
-**Obtener las direcciones físicas absolutas donde termina cada segmento**
+![[11.2.png]]
 
-**Dada la dirección lógica 0xA3231265, obtener la dirección física correspondiente.**
+↓
 
-- 4D3D-1265= 15064 Está dentro del segmento 
-- 226A5722+1265 = 226A6987 
-- Su dirección física sería 0x226A6987
+![[11.3.png]]
 
-**Dada la dirección lógica 0xA3240265, obtener la dirección física correspondiente.**
+---
 
-- 53-0265= -212 
-- Se sale del segmento
+### Paquetes instalados en el teléfono
 
-**Dada la dirección lógica 0xA325AAFA, obtener la dirección física correspondiente.**
+`pm list packages`
 
-- AAFF – AAFA = 5 Esta dentro del segmento 
-- 226CA460 + AAFA = 226D 4F5A 
-- Su dirección física sería 0x226D4F5A
+![[12.1.png]]
+
+---
+
+### Información de servicios del sistema
+
+El comando **dumpsys** nos muestra información de los servicios del sistema:
+
+`adb shell dumpsys > dump.txt`
+
+![[13.1.png]]
+
+↓
+
+![[13.2.png]]
+
+Con el **parámetro -l** se puede obtener una lista de los servicios que hay en el sistema, pero no nos saca nada de información sobre su estado (como lo hace el comando **dumpsys** de normal)
+
+`adb shell dumpsys -l > dump2.txt`
+
+![[13.3.png]]
+
+↓
+
+![[13.4.png]]
+
+Si a este comando le pasamos un servicio en específico y lo juntamos con el **parámetro -h** nos sacará todo tipo de información.
+
+`adb shell dumpsys account -h`
+
+![[13.5.png]]
 
 
+---
 
+### Extrae el contenido de alguna APK
 
+Este comando no solo funciona con servicios, si no que también lo hace con paquetes:
+
+`adb shell dumpsys package com.android.deskclock`
+
+![[14.1.png]]
+
+---
+
+### Obtener el estado los dispositivos de entrada del sistema y el procesamiento de eventos de entrada.
+
+`adb shell dumpsys input`
+
+![[15.1.png]]
+
+---
+
+### Uso de la memoria
+
+`adb shell dumpsys meminfo`
+
+![[16.1.png]]
+
+Al final de la ejecución de este comando se ve más información sobre la RAM, como la RAM total, la usada etc:
+
+![[16.2.png]]
+
+De hecho se puede ver el uso de memoria de **dalvik**:
+
+![[16.3.png]]
+
+---
+
+### Visualizar información más detallada del paquete
+
+Si ponemos el nombre de los paquetes junto con **meminfo**, podremos ver más información de los mismos:
+
+`adb shell dumpsys meminfo com.android.systemui`
+
+![[17.1.png]]
+
+---
+
+### Realizar una copia bit a bit con adb
+
+La copia de seguridad se realiza con el comando **adb backup** pero a este se le pueden agregar varios parámetros. 
+En mi caso: 
+- **-apk** 
+	- Incluye los archivos APK de las aplicaciones en la copia de seguridad (sin incluir los datos). 
+- **-shared** 
+	- Copia los datos de almacenamiento compartido 
+- **-all** 
+	- Realiza una copia de seguridad de todas las aplicaciones instaladas en el dispositivo. 
+- **-system** 
+	- Incluye aplicaciones del sistema (pero solo sus datos, no sus APKs). 
+- **-obb** 
+	- Copia archivos OBB (datos adicionales de juegos y aplicaciones grandes). 
+- **-keyvalue** 
+	- Incluye datos almacenados en el servicio de Key-Value Backup. 
+- **-f Xiaomi_redmi.ab** 
+	- Especifica el archivo de salida donde se guardará la copia de seguridad.
+
+`adb backup -apk -shared -all -system -obb -keyvalue -f xiaomi_redmi.ab`
+
+![[18.1.png]]
 
