@@ -189,7 +189,7 @@ Este comando no solo funciona con servicios, si no que también lo hace con paqu
 
 ---
 
-### Obtener el estado los dispositivos de entrada del sistema y el procesamiento de eventos de entrada.
+### Obtener el estado los dispositivos de entrada del sistema y el procesamiento de eventos de entrada
 
 `adb shell dumpsys input`
 
