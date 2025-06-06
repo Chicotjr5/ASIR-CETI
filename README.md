@@ -20,7 +20,6 @@ In the future I will translate the content into English.
 
 **Help appreciated**
 
-
 ---
 
 02/06/2025 - Empezar
