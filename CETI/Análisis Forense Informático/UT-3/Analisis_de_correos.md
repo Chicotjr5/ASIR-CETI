@@ -1,7 +1,7 @@
 ## Índice
 
 - [Introducción](#introducción)
-- [Descargar correos y HASH](#descargar-correos-y-hash)
+- [Descargar correos y HASH](#descargar-correos-y-obtener-hash)
 - [Obtener cabecera](#obtener-cabecera)
 - [Analizar cabecera](#analizar-cabecera)
 - [Consultar IP de salida](#consultar-ip-de-salida)
