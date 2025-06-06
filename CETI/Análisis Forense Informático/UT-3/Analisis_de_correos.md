@@ -229,7 +229,7 @@ Y este es su volumen de tráfico:
 
 Otra página donde se puede ver algo de información es https://viewdns.info/ la cual nos da muchas opciones de información:
 
-![[9.0.png]]![9 0](https://github.com/user-attachments/assets/1c33b051-fbef-450e-bed9-c5e48217d4ea)
+![9 0](https://github.com/user-attachments/assets/1c33b051-fbef-450e-bed9-c5e48217d4ea)
 
 Yo elijo la **Reverse IP Lookup** y tampoco proporciona información que no se haya visto ya.
 
