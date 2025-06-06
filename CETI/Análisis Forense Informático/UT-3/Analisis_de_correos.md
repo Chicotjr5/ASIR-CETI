@@ -14,20 +14,24 @@
 
 En esta práctica se van a analizar 2 correos electrónicos, uno que se encontraba en **spam** y otro que fue enviado por **Microsoft**.
 
-![[3.1 2.png]]
+![3 1](https://github.com/user-attachments/assets/332e8f21-bc38-4bf9-85e5-88c7f570325c)
 
-![[3.3 3.png]]
+
+![3 3](https://github.com/user-attachments/assets/03b1d4a9-1930-455e-94a5-bf56e0a46bbf)
+
 
 ---
 ### Descargar correos y obtener HASH
 
 Para poder descargarlos se hace **click derecho sobre cada correo>Descargar**:
 
-![[3.2 3.png]]
+![3 2](https://github.com/user-attachments/assets/22f78275-70e1-4e3b-a6a0-81ce15e30926)
+
 
 ↓
 
-![[3.4 3.png]]
+![3 4](https://github.com/user-attachments/assets/5e6df6b3-7fd1-4d5c-87b5-024d8377e906)
+
 
 He descargado uno en formato **EML** y otro en formato **MSG**
 
@@ -41,7 +45,8 @@ He descargado uno en formato **EML** y otro en formato **MSG**
 
 Ya descargados, obtengo su hash:
 
-![[4.0.png]]
+![4 0](https://github.com/user-attachments/assets/95859a30-4e8b-4ee4-b3e5-8fc54abe67d7)
+
 
 ---
 
@@ -50,20 +55,24 @@ Ya descargados, obtengo su hash:
 
 Para poder obtener la cabecera de ambos correos, hemos de abrir **Outlook en su versión de PC>hacer doble click sobre el coreo para que se abra en una nueva pestaña>ir a Archivo>Propiedades** y copiar su encabezado:
 
-![[4.1 1.png]]
+![4 1](https://github.com/user-attachments/assets/6b643d46-a4f0-4dc2-8ba1-de5f5b1eb803)
+
+
+
+↓
+
+![4 2](https://github.com/user-attachments/assets/f3cd8914-59d7-4900-a1c4-493b16d01473)
 
 
 ↓
 
-![[4.2 3.png]]
+![4 3](https://github.com/user-attachments/assets/a7190c2a-6bf1-4961-8581-f138b881a543)
 
-↓
-
-![[4.3 2.png]]
 
 +
 
-![[4.4 1.png]]
+![4 4](https://github.com/user-attachments/assets/15c3152d-96dd-4997-8a5b-ed7c1180980f)
+
 
 ---
 
@@ -71,11 +80,13 @@ Para poder obtener la cabecera de ambos correos, hemos de abrir **Outlook en su 
 
 Para poder analizar la cabecera tenemos varias herramientas, una de ellas es https://mha.azurewebsites.net/
 
-![[5.1 1.png]]
+![5 1](https://github.com/user-attachments/assets/e704eb8f-c934-4223-8139-5f7c7c61873d)
+
 
 +
 
-![[5.3.png]]
+![5 3](https://github.com/user-attachments/assets/97a723ea-2d69-4c4a-aae2-83a36597b5ee)
+
 
 De cada mensaje analizare su:
 
@@ -83,7 +94,8 @@ De cada mensaje analizare su:
 - From
 - To
 
-![[5.2 1.png]]
+![5 2](https://github.com/user-attachments/assets/3eff936f-a154-4018-a3ce-ef25542c6901)
+
 
 
 | Campo      | Valor                                                        |
@@ -94,7 +106,8 @@ De cada mensaje analizare su:
 
 +
 
-![[5.4.png]]
+![5 4](https://github.com/user-attachments/assets/35a2c1a7-ba0c-49ce-9a4e-29b97031cc27)
+
 
 
 | Campo      | Valor                                                                                                                                                                              |
@@ -106,11 +119,13 @@ De cada mensaje analizare su:
 
 Otra herramienta es https://securitytrails.com/ que nos permite ver a quien pertenece el servidor de origen, osease, quien ha mandado el correo: Primero lo pruebo con el correo de **magnetforensics**.
 
-![[6.2 2.png]]
+![6 2](https://github.com/user-attachments/assets/18b41013-cd08-4aac-bee5-3cc30690f2fb)
+
 
 ↓
 
-![[6.3 1.png]]
+![6 3](https://github.com/user-attachments/assets/ee04a41a-c181-439f-a92d-0b16d03986fa)
+
 
 En la página se puede ver los siguientes **registros DNS**:
 
@@ -134,15 +149,18 @@ Y, por último, en **el campo txt** tenemos diferente información, como que **e
 
 Ahora es el turno de **Microsoft.com**
 
-![[6.5 1.png]]
+![6 5](https://github.com/user-attachments/assets/bc16de7a-159b-4532-8d3e-285015b3df15)
+
 
 ↓
 
-![[6.6 1.png]]
+![6 6](https://github.com/user-attachments/assets/c6116bd3-0233-4f59-a7c3-a4d6584a5aad)
+
 
 ↓
 
-![[6.7.png]]
+![6 7](https://github.com/user-attachments/assets/b254a5f8-0c6b-4908-89aa-e2ea07466993)
+
 
 
 | Campo                      | Explicación                                                         | Valor                                                                                                                                                                                    |
@@ -169,20 +187,22 @@ Los 2 campos nuevos son **CNAME records pointed here** y **MX records pointed he
 Cada correo tiene una dirección de salida, que es desde la cual se ha mandado el correo y que se encuentra en las cabeceras 
 En el caso de **magnetforensics** es la siguiente:
 
-![[11.1 2.png]]
+![11 1](https://github.com/user-attachments/assets/21506dfc-97fc-4485-bdd6-bb9136c724ec)
+
 
 La página web https://talosintelligence.com/ permite analizar cada IP.
 
-![[8.1 1.png]]
+![8 1](https://github.com/user-attachments/assets/0eb71f00-3cc5-4ebc-a70d-3ebb897d627a)
 
 ↓
 
-![[8.1.1.png]]
+![8 1 1](https://github.com/user-attachments/assets/ab2202b7-10e9-4c0f-84f1-53db3bb011e9)
 
 En la captura anterior se puede observar que el proveedor de la IP pertenece a Salesforce.com y que se encuentra registrada en EEUU. 
 Su reputación es buena, lo que quiere decir que no se ha encontrado ninguna actividad sospechosa, además de que su categoría es desconocida, por lo que la IP no aloja ningún sitio web.
 
-![[8.1.3.png]]
+![8 1 3](https://github.com/user-attachments/assets/68d48bf9-f122-4eff-bc70-6ecd100fae6a)
+
 
 En esta captura se puede observar la cantidad de emails que se mandan desde esa IP al día.
 
@@ -190,31 +210,36 @@ En esta captura se puede observar la cantidad de emails que se mandan desde esa 
 
 La IP del otro correo es al siguiente:
 
-![[11.2 4.png]]
+![11 2](https://github.com/user-attachments/assets/22022e86-91b1-4f12-999a-788e43fa7941)
+
 
 Al meterla en la página, se observa la siguiente información
 
-![[8.2.1.png]]
+![8 2 1](https://github.com/user-attachments/assets/9a7b3e81-0566-4190-a7cf-7b1786144f70)
+
 
 Se ve que la IP pertenece a Microsoft y se encuentra registrada en EEUU. 
 Su reputación es buena y no tiene una categoría definida, por lo que tampoco aloja un sitio web. Esta IP esta asociada a los servicios de correo de Microsoft, como lo son Outlook.com o Exchange Online. 
 
 Y este es su volumen de tráfico:
 
-![[8.2.2.png]]
+![8 2 2](https://github.com/user-attachments/assets/aefa913b-f305-495c-8879-089571b489a7)
+
 
 
 Otra página donde se puede ver algo de información es https://viewdns.info/ la cual nos da muchas opciones de información:
 
-![[9.0.png]]
+![[9.0.png]]![9 0](https://github.com/user-attachments/assets/1c33b051-fbef-450e-bed9-c5e48217d4ea)
 
 Yo elijo la **Reverse IP Lookup** y tampoco proporciona información que no se haya visto ya.
 
-![[9.1 1.png]]
+![9 1](https://github.com/user-attachments/assets/73f3358e-d84c-42ce-8c8f-90d52401beb2)
+
 
 ↓
 
-![[9.2.png]]
+![9 2](https://github.com/user-attachments/assets/3860c98f-fc07-47a5-9bfa-f5cd1a396a45)
+
 
 ---
 
@@ -231,11 +256,11 @@ BCL es un valor usado por sistemas de filtrado de correo usado para clasificar e
 
 En el correo de **magnetforensics**, el BCL tiene un valor de 3:
 
-![[10.1 1.png]]
+![10 1](https://github.com/user-attachments/assets/457a63fa-4dc7-4905-a65e-d9ef6c32bc06)
 
 Mientras que el correo de **Microsoft**, de 0:
 
-![[10.2.png]]
+![10 2](https://github.com/user-attachments/assets/554c0ba4-dfca-4aec-9007-cf68e01fcfcc)
 
 ---
 
@@ -243,7 +268,8 @@ Mientras que el correo de **Microsoft**, de 0:
 
 En el correo de **MagneticForensics** tenemos los siguientes valores:
 
-![[11.1 3.png]]
+![11 1](https://github.com/user-attachments/assets/d8e7a2fc-6a0a-4274-8a66-40b507328845)
+
 
 `spf=pass (sender IP is 13.111.2.35) smtp.mailfrom=bounce.s7.exacttarget.com; dkim=pass (signature was verified) header.d=magnetforensics.com; dmarc=pass action=none header.from=magnetforensics.com; compauth=pass reason=100`
 
@@ -262,7 +288,8 @@ El mensaje cumple con la política de autenticación de correo en el dominio de 
 
 En el correo de Microsoft:
 
-![[11.2 5.png]]
+![11 2](https://github.com/user-attachments/assets/0d71360a-0c13-449e-99af-d5f587d1d096)
+
 
 `spf=pass (sender IP is 104.47.58.180) smtp.mailfrom=microsoft.com; dkim=pass (signature was header.d=microsoft.com;dmarc=pass header.from=microsoft.com;compauth=pass reason=100`
 
@@ -285,11 +312,13 @@ Con el comando dig también se puede obtener información de los campos spf, dki
 
 `dig TXT <dominio> | grep "spf"`
 
-![[12.1 1.png]]
+![12 1](https://github.com/user-attachments/assets/1cc1117a-4e34-4905-8426-1f98471753e3)
+
 
 +
 
-![[12.2.png]]
+![12 2](https://github.com/user-attachments/assets/8d6787eb-2d68-49df-add7-07db1a989cdc)
+
 
 ---
 
@@ -298,20 +327,24 @@ Con el comando dig también se puede obtener información de los campos spf, dki
 Otras herramientas son https://mxtoolbox.com/ y https://mailheader.org/ 
 La primera sirve para comprobar información de los dominios de correo desde los cuales se han mandado los correos:
 
-![[13.1 1.png]]
+![13 1](https://github.com/user-attachments/assets/5dd1e3ae-3554-4f5f-80d9-ae4dc5cba908)
+
 
 +
 
-![[13.2 1.png]]
+![13 2](https://github.com/user-attachments/assets/9d68a8e4-1fa2-4b00-8e38-4ab6e73dfa4c)
+
 
 Las principales diferencias con otras páginas es que magneticforensics usa los servicios de Microsoft 365 para enviar correos en nombre de magnetforensics.com y de microsoft.com no saca información nueva.
 
 La otra página web sirve para analizar cabeceras
 
-![[14.1 1.png]]
+![14 1](https://github.com/user-attachments/assets/25a0bd5a-934f-4bb4-a598-36d93e4b99e3)
+
 
 En el caso de magneticforensics, se nos da la información mejor organizada que en https://mha.azurewebsites.net/
 
 +
 
-![[14.2.png]]
+![14 2](https://github.com/user-attachments/assets/5fc8b2ed-b571-4a2d-9741-f268c25f4157)
+
