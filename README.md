@@ -19,3 +19,9 @@ I will be uploading the internships little by little, as I have to convert them 
 In the future I will translate the content into English.
 
 **Help appreciated**
+
+---
+
+02/06/2025 -> Empezar
+
+06/06/2025 -> Finalizar CETI>Análisis Forense Informático
