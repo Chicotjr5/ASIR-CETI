@@ -25,4 +25,5 @@ In the future I will translate the content into English.
 02/06/2025 -> Empezar
 
 06/06/2025 -> Finalizar CETI>Análisis Forense Informático
+
 08/06/2025 -> Finalizar CETI>Bastionado de Redes y Sistemas
