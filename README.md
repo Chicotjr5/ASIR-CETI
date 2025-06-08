@@ -1,6 +1,6 @@
 ## Introducción
 
-En este respositorio se encuentran todas las prácticas, trabajos y proyectos que he realizado en ASIR y en CETI en el C.I.F.P Juan de Colonia de la provincia de Burgos, España.
+En este repositorio se encuentran todas las prácticas, trabajos y proyectos que he realizado en ASIR y en CETI en el C.I.F.P Juan de Colonia de la provincia de Burgos, España.
 Se encuentran clasificadas por Año>Asignatura>Unidad y en formato Markdown.
 
 Ire subiendo las prácticas poco a poco, ya que he de convertirlas a formato Markdown a mano, para tener el mejor resultado posible.
