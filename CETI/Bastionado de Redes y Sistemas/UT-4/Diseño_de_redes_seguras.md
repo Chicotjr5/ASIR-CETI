@@ -193,7 +193,7 @@ Para ver que estas configuraciones son correctas realizo conexiones entre cada e
 ![7 3](https://github.com/user-attachments/assets/f2028dd0-c9f4-4084-b309-65d43bbffd94)
 
 
-#### VLAN 10 -> VLAN 20
+#### VLAN 10 - VLAN 20
 
 ![7 4 Fallopc1-pc2](https://github.com/user-attachments/assets/e232c16d-16ee-4809-83b9-2688404bb55d)
 
@@ -233,17 +233,17 @@ Por último se configura su dirección IP la cual hace referencia a la Gateway d
 
 ### Comprobación VLANs
 
-#### VLAN 10 -> VLAN 20 -> VLAN 30
+#### VLAN 10 - VLAN 20 - VLAN 30
 
 ![9 1 Comprobacion](https://github.com/user-attachments/assets/568ca594-7fe3-46b7-a553-f167d8f70066)
 
 
-#### VLAN 20 -> VLAN 10 -> VLAN 30
+#### VLAN 20 - VLAN 10 - VLAN 30
 
 ![9 2](https://github.com/user-attachments/assets/18672f36-ca50-4618-bcd2-2d5450dd2d7f)
 
 
-#### VLAN 30 -> VLAN 10 -> VLAN 20
+#### VLAN 30 - VLAN 10 - VLAN 20
 
 ![9 3](https://github.com/user-attachments/assets/41aa41db-f81e-4648-b1ab-342df9531aee)
 
