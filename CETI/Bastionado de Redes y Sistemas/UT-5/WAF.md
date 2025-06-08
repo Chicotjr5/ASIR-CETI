@@ -12,7 +12,7 @@
 
 ## Introducción
 
-
+En esta práctica se va a ver que es un WAF y se va a realziar un caso práctico en el cual se instala y configura uno para proteger un sitio web.
 
 ### Crear página web
 
