@@ -62,7 +62,8 @@ El objetivo es que cada vlan se conecte con cada VLAN.
 
 La topología queda de la siguiente forma:
 
-![[1.1 2.png]]
+![1 1](https://github.com/user-attachments/assets/156a7287-eadd-4ab2-9352-c5936a60802e)
+
 
 Las VLAN tendrán las siguientes redes:
 
@@ -79,39 +80,47 @@ Las VLAN tendrán las siguientes redes:
 
 #### VLAN 10
 
-![[2.1 configuracion ip pc.png]]
+![2 1 configuracion ip pc](https://github.com/user-attachments/assets/0c942047-5968-4ec6-b28f-9b9ea963aa6a)
+
 
 ↓
 
-![[2.2 1.png]]
+![2 2](https://github.com/user-attachments/assets/e63f3499-5198-47b9-a349-c8ff7510d5de)
+
 
 ↓
 
-![[2.3 1.png]]
+![2 3](https://github.com/user-attachments/assets/e08e988d-6b80-4e14-83bd-daf414586a0f)
+
 
 #### VLAN 20
 
-![[2.4 1.png]]
+![2 4](https://github.com/user-attachments/assets/9c7c5dc1-d26d-4d88-9637-33dbabd910b7)
 
 ↓
 
-![[2.5.png]]
+![2 5](https://github.com/user-attachments/assets/939824c6-40fa-4076-927e-26a81eae3e16)
+
 
 ↓
 
-![[2.6 1.png]]
+![2 6](https://github.com/user-attachments/assets/0665a338-05c8-485a-b670-2cf7c73f0ac7)
+
 
 #### VLAN 30
 
-![[2.7 1.png]]
+![2 7](https://github.com/user-attachments/assets/b6874f21-7a55-4376-906c-e6b16bd3a7dc)
+
 
 ↓
 
-![[2.8.png]]
+![2 8](https://github.com/user-attachments/assets/1648b089-55ce-459c-9918-91388e886374)
+
 
 ↓
 
-![[2.9.png]]
+![2 9](https://github.com/user-attachments/assets/a6cbc21f-96cc-4045-9935-759f438cd8ad)
+
 
 ---
 
@@ -123,7 +132,8 @@ Aquí se configura el número de la VLAN y su nombre:
 
 #### Switch 1
 
-![[3.1 VLANS.png]]
+![3 1 VLANS](https://github.com/user-attachments/assets/06cebc84-2b8a-4a87-a5d3-f0ddd5aad3de)
+
 
 En la parte inferior se puede observar los comandos que se ejecutan cuando creamos las VLAN. Esta **configuración es la misma para los 4 switches**, así que solo pongo la captura del switch1
 
@@ -137,7 +147,8 @@ Se hace con los comandos:
 `interface fa0/x` 
 `switchport Access vlan x`
 
-![[4.1 configurar vlan2.png]]
+![4 1 configurar vlan2](https://github.com/user-attachments/assets/6cc4b45c-1e31-43d8-b0cb-fa85372b0b37)
+
 
 También es la misma configuración para todos los switches
 
@@ -152,11 +163,13 @@ Para que los switches puedan enviarse tráfico VLAN entre sí hay que configurar
 
 **Switches normales**
 
-![[5.1 poner el modo trunk 1.png]]
+![5 1 poner el modo trunk](https://github.com/user-attachments/assets/4cf96b67-202a-4f34-9f14-90aefaa0cf3a)
+
 
 **Switch central**
 
-![[5.4 - raiz 1.png]]
+![5 4 - raiz](https://github.com/user-attachments/assets/ee606a00-fab0-45b2-81bd-4013f3c5ad1b)
+
 
 ---
 
@@ -166,20 +179,24 @@ Para ver que estas configuraciones son correctas realizo conexiones entre cada e
 
 #### VLAN 10
 
-![[7.1 cOMPROBACION DE QUE FUNCIONAN LAS VLANS.png]]
+![7 1 cOMPROBACION DE QUE FUNCIONAN LAS VLANS](https://github.com/user-attachments/assets/3b596f89-c8ca-4c4d-b436-e8fd545288bc)
+
 
 #### VLAN 20
 
-![[7.2 1.png]]
+![7 2](https://github.com/user-attachments/assets/7ec90bd5-e6dc-4398-9312-f43ada97a5fb)
+
 
 
 #### VLAN 30
 
-![[7.3 1.png]]
+![7 3](https://github.com/user-attachments/assets/f2028dd0-c9f4-4084-b309-65d43bbffd94)
+
 
 #### VLAN 10 -> VLAN 20
 
-![[7.4 Fallopc1-pc2.png]]
+![7 4 Fallopc1-pc2](https://github.com/user-attachments/assets/e232c16d-16ee-4809-83b9-2688404bb55d)
+
 
 Se puede ver que entre equipos de la misma VLAN, se realiza la conexión, pero que entre equipos de diferentes VLAN, la conexión no se realiza.
 
@@ -199,15 +216,18 @@ Por último se configura su dirección IP la cual hace referencia a la Gateway d
 
 #### VLAN 10
 
-![[8.1.png]]
+![8 1](https://github.com/user-attachments/assets/6fff56cf-2ad2-44c0-b631-1c87d58783b3)
+
 
 #### VLAN 20
 
-![[8.2.png]]
+![8 2](https://github.com/user-attachments/assets/704b6235-21e0-4659-8e50-5eb648af9c0d)
+
 
 #### VLAN 30
 
-![[8.3.png]]
+![8 3](https://github.com/user-attachments/assets/b36968db-727b-45e0-a6a1-9ed956bb1cd2)
+
 
 ---
 
@@ -215,15 +235,18 @@ Por último se configura su dirección IP la cual hace referencia a la Gateway d
 
 #### VLAN 10 -> VLAN 20 -> VLAN 30
 
-![[9.1 Comprobacion 1.png]]
+![9 1 Comprobacion](https://github.com/user-attachments/assets/568ca594-7fe3-46b7-a553-f167d8f70066)
+
 
 #### VLAN 20 -> VLAN 10 -> VLAN 30
 
-![[9.2.png]]
+![9 2](https://github.com/user-attachments/assets/18672f36-ca50-4618-bcd2-2d5450dd2d7f)
+
 
 #### VLAN 30 -> VLAN 10 -> VLAN 20
 
-![[9.3.png]]
+![9 3](https://github.com/user-attachments/assets/41aa41db-f81e-4648-b1ab-342df9531aee)
+
 
 ---
 
@@ -247,7 +270,8 @@ Los protocolos habilitados en Ipsec son:
 
 La topología es la siguiente:
 
-![[33.1.png]]
+![33 1](https://github.com/user-attachments/assets/7678b5b5-01e8-4264-9c2b-25ec5d920df3)
+
 
 ---
 
@@ -255,11 +279,13 @@ La topología es la siguiente:
 
 #### PC1
 
-![[34.1.png]]
+![34 1](https://github.com/user-attachments/assets/01918e19-e26d-40bb-8ac4-b91aaaafb971)
+
 
 #### PC2
 
-![[34.2.png]]
+![34 2](https://github.com/user-attachments/assets/5e63c105-54b7-4437-babb-4adf2c1efc61)
+
 
 ---
 
@@ -270,27 +296,33 @@ La red para los routers 0 y 1 será la 192.168.3.0/24 y para los routers 0 y 2 l
 
 #### R1
 
-![[35.1.png]]
+![35 1](https://github.com/user-attachments/assets/fdf8f1b4-c90d-451a-82f1-15e31f86a559)
+
 
 ↓
 
-![[35.2.png]]
+![35 2](https://github.com/user-attachments/assets/9408c556-db1a-43c8-a897-50f04d577398)
+
 
 #### R2
 
-![[35.3.png]]
+![35 3](https://github.com/user-attachments/assets/1acc85e6-7f1f-4752-b0ad-78339b28bef3)
+
 
 ↓
 
-![[35.4.png]]
+![35 4](https://github.com/user-attachments/assets/5122548f-2117-43d5-9ad4-195516b2f7ac)
+
 
 #### R0
 
-![[35.5.png]]
+![35 5](https://github.com/user-attachments/assets/4078cde7-4acf-45bb-a840-c2accc9ff166)
+
 
 ↓
 
-![[35.6.png]]
+![35 6](https://github.com/user-attachments/assets/6ee6336a-d363-4548-81cd-7dab4d641658)
+
 
 ---
 
@@ -307,7 +339,8 @@ En cada router se deberá de realizar la siguiente configuración:
 
 Para ambos routers es la misma configuración, pero con las IP cambiadas:
 
-![[36.3.png]]
+![36 3](https://github.com/user-attachments/assets/ab24cb75-1ee9-48a2-9012-872274ea08d0)
+
 
 ---
 
@@ -315,7 +348,8 @@ Para ambos routers es la misma configuración, pero con las IP cambiadas:
 
 Para comprobar su funcionamiento, mando un paquete del PC1 al PC2:
 
-![[36.4.png]]
+![36 4](https://github.com/user-attachments/assets/8bfb3051-518f-4bfd-a777-b8238b3dc8bf)
+
 
 ---
 
