@@ -4,8 +4,8 @@
 - [Escalar privilegios](#escalar-privilegios)
 - [Capturar flags](#capturar-flags)
 - [Vulnerar sitio web](#vulnerar-sitio-web)
- - [Base de datos](#base-de-datos)
- - [Inyección SQL](#inyección-sql)
+  - [Base de datos](#base-de-datos)
+  - [Inyección SQL](#inyección-sql)
 
 
 ## Introducción
