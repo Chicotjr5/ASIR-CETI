@@ -1,72 +1,69 @@
+### Introducción
 
-## Índice
-- [[Practica 1#Índice|Índice]]
-- [[Practica 1#Algoritmos|Algoritmos]]
-- [[Practica 1#Ejercicio de paginación|Ejercicio de paginación]]
-- [[Practica 1#Ejercicio de segmentación|Ejercicio de segmentación]]
+En esta práctica se va a ver la herramienta **Wigle** que permite obtener información de redes Wifi.
 
 
-### Algoritmos
+---
+### Wigle - Web
+
+https://wigle.net es una herramienta que obtiene información sobre diferentes redes, como:
+
+- SSID
+- BSSID
+- Canal
+- Encriptación
+- Calidad de la señal
+- Dirección GPS
+
+En esta página hay un mapa con todas las redes que han sido descubiertas en un sitio, así que busco redes por Burgos y elijo un objetivo.
+
+![1 1](https://github.com/user-attachments/assets/478e3caa-ee6c-4c4e-b3c9-595ca4574508)
 
 
+Esta red se llama/tiene el SSID MIWIFI_2G_sPAw, su BSSID es F4:B5:AA:96:ED:13, la primera y última vez que se vio esta red fue el 14-01-2025 a las 18:00:00 el cifrado que usa es WPA2 y la dirección es C\ Ana María Lopidana – Burgos – Castilla y León – España – 09004
 
-### Ejercicio de paginación
+Con el SSID puedo saber de que operadora es esa red, en este caso, MIWIFI puede ser de Yoigo o Pepephone, que son parte del grupo Más Móvil. 
 
-Tenemos un sistema operativo de 32 bits en el que la asignación de memoria se realiza mediante paginación. 
-Cada página/marco ocupa 1 MB. De los 32 bits de la dirección de memoria, se usan 12 bits para especificar la página. 
-Se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de páginas:
+Este grupo suele poner los siguientes routers:
 
-| Página | Marco |
-| ------ | ----- |
-| 0x59B  | 0x123 |
-| 0x59C  | 0xA05 |
-| 0x59D  | 0x59F |
-| 0x59E  | 0x799 |
-| 0x59F  | 0xF8B |
-| 0x59A0 | 0x22D |
+- ZTE ZXHN F680
+- ZTE H367A
+- Huawei HG659
+- Comtrend GRG-4280us
+- NUCOM NC-WR764TGV
 
-Dada la dirección lógica 0x59F2A5A0, obtener la dirección física correspondiente:
-- 0xF8B2A5A0
+En específico el router ZTE ZXHN F680 tiene la siguiente vulnerabilidad:
 
-Dada la dirección lógica 0x5A02A59F, obtener la dirección física correspondiente.
-- 0x22DA59F
+- [CVE Record: CVE-2020-6868](https://www.cve.org/CVERecord?id=CVE-2020-6868)
 
-Dada la dirección lógica 0x59C4DE87, obtener la dirección física correspondiente
-- 0xA054DE87
+En resumen, esta vulnerabilidad describe un caso de **validación de entrada insuficiente** en un producto terminal **PON (Passive Optical Network)** de ZTE, específicamente en el **ZTE F680 V9.0.10P1N6**. La vulnerabilidad se origina en una limitación de longitud del **nombre de conexión WAN** que se crea a través de la interfaz web de administración del dispositivo, la cual no es correctamente aplicada en todas las partes del sistema.
 
-### Ejercicio de segmentación
+Por culpa de esto, puede pasar:
 
-En un sistema de de 32 bits se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de segmentos (el tamaño viene expresado de forma relativa la base):
+**Ejecución remota de código**
+- Si un atacante puede manipular las solicitudes HTTP y afectar la configuración del dispositivo, podría ejecutar comandos o código malicioso en el terminal PON.
 
-| Segmento | Base       | Tamaño     | Límite     |
-| -------- | ---------- | ---------- | ---------- |
-| 0xA321   | 0x85434520 | 0x00005218 | 0x85439738 |
-| 0xA322   | 0xBA41002E | 0x00003FD1 | 0xBA413FFF |
-| 0xA323   | 0x226A5722 | 0x00004D3D | 0x226AA45F |
-| 0xA324   | 0xF01809AC | 0x00000053 | 0xF01809FF |
-| 0xA325   | 0x226CA460 | 0x0000AAFF | 0x226D4F5F |
-| 0xA326   | 0x4951B4D8 | 0x0000F424 | 0x4952A8FC |
+**Desbordamiento de búfer**
+- Al permitir un nombre de conexión WAN demasiado largo, es posible que se cause un desbordamiento de búfer en el dispositivo, lo cual podría llevar a la **ejecución arbitraria de código.**
 
-**Obtener las direcciones físicas absolutas donde termina cada segmento**
+**Acceso no autorizado**
+- Manipular los parámetros podría permitir al atacante cambiar configuraciones críticas del dispositivo, lo que puede permitir acceso no autorizado o interrumpir los servicios de red.
 
-**Dada la dirección lógica 0xA3231265, obtener la dirección física correspondiente.**
-
-- 4D3D-1265= 15064 Está dentro del segmento 
-- 226A5722+1265 = 226A6987 
-- Su dirección física sería 0x226A6987
-
-**Dada la dirección lógica 0xA3240265, obtener la dirección física correspondiente.**
-
-- 53-0265= -212 
-- Se sale del segmento
-
-**Dada la dirección lógica 0xA325AAFA, obtener la dirección física correspondiente.**
-
-- AAFF – AAFA = 5 Esta dentro del segmento 
-- 226CA460 + AAFA = 226D 4F5A 
-- Su dirección física sería 0x226D4F5A
+Así que con esta vulnerabilidad descubierta, se podría intentar atacar esta red e intentar explotar esta vulnerabilidad.
 
 
+---
+
+### Wigle - App
+
+Wigle también tiene una aplicación donde puedo escanear redes Wifi que se encuentren cerca de mi ubicación
+
+La descargué y analicé todas las redes wifis desde el CIFP Juan de Colonia hasta mi casa, pasando por algunos puntos clave. 
+Cuando finalizo el escaneo exporto todas las wifis en 2 formatos: .kml y .csv.
+Con él .kml puedo hacer un mapa con todas las redes wifi que he capturado:
+
+[Mapa_Wifi - Google My Maps](https://www.google.com/maps/d/viewer?mid=1BMZwYaM2N8IunGlRz4eJTABa1AGQb_8&ll=42.34882718250293%2C-3.6897225000000144&z=15)
 
 
+Y dentro del archivo .csv se podría filtrar la información para acotar los resultados, por ejemplo, buscando información de las redes **Vodafone** o aquellas redes con cifrado **WEP**
 
