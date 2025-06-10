@@ -1,72 +1,75 @@
-
 ## Índice
-- [[Practica 1#Índice|Índice]]
-- [[Practica 1#Algoritmos|Algoritmos]]
-- [[Practica 1#Ejercicio de paginación|Ejercicio de paginación]]
-- [[Practica 1#Ejercicio de segmentación|Ejercicio de segmentación]]
+
+- [Introducción](#introducción)
+- [Scripts](#scripts)
+
+## Introducción
+
+En esta práctica se van a ver diferentes scripts para usar a la hora de realizar escaneos con **nmap**. Con estos scripts no hace falta poner tantas opciones (-sV -Pn) aunque también se pueden poner junto con el script.
+
+En otras prácticas ya se ha usado algún script de nmap, pero en esta práctica se verán unos pocos más:
+
+---
+
+### Scripts
+
+Los scripts de nmap se almacenan en el directorio **/usr/share/nmap/scripts.**
+
+![1 1 1](https://github.com/user-attachments/assets/62349e7b-2aa1-489e-a925-4e04f09d84d6)
 
 
-### Algoritmos
+El primer script que pruebo es **http-waf-fingerprint.nse** el cual intenta detectar la presencial de un WAF, así como su tipo y versión. Un WAF es un firewall pero de aplicaciones web. 
+El equipo al cual realizo los escaneos es una máquina **opnsense**.
+
+`nmap -script=http-waf-fingerprint 10.0.2.12`
+
+![1 1](https://github.com/user-attachments/assets/f365b4a7-e86e-4375-83e9-05b7e9211dde)
 
 
+La ejecución del script nos aporta información sobre los puertos y servicios abiertos de la máquina.
 
-### Ejercicio de paginación
+---
 
-Tenemos un sistema operativo de 32 bits en el que la asignación de memoria se realiza mediante paginación. 
-Cada página/marco ocupa 1 MB. De los 32 bits de la dirección de memoria, se usan 12 bits para especificar la página. 
-Se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de páginas:
+Otro script que he probado es el **http-title** el cual realiza una solicitud HTTP a un servidor web y extrae el contenido del título de la página HTML.
 
-| Página | Marco |
-| ------ | ----- |
-| 0x59B  | 0x123 |
-| 0x59C  | 0xA05 |
-| 0x59D  | 0x59F |
-| 0x59E  | 0x799 |
-| 0x59F  | 0xF8B |
-| 0x59A0 | 0x22D |
+`nmap -script=http-title 10.0.2.12`
 
-Dada la dirección lógica 0x59F2A5A0, obtener la dirección física correspondiente:
-- 0xF8B2A5A0
-
-Dada la dirección lógica 0x5A02A59F, obtener la dirección física correspondiente.
-- 0x22DA59F
-
-Dada la dirección lógica 0x59C4DE87, obtener la dirección física correspondiente
-- 0xA054DE87
-
-### Ejercicio de segmentación
-
-En un sistema de de 32 bits se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de segmentos (el tamaño viene expresado de forma relativa la base):
-
-| Segmento | Base       | Tamaño     | Límite     |
-| -------- | ---------- | ---------- | ---------- |
-| 0xA321   | 0x85434520 | 0x00005218 | 0x85439738 |
-| 0xA322   | 0xBA41002E | 0x00003FD1 | 0xBA413FFF |
-| 0xA323   | 0x226A5722 | 0x00004D3D | 0x226AA45F |
-| 0xA324   | 0xF01809AC | 0x00000053 | 0xF01809FF |
-| 0xA325   | 0x226CA460 | 0x0000AAFF | 0x226D4F5F |
-| 0xA326   | 0x4951B4D8 | 0x0000F424 | 0x4952A8FC |
-
-**Obtener las direcciones físicas absolutas donde termina cada segmento**
-
-**Dada la dirección lógica 0xA3231265, obtener la dirección física correspondiente.**
-
-- 4D3D-1265= 15064 Está dentro del segmento 
-- 226A5722+1265 = 226A6987 
-- Su dirección física sería 0x226A6987
-
-**Dada la dirección lógica 0xA3240265, obtener la dirección física correspondiente.**
-
-- 53-0265= -212 
-- Se sale del segmento
-
-**Dada la dirección lógica 0xA325AAFA, obtener la dirección física correspondiente.**
-
-- AAFF – AAFA = 5 Esta dentro del segmento 
-- 226CA460 + AAFA = 226D 4F5A 
-- Su dirección física sería 0x226D4F5A
+![1 2](https://github.com/user-attachments/assets/ef1754fc-aa4f-43ee-b2f7-fa0ce30ce8fd)
 
 
+---
+En el puerto **443** ha encontrado el título, el cual parece ser una página de **Login de OPNsense**.
 
+El siguiente script es el **ssl-cert** el cual obtiene el **certificado SSL/TLS** que está utilizando.
+
+Se nos indica:
+
+- La entidad que ha emitido el certificado
+- Cifrado usado
+- Fechas de validez
+- Huella digital
+
+`nmap --script=ssl-cert 10.0.2.12`
+
+![1 3](https://github.com/user-attachments/assets/82cadadf-e610-4bed-bcc1-56acb588e58e)
+
+
+---
+
+El script **ssl-enum-ciphers** lista los cifrados SSL/TLS admitidos y detecta configuraciones débiles.
+
+`nmap --script sll-enum-ciphers -p 443 10.0.2.12`
+
+![1 5](https://github.com/user-attachments/assets/fc6b325a-c2ae-475b-81e3-03c5a258d92b)
+
+
+---
+
+El script **banner** se utiliza para obtener el **banner** de un servicio que se está ejecutando en un puerto específico. 
+Un **banner** es un texto o mensaje que los servicios suelen enviar al cliente cuando se establece una conexión, y normalmente incluye información sobre el servicio, su versión y, en algunos casos, detalles del software o el sistema operativo
+
+`nmap --script=banner 10.0.2.12`
+
+![1 4](https://github.com/user-attachments/assets/ad39265d-6b1e-475f-bb8f-ec01d3417bdb)
 
 
