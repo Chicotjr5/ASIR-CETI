@@ -20,7 +20,9 @@ Estoy en la red 10.0.2.0/24, así que voy a ver que otros equipos se encuentran 
 
 Para ello, ejecuto el comando **netdiscover -r 10.0.2.0/24** que muestra todos los equipos conectados a la red.
 
-`netdiscover -r 10.0.2.0/24`
+```bash
+netdiscover -r 10.0.2.0/24
+```
 
 ![2 3](https://github.com/user-attachments/assets/e801ee33-dd44-4e16-87c7-8feafde52cae)
 
@@ -37,7 +39,9 @@ Si estamos realizando un escaneo de la red y usamos **netdiscover** y hay alguie
 
 Otra forma de hacer un escaneo de la red es con la herramienta **nmap**, la cual busca que equipos hay en la red y que puertos están abiertos.
 
-`nmap 10.0.2.0/24`
+```bash
+nmap 10.0.2.0/24
+```
 
 ![2 5 1](https://github.com/user-attachments/assets/0f70f108-f84a-4217-b8b9-c6429e13dc17)
 
@@ -65,7 +69,9 @@ Sabiendo las versiones de los servicios, se pueden buscar posibles vulnerabilida
 
 Para lanzar el escaneo, ejecuto el siguiente comando:
 
-`nmap 10.0.2.5 -Pn -n -p21,22,80,8080 -sV`
+```bash
+nmap 10.0.2.5 -Pn -n -p21,22,80,8080 -sV
+```
 
 **-sV**
 - Muestra las versiones de los servicios que se encuentran presentes en la máquina.
@@ -74,7 +80,9 @@ Para lanzar el escaneo, ejecuto el siguiente comando:
 
 
 Para ver posibles vulnerabilidades, se ejecuta el comando 
-`searchsploit <protocolo>`
+```bash
+searchsploit <protocolo>
+```
 
 ![5 2](https://github.com/user-attachments/assets/dae6ae39-db50-4f4c-a14f-948959f7b01e)
 
@@ -87,7 +95,9 @@ Para el protocolo **vsftpd** hay una vulnerabilidad mientras que para el resto, 
 
 Iniciare sesión como el usuario **Anonymous en el servidor FTP**, el cual no tiene contraseña.
 
-`ftp <ip_servidor>`
+```bash
+ftp <ip_servidor>
+```
 
 ![6 1](https://github.com/user-attachments/assets/40c5bac8-c014-4774-8d06-d041e43d5cd8)
 
