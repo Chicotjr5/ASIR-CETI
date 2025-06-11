@@ -21,7 +21,9 @@ Para usarlo, nuestro móvil ha de estar conectado al equipo vía cable USB y ten
 
 Para comprobar que nuestro dispositivo esta realmente conectado y es visible por adb ejecuto:
 
-`adb devices`
+```bash
+adb devices
+```
 
 ![2 1 1](https://github.com/user-attachments/assets/162658ba-caba-4a6f-b32d-329d7e10e6a8)
 
@@ -34,7 +36,9 @@ Para comprobar que nuestro dispositivo esta realmente conectado y es visible por
 
 Para ver si estoy como **root** o no ejecuto:
 
-`adb root`
+```bash
+adb root
+```
 
 ![2 2](https://github.com/user-attachments/assets/9e4ff9e5-e3b2-4eb4-b8ee-d5be26a83fb0)
 
@@ -48,7 +52,9 @@ En mi caso, el dispositivo no esta rooteado.
 
 Con adb se puede acceder a la **shell** del móvil y desde allí, podemos navegar por el sistema y ejecutar algunos comandos.
 
-`adb shell`
+```bash
+adb shell
+```
 
 ![3 1](https://github.com/user-attachments/assets/5f05fcfa-092b-478f-93bb-36ce61634ae4)
 
@@ -68,7 +74,9 @@ En un principio, se puede acceder a todos (o casi todos) los directorios del mó
 
 Pero habrá otras que si y de hecho, podemos extraer información, como en el siguiente caso:
 
-`adb pull /system/media/wallpaper/walppaper_group/00MoltenGlass`
+```bash
+adb pull /system/media/wallpaper/walppaper_group/00MoltenGlass
+```
 
 ![3 4](https://github.com/user-attachments/assets/53dd243a-d5fd-4f19-8c53-5b27c9ca1b92)
 
