@@ -14,3 +14,7 @@ Este es un párrafo en **Markdown**.
 
   ```bash
   sudo apt update
+```
+</details>
+
+### Introducción
