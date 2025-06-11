@@ -21,7 +21,9 @@ Los scripts de nmap se almacenan en el directorio **/usr/share/nmap/scripts.**
 El primer script que pruebo es **http-waf-fingerprint.nse** el cual intenta detectar la presencial de un WAF, así como su tipo y versión. Un WAF es un firewall pero de aplicaciones web. 
 El equipo al cual realizo los escaneos es una máquina **opnsense**.
 
-`nmap -script=http-waf-fingerprint 10.0.2.12`
+```bash
+nmap -script=http-waf-fingerprint 10.0.2.12
+```
 
 ![1 1](https://github.com/user-attachments/assets/f365b4a7-e86e-4375-83e9-05b7e9211dde)
 
