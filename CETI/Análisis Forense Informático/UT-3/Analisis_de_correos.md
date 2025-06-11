@@ -271,7 +271,9 @@ En el correo de **MagneticForensics** tenemos los siguientes valores:
 ![11 1](https://github.com/user-attachments/assets/d8e7a2fc-6a0a-4274-8a66-40b507328845)
 
 
-`spf=pass (sender IP is 13.111.2.35) smtp.mailfrom=bounce.s7.exacttarget.com; dkim=pass (signature was verified) header.d=magnetforensics.com; dmarc=pass action=none header.from=magnetforensics.com; compauth=pass reason=100`
+```bash
+spf=pass (sender IP is 13.111.2.35) smtp.mailfrom=bounce.s7.exacttarget.com; dkim=pass (signature was verified) header.d=magnetforensics.com; dmarc=pass action=none header.from=magnetforensics.com; compauth=pass reason=100
+```
 
 **spf**
 El resultado es **pass**, lo que quiere decir que servidor de correo receptor comprobó que la IP 13.111.2.35 está autorizada para enviar correos en nombre de bounce.s7.exacttarget.com, el dominio usado en la dirección Mail From.
@@ -291,7 +293,9 @@ En el correo de Microsoft:
 ![11 2](https://github.com/user-attachments/assets/0d71360a-0c13-449e-99af-d5f587d1d096)
 
 
-`spf=pass (sender IP is 104.47.58.180) smtp.mailfrom=microsoft.com; dkim=pass (signature was header.d=microsoft.com;dmarc=pass header.from=microsoft.com;compauth=pass reason=100`
+```bash
+spf=pass (sender IP is 104.47.58.180) smtp.mailfrom=microsoft.com; dkim=pass (signature was header.d=microsoft.com;dmarc=pass header.from=microsoft.com;compauth=pass reason=100
+```
 
 **spf**
 El resultado es **pass**, por lo que la dirección IP está autorizada para enviar correos en nombre del dominio microsoft.com.
@@ -310,7 +314,9 @@ El mensaje cumple con la política de autenticación de Microsoft. Es legítimo.
 
 Con el comando dig también se puede obtener información de los campos spf, dkim y dmarc de los dominios, aunque yo solo obtuve información del campo **spf**:
 
-`dig TXT <dominio> | grep "spf"`
+```bash
+dig TXT <dominio> | grep "spf"
+```
 
 ![12 1](https://github.com/user-attachments/assets/1cc1117a-4e34-4905-8426-1f98471753e3)
 
