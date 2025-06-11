@@ -19,8 +19,12 @@ Generalmente, para poder rootear un móvil, este ha de tener el **bootloader des
 Para poder comprobar si el **bootloader** de un móvil esta desbloqueado o no:
 
 
-`adb reboot bootloader`
-`fastboot oem get-bootinfo`
+```bash
+adb reboot bootloader
+```
+```bash
+fastboot oem get-bootinfo
+```
 
 ![4 3](https://github.com/user-attachments/assets/f4d9ef16-cb82-4bc5-9cf8-5a811d0cac91)
 
