@@ -152,7 +152,11 @@ Saco el hash del archivo generado y lo compruebo:
 
 ### Almacenar tablas ARP
 
-Para poder obtener las tablas ARP usaré el comando `arp -a` y el resultado lo pasaré a un archivo.
+Para poder obtener las tablas ARP usaré el comando 
+```bash
+arp -a
+```
+y el resultado lo pasaré a un archivo.
 
 ![7 1](https://github.com/user-attachments/assets/4a152617-7230-4401-a75b-34338a7ab6d1)
 
@@ -166,7 +170,11 @@ Y de este archivo generado, obtengo su hash, el cual compruebo.
 
 ### Almacenar estado de las tablas NetBIOS
 
-Para esto usaré el comando `nbtstat -s, nbtstat -A 10.0.2.15 y nbtstat -c` y lo pasaré todo al mismo archivo.
+Para esto usaré el comando 
+```bash
+nbtstat -s, nbtstat -A 10.0.2.15 y nbtstat -c
+```
+y lo pasaré todo al mismo archivo.
 
 ![8 1](https://github.com/user-attachments/assets/914496b1-59c0-4a57-a6f9-f8b0c6efff25)
 
@@ -181,7 +189,11 @@ De este archivo genero un hash y lo compruebo.
 
 ### Almacenar configuraciones de las interfaces de red
 
-Con un `ipconfig /all`  se pueden ver todas las interfaces de red.
+Con un 
+```bash
+ipconfig /all
+```
+se pueden ver todas las interfaces de red.
 
 ![9 1](https://github.com/user-attachments/assets/3a78ae7b-40c0-4ed5-8ce5-5f2a1fa87ce9)
 
@@ -219,7 +231,10 @@ Obtengo su hash y lo almaceno.
 
 ### Almacenar estado de las conexiones
 
-Para ver el estado de todas las conexiones del equipo ejecuto un `netstat -an`.
+Para ver el estado de todas las conexiones del equipo ejecuto un 
+```bash
+netstat -an
+```
 
 ![11 1](https://github.com/user-attachments/assets/f0712f73-7868-43a4-9fff-7117226eaa05)
 
@@ -237,7 +252,10 @@ Obtengo el hash del archivo generado.
 
 ### Almacenar las carpetas compartidas
 
-Para terminar, debo recoger información sobre las carpetas compartidas en el equipo, lo cual se hace con el comando `net share`.
+Para terminar, debo recoger información sobre las carpetas compartidas en el equipo, lo cual se hace con el comando 
+```bash
+net share
+```
 
 ![12 1](https://github.com/user-attachments/assets/5871957a-1c1d-4179-b76c-6222540e6d64)
 
