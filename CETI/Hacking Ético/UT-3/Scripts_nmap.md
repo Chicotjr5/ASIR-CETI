@@ -34,7 +34,9 @@ La ejecución del script nos aporta información sobre los puertos y servicios a
 
 Otro script que he probado es el **http-title** el cual realiza una solicitud HTTP a un servidor web y extrae el contenido del título de la página HTML.
 
-`nmap -script=http-title 10.0.2.12`
+```bash
+nmap -script=http-title 10.0.2.12
+```
 
 ![1 2](https://github.com/user-attachments/assets/ef1754fc-aa4f-43ee-b2f7-fa0ce30ce8fd)
 
@@ -51,7 +53,9 @@ Se nos indica:
 - Fechas de validez
 - Huella digital
 
-`nmap --script=ssl-cert 10.0.2.12`
+```bash
+nmap --script=ssl-cert 10.0.2.12
+```
 
 ![1 3](https://github.com/user-attachments/assets/82cadadf-e610-4bed-bcc1-56acb588e58e)
 
@@ -60,7 +64,9 @@ Se nos indica:
 
 El script **ssl-enum-ciphers** lista los cifrados SSL/TLS admitidos y detecta configuraciones débiles.
 
-`nmap --script sll-enum-ciphers -p 443 10.0.2.12`
+```bash
+nmap --script sll-enum-ciphers -p 443 10.0.2.12
+```
 
 ![1 5](https://github.com/user-attachments/assets/fc6b325a-c2ae-475b-81e3-03c5a258d92b)
 
@@ -70,7 +76,9 @@ El script **ssl-enum-ciphers** lista los cifrados SSL/TLS admitidos y detecta co
 El script **banner** se utiliza para obtener el **banner** de un servicio que se está ejecutando en un puerto específico. 
 Un **banner** es un texto o mensaje que los servicios suelen enviar al cliente cuando se establece una conexión, y normalmente incluye información sobre el servicio, su versión y, en algunos casos, detalles del software o el sistema operativo
 
-`nmap --script=banner 10.0.2.12`
+```bash
+nmap --script=banner 10.0.2.12
+```
 
 ![1 4](https://github.com/user-attachments/assets/ad39265d-6b1e-475f-bb8f-ec01d3417bdb)
 
