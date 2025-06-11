@@ -10,7 +10,7 @@
 - [Otras herramientas](#otras-herramientas)
   - [Target](#target)
   - [XSS](#xss)
-  - [Colllaborator](#colllaborator)
+  - [Collaborator](#collaborator)
   - [Sequencer](#sequencer)
   - [Decoder](#decoder)
   - [Comparer](#comparer)
