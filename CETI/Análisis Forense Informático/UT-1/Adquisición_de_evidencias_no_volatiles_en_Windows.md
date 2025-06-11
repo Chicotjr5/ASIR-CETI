@@ -76,7 +76,9 @@ Ya con la imagen creada se crea un fichero donde nos da información sobre el ar
 
 Comando:
 
-`fsinfo ntsinfo C:`
+```bash
+fsinfo ntsinfo C:
+```
 
 Almaceno la información en el archivo **Tabla_MFT.txt**
 
@@ -93,7 +95,9 @@ PsInfo.exe
 ![3 1](https://github.com/user-attachments/assets/d9bb0f6b-18fe-4aa2-94d1-3eab9c4c70b5)
 
 
-`systeminfo`
+```bash
+systeminfo
+```
 
 ![3 2 1](https://github.com/user-attachments/assets/194dfa79-03e0-4e3e-a889-1766638fba08)
 
@@ -128,13 +132,19 @@ También accedo desde el **Explorador de Archivos**:
 
 Con la herramienta **rifiuti-vista.exe** obtengo información sobre cada uno de los directorios que se encuentran en **$Recycle.bin**
 
-`rifiuti-vista.exe “C:\$Recycle.bin\S-1-5-18” -o salida.xml`
+```bash
+rifiuti-vista.exe “C:\$Recycle.bin\S-1-5-18” -o salida.xml
+```
 
 ![4 11](https://github.com/user-attachments/assets/0bf65f8e-8247-4b65-bee5-f6403baa0dd5)
 
 
-`rifiuti-vista.exe “C:\$Recycle.bin\S-1-5-21-” -o salida2.xml`
-`rifiuti-vista.exe “C:\$Recycle.bin\S-1-5-21” -o salida3.xml`
+```bash
+rifiuti-vista.exe “C:\$Recycle.bin\S-1-5-21-” -o salida2.xml
+```
+```bash
+rifiuti-vista.exe “C:\$Recycle.bin\S-1-5-21” -o salida3.xml
+```
 
 ![4 12](https://github.com/user-attachments/assets/10d31681-6dd4-4608-9a16-c5bac900858c)
 
@@ -154,7 +164,9 @@ Pero el 3º sí que tiene información:
 ### Almacenamiento de ficheros log
 Con la herramienta psloglist64 recopilo información sobre los logs del sistema y procedo a visualizar su contenido:
 
-`psloglist64.exe > g:\Guardar_informacion\log.txt`
+```bash
+psloglist64.exe > g:\Guardar_informacion\log.txt
+```
 
 ![6 1](https://github.com/user-attachments/assets/bdceb7ad-184b-470d-a210-f801f1c46dcb)
 
@@ -183,7 +195,10 @@ Este archivo permite a los usuarios especificar manualmente una dirección a la 
 Para ver cuáles son las variables de entorno ejecuto el comando Path. 
 El resultado de este comando lo almaceno en otro archivo.
 
-`path > variables_de_entorno.txt`
+```bash
+path > variables_de_entorno.txt
+
+```
 
 ![8 1](https://github.com/user-attachments/assets/02be2ff1-22fe-4574-ad92-87239c700275)
 
@@ -193,7 +208,9 @@ El resultado de este comando lo almaceno en otro archivo.
 
 Para recoger información sobre las tareas programadas, almaceno el resultado del comando **schtasks** en un archivo y veo su contenido:
 
-`schtasks > tareas_programadas.txt`
+```bash
+schtasks > tareas_programadas.txt
+```
 
 ![9 1](https://github.com/user-attachments/assets/6e37af80-06a6-4790-a47f-8efa67ef8dae)
 
@@ -206,7 +223,9 @@ El fichero de log del firewall se encuentra en la ruta:
 
 Así que copio su contenido a otro archivo y veo su contenido:
 
-`copy C:\windows\system32\logfiles\firewall\pfirewall.log g:\Guardar_informacion\pfirewall.log` 
+```bash
+copy C:\windows\system32\logfiles\firewall\pfirewall.log g:\Guardar_informacion\pfirewall.log
+``` 
 
 
 ![10 1](https://github.com/user-attachments/assets/33202439-d0ae-41f4-9379-5f344329afb8)
@@ -220,7 +239,9 @@ Así que copio su contenido a otro archivo y veo su contenido:
 
 Para poder obtener todos los accesos directos, uso el siguiente comando de Powershell:
 
-`Get-Childitem -Path C:\ -Filter *.lnk -Recuse | Copy-Item -Destination G:\Guardar_informacion\lnk`
+```bash
+Get-Childitem -Path C:\ -Filter *.lnk -Recuse | Copy-Item -Destination G:\Guardar_informacion\lnk
+```
 
 ![11 1](https://github.com/user-attachments/assets/fd41aad6-2cdc-4966-a3f4-85d7f83cf39f)
 
@@ -294,7 +315,9 @@ En esta captura se puede ver la siguiente información:
 
 El comando **doskey** permite ver cuáles han sido los comandos que se han ejecutado en la consola desde que se ha iniciado sesión en el equipo.
 
-`doskey /history >> historias_de_comandos.txt`
+```bash
+doskey /history >> historias_de_comandos.txt
+```
 
 ![16 1](https://github.com/user-attachments/assets/04fa1fe0-f881-4ea6-9c01-59ff4c05c348)
 
@@ -305,7 +328,9 @@ El comando **doskey** permite ver cuáles han sido los comandos que se han ejecu
 Ahora voy a guardar la estructura de directorios de todo el equipo, pero ordenándola de 3 formas diferentes:
 
 **Mapa del sistema de ficheros basado en la fecha de modificación**
-- `dir C:\ /T:W /S > mapa_modificacion.txt`
+```bash
+dir C:\ /T:W /S > mapa_modificacion.txt
+```
 
 ![17 1](https://github.com/user-attachments/assets/55cb7f2d-a957-4db6-842f-8f539f1df1fc)
 
