@@ -21,6 +21,7 @@
 En esta práctica se va a recopilar información de un equipo Ubuntu 24.04 mediante el uso de diferentes herramientas y con el uso de comandos del mismo sistema.
 
 Antes de nada, paso la fecha actual al fichero inicio.txt.
+
 ![1 1](https://github.com/user-attachments/assets/fb19ebb1-d77d-473a-8c6c-afbce503b262)
 
 
