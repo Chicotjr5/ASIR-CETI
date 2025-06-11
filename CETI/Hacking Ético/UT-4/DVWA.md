@@ -2,7 +2,21 @@
   <summary><h2>Índice</h2></summary>
   
 - [Introducción](#introducción)
-- 
+- [Instalación](#instalación)
+- [Acceso](#acceso)
+- [Brute Force](#brute-force)
+- [Command Injection](#command-injection)
+- [Cross Site Request Forgery](#cross-site-request-forgery)
+- [File Inclusion](#file-inclusion)
+- [File Upload](#file-upload)
+- [SQL Injection](#sql-injection)
+- [SQL INJECTION Blind](#sql-injection-blind)
+- [WEAK SESSION IDs](#weak-session-ids)
+- [XSS DOM](#xss-dom)
+- [Reflected Cross Site Scripting](#reflected-cross-site-scripting)
+- [XSS (Stored)](#xss-stored)
+- [Content Security Policy Bypass](#content-security-policy-bypass)
+- [JavaScript](#javascript)
   
 </details>
 
