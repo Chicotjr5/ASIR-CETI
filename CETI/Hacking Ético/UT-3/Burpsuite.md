@@ -4,5 +4,6 @@
 
 - [Introducción](#introducción)
 
+</details>
 ### Introducción
 
