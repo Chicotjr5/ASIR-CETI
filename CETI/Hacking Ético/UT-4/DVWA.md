@@ -44,7 +44,7 @@ apt-get install docker.io
 Ahora obtengo el contenedor de Docker: 
 
 ```bash 
-docker pull fvulnerables/web-dvwa 
+docker pull vulnerables/web-dvwa 
 ```
 
 ![1 3](https://github.com/user-attachments/assets/8d7065a1-6c44-4a8b-a196-89f07a7304d0)
