@@ -144,8 +144,13 @@ En la parte inferior se puede observar los comandos que se ejecutan cuando cream
 El siguiente paso es el de configurar los puertos por los que irá cada VLAN. 
 Se hace con los comandos:
 
-`interface fa0/x` 
-`switchport Access vlan x`
+```bash
+interface fa0/x
+``` 
+
+```bash
+switchport Access vlan x
+```
 
 ![4 1 configurar vlan2](https://github.com/user-attachments/assets/6cc4b45c-1e31-43d8-b0cb-fa85372b0b37)
 
@@ -157,8 +162,12 @@ También es la misma configuración para todos los switches
 
 Para que los switches puedan enviarse tráfico VLAN entre sí hay que configurar el modo trunk en la interfaz donde están conectados con el switch central. Se hace con los comandos:
 
-`interface fa0/x `
-`switchport mode trunk`
+```bash
+interface fa0/x
+```
+```bash
+switchport mode trunk
+```
 
 
 **Switches normales**
@@ -205,10 +214,18 @@ Se puede ver que entre equipos de la misma VLAN, se realiza la conexión, pero q
 ### Configurar router
 Para permitir la comunicación entre las VLANS hay que configurar la interfaz fa0/0 del router.
 
-`interface fa0/0`
-`interface fa0/0.x`
-`encapsulation dot1Qx`
-`ip address 192.168.x.1 255.255.255.0`
+```bash
+interface fa0/0
+```
+```bash
+interface fa0/0.x
+```
+```bash
+encapsulation dot1Qx
+```
+```bash
+ip address 192.168.x.1 255.255.255.0
+```
 
 Con estos comandos se crea un subinterfaz en la interfaz fa0/0. 
 La enumeración 0.x identifica a la VLAN a la que pertenece, caso similar a la encapsulación, puesto que tendrá el mismo número que la vlan a la que está asociada.
@@ -331,11 +348,11 @@ La red para los routers 0 y 1 será la 192.168.3.0/24 y para los routers 0 y 2 l
 En cada router se deberá de realizar la siguiente configuración:
 
 
-`# 1. Crear una lista de acceso para tráfico entre las LANs de PC1 y PC2 access-list 100 permit ip 192.168.x.0 0.0.0.255 192.168.x.0 0.0.0.255 
-`# 2. Configurar la política ISAKMP (Fase 1) crypto isakmp policy 10 encr aes 256 # Cifrado AES de 256 bits hash sha # Algoritmo de hash SHA authentication pre-share group 5 # Grupo Diffie-Hellman 5 lifetime 86400 # Tiempo de vida de la fase 1 en segundos 
-`# 3. Definir clave compartida crypto isakmp key MI_CLAVE address 192.168.x.x 
-`# 4. Configurar IPsec Transform Set (Fase 2) crypto ipsec transform-set TUNEL esp-aes 256 esp-sha-hmac 
-`# 5. Crear una política de seguridad IPsec crypto map VPN 10 ipsec-isakmp set peer 192.168.x.x set transform-set TUNEL match address 100
+`# 1. Crear una lista de acceso para tráfico entre las LANs de PC1 y PC2 access-list 100 permit ip 192.168.x.0 0.0.0.255 192.168.x.0 0.0.0.255`
+`# 2. Configurar la política ISAKMP (Fase 1) crypto isakmp policy 10 encr aes 256 # Cifrado AES de 256 bits hash sha # Algoritmo de hash SHA authentication pre-share group 5 # Grupo Diffie-Hellman 5 lifetime 86400 # Tiempo de vida de la fase 1 en segundos`
+`# 3. Definir clave compartida crypto isakmp key MI_CLAVE address 192.168.x.x`
+`# 4. Configurar IPsec Transform Set (Fase 2) crypto ipsec transform-set TUNEL esp-aes 256 esp-sha-hmac`
+`# 5. Crear una política de seguridad IPsec crypto map VPN 10 ipsec-isakmp set peer 192.168.x.x set transform-set TUNEL match address 100`
 
 Para ambos routers es la misma configuración, pero con las IP cambiadas:
 
