@@ -3,7 +3,7 @@
 
 - [Introducción](#introducción)
 - [Instalación / Activación](#instalación--activación)
-- [Configuración del navegador](#configuración-del-navegador)
+- [Configurar el navegador](#configurar-el-navegador)
 - [Ataques](#ataques)
   - [Sniper Attack](#sniper-attack)
   - [Cluester bomb](#cluester-bomb)
@@ -36,7 +36,7 @@ https://github.com/xiv3r/Burpsuite-Professional
 
 ---
 
-### Configurar del navegador
+### Configurar el navegador
 
 Como ya dije, **para usar Burpsuite hay que configurar nuestro navegador** para que use el proxy de Burpsuite.
 Para saber cuál es, en Burpsuite vamos a **Settings>Proxy>Proxy listeners**.
