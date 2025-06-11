@@ -93,14 +93,18 @@ Conectaremos nuestro equipo anfitrión a la red donde está conectada la Raspber
 
 Ya conectados a la red comprobaremos la conexión con la Raspberry Pi realizando un ping.
 
-`ping padOS-1`
+```bash
+ping padOS-1
+```
 
 ![2 2](https://github.com/user-attachments/assets/20c4c8c3-eed3-4fd9-8a6e-cbcfa765e181)
 
 
 Para poder trabajar con la Raspberry Pi realizaremos una conexión ssh con el usuario que configuramos anteriormente.
 
-`ssh padOS-1@padOS-1`
+```bash
+ssh padOS-1@padOS-1
+```
 
 ![2 3](https://github.com/user-attachments/assets/db5f4fa0-d6bf-4979-afba-15e2b093a681)
 
@@ -111,7 +115,9 @@ Para poder trabajar con la Raspberry Pi realizaremos una conexión ssh con el us
 
 Antes de hacer nada, se realiza una actualización del sistema con la siguiente orden:
 
-`sudo apt update -y && sudo apt full-upgrade -y`
+```bash
+sudo apt update -y && sudo apt full-upgrade -y
+```
 
 ![3 1](https://github.com/user-attachments/assets/16385156-1aa4-4d23-8bb8-bcdffa1ab8f6)
 
@@ -124,7 +130,9 @@ La copia de seguridad se hará de todo el **directorio /home** y se guardará en
 
 El comando para realizar la copia será el siguiente:
 
-`rsync -avh /home /backup`
+```bash
+rsync -avh /home /backup
+```
 
 ![3 4](https://github.com/user-attachments/assets/68ea7e37-902c-4132-beba-08a8d13f3a75)
 
@@ -141,7 +149,9 @@ Lo que hace este script es mostrar la fecha de realización de la copia de segur
 
 Para poder automatizar la copia de seguridad, editamos el archivo **/etc/crontab** y ponemos la siguiente línea:
 
-`0 */12 * * * root test -x /root/scripts/backup.sh`
+```bash
+0 */12 * * * root test -x /root/scripts/backup.sh
+```
 
 Con esta línea la copia de seguridad se ejecutará cada 2 horas, todos los días de la semana, todos los días del mes, todos los meses.
 
@@ -179,7 +189,9 @@ Para hacerlo vamos a **Edit a connection>Wifi preconfigured** y ya dentro config
 
 El firewall que usaremos para esta práctica es ufw (Uncompicated Firewall)
 
-`apt install ufw`
+```bash
+apt install ufw
+```
 
 ![5 1](https://github.com/user-attachments/assets/58d6127a-7dca-46a3-82bf-5320fe9b560c)
 
@@ -188,12 +200,16 @@ El firewall que usaremos para esta práctica es ufw (Uncompicated Firewall)
 
 Las reglas que se han de crear son las siguientes:
 
-`sudo ufw allow from 192.168.1.103 to any port 22`
+```bash
+sudo ufw allow from 192.168.1.103 to any port 22
+```
 
 ![5 2](https://github.com/user-attachments/assets/ad18ed0e-854a-4fb2-a420-89d54b5e61ce)
 
 
-`sudo ufw deny from any to any port 22`
+```bash
+sudo ufw deny from any to any port 22
+```
 
 ![5 3](https://github.com/user-attachments/assets/fbf4f90c-3112-4b2c-9ed1-96c0d2fd86b2)
 
@@ -210,15 +226,22 @@ En la siguiente captura se puede ver que la regla funciona.
 
 Creamos una regla que deniega todo el tráfico saliente
 
-`sudo ufw default deny outgoing`
+```bash
+sudo ufw default deny outgoing
+```
 
 ![5 5](https://github.com/user-attachments/assets/9d0afe94-6c8e-4d11-988b-849c0ffb065c)
 
 
 Y luego creamos otras 2, que permiten el tráfico saliente hacia los puertos 80 y 443.
 
-`sudo ufw allow out to any port 80`
-`sudo ufw allow out to any port 443`
+```bash
+sudo ufw allow out to any port 80
+```
+```bash
+sudo ufw allow out to any port 443
+```
+
 
 ![5 6](https://github.com/user-attachments/assets/d79fec40-6349-44a7-9ed4-4709a6a99921)
 
@@ -227,7 +250,9 @@ Y luego creamos otras 2, que permiten el tráfico saliente hacia los puertos 80 
 
 Para poder ver el registro del servicio ssh y observar cualquier evento usamos el comando
 
-`sudo journalctl -u ssh -o verbose | tail -n 24`
+```bash
+sudo journalctl -u ssh -o verbose | tail -n 24
+```
 
 ![5 7](https://github.com/user-attachments/assets/ed30e41c-314a-4d41-be6a-cebe3f6df71e)
 
@@ -236,8 +261,12 @@ Para poder ver el registro del servicio ssh y observar cualquier evento usamos e
 
 Para realizar este objetivo, configuramos las 2 siguientes reglas.
 
-`sudo ufw default deny incoming`
-`sudo ufw default deny outgoing`
+```bash
+sudo ufw default deny incoming
+```
+```bash
+sudo ufw default deny outgoing
+```
 
 ![5 8](https://github.com/user-attachments/assets/55af9a3d-2169-4166-bbd2-ff80449bcaa2)
 
@@ -246,7 +275,9 @@ Para realizar este objetivo, configuramos las 2 siguientes reglas.
 
 Para este objetivo, hemos de crear una nueva regla en el firewall
 
-`sudo ufw allow from 192.168.1.0/24 to any port 8080`
+```bash
+sudo ufw allow from 192.168.1.0/24 to any port 8080
+```
 
 ![5 9](https://github.com/user-attachments/assets/4dcaab46-489f-47d7-ac04-90ea831205d3)
 
@@ -254,7 +285,9 @@ Para este objetivo, hemos de crear una nueva regla en el firewall
 
 Pero no solo es añadir la regla anterior, si no que además, hay que modificar las **iptables** las cuales  son un programa que permite a los usuarios configurar reglas para el filtro de paquetes.
 
-`sudo iptables -t nat -A PREROUTING -p tcp --dport 3389 -j REDIRECT --to-port 8080`
+```bash
+sudo iptables -t nat -A PREROUTING -p tcp --dport 3389 -j REDIRECT --to-port 8080
+```
 
 ![5 10](https://github.com/user-attachments/assets/def2cbb1-791f-47e3-bffa-d6136ff12f67)
 
@@ -272,14 +305,18 @@ Pero no solo es añadir la regla anterior, si no que además, hay que modificar 
 
 Con este último comando ya tenemos todo el firewall configurado. Para ver las reglas de UFW, uso el comando:
 
-`sudo ufw status verbose`
+```bash
+sudo ufw status verbose
+```
 
 ![5 11](https://github.com/user-attachments/assets/d049bcb3-7894-4aaa-baa5-dc66e00d4e77)
 
 
 Y para ver las de iptables:
 
-`sudo iptables -t nat -L -n -v
+```bash
+sudo iptables -t nat -L -n -v
+```
 
 ![5 12](https://github.com/user-attachments/assets/6591e9ef-6e02-4c9b-a5a4-65bccb217fc7)
 
@@ -291,14 +328,18 @@ Y para ver las de iptables:
 Ahora pasaremos a instalar un servidor FTP. 
 Usaremos **vsftpd** para crearlo, un servidor FTP para sistemas Unix y Linux, diseñado para ser rápido, seguro y con una configuración sencilla, así que lo instalamos con un **apt install vsftpd**.
 
-`sudo apt install vsftpd`
+```bash
+sudo apt install vsftpd
+```
 
 ![5 13](https://github.com/user-attachments/assets/6dcead1c-fe93-4dfa-829c-7c8dde547007)
 
 
 Una vez instalado pasamos a ver su estado, para comprobar que se ha instalado e iniciado de manera correcta.
 
-`systemctl status vsftpd`
+```bash
+systemctl status vsftpd
+```
 
 ![6 2](https://github.com/user-attachments/assets/019b2948-6239-487f-97b2-03f992bc5ead)
 
@@ -323,12 +364,16 @@ El siguiente punto es conocer desde que redes se permitirá el acceso a FTP, que
 
 Para cumplir este objetivo, debemos de añadir las siguientes reglas a ufw:
 
-`sudo ufw allow proto tcp from 192.168.1.0/24 to any port 21`
+```bash
+sudo ufw allow proto tcp from 192.168.1.0/24 to any port 21
+```
 
 ![6 5](https://github.com/user-attachments/assets/10152234-754b-4378-b26d-ee60fb3896d3)
 
 
-`sudo ufw deny 21/tcp`
+```bash
+sudo ufw deny 21/tcp
+```
 
 ![6 6](https://github.com/user-attachments/assets/9d814414-c9e0-490e-93f8-fbe29c556dde)
 
@@ -342,8 +387,12 @@ Para poder hacer esto hay que modificar el archivo **/etc/vsftpd.conf** y poner 
 
 Además, hemos configurado las siguientes reglas en el firewall:
 
-`sudo ufw allow in 50000:51000/tcp`
-`sudo ufw allow out 50000:51000/tcp`
+```bash
+sudo ufw allow in 50000:51000/tcp
+```
+```bash
+sudo ufw allow out 50000:51000/tcp
+```
 
 ![6 8](https://github.com/user-attachments/assets/f31101c1-c704-4e62-aa88-ce9ade3e2ce1)
 
@@ -352,10 +401,15 @@ Además, hemos configurado las siguientes reglas en el firewall:
 
 Crearemos las 3 siguientes reglas:
 
-`sudo ufw allow out 53`
-`sudo ufw allow out 80`
-`sudo ufw allow out 443`
-
+```bash
+sudo ufw allow out 53
+```
+```bash
+sudo ufw allow out 80
+```
+```bash
+sudo ufw allow out 443
+```
 
 Con un **ufw status verbose** visualizamos las reglas que hemos ido creando:
 
