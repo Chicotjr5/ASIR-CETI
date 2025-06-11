@@ -324,8 +324,65 @@ obtendremos la cookie:
 
 ![image](https://github.com/user-attachments/assets/d3534fd8-85ed-43f6-8646-d37a952f1b22)
 
+---
+
+### XSS (Stored) 
+
+El atacante almacena el código malicioso en la base de datos del sitio, afectando a cualquier usuario que visualice el contenido infectado. 
+En este ataque tenemos un formulario, donde podemos poner un nombre y un mensaje: 
+
+![image](https://github.com/user-attachments/assets/41feb8a8-67ca-44db-bd29-7d4ea9ca97a5)
+
+Si en el campo del mensaje ponemos:
+
+```bash
+<img src=x onerror="alert(document.cookie)">
+```
+
+![14 2 1](https://github.com/user-attachments/assets/d948fb1a-0569-406f-8f99-6ab8f5171c73)
+
+Nos saldrá la cookie:
+
+![14 2](https://github.com/user-attachments/assets/826430da-41d0-4701-ba2d-eace5b8ed5ae)
+
+---
+
+### Content Security Policy Bypass 
+
+Técnica para evadir la política de seguridad de contenido (CSP) de una web, permitiendo la ejecución de código malicioso a pesar de las restricciones. 
+En este ataque tenemos un formulario donde podemos meter una url. 
+Si agrego la url - https://pastebin.com/dl/Lnamji4V - el script que se esconde tras esta url se ejecutará en la página.
+
+![image](https://github.com/user-attachments/assets/63f70783-0438-44d7-a6f3-00773cd2dccf)
+
+↓
+
+![15 2](https://github.com/user-attachments/assets/050c72d7-b839-4249-875a-0bbe06494f17)
+
+---
+
+### JavaScript
+
+Son vulnerabilidades relacionadas con JavaScript, como el uso inseguro de eval(), la manipulación del DOM, o la exposición de datos sensibles en el cliente. 
+
+En este ataque tenemos otro formulario donde se nos dice que tenemos que poner la palabra “success” para ganar, pero al hacerlo, nos sale el mensaje “Invalid Token”.
+
+![image](https://github.com/user-attachments/assets/adef76d9-2c94-437a-b7ad-ed019578f3ee)
 
 
+Lo que hay que hacer es cifrar la palabra “success” a rot13 y luego el resultado 
+cifrarlo a MD5, dándonos 38581812b435834ebf84ebcc2c6424d6 – como resultado.
+Ahora debemos de poner lo siguiente en el formulario para que saque el mensaje:
+
+```bash
+token=38581812b435834ebf84ebcc2c6424d6&phrase=success 
+```
+
+![17 1](https://github.com/user-attachments/assets/b0183177-dda7-44b6-a752-a0d04cc382da)
+
+↓
+
+<img width="296" alt="17 2" src="https://github.com/user-attachments/assets/71dad6a6-6b2b-4aa6-942e-b206075c8379" />
 
 
 
