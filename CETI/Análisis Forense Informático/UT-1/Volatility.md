@@ -41,7 +41,9 @@ Luego se comprueba que existe y actualiza los repositorios.
 
 Ya con el programa instalado, lo ejecuto con:
 
-`python2 /opt/volatility/vol.py`
+```bash
+python2 /opt/volatility/vol.py
+```
 
 ---
 
@@ -57,7 +59,9 @@ Este **"Perfil"** se refiere a un conjunto de configuraciones específicas que V
 
 Comando:
 
-`python2 /opt/volatility/vol.py -f 1.-Memory.dump imageinfo`
+```bash
+python2 /opt/volatility/vol.py -f 1.-Memory.dump imageinfo
+```
 
 ![1 6 1](https://github.com/user-attachments/assets/4d2d6287-e85d-44d7-8494-764d30a63481)
 
@@ -69,7 +73,9 @@ En este caso el perfil que necesito usar es Win7SP1x64.
 
 Para poder ver una lista de todos los procesos que se estaban ejecutando en el momento en el que se extrajo la memoria usaré el plugin **pslist**.
 
-`python2 /opt/volatility/vol.py -f 1.-Memory.dump –profile=WinSP1x64 pslist`
+```bash
+python2 /opt/volatility/vol.py -f 1.-Memory.dump –profile=WinSP1x64 pslist
+```
 
 ![2 1](https://github.com/user-attachments/assets/4f7df525-b274-41b7-a370-0d337785eb54)
 
@@ -90,7 +96,9 @@ La información que se muestra es:
 
 Para poder ver precisamente el PID de Notepad.exe filtramos el resultado por **Notepad.exe**
 
-`python2 /opt/volatility/vol.py -f 1.-Memory.dump –profile=WinSP1x64 pslist | grep "notepad.exe`
+```bash
+python2 /opt/volatility/vol.py -f 1.-Memory.dump –profile=WinSP1x64 pslist | grep "notepad.exe
+```
 
 ![2 2](https://github.com/user-attachments/assets/69f11d80-c430-41d7-bedc-113e1575dd25)
 
@@ -100,7 +108,9 @@ El PID es **3032**.
 
 Otra forma de ver la misma información pero de una manera algo más ordenada, se puede usar **pstree**.
 
-`python2 /opt/volatility/vol.py -f 1.-Memory.dump –profile=WinSP1x64 pstree`
+```bash
+python2 /opt/volatility/vol.py -f 1.-Memory.dump –profile=WinSP1x64 pstree
+```
 
 ![2 3](https://github.com/user-attachments/assets/b5a9eca0-0867-4a5d-9bc9-446f2149345a)
 
@@ -122,7 +132,9 @@ Los procesos hijos son **UWkpjFjDzM.exe** y **cmd.exe**, siendo algo sospeshosos
 
 Para poder obtener información sobre las conexiones del equipo uso el plugin **netscan**:
 
-`python2 /opt/volatility/vol.py -f 1.-Memory.dump –profile=WinSP1x64 netscan`
+```bash
+python2 /opt/volatility/vol.py -f 1.-Memory.dump –profile=WinSP1x64 netscan
+```
 
 ![4 1](https://github.com/user-attachments/assets/fdb699a6-2f63-407c-9ad7-b70b706ac61a)
 
@@ -156,7 +168,9 @@ La IP es **10.0.0.106** y la conexión se hizo por el puerto **4444**
 **VCRUNTIME140.dll** es una biblioteca de enlace dinámico (DLL) que forma parte de las Microsoft Visual C++ Redistributable. Esta DLL contiene funciones esenciales que los programas desarrollados en C++ usan para ejecutarse en Windows. 
 Para ver la información solicitada se precisa del suso del plugin **dlllist** y filtrar por el nombre de la librería:
 
-`python2 /opt/volatility/vol.py -f 1.-Memory.dump –profile=WinSP1x64 dlllist | grep “VCRUNTIME140.dll”`
+```bash
+python2 /opt/volatility/vol.py -f 1.-Memory.dump –profile=WinSP1x64 dlllist | grep “VCRUNTIME140.dll”
+```
 
 ![7 1](https://github.com/user-attachments/assets/8aaa7d56-6df6-41e7-8e7c-fa3736758cdf)
 
@@ -169,15 +183,21 @@ Ahora he de obtener el hash del proceso malicioso.
 Para ello tengo que volcar el contenido de ese proceso a un archivo y sacar el hash de ese archivo. 
 Para volcarlo uso el plugin **procdump**:
 
-`python2 /opt/volatility/vol.py -f 1.-Memory.dump –profile=WinSP1x64 procdump -D volcado -p 3496`
+```bash
+python2 /opt/volatility/vol.py -f 1.-Memory.dump –profile=WinSP1x64 procdump -D volcado -p 3496
+```
 
 ![8 1](https://github.com/user-attachments/assets/6512fed4-b50f-4abd-9e98-c46080d1c47c)
 
 
 Obtengo los hashes md5 y sha256:
 
-`md5sum executable.3496.exe`
-`sha256sum executable.3496.exe`
+```bash
+md5sum executable.3496.exe
+```
+```bash
+sha256sum executable.3496.exe
+```
 
 ![8 2](https://github.com/user-attachments/assets/3620872b-ef9c-4eb8-921d-ede4eb11fe4a)
 
@@ -196,7 +216,9 @@ Si el hash LM aparece como **AAD3B435B51404EEAAD3B435B51404EE**, significa que *
 
 Para poder ver esta información uso el plugin **hashdump**.
 
-`python2 /opt/volatility/vol.py -f 1.-Memory.dump –profile=WinSP1x64 hashdump`
+```bash
+python2 /opt/volatility/vol.py -f 1.-Memory.dump –profile=WinSP1x64 hashdump
+```
 
 ![9 1](https://github.com/user-attachments/assets/a9d40c4b-2281-4525-9f55-e6f45a3e29a8)
 
@@ -217,7 +239,9 @@ El VAD es una estructura en la memoria utilizada por el **gestor de memoria de W
 
 Para obtener esta información uso el plugin **vadinfo** y filtro la información por el nodo.
 
-`python2 /opt/volatility/vol.py -f 1.-Memory.dump –profile=WinSP1x64 vadinfo | grep -A 10 “0xfffffa800577ba10”`
+```bash
+python2 /opt/volatility/vol.py -f 1.-Memory.dump –profile=WinSP1x64 vadinfo | grep -A 10 “0xfffffa800577ba10”
+```
 
 ![10 1](https://github.com/user-attachments/assets/e76faef9-60c1-4bb3-87df-5e50f86d81fd)
 
@@ -228,7 +252,9 @@ En este caso es **PAGE_READONLY**
 
 ### ¿Qué protección tiene la memoria VAD (Virtual Address Description) en la dirección inicio 0x00000000033c0000 y finalización 0x00000000033dffff?
 
-`python2 /opt/volatility/vol.py -f 1.-Memory.dump –profile=WinSP1x64 vadinfo | grep -A 10 “0x00000000033c0000”`
+```bash
+python2 /opt/volatility/vol.py -f 1.-Memory.dump –profile=WinSP1x64 vadinfo | grep -A 10 “0x00000000033c0000”
+```
 
 ![11 1](https://github.com/user-attachments/assets/cc0cf5e6-79c3-4d13-994d-a68010ac9164)
 
@@ -241,7 +267,9 @@ En este caso es **PAGE_READONLY**
 
 Para poder ver esta información hay que usar el plugin **cmdline** y filtrar el resultado por **vbs**:
 
-`python2 /opt/volatility/vol.py -f 1.-Memory.dump –profile=WinSP1x64 cmdline | grep -i “vbs”`
+```bash
+python2 /opt/volatility/vol.py -f 1.-Memory.dump –profile=WinSP1x64 cmdline | grep -i “vbs”
+```
 
 ![12 1](https://github.com/user-attachments/assets/7b457e99-736e-49cd-8f87-ecaed4731f08)
 
@@ -254,7 +282,9 @@ El nombre del script es **vhjReUDEuumrX.exe**
 
 Para poder ver esta información usaré el plugin **shimcache** y filtramos por la hora y fecha.
 
-`python2 /opt/volatility/vol.py -f 1.-Memory.dump –profile=WinSP1x64 shimcache | grep “2019 03-07 23:06:58”`
+```bash
+python2 /opt/volatility/vol.py -f 1.-Memory.dump –profile=WinSP1x64 shimcache | grep “2019 03-07 23:06:58”
+```
 
 ![13 1](https://github.com/user-attachments/assets/b41c29ef-3acb-424a-974a-73be4e44189a)
 
@@ -266,7 +296,9 @@ Para poder ver esta información usaré el plugin **shimcache** y filtramos por 
 Este proceso lleva su tiempo de llevar a cabo. 
 Primero localizamos el proceso **Notepad.exe**.
 
-`python2 /opt/volatility/vol.py -f 1.-Memory.dump –profile=WinSP1x64 pstree | grep -i “notepad”`
+```bash
+python2 /opt/volatility/vol.py -f 1.-Memory.dump –profile=WinSP1x64 pstree | grep -i “notepad”
+```
 
 ![14 1](https://github.com/user-attachments/assets/294c416e-a400-4e6c-9d1c-29f957c3a892)
 
@@ -278,7 +310,9 @@ Ya localizado vuelco su contenido a un archivo:
 
 Ahora para ver el contenido del fichero usaría el comando strings pero la cantidad de información que me saca no me permitiría encontrar la información que busco.
 
-`strings 3032.dmp | less`
+```bash
+strings 3032.dmp | less
+```
 
 ![14 3 1](https://github.com/user-attachments/assets/9cea326c-d604-404b-b0e5-673513f3023d)
 
@@ -291,25 +325,39 @@ Ahora para ver el contenido del fichero usaría el comando strings pero la canti
 Así que voy a usar el plugin **volshell**. 
 Este plugin otorga una interfaz de comandos interactiva la cual permite analizar una memoria de una forma más avanzada.
 
-`python2 /opt/volatility/vol.py -f 1.-Memory.dump –profile=WinSP1x64 volshell -p 3032`
+```bash
+python2 /opt/volatility/vol.py -f 1.-Memory.dump –profile=WinSP1x64 volshell -p 3032
+```
 
 ![14 5](https://github.com/user-attachments/assets/a391046d-1d17-4ccd-993a-918f21401361)
 
 
 Para obtener la información que quiero ejecuto los siguientes comandos:
 
-`current_proc = proc() # Obtiene el objeto del proceso actual`
-`offset_proc = current_proc.v() # Extrae su dirección virtual en memoria`
-`cc(offset_proc) # Cambia el contexto al proceso seleccionado`
-`peb = current_proc.Peb # Accede al PEB (Process Environment Block)`
-`print(peb) # Imprime la dirección del PEB`
+```bash
+current_proc = proc() # Obtiene el objeto del proceso actual
+```
+```bash
+offset_proc = current_proc.v() # Extrae su dirección virtual en memoria
+```
+```bash
+cc(offset_proc) # Cambia el contexto al proceso seleccionado
+```
+```bash
+peb = current_proc.Peb # Accede al PEB (Process Environment Block)
+```
+```bash
+print(peb) # Imprime la dirección del PEB
+```
 
 ![14 6](https://github.com/user-attachments/assets/347262d7-7912-4e33-94d4-85987c7fb00c)
 
 
 De la salida de estos comandos nos quedamos con el último número y ahora ejecuto el comando:
 
-`dt(“_PEB”,8796092870656)`
+```bash
+dt(“_PEB”,8796092870656)
+```
 
 Este comando se utiliza para analizar la estructura del Process Environment Block (PEB) de un proceso en Windows.
 
@@ -333,7 +381,9 @@ Selecciono la primera línea y al estar puesta en Little **Endian** le damos la 
 Con el plugin **vaddump** extraigo el rango de páginas descrito por un nodo **VAD**.
 Obtendré un fichero **.dmp** por cada una de las áreas que utilizaré más adelante.
 
-`python2 /opt/volatility/vol.py -f 1.-Memory.dump –profile=WinSP1x64 vaddump -p 3032 base0x00000000140000 -D volcado -D volcado`
+```bash
+python2 /opt/volatility/vol.py -f 1.-Memory.dump –profile=WinSP1x64 vaddump -p 3032 base0x00000000140000 -D volcado -D volcado
+```
 
 
 ![14 10](https://github.com/user-attachments/assets/4954cc7f-de33-4e89-ae94-a218dda84522)
@@ -363,14 +413,18 @@ El contenido es **REDBULL_IS_LIFE**
 
 Para poder ver esta información uso el plugin **mftpaser** y filtrando los resultados por **59045**
 
-`python2 /opt/volatility/vol.py -f 1.-Memory.dump –profile=WinSP1x64 mftparser | grep “59045”`
+```bash
+python2 /opt/volatility/vol.py -f 1.-Memory.dump –profile=WinSP1x64 mftparser | grep “59045”
+```
 
 ![15 2](https://github.com/user-attachments/assets/3c789d28-20c9-4585-b55e-1b3e1a483b27)
 
 
 Y ahora hago lo mismo pero filtrando por XLS:
 
-`python2 /opt/volatility/vol.py -f 1.-Memory.dump –profile=WinSP1x64 mftparser | grep “XLS”`
+```bash
+python2 /opt/volatility/vol.py -f 1.-Memory.dump –profile=WinSP1x64 mftparser | grep “XLS”
+```
 
 ![15 1](https://github.com/user-attachments/assets/52dbb10c-84af-4acd-9304-20ef0ae0da7c)
 
