@@ -22,8 +22,12 @@ Con el comando **whoaim** veo que usuario estoy usando.
 En este caso, el usuario root, así que tengo permisos de administrador dentro de mi sistema. 
 Y con el comando **ip a** puedo ver que dirección IP tengo, siendo esta la 10.0.2.4/24, lo que hace ver que estamos en la red 10.0.2.0/24.
 
-`whoami`
-`ip a`
+```bash
+whoami
+```
+```bash
+ip a
+```
 
 ![1 1](https://github.com/user-attachments/assets/817bec57-a180-4718-9867-8a1844598aa2)
 
@@ -34,7 +38,9 @@ Y con el comando **ip a** puedo ver que dirección IP tengo, siendo esta la 10.0
 
 Ya que estoy en la red **10.0.2.4/24**, haré un escaneo a la misma para ver que equipos están conectados a ella. Usaré el comando:
 
-`netdiscover -r 10.0.2.0/24`
+```bash
+netdiscover -r 10.0.2.0/24
+```
 
 ![1 2](https://github.com/user-attachments/assets/e0b59a04-96ef-4f30-9ed4-67009e6464e6)
 
@@ -46,7 +52,9 @@ De estos equipos, el más interesante es el **10.0.2.6**, porque el resto son se
 
 Compruebo con un ping si tengo conexión hacia ese equipo.
 
-`ping 10.0.2.6 -c2`
+```bash
+ping 10.0.2.6 -c2
+```
 
 ![1 3](https://github.com/user-attachments/assets/8e80bd51-9e55-4968-8b40-75f8a331d831)
 
@@ -63,7 +71,9 @@ Empezaré realizando un escaneo de puertos con **nmap**.
 
 Usaré el siguiente comando:
 
-`nmap 10.0.2.6 -Pn -O -p-`
+```bash
+nmap 10.0.2.6 -Pn -O -p-
+```
 
 **-Pn**
 - No realiza el primer ping
@@ -99,7 +109,9 @@ El ataque va a consistir en un ataque de fuerza bruta al inicio de sesión del s
 
 
 Generaré un diccionario de contraseñas propio con el comando:
-`crunch 7 7 amdp -o dic.txt.` 
+```bash
+crunch 7 7 amdp -o dic.txt.
+``` 
 
 Este comando lo que hará será generar combinaciones de palabras, con las letras amdp, que tengan una longitud mínima y máxima de 7 caracteres guardándolas en el fichero dic.txt.
 
@@ -108,7 +120,9 @@ Este comando lo que hará será generar combinaciones de palabras, con las letra
 
 Para realizar el ataque, usaré la herramienta **crackmapexec** 
 
-`crackmapexec smb 10.0.2.6 -u amadapa -p dic.txt –local-auth`
+```bash
+crackmapexec smb 10.0.2.6 -u amadapa -p dic.txt –local-auth
+```
 
 En este comando, se usa la herramienta **crackmapexec**, diciéndole que se usará el **protocolo smb** para escanear el equipo **10.0.2.6**, indicando que el **usuario es amadapa** y para las contraseñas, que use el archivo **dic.txt**, indicando que se debe **usar la autenticación local**, en lugar de la autenticación de dominio.
 
@@ -122,7 +136,9 @@ En este comando, se usa la herramienta **crackmapexec**, diciéndole que se usar
 
 En caso de no saber el nombre del usuario, se podría generar otro diccionario de contraseñas y usarlo en el comando del ataque:
 
-`crackmapexec smb 10.0.2.6 -u dic2.txt -p dic.txt –local-auth
+```bash
+crackmapexec smb 10.0.2.6 -u dic2.txt -p dic.txt –local-auth
+```
 
 ![3 4](https://github.com/user-attachments/assets/e5088f40-3f02-4e48-96a6-b62d42aae79b)
 
