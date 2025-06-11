@@ -71,7 +71,9 @@ Me conecto por ssh.
 
 Para poder crear mi servidor VPN voy a instalar PiVPN el cual es un script que facilita la instalación de OpenVPN
 
-`curl -L https://install.pivpn.io | bash`
+```bash
+curl -L https://install.pivpn.io | bash
+```
 
 ![3 1](https://github.com/user-attachments/assets/fad3239e-64ae-4ad0-b2a0-9358512501b3)
 
