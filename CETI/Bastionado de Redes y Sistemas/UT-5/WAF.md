@@ -21,7 +21,9 @@ En esta práctica se va a ver que es un WAF y se va a realziar un caso práctico
 Lo primero que hay que hacer en esta práctica es la creación de una página web.
 Para ello instalaré y configuraré apache2.
 
-`apt install apache2`
+```bash
+apt install apache2
+```
 
 ![1 1](https://github.com/user-attachments/assets/a1886cae-0203-4b6f-b14d-634f0a32ee7b)
 
@@ -35,9 +37,10 @@ Pero voy a personalizarlo algo más:
 
 Edito el fichero **/etc/apache2/apache2.conf** y al final de este añado las siguientes líneas:
 
-`Listen 80`
-`DocumentRoot “/var/www”`
-`DirectoryIndex index.htm index2.htm index.php`
+```bashListen 80
+DocumentRoot “/var/www”
+DirectoryIndex index.htm index2.htm index.php
+```
 
 ![1 3](https://github.com/user-attachments/assets/3e080400-05a6-4c36-a2fb-af2b69063d0b)
 
@@ -62,21 +65,27 @@ Si voy al navegador y escribo – http://192.168.1.142/prueba.html podré ver el
 El WAF que voy a usar es **ModSecurity** el cual está diseñado específicamente para apache. 
 Para instalarlo:
 
-`apt install libapache2-mod-securtity2`
+```bash
+apt install libapache2-mod-securtity2
+```
 
 ![2 1](https://github.com/user-attachments/assets/3da131e5-6d11-4b42-9b6b-6851a82a3732)
 
 
 Ya instalado, hay que habilitar su módulo:
 
-`a2enmod security2`
+```
+a2enmod security2
+```
 
 ![2 2](https://github.com/user-attachments/assets/9a9334dd-c062-4ea8-92bf-711897cf13bb)
 
 
 Para que se guarde la configuración, reinicio el servidor apache2
 
-`systemctl restart apache2`
+```bash
+systemctl restart apache2
+```
 
 ---
 
@@ -90,7 +99,9 @@ Esto hará que Apache incluya todos los archivos **.conf** del directorio **/etc
 
 Para que esto funcione, hay que cambiar el nombre del fichero que se encuentra en este directorio, debido a que tiene otro nombre:
 
-`sudo mv /etc/modsecurity/modsecurity.conf-recommended /etc/modsecurity/modsecurity.conf`
+```bash
+sudo mv /etc/modsecurity/modsecurity.conf-recommended /etc/modsecurity/modsecurity.conf
+```
 
 ![2 4](https://github.com/user-attachments/assets/3fd1275d-e807-4623-999a-992d64267d63)
 
@@ -120,7 +131,9 @@ Así es como hay que configurarlo:
 
 Para que se actualicen estas configuraciones hay que reiniciar el servicio **apache2**.
 
-`systemctl apache2 restart`
+```bash
+systemctl apache2 restart
+```
 
 ---
 
@@ -137,27 +150,35 @@ En mi caso voy a instalar las reglas OWASP que contiene reglas para detener ataq
 
 **Descarga:**
 
-`wget https://github.com/coreruleset/coreruleset/archive/v3.3.0.tar.gz`
+```bash
+wget https://github.com/coreruleset/coreruleset/archive/v3.3.0.tar.gz
+```
 
 ![3 1](https://github.com/user-attachments/assets/5f5a7961-79bd-4091-9029-5cb97130defa)
 
 
 Extracción del archivo:
 
-`tar xvf v3.3.0.tar.gz`
+```bash
+tar xvf v3.3.0.tar.gz
+```
 
 ![3 2](https://github.com/user-attachments/assets/00fd359d-b659-416c-80e0-63f54da1e70d)
 
 
 Ya con todo descargado, creamos un directorio para guardar estas reglas:
 
-`mkdir /etc/apache2/modsecurity-crs`
+```bash
+mkdir /etc/apache2/modsecurity-crs
+```
 
 ![3 3](https://github.com/user-attachments/assets/5415328d-9d64-4d8c-bb37-e5993ae875ee)
 
 
 Y movemos el directorio extraído al directorio creado:
-`mv coreruleset-3.3.0/ /etc/apache2/modsecurity-crs`
+```bash
+mv coreruleset-3.3.0/ /etc/apache2/modsecurity-crs
+```
 
 ![3 4](https://github.com/user-attachments/assets/76de3fc9-2b46-4414-95f9-b1a97ab315ef)
 
@@ -169,7 +190,9 @@ Dentro de este directorio vemos los siguientes archivos:
 
 Al archivo **crs-setup.conf.example** le cambiamos el nombre, quitándole el **example**:
 
-`mv crs-setup.conf.ejemplo crs-setup.conf`
+```bash
+mv crs-setup.conf.ejemplo crs-setup.conf
+```
 
 ![3 6](https://github.com/user-attachments/assets/16d0309f-e488-4240-a81a-bc4923e24221)
 
@@ -187,7 +210,9 @@ Y lo edito, cambiando el último valor **IncludeOptional**.
 Esto hará que **ModSecurity** use las últimas reglas de OWASP. 
 Compruebo que la sintaxis de los archivos de configuración es correcta:
 
-`apache2ctl -t`
+```bash
+apache2ctl -t
+```
 
 ![3 9](https://github.com/user-attachments/assets/09c3a3cd-6e3c-4d94-8556-d0a11eefc65e)
 
@@ -208,7 +233,9 @@ En cambio, si puedo acceder a **prueba.html**:
 
 Además, otra forma de verificar el funcionamiento y existencia del WAF, es lanzado un **nuclei** sobre el sitio web:
 
-`nuceli -u http://192.168.1.142`
+```bash
+nuceli -u http://192.168.1.142
+```
 
 ![5 5](https://github.com/user-attachments/assets/8e2c2abd-b3e3-4f99-8923-97e751be256f)
 
@@ -220,20 +247,28 @@ Además, otra forma de verificar el funcionamiento y existencia del WAF, es lanz
 Las reglas que yo puse son las del OWASP TOP TEN que protegen mi sitio frente a las 10 amenazas más amenazantes de los servidores web. 
 Pero se podrían haber creado otras reglas más específicas:
 
-Este bloquea ciertos user-agents maliciosos:
+**Este bloquea ciertos user-agents maliciosos:**
 
-- `SecRule REQUEST_HEADERS:User-Agent "@rx (nmap|sqlmap|dirbuster)" \ "id:1001,deny,status:403,msg:'Bloqueado: User-Agent malicioso'"`
+```bash
+SecRule REQUEST_HEADERS:User-Agent "@rx (nmap|sqlmap|dirbuster)" \ "id:1001,deny,status:403,msg:'Bloqueado: User-Agent malicioso'"
+```
 
-O esta regla que bloquea métodos HTTP como **TRACE** u **OPTIONS**.
+**O esta regla que bloquea métodos HTTP como TRACE u OPTIONS.**
 
-- `SecRule REQUEST_METHOD "@streq TRACE" "id:1002,deny,status:405,msg:'Método TRACE bloqueado'"`
+```bash
+SecRule REQUEST_METHOD "@streq TRACE" "id:1002,deny,status:405,msg:'Método TRACE bloqueado'"
+```
 
-Esta regla bloquea accesos recuentes de una misma IP:
+**Esta regla bloquea accesos recuentes de una misma IP:**
 
-- `SecRule IP:REQS "@gt 50" "id:2002,deny,status:429,msg:'Demasiadas peticiones en poco tiempo'"`
+```bash
+SecRule IP:REQS "@gt 50" "id:2002,deny,status:429,msg:'Demasiadas peticiones en poco tiempo'"
+```
 
-Esta limita los intentos de login en una misma IP:
-- `SecRule REQUEST_FILENAME "@streq /login.php" "id:4001,chain,deny,status:403,msg:'Demasiados intentos de login'" SecRule IP:ATTEMPTS "@gt 5"`
+**Esta limita los intentos de login en una misma IP:**
+```bash
+SecRule REQUEST_FILENAME "@streq /login.php" "id:4001,chain,deny,status:403,msg:'Demasiados intentos de login'" SecRule IP:ATTEMPTS "@gt 5"
+```
 
 
 También se podrían haber importado reglas avanzadas ya definidas (como las de OWASP) como:
