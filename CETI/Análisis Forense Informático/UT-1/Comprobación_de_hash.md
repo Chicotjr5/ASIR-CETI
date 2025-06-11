@@ -19,6 +19,7 @@ Accedemos a la página https://shattered.io/ y nos descargamos los 2 documentos.
 
 
 Al abrirlos, vemos que su contenido es diferente:
+
 ![1 2 1](https://github.com/user-attachments/assets/50fbdeb3-8931-4dff-a9de-b24c726b8229)
 
 
