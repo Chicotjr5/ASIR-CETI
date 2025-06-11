@@ -1,10 +1,16 @@
+# Mi documento
+
+Este es un párrafo en **Markdown**.
 
 <details>
-  <summary><h2>Índice</h2></summary>
+  <summary><strong>Haz clic aquí para más detalles</strong></summary>
 
-- [Introducción](#introducción)
+  Aquí dentro puedes escribir más contenido en **Markdown**, como listas:
 
-</details>
+  - Punto 1
+  - Punto 2
 
-<h3>Introducción</h3>
+  También puedes poner código:
 
+  ```bash
+  sudo apt update
