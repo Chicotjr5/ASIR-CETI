@@ -20,7 +20,10 @@ Además, también permite realizar diferentes ataques relacionados con las redes
 
 Nuestra antena de red ha de estar en modo monitor
 
-`sudo airmon-ng start wlan0 9`
+```bash
+sudo airmon-ng start wlan0 9
+
+```
 
 ![1 2](https://github.com/user-attachments/assets/3e11b78b-4b82-4650-8025-51e2872ee76f)
 
@@ -33,10 +36,12 @@ Igualmente, con **airgeddon** se puede poner la tarjeta en modo monitor o tambi�
 
 Para poder usar esta herramienta he de obtener su repositorio de **github** y ejecutar el script **airgeddon**:
 
-`git clone https://github.com/v1s1t0r1sh3r3/airgeddon.git`
-`cd airgeddon`
-`chmod +x airgeddon.sh`
-`./airgeddon.sh`
+```bash
+git clone https://github.com/v1s1t0r1sh3r3/airgeddon.git
+cd airgeddon
+chmod +x airgeddon.sh
+./airgeddon.sh
+```
 
 
 ![1 1](https://github.com/user-attachments/assets/51f82b1f-42d4-4052-baee-e58775067e64)
@@ -90,7 +95,9 @@ Al elegir esa opción se abre el siguiente menú:
 Elijo la **opción 4** para buscar redes. 
 Esta opción es similar al comando:
 
-`airodump-ng wlan0`
+```bash
+airodump-ng wlan0
+```
 
 ![2 9](https://github.com/user-attachments/assets/b1194a0f-8aa8-4003-91c3-89c6a355dac4)
 
@@ -123,7 +130,9 @@ AL cerrarse la ventana, el script nos dice que la captura se encuentra en **/roo
 
 Con esta información voy a ese directorio y hago un ataque de fuerza bruta:
 
-`aircrack-ng handshake-7ª:4E:6F:94:FD:5F.cap -w contraseña.txt`
+```bash
+aircrack-ng handshake-7ª:4E:6F:94:FD:5F.cap -w contraseña.txt
+```
 
 ![3 5](https://github.com/user-attachments/assets/ede05880-fe5b-4881-8474-c1f9397d61fd)
 
