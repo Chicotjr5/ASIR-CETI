@@ -73,7 +73,9 @@ Como sé que algunos usuarios tienen archivos que se llaman flag.txt lo que voy 
 
 Con el siguiente comando visualizo el contenido de cada archivo:
 
-`find / -name *flag.txt`
+```bash
+find / -name *flag.txt
+```
 
 ![1 11](https://github.com/user-attachments/assets/91a8da19-215f-41b5-af94-e212a28197c0)
 
@@ -118,7 +120,9 @@ Este estado puede ser:
 
 Ejecuto el escaneo y veo que el puerto no está bloqueado:
 
-`nmap 10.0.2.5 -Pn -n -p3306 -sA`
+```bash
+nmap 10.0.2.5 -Pn -n -p3306 -sA
+```
 
 ![1 20](https://github.com/user-attachments/assets/c7f282a5-83ee-420d-8e35-725e6cd031a5)
 
@@ -155,14 +159,18 @@ Y como no, desde este usuario también puedo elevar privilegios para ser root.
 
 Ya como **root** intento acceder a la base de datos conectándome desde 127.0.0.1, osease, desde el propio equipo.
 
-`mysql -h 127.0.0.1 -u mysql -p`
+```bash
+mysql -h 127.0.0.1 -u mysql -p
+```
 
 ![1 25](https://github.com/user-attachments/assets/f0af7a9b-f8f7-46b0-a769-05d207191052)
 
 
 En cambio sí intento la conexión con el comando **mysql -u mysql -p** si que me permite conectarme a la base de datos.
 
-`mysql -u mysql -p`
+```bash
+mysql -u mysql -p
+```
 
 ![1 26](https://github.com/user-attachments/assets/2cd92039-cffd-4ede-b92a-e02de625d5d1)
 
@@ -172,7 +180,9 @@ Puede ser que el usuario mysql no tenga configurados permisos para acceder usand
 
 Ya conectado visualizo las bases de datos con un:
 
-`show database;`
+```bash
+show database;
+```
 
 ![1 27](https://github.com/user-attachments/assets/f8cdbf13-d8aa-43b2-b76b-614f27483c83)
 
@@ -181,8 +191,12 @@ Ya conectado visualizo las bases de datos con un:
 Esa base de datos llamada **colapp** me llama la atención. 
 Con un **use colapp** accedo a la base de datos y con un show tables visualizo las tablas que contiene esa base de datos.
 
-`use colapp`
-`show tables`
+```bash
+use colapp
+```
+```bash
+show tables
+```
 
 ![1 28](https://github.com/user-attachments/assets/782e1bc1-d8d8-4029-8f74-eb5d6dc83951)
 
@@ -193,7 +207,9 @@ Así que esta tabla usuarios contendrá los usuarios y contraseñas de ese inici
 
 Visualizo el contenido de la tabla con un:
 
-`select * from usuarios`
+```bash
+select * from usuarios
+```
 
 ![1 29](https://github.com/user-attachments/assets/5d593325-c96f-4d63-9c6f-8ee275ed7fad)
 
@@ -227,7 +243,9 @@ Esta herramienta sirve para realizar pruebas de seguridad en aplicaciones web.
 
 Con el comando **sqlmap -u "https://10.0.2.5.:8080/colapp/cervezas?busqueda='"** lo que hará la herramientas es detectar vulnerabilidades de inyección SQL en el parámetro **busqueda**
 
-`sqlmap -u "https://10.0.2.5.:8080/colapp/cervezas?busqueda='"`
+```bash
+sqlmap -u "https://10.0.2.5.:8080/colapp/cervezas?busqueda='"
+```
 
 ![1 34](https://github.com/user-attachments/assets/97773ec4-2b73-4d89-bc1e-6b61650cda22)
 
