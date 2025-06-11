@@ -6,7 +6,7 @@
 - [Configurar el navegador](#configurar-el-navegador)
 - [Ataques](#ataques)
   - [Sniper Attack](#sniper-attack)
-  - [Cluester bomb](#cluester-bomb)
+  - [Cluster bomb](#cluster-bomb)
 - [Otras herramientas](#otras-herramientas)
   - [Target](#target)
   - [XSS](#xss)
