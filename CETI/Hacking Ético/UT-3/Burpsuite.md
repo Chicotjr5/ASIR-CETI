@@ -106,7 +106,7 @@ En este caso, vamos a capturar credenciales en la página de **educa.jcyl.es**
 
 Accedemos a la página de login de educa.jcyl.es y metemos credenciales falsas y las mandamos. Burpsuite habrá capturado ese paquete donde se pueden ver la contraseña y el usuario:
 
-![[4.2.png]]![4 2](https://github.com/user-attachments/assets/0fb60e5a-40cb-4e30-8ec4-985883b4e0d1)
+![4 2](https://github.com/user-attachments/assets/0fb60e5a-40cb-4e30-8ec4-985883b4e0d1)
 
 ↓
 
