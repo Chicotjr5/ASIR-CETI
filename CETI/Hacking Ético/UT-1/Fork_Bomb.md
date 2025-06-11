@@ -57,7 +57,9 @@ Con un **ulimit -a** vemos los límites que ya tiene establecidos el usuario Kal
 
 De todos los límites que vemos, el que más interesa es el de los procesos el cual se establece con un **ulimit -u**.
 
-`ulimit -u`
+```bash
+ulimit -u
+```
 
 ![4 2](https://github.com/user-attachments/assets/0210fca9-9a20-45cd-b086-2c19c186b4e7)
 
@@ -112,7 +114,9 @@ Tiene la siguiente estructura:
 
 Para que se ejecute, le doy los permisos necesarios:
 
-`chmod 755`
+```bash
+chmod 755
+```
 
 ![5 2](https://github.com/user-attachments/assets/57aee797-9bde-4152-aeba-b6d8f03e701a)
 
@@ -131,7 +135,9 @@ Pero hay un problema. Este script solo registrará los datos cuando lo ejecute, 
 
 Para solucionarlo, instalo **anacron** el cual es un programador de tareas **similar a cron**, con la diferencia de que no necesita que el sistema esté en ejecución. 
 
-`apt install anacron`
+```bash
+apt install anacron
+```
 
 ![5 5](https://github.com/user-attachments/assets/4757e714-ece1-4f13-bc69-146c67aa103c)
 
