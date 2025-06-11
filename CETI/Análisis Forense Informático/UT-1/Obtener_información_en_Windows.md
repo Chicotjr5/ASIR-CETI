@@ -52,7 +52,11 @@ Localizo los archivos y los copio a mi unidad USB.
 ![2 5](https://github.com/user-attachments/assets/419e51a6-717d-45d9-826a-cb4408acc165)
 
 
-Con el comando `certutil -hashfile <archivo.sys> sha256 >> f:\hash.txt` obtengo su hash y lo almaceno.
+Con el comando:
+```bash
+certutil -hashfile <archivo.sys> sha256 >> f:\hash.txt
+```
+obtengo su hash y lo almaceno.
 
 ![2 6](https://github.com/user-attachments/assets/5c4e9310-93dc-46f5-a0c2-b3a13f8430e1)
 
@@ -120,7 +124,11 @@ Obtengo su hash y lo guardo.
 ![5 2](https://github.com/user-attachments/assets/2fcfb8ab-12bd-471e-99cc-ddb904846c1f)
 
 
-Con el comando `net user` puedo que usuarios hay en el sistema, comparándolos con la información del archivo generado:
+Con el comando 
+```bash
+net user
+```
+puedo ver que usuarios hay en el sistema, comparándolos con la información del archivo generado:
 
 
 ![5 4](https://github.com/user-attachments/assets/a62c8e9c-42db-4894-9a60-6724c562a45f)
