@@ -73,7 +73,9 @@ Este Ticket de Kerberos tiene una vida limitada (la cual es configurable) que pe
 Para realizar la creación del servidor kerberos y del servidor Radius voy a usar 2 equipos Ubuntu, uno con la versión 18.04 y otro con la versión 24.04. 
 El primer paso que hay que hacer es actualizar el equipo:
 
-`apt update -y && apt upgrade -y`
+```bash
+apt update -y && apt upgrade -y
+```
 
 ![0 1](https://github.com/user-attachments/assets/ce1354f4-14ff-498b-b590-46eb9f6ff7c9)
 
@@ -91,7 +93,9 @@ Estableceré un nuevo dominio que se llamará **servidor.dominio.local** además
 
 Con todo listo, instalo en el equipo Ubuntu 24.04 (que hará de servidor en ambos casos) el servidor Kerberos:
 
-`apt install krb5-kdc krb5-admin-server krb5-config -y`
+```bash
+apt install krb5-kdc krb5-admin-server krb5-config -y
+```
 
 ![1 3](https://github.com/user-attachments/assets/7d93a14d-e3d2-4ec0-8984-667f2a5aaa5e)
 
@@ -137,8 +141,12 @@ Dentro de este archivo también salían reinos de ejemplo, así que los he borra
 
 Para hacer que le cliente se pueda autenticar, creo un usuario con el comando:
 
-`kadmin.local` 
-`addprinc usuario1/admin`
+```bash
+kadmin.local
+``` 
+```bash
+addprinc usuario1/admin
+```
 
 ![1 12](https://github.com/user-attachments/assets/d1d99e62-a1e6-4f92-a43e-6a0fbaa3ea13)
 
@@ -154,7 +162,9 @@ Para que se guarden los cambios reinicio los servicios:
 
 En el cliente instalaré el paquete cliente de Kerberos:
 
-`apt install krb5-user`
+```bash
+apt install krb5-user
+```
 
 ![2 1](https://github.com/user-attachments/assets/a3a34852-dcd9-4ad2-9fa2-910fb15995b9)
 
@@ -177,7 +187,9 @@ Se genera el archivo krb5.conf con la configuración bien puesta:
 
 Ahora para poder ver si el cliente se conecta con el servidor voy a solicitar un ticket del usuario “usuario1”
 
-`kinit usuario1@DOMINIO.COM`
+```bash
+kinit usuario1@DOMINIO.COM
+```
 
 ![2 6](https://github.com/user-attachments/assets/64c0ae3d-6fd1-4207-873e-a9137ef54285)
 
@@ -239,14 +251,19 @@ Para mejorar la seguridad se recomienda el uso de EAP-TLS para una autenticació
 
 Como ya está el equipo actualizado, instalo directamente el paquete **freeradius**
 
-`apt install freeradius -y`
+```bash
+apt install freeradius -y
+```
 
 ![4 1](https://github.com/user-attachments/assets/d56e3d70-4dd8-4890-92dc-b6117b50fc32)
 
 
 Una vez instalado compruebo el estado del servicio para ver que todo funciona perfectamente o no:
 
-`systemctl status freeradius`
+```bash
+systemctl status freeradius
+```
+
 
 ![4 2](https://github.com/user-attachments/assets/3e61283d-1d06-4bcf-9cfa-ac5ffe0fac5d)
 
@@ -258,7 +275,9 @@ Una vez instalado compruebo el estado del servicio para ver que todo funciona pe
 
 Edito el fichero **clients.conf:**
 
-`nano /etc/freeradius/3.0/clients.conf`
+```bash
+nano /etc/freeradius/3.0/clients.conf
+```
 
 ![4 3](https://github.com/user-attachments/assets/ff1ba26f-6500-461a-aeed-543926dd5243)
 
@@ -280,8 +299,12 @@ Cuando se conecte, le saldrá el mensaje “Bienvenido usuario1”.
 
 Tras estos cambios reinicio el servicio de freeradius y compruebo que esté funcionando correctamente
 
-`systemctl restart freeradius`
-`systemctl status freeradius`
+```bash
+systemctl restart freeradius
+```
+```bash
+systemctl status freeradius
+```
 
 ![4 6](https://github.com/user-attachments/assets/ce1b3dde-f3b6-41ce-b04a-0910aeb558d2)
 
@@ -292,7 +315,9 @@ Tras estos cambios reinicio el servicio de freeradius y compruebo que esté func
 
 Para continuar instalo el paquete **libpam-radius-auth** en el cliente el cual me permite autenticar usuarios mediante **RADIUS** a través de **PAM**.
 
-`apt install libpam-radius-auth -y`
+```bash
+apt install libpam-radius-auth -y
+```
 
 ![5 1](https://github.com/user-attachments/assets/55378ee1-5fe9-4149-a66c-476a37eabfb4)
 
@@ -312,7 +337,9 @@ También he de instalar el paquete **freeradius-utils** el cual me permite inter
 
 Para comprobar la conexión entre cliente y usuario a través del usuario1 uso el siguiente comando:
 
-`radtest usuario1 alonso33 192.168.1.100 1812 alonso33`
+```bash
+radtest usuario1 alonso33 192.168.1.100 1812 alonso33
+```
 
 ![5 4](https://github.com/user-attachments/assets/23894e09-b348-4b08-9821-1d6bf2881cc0)
 
