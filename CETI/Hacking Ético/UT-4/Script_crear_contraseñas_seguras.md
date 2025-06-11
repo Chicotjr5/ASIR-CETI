@@ -2,6 +2,8 @@
   <summary><h2>Índice</h2></summary>
 
 - [Introducción](#introducción)
+- [Script](#script)
+- [Mejora del script](#mejora-del-script)
   
 </details>
 
