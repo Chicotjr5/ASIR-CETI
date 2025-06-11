@@ -336,13 +336,17 @@ dir C:\ /T:W /S > mapa_modificacion.txt
 
 
 **Mapa del sistema de ficheros basado en la fecha de acceso**
-- `dir C:\ /T:A /S > mapa_acceso.txt`
+```bash
+dir C:\ /T:A /S > mapa_acceso.txt
+```
 
 ![17 2](https://github.com/user-attachments/assets/de71bc99-6bb7-4bed-b358-b9efc2616c42)
 
 
 **Mapa del sistema de ficheros basado en la fecha de creación**
-- `dir C:\ /T:C /S > mapa_creacion.txt`
+```bash
+dir C:\ /T:C /S > mapa_creacion.txt
+```
 
 ![17 3](https://github.com/user-attachments/assets/cd7633a6-5669-48f9-8c96-1dfc94ee3baf)
 
@@ -441,7 +445,9 @@ Al momento de hacer la captura, no contenía nada
 
 Esta información se guarda en el archivo **C:\Windows\INF\setupapi.dev.log** así que obtengo su contenido y lo copio en otro fichero.
 
-`type C:\Windows\INF\setupapi.dev.log > usb_conectados.txt`
+```bash
+type C:\Windows\INF\setupapi.dev.log > usb_conectados.txt
+```
 
 ![24 1](https://github.com/user-attachments/assets/d71bdc82-4f8d-4782-93a0-40e39f08d019)
 
