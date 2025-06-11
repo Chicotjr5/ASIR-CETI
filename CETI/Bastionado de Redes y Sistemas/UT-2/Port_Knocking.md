@@ -29,14 +29,18 @@ Si la secuencia no es correcta, no se abre el puerto.
 ### Implementación
 Para implementar el Port Knocking hay que instalar la herramienta knockd
 
-`apt install knockd`
+```bash
+apt install knockd
+```
 
 ![1 1](https://github.com/user-attachments/assets/69f1f8fa-0092-4a2b-b0d5-da03dfa6f546)
 
 
 Una vez instalado accedo a su archivo de configuración
 
-`nano /etc/knockd.conf`
+```bash
+nano /etc/knockd.conf
+```
 
 ![1 2](https://github.com/user-attachments/assets/a6b27b56-ce69-4281-9597-1894294d3525)
 
@@ -73,8 +77,12 @@ Además de que si tenemos varias interfaces de red, el servicio puede escuchar p
 
 Para aplicar estos cambios, reinicio el servicio **knockd** y compruebo su estatus:
 
-`systemctl restart knockd.service` 
-`systemctl status knockd.service`
+```bash
+systemctl restart knockd.service
+``` 
+```bash
+systemctl status knockd.service
+```
 
 ![1 8](https://github.com/user-attachments/assets/64a364c7-3e02-4cee-af64-f83103a952ec)
 
