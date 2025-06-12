@@ -6,9 +6,9 @@
  - [Metaspoitable](#realizar-escaneo)
    - [Análisis de la información](#análisis-de-la-información)
    - [Explotaciones posibles](explotaciones-posibles)
- - [DVWA](dvwa)
+ - [DVWA](#dvwa)
    - [Análisis de la información](#análisis-de-la-información)
-   - [Explotaciones posibles](explotaciones-posibles)
+   - [Explotaciones posibles](#explotaciones-posibles)
 
 </details>
 
