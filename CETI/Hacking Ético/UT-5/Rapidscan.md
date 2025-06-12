@@ -2,8 +2,13 @@
   <summary><h2>Índice</h2></summary>
   
  - [Introducción](#introducción)
- - [Instalación](#instalación)
- - [Realizar escaneo](#realizar-escaneo)
+ - [Instalación y preparación](#instalación)
+ - [Metaspoitable](#realizar-escaneo)
+   - [Análisis de la información](#análisis-de-la-información)
+   - [Explotaciones posibles](explotaciones-posibles)
+ - [DVWA](dvwa)
+   - [Análisis de la información](#análisis-de-la-información)
+   - [Explotaciones posibles](explotaciones-posibles)
 
 </details>
 
@@ -105,6 +110,113 @@ Paso el archivo que se ha generado a txt y al revisarlo se distinguen las siguie
   - **VNC (5900), X11 (6000)** – potencial para acceso remoto o captura de sesión.
   - **AJP (8009)** – Apache JServ Protocol, relacionado con vulnerabilidad Ghostcat (CVE-2020-1938).
  
+**Servicios SMB Abiertos (Nmap SMB y STUXNET)**
+
+- Puertos 139 y 445 abiertos – asociados a servicios NetBIOS y SMB, usados por exploits como:
+  - EternalBlue (MS17-010)
+  - STUXNET (aunque no se confirmó infección, el servicio está activo)
+- Evaluar si está parchado, ya que SMB es muy vulnerable en versiones antiguas de Windows o Samba.
+
+#### Explotaciones posibles
+
+- **XSS Testing **
+  - Por falta de cabeceras + posible PHP antiguo sin filtrado.
+- **Ataques de Clickjacking.**
+- **XST (Cross Site Tracing)**
+  - Para robar cookies.
+- **Explotación por PHP obsoleto:**
+  - RCE (Remote Code Execution) en PHP < 5.4
+- **Ataque DoS tipo Slowlori**
+  - Ya confirmado
+- **Ataques SMB**
+  - EternalBlue, SMBGhost, etc
+- **Fuzzing/Explotación en AJP (8009)**
+  - Por Ghostcat
+- **Fuerza bruta o login remoto en:**
+  - FTP, SSH, Telnet, PostgreSQL, MySQL, VNC.
+- **Exploración de servicios RPC/NFS abiertos**
+- **Backdoor en puertos no estándar**
+  - 1524 - ingreslock
+  - 53650
+ 
+---
+
+### DVWA
+
+```bash
+python3 rapisdcan.py 192.168.1.143
+```
+
+![image](https://github.com/user-attachments/assets/7d7e22de-6d6d-4abc-8a6a-68336e80b070)
+
+Al finalizar el escaneo, sale un pequeño resumen de este: 
+
+![3 1](https://github.com/user-attachments/assets/f0028dc8-fb17-40c0-8f0b-d40b2a38107c)
+
+Además de que se han generado varios archivos: 
+
+![image](https://github.com/user-attachments/assets/66247a6a-7e73-4594-a61b-c9784c3e19ee)
+
+El archivo **rs.vul.192.168.1.136.2025-04-16** es el importante y donde se ven todas las herramientas que se han probado y un resumen del escáner: 
+
+![image](https://github.com/user-attachments/assets/1ddc0a8f-6d29-4224-9fc2-2f4c940b8cdf)
+
+#### Análisis de la información
+
+Básicamente este archivo nos dice: 
+
+**Servidor Web Apache en puerto 80**
+
+- **Versión** - Apache/2.4.25 (Debian)
+- **Estado** - Obsoleta → la versión actual recomendada es 2.4.54 o superior.
+- **Posibles riesgos:**
+  -  Vulnerabilidades conocidas en Apache 2.4.25 (CVE-2017-3167, CVE-2017-3169)
+  -  Ausencia de cabeceras HTTP de seguridad:
+    -  X-Frame-Options: Vulnerabilidad a clickjacking.
+    -  X-Content-Type-Options: Posibilidad de MIME-sniffing.
+
+**Redirección a login.php**
+
+- Indica que hay un sistema de autenticación que podría ser susceptible a:
+  - Ataques de fuerza bruta
+  - Inyecciones SQL
+  - Robo de cookies (si no hay HTTPS)
+ 
+**No se encontraron subdominios ni balanceadores de carga**
+
+- Las herramientas amass, fierce, lbd, y dmitry no obtuvieron más información útil.
+- No hay carga distribuida indicando que es una única máquina objetivo.
+
+**Puertos cerrados relevantes**
+
+- 445/tcp (SMB):
+  - Cerrado por lo que no hay posibilidad de un ataque directo
+- 443/tcp (HTTPS):
+  - Cerrado, no hay cifrado ni tráfico seguro activo
+ 
+#### Explotaciones posibles
+
+**Ataques web dirigidos a Apache/login.php**
+
+- **Buscar exploits conocidos para Apache 2.4.25**
+  - Usar searchsploit apache 2.4.25 en Kali.
+  - Escanear con **Nessus** o **OpenVAS** para más profundidad.
+- **Prueba de fuerza bruta en login.php**
+  - Usar herramientas como hydra, Burp Suite, wfuzz
+- **Test de inyección SQL / XSS / LFI en formularios**
+  - Explorar con sqlmap, nikto, zap, burp.
+ 
+**Evaluar el mal uso de cabeceras HTTP **
+
+- Clickjacking:
+  - Se puede crear un iframe que apunte al login y verifica si puedes superponerlo.
+- MIME-sniffing
+  - Subir archivos con extensiones “.jpg” pero contenido ejecutable (en caso de poder subir archivos).
+ 
+**Enumeración y fingerprinting adicional**
+
+- Usar whatweb o wappalyzer para descubrir más tecnologías en uso.
+- Repetir escaneo con nmap -sV -A para obtener versiones detalladas de servicios. 
 
 
 
