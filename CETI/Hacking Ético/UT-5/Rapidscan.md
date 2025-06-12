@@ -72,13 +72,39 @@ Al lanzarla se van realizando diferentes escaneos, que tardaran mas o menos tiem
 
 Paso el archivo que se ha generado a txt y al revisarlo se distinguen las siguientes vulnerabilidades: 
 
-**Cabeceras de Seguridad HTTP Ausentes **
+**Cabeceras de Seguridad HTTP Ausentes**
 
 - X-Frame-Options no presente
   - Permite ataques de Clickjacking
 - X-Content-Type-Options no presente
+  - Puede permitir que el navegador interprete tipos MIME incorrectamente (MIME-sniffing).
 - X-XSS-Protection aparentemente ausente
+  - Podría permitir ejecución de scripts maliciosos si hay una vulnerabilidad XSS.
+ 
+**Servidor y Tecnología Obsoleta (Nikto)**
 
+- Apache 2.2.8 + PHP 5.2.4 (Ubuntu)
+  - Ambas versiones están fuera de soporte, conocidas por múltiples vulnerabilidades (RCE, LFI, etc.).
+ 
+**HTTP TRACE se encuentra habilitado**
+
+- Lo cual habilita ataques de tipo Cross-Site Tracing (XST).
+
+**Vulnerabilidad a Slowloris (Nmap + NSE)**
+
+- El servidor es vulnerable a un ataque DoS tipo Slowloris, al mantener muchas conexiones abiertas sin cerrarlas.
+  - Se confirma la vulnerabilidad ya que se lanzó un ataque exitoso con 1001 conexiones durante 2min 22s.
+ 
+**Puertos y Servicios Abiertos (Nmap Full TCP)**
+
+- El host tiene numerosos servicios abiertos, algunos peligrosos si no están protegidos:
+  - **FTP (21)** - sin información de seguridad adicional, podría permitir acceso anónimo.
+  - **Telnet (23)** – servicio inseguro (sin cifrado).
+  - **SMTP (25)** – podría ser explotado para spam o spoofing si mal configurado.
+  - **MySQL (3306), PostgreSQL (5432)** – verificar si requieren autenticación fuerte.
+  - **VNC (5900), X11 (6000)** – potencial para acceso remoto o captura de sesión.
+  - **AJP (8009)** – Apache JServ Protocol, relacionado con vulnerabilidad Ghostcat (CVE-2020-1938).
+ 
 
 
 
