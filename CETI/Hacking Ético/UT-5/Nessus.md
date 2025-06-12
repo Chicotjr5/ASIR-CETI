@@ -1,72 +1,106 @@
+<details>
+  <summary><h2>Índice</h2></summary>
+  
+ - [Introducción](#introducción)
+ - [Instalación](#instalación)
+ - [Realizar escaneo](#realizar-escaneo)
 
-## Índice
-- [[Practica 1#Índice|Índice]]
-- [[Practica 1#Algoritmos|Algoritmos]]
-- [[Practica 1#Ejercicio de paginación|Ejercicio de paginación]]
-- [[Practica 1#Ejercicio de segmentación|Ejercicio de segmentación]]
+</details>
 
+---
 
-### Algoritmos
+## Introducción
 
+En esta práctica se va usar la herramineta **Nessus**, la cual es usada para escanear vulnerabilidades e identificar fallos en:
 
+- Sistemas operativos
+- Dispositivos de red
+- Servidores
+- Bases de datos
+- Aplicaciones
 
-### Ejercicio de paginación
+Su funcionamiento se basa en el análisis activo de los equipos dentro de una red, detectando configuraciones erróneas, puertos inseguros, servicios vulnerables o software desactualizado. 
 
-Tenemos un sistema operativo de 32 bits en el que la asignación de memoria se realiza mediante paginación. 
-Cada página/marco ocupa 1 MB. De los 32 bits de la dirección de memoria, se usan 12 bits para especificar la página. 
-Se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de páginas:
+Uno de sus puntos fuertes, es la gran base de datos de vulnerabilidades con la que cuenta, que además se actualiza constantemente con nuevas amenazas descubiertas.
 
-| Página | Marco |
-| ------ | ----- |
-| 0x59B  | 0x123 |
-| 0x59C  | 0xA05 |
-| 0x59D  | 0x59F |
-| 0x59E  | 0x799 |
-| 0x59F  | 0xF8B |
-| 0x59A0 | 0x22D |
+Nessus ofrece escaneos personalizados, informes detallados y recomendaciones para mitigar los riesgos detectados. 
 
-Dada la dirección lógica 0x59F2A5A0, obtener la dirección física correspondiente:
-- 0xF8B2A5A0
+Cuenta con distintas versiones: **Nessus Essentials (gratuita y limitada a 16 IPs)**, ideal entornos de prueba y para lo que voy a hacer y versiones de pago como **Professional y Expert**, que ofrecen más capacidad, funciones avanzadas y soporte técnico, que no voy a usar.
 
-Dada la dirección lógica 0x5A02A59F, obtener la dirección física correspondiente.
-- 0x22DA59F
+Es multiplataforma (Windows, Linux y macOS) y muy utilizado por profesionales en auditorías, pentesting, y compliance (cumplimiento de normativas como PCI-DSS o ISO 27001). 
 
-Dada la dirección lógica 0x59C4DE87, obtener la dirección física correspondiente
-- 0xA054DE87
+---
 
-### Ejercicio de segmentación
+### Instalación
 
-En un sistema de de 32 bits se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de segmentos (el tamaño viene expresado de forma relativa la base):
+Para poder obtener el programa tuve que crear una cuenta y solicitar una prueba de **Nessus essentials**. 
+Obtuve el instalador e inicié la instalación de Nessus.
+Para configurar la instalación, hay que abrir un navegador y acceder a la dirección **localhost:8834**
 
-| Segmento | Base       | Tamaño     | Límite     |
-| -------- | ---------- | ---------- | ---------- |
-| 0xA321   | 0x85434520 | 0x00005218 | 0x85439738 |
-| 0xA322   | 0xBA41002E | 0x00003FD1 | 0xBA413FFF |
-| 0xA323   | 0x226A5722 | 0x00004D3D | 0x226AA45F |
-| 0xA324   | 0xF01809AC | 0x00000053 | 0xF01809FF |
-| 0xA325   | 0x226CA460 | 0x0000AAFF | 0x226D4F5F |
-| 0xA326   | 0x4951B4D8 | 0x0000F424 | 0x4952A8FC |
+![10 0](https://github.com/user-attachments/assets/3f7296b6-2a2c-4b81-a3c3-0455053f7abe)
 
-**Obtener las direcciones físicas absolutas donde termina cada segmento**
+Se ve la siguiente pantalla, donde NO hay que marcar la opción de registro online, ya que es más difícil de activar.
 
-**Dada la dirección lógica 0xA3231265, obtener la dirección física correspondiente.**
+![10 1](https://github.com/user-attachments/assets/472ea3a2-0ace-4af6-865d-4807db8e3e26)
 
-- 4D3D-1265= 15064 Está dentro del segmento 
-- 226A5722+1265 = 226A6987 
-- Su dirección física sería 0x226A6987
+El siguiente paso es elegir la versión de Nessus que se va a instalar, en mi caso (aunque no sale aquí) es la Nessus Essentials. 
 
-**Dada la dirección lógica 0xA3240265, obtener la dirección física correspondiente.**
+![10 2](https://github.com/user-attachments/assets/4fce10d4-bbe7-40cd-82ab-7bc644f6e0ed)
 
-- 53-0265= -212 
-- Se sale del segmento
+Al elegirlo, saldrá una pantalla, donde se nos pide poner el correo electrónico con el cual nos registramos y pedimos la licencia de Nessus Essentials, junto con la licencia que la gente de Tenable nos ha proporcionado. 
 
-**Dada la dirección lógica 0xA325AAFA, obtener la dirección física correspondiente.**
+Después, creamos un usuario para poder acceder y se terminará de instalar la herramienta.
 
-- AAFF – AAFA = 5 Esta dentro del segmento 
-- 226CA460 + AAFA = 226D 4F5A 
-- Su dirección física sería 0x226D4F5A
+---
 
+### Realizar escaneo
 
+Después de esperar unas 3 horas a que se terminen de instalar y compilar los plugins, ya podemos acceder a Nessus Essentials.
 
+![10 8](https://github.com/user-attachments/assets/f73ef321-b79c-4d05-b180-c1eaffe124b7)
 
+Para poder crear un nuevo escaneo, hay que darle al botón de **New Scan**.
+En mi caso, este botónno funcionaba, asi que tuve que ver el código de la página (F12) y manualmente darle al enlace que tiene ese botón para poder hacer el escaneo.
 
+![image](https://github.com/user-attachments/assets/80b11f68-35d4-45e2-897e-614d016156e0)
+
+Entonces se abrirá una pantalla donde se pueden realizar diferentes escaneos y pruebas: 
+
+![10 12](https://github.com/user-attachments/assets/3ee73d9b-1d93-408f-95ff-f507d9207c8d)
+
+Algunas pruebas no están disponibles ya que son de las versiones más avanzadas (aunque se puede solicitar una prueba gratuita).
+
+![image](https://github.com/user-attachments/assets/4eb21765-e21a-41b0-84d1-e1a5e4553dc7)
+
+Yo voy a probar un Basic Network Scan el cual consiste en un escaneo de vulnerabilidades de todos los dispositivos de red que se encuentren en la red
+
+![10 13](https://github.com/user-attachments/assets/3c52dfb1-b084-423b-9db0-506debdf66d8)
+
+En este escaneo no he necesitado configurar nada más, pero hay varias opciones de configuración, como las siguientes:
+
+**Tipo de escaneo**
+
+Donde se elige entre un escaneo de puertos comunes, o de todos los puertos 
+
+![image](https://github.com/user-attachments/assets/686175b9-a733-4d17-a706-7dc8e1edd424)
+
+**Evaluación**
+
+Donde se elige el tipo de escaneo, si queremos que sea más intenso o no: 
+
+![image](https://github.com/user-attachments/assets/b847c9fa-712d-4653-a191-d4013f01e7bc)
+
+Lo siguiente sería elegir plugins, donde podemos añadir algunos para añadir más funcionalidad al escaneo, aunque si no añadimos ninguno, no pasa nada, ay que estos escaneos ya tienen algunos implementados por defecto.
+
+![image](https://github.com/user-attachments/assets/83cff6f6-e15b-40ab-b48f-3b1b7fa9641d)
+
+Con todo explicado, inicio el escaneo y tras esperar unos minutos, finaliza: 
+
+![10 22](https://github.com/user-attachments/assets/0b65fd8b-0202-4dd0-bd61-ab6f8d267ec6)
+
+El escaneo lo realice sobre mi red, en la cual estaba activa la máquina de metasploitable, que es de donde más vulnerabilidades se han obtenido.
+
+En el apartado Vulnerabilitles encontramos todas las vulnerabilidades que ha detectado el escaneo junto con su valoración y nombre. 
+Si seleccionamos una vulnerabilidad, veremos una descripción de esta, junto con una recomendación/solución para mitigarla y más información sobre la misma. 
+
+![image](https://github.com/user-attachments/assets/d19ffdd1-d3c9-4aab-9d68-64fb3fe93cf2)
