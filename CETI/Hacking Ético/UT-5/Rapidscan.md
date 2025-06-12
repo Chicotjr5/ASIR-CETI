@@ -104,15 +104,3 @@ En el apartado Vulnerabilitles encontramos todas las vulnerabilidades que ha det
 Si seleccionamos una vulnerabilidad, veremos una descripción de esta, junto con una recomendación/solución para mitigarla y más información sobre la misma. 
 
 ![image](https://github.com/user-attachments/assets/d19ffdd1-d3c9-4aab-9d68-64fb3fe93cf2)
-
-
-
-
-
-
-
-
-
-
-
-
