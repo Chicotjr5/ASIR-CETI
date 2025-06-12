@@ -75,7 +75,7 @@ Paso el archivo que se ha generado a txt y al revisarlo se distinguen las siguie
 **Cabeceras de Seguridad HTTP Ausentes **
 
 - X-Frame-Options no presente
--   Permite ataques de Clickjacking
+ - Permite ataques de Clickjacking
 - X-Content-Type-Options no presente
 - X-XSS-Protection aparentemente ausente
 
