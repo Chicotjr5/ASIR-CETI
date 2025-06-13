@@ -1,4 +1,5 @@
-## Índice
+<details>
+  <summary><h2>Índice</h2></summary>
 
 - [Introducción](#introducción)
 - [Obtener imagen del disco](#obtener-imagen-del-disco)
@@ -27,6 +28,8 @@
 - [Almacenamiento de reglas de excepciones en cortafuegos](#almacenamiento-de-reglas-de-excepciones-en-cortafuegos)
 - [Almacenamiento de la asociación extensión y programa que los abre](#almacenamiento-de-la-asociación-extensión-y-programa-que-los-abre)
 - [Almacenamiento del registro. Lista de aplicaciones instaladas](#almacenamiento-del-registro-lista-de-aplicaciones-instaladas)
+
+</details>
 
 ## Introducción
 
