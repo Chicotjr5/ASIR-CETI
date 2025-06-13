@@ -1,7 +1,7 @@
-## Índice
+<details>
+  <summary><h2>Índice</h2></summary>
 
 - [Introducción](#introducción)
-
 - [KERBEROS](#kerberos)
   - [Explicación](#explicación)
   - [Proceso de autenticación](#proceso-de-autenticación)
@@ -19,7 +19,7 @@
   - [Configuración](#configuración-1)
   - [Cliente](#cliente-1)
 
-
+</details>
 
 ## Introducción
 
