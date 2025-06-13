@@ -1,4 +1,5 @@
-## Índice
+<details>
+  <summary><h2>Índice</h2></summary>
 
 - [Introducción](#introducción)
 - [Escalar privilegios](#escalar-privilegios)
@@ -7,6 +8,7 @@
   - [Base de datos](#base-de-datos)
   - [Inyección SQL](#inyección-sql)
 
+</details>
 
 ## Introducción
 
