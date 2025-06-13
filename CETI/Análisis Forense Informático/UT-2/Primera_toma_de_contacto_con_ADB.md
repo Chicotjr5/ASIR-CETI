@@ -1,9 +1,12 @@
-## Índice
+<details>
+  <summary><h2>Índice</h2></summary>
 
 - [Introducción](#introducción)
 - [Primera toma de contacto](#primera-toma-de-contacto)
 - [Acceder al móvil](#acceder-al-móvil)
 - [Borrar patrón de desbloqueo del móvil](#borrar-patrón-de-desbloqueo-del-móvil)
+
+</details>
 
 ## Introducción
 En esta práctica se va a instalar adb. 
