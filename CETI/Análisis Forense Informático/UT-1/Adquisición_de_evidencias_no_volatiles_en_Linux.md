@@ -1,4 +1,5 @@
-## Índice
+<details>
+  <summary><h2>Índice</h2></summary>
 
 - [Introducción](#introducción)
 - [Extraer el conjunto de ficheros log](#extraer-el-conjunto-de-ficheros-log)
@@ -27,6 +28,7 @@
 - [Conclusiones](#conclusiones)
 - [Tabla de incidencias](#tabla-de-incidencias)
 
+</details>
 
 ## Introducción
 
