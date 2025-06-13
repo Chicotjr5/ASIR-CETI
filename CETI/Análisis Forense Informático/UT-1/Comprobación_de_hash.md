@@ -1,8 +1,11 @@
-## Índice
+<details>
+  <summary><h2>Índice</h2></summary>
 
 - [Introducción](#introduccion)
 - [Parte 1](#parte-1)
 - [Parte 2](#parte-2)
+
+</details>
 
 ## Introducción
 
