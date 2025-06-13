@@ -1,5 +1,23 @@
-## Índice
+<details>
+  <summary><h2>Índice</h2></summary>
 
+- [Introducción](#introducción)
+- [Obtener volcado de RAM](#obtener-volcado-de-ram)
+- [Obtener archivos de paginación y segmentación](#obtener-archivos-de-paginación-y-segmentación)
+- [Almacenar servicios en ejecución](#almacenar-servicios-en-ejecución)
+- [Almacenar lista de procesos en ejecución](#almacenar-lista-de-procesos-en-ejecución)
+- [Almacenar usuarios logueados](#almacenar-usuarios-logueados)
+- [Almacenar configuraciones de la tarjeta de red](#almacenar-configuraciones-de-la-tarjeta-de-red)
+- [Almacenar tablas ARP](#almacenar-tablas-arp)
+- [Almacenar estado de las tablas NetBIOS](#almacenar-estado-de-las-tablas-netbios)
+- [Almacenar configuraciones de las interfaces de red](#almacenar-configuraciones-de-las-interfaces-de-red)
+- [Almacenar configuraciones de las interfaces de red](#almacenar-configuraciones-de-las-interfaces-de-red)
+- [Almacenar las consultas DNS](#almacenar-las-consultas-dns)
+- [Almacenar estado de las conexiones](#almacenar-estado-de-las-conexiones)
+- [Almacenar las carpetas compartidas](#almacenar-las-carpetas-compartidas)
+
+
+</details>
 
 ## Introducción
 
@@ -211,7 +229,7 @@ Obtengo el hash y lo guardo en el archivo hash.txt.
 
 ---
 
-### Almacenar las consultas dns
+### Almacenar las consultas DNS
 
 Con un nslookup Google.com podemos ver las consultas dns que se han realizado en el equipo hacia el dominio de Google.com.
 
