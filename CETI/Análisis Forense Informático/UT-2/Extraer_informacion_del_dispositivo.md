@@ -1,4 +1,6 @@
-## Índice
+<details>
+  <summary><h2>Índice</h2></summary>
+	
 - [Introducción](#introducción)
 - [Extracción de archivos log](#extracción-de-archivos-log)
 - [Obtén toda la información del sistema](#obtén-toda-la-información-del-sistema)
@@ -15,6 +17,7 @@
 - [Visualizar información más detallada del paquete](#visualizar-información-más-detallada-del-paquete)
 - [Realizar una copia bit a bit con ADB](#realizar-una-copia-bit-a-bit-con-adb)
 
+</details>
 
 ## Introducción
 
