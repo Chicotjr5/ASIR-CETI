@@ -1,4 +1,5 @@
-## Índice
+<details>
+  <summary><h2>Índice</h2></summary>
 
 - [Introducción](#introducción)
 - [Instalar y configurar Raspberry Pi](#instalar-y-configurar-raspberry-pi)
@@ -16,6 +17,7 @@
   - [Permitir conexiones pasivas, desde el puerto 50000-51000](#permitir-conexiones-pasivas-desde-el-puerto-50000-51000)
   - [Permitir el tráfico saliente necesario para actualizaciones de software y DNS](#permitir-el-tráfico-saliente-necesario-para-actualizaciones-de-software-y-dns)
 
+</details>
 
 ## Introducción
 
