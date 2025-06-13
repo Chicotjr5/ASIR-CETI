@@ -1,4 +1,5 @@
-## Índice
+<details>
+  <summary><h2>Índice</h2></summary>
 
 - [Introducción](#introducción)
 - [Crear página web](#crear-página-web)
@@ -9,6 +10,8 @@
   - [Instalación de reglas](#instalación-de-reglas)
   - [Comprobar funcionamiento](#comprobar-funcionamiento)
   - [¿Qué otras reglas se podrían haber implementado?](#qué-otras-reglas-se-podrían-haber-implementado)
+
+</details>
 
 ## Introducción
 
