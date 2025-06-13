@@ -1,4 +1,5 @@
-## Índice
+<details>
+  <summary><h2>Índice</h2></summary>
 
 - [Introducción](#introducción)
 - [Descargar correos y HASH](#descargar-correos-y-obtener-hash)
@@ -9,6 +10,8 @@
 - [SPF, DKIM, DMARC](#spf-dkim-dmarc)
 - [Obtener información con el comando dig](#obtener-información-con-el-comando-dig)
 - [Uso de otras herramientas](#uso-de-otras-herramientas)
+
+</details>
 
 ## Introducción
 
