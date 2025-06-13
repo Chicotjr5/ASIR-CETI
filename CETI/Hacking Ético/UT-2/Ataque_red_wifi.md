@@ -1,10 +1,12 @@
-## Índice
+<details>
+  <summary><h2>Índice</h2></summary>
 
 - [Introducción](#introducción)
 - [Pasos previos](#pasos-previos)
 - [Instalación e inicio](#instalación-e-inicio)
 - [Ataque](#ataque)
 
+</details>
 
 ## Introducción
 
