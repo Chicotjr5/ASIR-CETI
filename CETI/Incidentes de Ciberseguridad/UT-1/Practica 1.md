@@ -1,4 +1,4 @@
-```pyhton
+```bash
 
 import os
 
