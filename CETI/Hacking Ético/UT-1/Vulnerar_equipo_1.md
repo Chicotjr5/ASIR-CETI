@@ -1,10 +1,13 @@
-## Índice
+<details>
+  <summary><h2>Índice</h2></summary>
 
 - [Introducción](#introducción)
 - [Preparación](#preparación)
 - [Escaneo de la red](#escaneo-de-la-red)
 - [Búsqueda de vulnerabilidades](#búsqueda-de-vulnerabilidades)
 - [Realizar ataque](#realizar-ataque)
+
+</details>
 
 ---
 
