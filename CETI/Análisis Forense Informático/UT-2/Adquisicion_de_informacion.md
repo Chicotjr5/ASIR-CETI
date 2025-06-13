@@ -1,4 +1,5 @@
-## Índice
+<details>
+  <summary><h2>Índice</h2></summary>
 
 - [Introducción](#introducción)
 - [MOBILEdit - LG](#mobiledit---lg)
@@ -10,6 +11,7 @@
   - [Crear nuevo caso y preparar extracción](#crear-nuevo-caso-y-preparar-extracción)
   - [Ver datos extraídos](#ver-datos-extraídos)
 
+</details>
 
 ## Introducción
 
