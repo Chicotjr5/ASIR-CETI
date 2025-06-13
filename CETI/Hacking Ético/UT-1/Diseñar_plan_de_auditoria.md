@@ -1,37 +1,34 @@
-## Índice
+<details>
+  <summary><h2>Índice</h2></summary>
 
 - [Introducción](#introducción)
-
 - [Auditoría del servidor web](#auditoría-del-servidor-web)
   - [Activos incluidos](#activos-incluidos)
   - [Justificación](#justificación)
   - [Tipo de auditoría](#tipo-de-auditoría)
   - [Objetivo](#objetivo)
-
 - [Auditoría del servidor de correo](#auditoría-del-servidor-de-correo)
   - [Activos incluidos](#activos-incluidos-1)
   - [Justificación](#justificación-1)
   - [Tipo de auditoría](#tipo-de-auditoría-1)
   - [Objetivo](#objetivo-1)
-
 - [Auditoría del servidor VPN](#auditoría-del-servidor-vpn)
   - [Activos incluidos](#activos-incluidos-2)
   - [Justificación](#justificación-2)
   - [Tipo de auditoria](#tipo-de-auditoria)
   - [Objetivo](#objetivo-2)
-
 - [Auditoría de las políticas de seguridad](#auditoría-de-las-políticas-de-seguridad)
   - [Activos incluidos](#activos-incluidos-3)
   - [Justificación](#justificación-3)
   - [Tipo de auditoría](#tipo-de-auditoría-2)
   - [Objetivo](#objetivo-3)
-
 - [Auditoría de Seguridad de la Red Interna](#auditoría-de-seguridad-de-la-red-interna)
   - [Activos incluidos](#activos-incluidos-4)
   - [Justificación](#justificación-4)
   - [Tipo de auditoría](#tipo-de-auditoría-3)
   - [Objetivo](#objetivo-4)
 
+</details>
 
 ## Introducción:
 
