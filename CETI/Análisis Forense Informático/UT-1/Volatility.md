@@ -1,5 +1,7 @@
 
-## Índice
+<details>
+  <summary><h2>Índice</h2></summary>
+	
 - [Introducción](#introducción)
 - [Instalación](#instalación)
 - [¿Cuál es el perfil más apropiado de Volatility para este volcado de memoria?](#cuál-es-el-perfil-más-apropiado-de-volatility-para-este-volcado-de-memoria)
@@ -17,6 +19,8 @@
 - [¿Qué se había escrito en el block de notas (notepad.exe) cuando la memoria fue capturada?](#qué-se-había-escrito-en-el-block-de-notas-notepadexe-cuando-la-memoria-fue-capturada)
 - [¿Cuál es el nombre corto del archivo en el registro 59045?](#cuál-es-el-nombre-corto-del-archivo-en-el-registro-59045)
 - [Este ordenador fue explotado con meterpreter ¿Cuál fue el PID infectado?](#este-ordenador-fue-explotado-con-meterpreter-cuál-fue-el-pid-infectado)
+
+</details>
 
 ## Introducción
 
