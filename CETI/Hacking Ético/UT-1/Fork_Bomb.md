@@ -1,10 +1,13 @@
-## Índice
+<details>
+  <summary><h2>Índice</h2></summary>
 
 - [Introducción](#introducción)
 - [Fork Bomb](#fork-bomb)
 - [Formas de mitigarla](#formas-de-mitigarla)
   - [Limitar el nº de procesos](#limitar-el-nº-de-procesos)
 - [Formas de monitorizarlo](#formas-de-monitorizarlo)
+
+</details>
 
 ## Introducción
 
