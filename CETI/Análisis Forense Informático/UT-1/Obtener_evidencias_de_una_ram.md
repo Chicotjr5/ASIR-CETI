@@ -1,4 +1,5 @@
-## Índice
+<details>
+  <summary><h2>Índice</h2></summary>
 
 - [Introducción](#introducción)
 - [Capturar la RAM](#capturar-la-ram)
@@ -15,6 +16,8 @@
 - [Extraer información de logs de autenticación](#extraer-información-de-logs-de-autenticación)
 - [Extraer información de las aplicaciones](#extraer-información-de-las-aplicaciones)
 - [Extraer información de los usuarios sudoers](#extraer-información-de-los-usuarios-sudoers)
+
+</details>
 
 ## Introducción
 
