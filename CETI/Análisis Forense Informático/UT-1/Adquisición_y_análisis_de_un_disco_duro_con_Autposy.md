@@ -1,4 +1,5 @@
-## Índice
+<details>
+  <summary><h2>Índice</h2></summary>
 
 - [Introducción](#introducción)
 - [Obtener imagen de disco](#obtener-imagen-de-disco)
@@ -19,6 +20,7 @@
   - [Acotación a horas de un día y posteriormente a minutos de una de las horas elegidas](#acotación-a-horas-de-un-día-y-posteriormente-a-minutos-de-una-de-las-horas-elegidas)
 - [Generar un informe](#generar-un-informe)
 
+</details>
 
 ## Introducción
 
