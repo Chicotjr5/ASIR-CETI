@@ -2,6 +2,12 @@
   <summary><h2>Índice</h2></summary>
   
  - [Introducción](#introducción)
+ - [Reconocimiento](#reconocimiento)
+ - [Escaneo](#escaneo)
+ - [Obtener acceso](#obtener-acceso)
+ - [Ataque](#ataque)
+ - [Limpiar rastro](#limpiar-rastro)
+ - [Como protegerse](#como-protegerse)
 </details>
 
 ---
