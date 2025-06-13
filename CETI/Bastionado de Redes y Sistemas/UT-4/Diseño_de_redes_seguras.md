@@ -1,7 +1,7 @@
-## Índice
+<details>
+  <summary><h2>Índice</h2></summary>
 
 - [Introducción](#introducción)
-
 - [Ejercicio 1](#ejercicio-1)
   - [Configuración de PCs](#configuración-de-pcs)
     - [VLAN 10](#vlan-10)
@@ -45,6 +45,8 @@
   - [Soluciones](#soluciones-2)
   - [MAC Flooding – Inundación de la tabla CAM](#mac-flooding--inundación-de-la-tabla-cam)
     - [Soluciones](#soluciones-3)
+
+</details>
 
 ## Introducción
 
