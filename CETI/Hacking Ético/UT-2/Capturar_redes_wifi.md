@@ -1,10 +1,19 @@
+<details>
+  <summary><h2>Índice</h2></summary>
+  
+- [Introducción](#introducción)
+- [Wigle Web](#wigle-web)
+- [Wigle App](#wigle-app)
+  
+</details>
+
 ### Introducción
 
 En esta práctica se va a ver la herramienta **Wigle** que permite obtener información de redes Wifi.
 
 
 ---
-### Wigle - Web
+### Wigle Web
 
 https://wigle.net es una herramienta que obtiene información sobre diferentes redes, como:
 
@@ -54,7 +63,7 @@ Así que con esta vulnerabilidad descubierta, se podría intentar atacar esta re
 
 ---
 
-### Wigle - App
+### Wigle App
 
 Wigle también tiene una aplicación donde puedo escanear redes Wifi que se encuentren cerca de mi ubicación
 
