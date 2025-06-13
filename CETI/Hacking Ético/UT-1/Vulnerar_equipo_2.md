@@ -1,9 +1,12 @@
-## Índice
+<details>
+  <summary><h2>Índice</h2></summary>
 
 - [Introducción](#introducción)
 - [Reconocimiento](#reconocimiento)
 - [Escaneo](#escaneo)
 - [Atacar servicios](#atacar-servicios)
+
+</details>
 
 ---
 
