@@ -1,9 +1,12 @@
-## Índice
+<details>
+  <summary><h2>Índice</h2></summary>
 
 - [Introducción](#introducción)
 - [Instalar SO](#instalar-so)
 - [Crear servidor VPN](#crear-servidor-vpn)
 - [Cliente](#cliente)
+
+</details>
 
 ## Introducción
 
