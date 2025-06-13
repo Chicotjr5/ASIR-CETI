@@ -1,8 +1,11 @@
-## Índice
+<details>
+  <summary><h2>Índice</h2></summary>
 
 - [Introducción](#introducción)
 - [Rootear Huawei P8 Lite](#rootear-huawei-p8-lite)
 - [Rootear Xiaomi Redmi Note 9](#rootear-xiaomi-redmi-note-9)
+
+</details>
 
 ## Introducción
 
