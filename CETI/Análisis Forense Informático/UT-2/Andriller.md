@@ -1,4 +1,5 @@
-## Índice
+<details>
+  <summary><h2>Índice</h2></summary>
 
 - [Introducción](#introducción)
 - [Instalación](#instalación)
@@ -10,6 +11,7 @@
   - [ADB](#adb)
 - [Realizar copia](#realizar-copia)
 
+</details>
 
 ## Introducción
 
