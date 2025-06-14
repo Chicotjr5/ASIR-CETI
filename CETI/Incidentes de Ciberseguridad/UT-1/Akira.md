@@ -2,6 +2,27 @@
   <summary><h2>Índice</h2></summary>
   
  - [Introducción](#introducción)
+  - [Segurizar la máquina](#segurizar-la-máquina)
+    - [Configuración de la máquina](#configuración-de-la-máquina)
+      - [Red](#red)
+      - [Carpetas compartidas](#carpetas-compartidas)
+    - [Portapapeles](#portapapeles)
+    - [Configuración del sistema operativo](#configuración-del-sistema-operativo)
+      - [Actualizar](#actualizar)
+      - [Firewall](#firewall)
+      - [Comprobar tráfico saliente](#comprobar-tráfico-saliente)
+      - [Comprobar tráfico entrante](#comprobar-tráfico-entrante)
+        - [VPN](#vpn)
+        - [Navegador](#navegador)
+    - [Prueba de funcionamiento](#prueba-de-funcionamiento)
+- [Investigación sobre el ransomware Akira](#investigación-sobre-el-ransomware-akira)
+  - [Dark Web](#dark-web)
+  - [Análisis técnico](#análisis-técnico)
+  - [Herramientas de descifrado](#herramientas-de-descifrado)
+  - [Flujo de ataque](#flujo-de-ataque)
+  - [Páginas web](#páginas-web)
+- [Prueba de ataque](#prueba-de-ataque)
+- [Usar herramientas de descifrado](#usar-herramientas-de-descifrado)
 </details>
 
 ---
