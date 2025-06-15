@@ -2,6 +2,9 @@
   <summary><h2>Índice</h2></summary>
   
  - [Introducción](#introducción)
+ - [Ataque](#ataque)
+ - [Intentar replicar el ataque](#intentar-replicar-el-ataque)
+ - [Conclusiones](#conclusiones)
 </details>
 
 ---
@@ -96,7 +99,9 @@ Esta es la página **afiliate.htm**
 
 Como se puede observar ya no se puede realizar el mismo ataque ya que el administrador del sitio web lo ha bloqueado. 
 
---- Conclusiones
+--- 
+
+### Conclusiones
 
 Lo que más me llama la atención de este ataque es el hecho de la pobre seguridad que tenía un sitio web de una organización tan importante como es **CCOO** pudiendo acceder a archivos importantísimos como **/etc/passwd** o el hecho de 
 que haya credenciales de bases de datos o credenciales del sistema en texto plano. 
