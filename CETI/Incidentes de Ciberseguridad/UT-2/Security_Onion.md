@@ -2,6 +2,8 @@
   <summary><h2>Índice</h2></summary>
   
  - [Introducción](#introducción)
+ - [](url)
+ - [](url)
  - 
 </details>
 
@@ -17,7 +19,7 @@ Es una herramienta de código abierto ampliamente utilizada en el ámbito de la 
 
 Proporciona una plataforma integral que combina diversas herramientas de análisis de red y host, permitiendo realizar tareas como detección de intrusiones, análisis de registros, y respuesta a incidentes.
 
-#### Características
+#### Características:
 
 **IDS**
 - Integra herramientas como Suricata y Zeek para analizar el tráfico de red en tiempo real y detectar actividades sospechosas.
@@ -45,7 +47,7 @@ Proporciona una plataforma integral que combina diversas herramientas de anális
 **Análisis y visualización**
 - Integraciones gráficas basadas en ELK STACK para gestionar y enviar datos.
 
-#### Usos
+#### Usos:
 
 **Monitorizar la red**
 - Intrusiones
@@ -62,7 +64,7 @@ Proporciona una plataforma integral que combina diversas herramientas de anális
 - Aprendizaje y experimentación en un entorno controlado.
 
 
-#### Instalación
+#### Versiones:
 
 Al instalar **Security Onion** se pueden elegir varios tipos de instalación. 
 
@@ -105,7 +107,7 @@ En mi caso voy a instalar las versiones **STANDALONE y Desktop**.
 
 ### Standalone
 
-#### Instalación y configuración
+#### Instalación y configuración:
 
 Ya con la parte teórica realizada, paso a la parte práctica, donde he creado una máquina virtual con la siguiente configuración: 
 
@@ -197,7 +199,7 @@ Ya con esto, se crea un pequeño resumen de la configuración del equipo e insta
 ![2 18](https://github.com/user-attachments/assets/bb5011c1-3336-4aec-b6f9-5531778364bc)
 
 
-#### Iniciar el sistema
+#### Iniciar el sistema:
 
 Después de esperar unas 2-4 horas se instala el sistema, se reinicia y puedo acceder a él
 
