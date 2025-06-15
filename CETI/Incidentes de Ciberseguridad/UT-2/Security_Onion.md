@@ -2,9 +2,14 @@
   <summary><h2>Índice</h2></summary>
   
  - [Introducción](#introducción)
- - [](url)
- - [](url)
- - 
+  - [Características](#características)
+  - [Componentes principales](#componentes-principales)
+  - [Usos](#usos)
+  - [Versiones](#versiones)
+- [Standalone](#standalone)
+  - [Instalación y configuración](#instalación-y-configuración)
+    - [Iniciar el sistema](#iniciar-el-sistema)
+- [Desktop](#desktop)
 </details>
 
 ---
