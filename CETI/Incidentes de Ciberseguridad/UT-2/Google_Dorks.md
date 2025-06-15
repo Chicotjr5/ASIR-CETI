@@ -1,72 +1,158 @@
+<details>
+  <summary><h2>Índice</h2></summary>
+  
+ - [Introducción](#introducción)
+</details>
 
-## Índice
-- [[Practica 1#Índice|Índice]]
-- [[Practica 1#Algoritmos|Algoritmos]]
-- [[Practica 1#Ejercicio de paginación|Ejercicio de paginación]]
-- [[Practica 1#Ejercicio de segmentación|Ejercicio de segmentación]]
+---
 
+## Introducción
 
-### Algoritmos
+Los Google Dorks consiste en la realización de búsquedas avanzadas usando operadores especiales de Google. 
+Estas búsquedas permiten encontrar información de todo tipo en Internet, localizando bases de datos, páginas de login, logs, dispositivos IoT etc.
 
+---
 
+### Realizar búsquedas
 
-### Ejercicio de paginación
+intext:password filetype:log - busca archivos de registro (.log) que contienen términos relacionados con contraseñas. 
+Me he encontrado con el siguiente [archivo](https://kc.200888net.com/Operate/xiaochengxu/source/runtime/log/202405/05_sql.log)
 
-Tenemos un sistema operativo de 32 bits en el que la asignación de memoria se realiza mediante paginación. 
-Cada página/marco ocupa 1 MB. De los 32 bits de la dirección de memoria, se usan 12 bits para especificar la página. 
-Se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de páginas:
+![image](https://github.com/user-attachments/assets/e48dea49-ec58-4f7b-935b-0215f28e4b7b)
 
-| Página | Marco |
-| ------ | ----- |
-| 0x59B  | 0x123 |
-| 0x59C  | 0xA05 |
-| 0x59D  | 0x59F |
-| 0x59E  | 0x799 |
-| 0x59F  | 0xF8B |
-| 0x59A0 | 0x22D |
+**intitle:"Index of" htpasswd** 
+Busca directorios públicos en servidores web que contengan archivos denominados .htpasswd
 
-Dada la dirección lógica 0x59F2A5A0, obtener la dirección física correspondiente:
-- 0xF8B2A5A0
+Con este dork he encontrado la siguiente [url](https://acaciaconsulting.ca/private/phpmyadmin/) la cual es un directorio que contiene los siguientes archivos:
 
-Dada la dirección lógica 0x5A02A59F, obtener la dirección física correspondiente.
-- 0x22DA59F
+![image](https://github.com/user-attachments/assets/4fd2b592-6772-4088-b404-6c800adcc280)
 
-Dada la dirección lógica 0x59C4DE87, obtener la dirección física correspondiente
-- 0xA054DE87
+El contenido de esos archivos son los siguientes: 
 
-### Ejercicio de segmentación
+![image](https://github.com/user-attachments/assets/bcac5c5a-54d7-4f05-9a3c-73a90ed43cdd)
 
-En un sistema de de 32 bits se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de segmentos (el tamaño viene expresado de forma relativa la base):
+↓
 
-| Segmento | Base       | Tamaño     | Límite     |
-| -------- | ---------- | ---------- | ---------- |
-| 0xA321   | 0x85434520 | 0x00005218 | 0x85439738 |
-| 0xA322   | 0xBA41002E | 0x00003FD1 | 0xBA413FFF |
-| 0xA323   | 0x226A5722 | 0x00004D3D | 0x226AA45F |
-| 0xA324   | 0xF01809AC | 0x00000053 | 0xF01809FF |
-| 0xA325   | 0x226CA460 | 0x0000AAFF | 0x226D4F5F |
-| 0xA326   | 0x4951B4D8 | 0x0000F424 | 0x4952A8FC |
+![image](https://github.com/user-attachments/assets/63e6163e-dfe0-473d-844a-8c7fe4e4e7cf)
 
-**Obtener las direcciones físicas absolutas donde termina cada segmento**
+Si salgo del directorio, me encuentro con otros 2 archivos: 
 
-**Dada la dirección lógica 0xA3231265, obtener la dirección física correspondiente.**
+![image](https://github.com/user-attachments/assets/ae5492cc-c879-4a59-beaa-63bc72cd85c3)
 
-- 4D3D-1265= 15064 Está dentro del segmento 
-- 226A5722+1265 = 226A6987 
-- Su dirección física sería 0x226A6987
+↓
 
-**Dada la dirección lógica 0xA3240265, obtener la dirección física correspondiente.**
+![image](https://github.com/user-attachments/assets/26d88ea1-d010-420c-bd0f-7fc1910991bf)
 
-- 53-0265= -212 
-- Se sale del segmento
+↓
 
-**Dada la dirección lógica 0xA325AAFA, obtener la dirección física correspondiente.**
+![image](https://github.com/user-attachments/assets/9d8fa8ac-abdb-4e03-a108-2e03a69f0ea4)
 
-- AAFF – AAFA = 5 Esta dentro del segmento 
-- 226CA460 + AAFA = 226D 4F5A 
-- Su dirección física sería 0x226D4F5A
+Si voy para atrás, llego a la página: https://acacia.consulting.ca
 
+![image](https://github.com/user-attachments/assets/0190e723-2eb2-46e7-9d95-250c1fa14e7b)
 
+---
+
+**intitle:"index of" "/usernames"** 
+Busco directorios indexados que contengan la palabra username.
+
+Este enlace: http://www1.udel.edu/CIS/181h/pconrad/06S/work/labs/lab07/
+Contiene un directorio con un archivo llamado **usernames.txt** perteneciente al domino de la **Universidad de Delaware**:
+
+![image](https://github.com/user-attachments/assets/e9c71c59-8119-4dc5-a17b-2786aa583763)
+
+El contenido de este archivo no es lo que más me llama la atención, si no que se puede retroceder y acceder a más directorios, hasta llegar a la que parece ser la raíz: 
+
+![image](https://github.com/user-attachments/assets/af19b187-6590-46fa-86c8-8a70b35a82ab)
+
+La mayoría de los archivos/directorios que se encuentran tienen son bastante antiguos, teniendo algunos casi 20 años. 
+Pero el directorio con información más reciente es el 106h así que accedo a él para ver la información que contiene.
+
+![image](https://github.com/user-attachments/assets/2545e52d-55a8-4ead-ac12-3879accc42e6)
+
+Contiene 3 archivos siendo el más actual el **20F** 
+Accedo a él y se ve la siguiente página:
+
+![image](https://github.com/user-attachments/assets/6b655096-003c-4650-98ba-67e1a49c4abe)
+
+Esta página está relacionada con el curso CISC106 Honors: General Computer Science de la Universidad de Delaware para el otoño de 2020. Ofrece recursos para aprender los fundamentos de la programación y la ciencia computacional, incluyendo programación con bucles, recursión, estructuras de datos, y algoritmos básicos. 
+
+Nada que me interese mucho, quitando que tenemos varios nombres y correos: 
+
+![image](https://github.com/user-attachments/assets/62ffd2f9-a739-457d-b63c-758cb1a114b3)
+
+Pero estas páginas contienen información personal de profesores de esta universidad y si veo otras páginas, me encuentro con información como la siguiente: 
+
+![image](https://github.com/user-attachments/assets/84f1608b-4845-4a15-a5d0-2c863158cb71)
+
+Nombre, dirección de su oficina, horarios en los que esta, correo
+
+https://www1.udel.edu/CIS/
+
+---
+
+**intitle:"index of" "tomcat-users.xml**
+
+Proporciona el nombre de usuario, la contraseña y la contraseña del servidor web Apache Tomcat y detalles de roles.
+
+He encontrado el siguiente sitio:
+
+http://103.78.9.106/tools/apache-tomcat-8.5.50/conf/
+
+![image](https://github.com/user-attachments/assets/12c808f6-4982-4734-917e-28913754ad05)
+
+Este directorio contiene la configuración del **servidor apache-tomcat**. 
+Si salgo de este directorio y voy al directorio raíz se puede observar el archivo de configuración de Apache además de un fichero **content.xml** 
+
+![image](https://github.com/user-attachments/assets/96ef1fbd-636c-4720-ba7a-fb3f1c22fa27)
+
+Este archivo de configuración define recursos JNDI en un archivo **<Context>** para una aplicación Java que utiliza conexiones a bases de datos MySQL. 
+Cada recurso especifica un DataSource con parámetros como: 
+
+- **Nombre del recurso**
+  -  jdbc/one_lis_dev, jdbc/nasional.
+- **Credenciales**
+  - Nombres de usuario y contraseñas.
+- **Conexión**
+  -  URLs como jdbc:mysql://localhost:3306/one.
+- **Optimización**
+  -  Parámetros para gestionar conexiones como maxActive, maxIdle, y removeAbandoned. 
+
+Y el contenido del archivo **000.defaul.conf**:
+
+![image](https://github.com/user-attachments/assets/8017f730-9cc1-4254-b391-b043a2ce99c1)
+
+Si intento ir para atrás, me sale una página de **Login de Pramita Lab**
+
+![image](https://github.com/user-attachments/assets/723ecbfc-a774-4773-aa9c-0475e6eca2f7)
+
+Pramita Lab es una red de laboratorios médicos fundada en Indonesia, especializada en análisis clínicos, diagnósticos, y servicios relacionados con la salud.
+
+Si la IP 103.78.9.106 (que salía antes en la url) la busco en shodan me saldrá información sobre la misma: https://www.shodan.io/host/103.78.9.106 
+
+![image](https://github.com/user-attachments/assets/adeabbc0-ec95-4f74-a03e-f0e4653a9fc2)
+
+↓
+
+![image](https://github.com/user-attachments/assets/f7da6e79-0ea2-430e-9236-530a4e164709)
+
+↓
+
+![image](https://github.com/user-attachments/assets/d3518840-e444-4ca8-bae7-9edae03ab7ef)
+
+---
+
+**intitle:"index of" "passwords" gov**
+
+Busca directorios de acceso público en sitios web gubernamentales que contengan archivos o listados con la palabra "contraseñas"
+
+He encontrado la URL - https://www.openaccessgovernment.org/wpadmin/js/?SA – en la cual estoy dentro del directorio wp-admin/js del dominio 
+
+![image](https://github.com/user-attachments/assets/77fe24dc-d75d-4bef-87f5-6f81e68809b5)
+
+Este directorio guarda los scripts que contienen funciones específicas para mejorar la funcionalidad y la experiencia del usuario en el panel de administración.
+
+Por supuesto es una página en Wordpress y también deja acceder a **wp-login** 
 
 
 
