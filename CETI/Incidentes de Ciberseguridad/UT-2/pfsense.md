@@ -1,9 +1,21 @@
 <details>
   <summary><h2>Índice</h2></summary>
   
- - [Introducción](#introducción)
- - [](url)
- - [](url)
+- [Introducción](#introducción)
+- [Configurar pfSense](#configurar-pfsense)
+- [Ubuntu-Red_NAT](#ubuntu-red_nat)
+  - [Comprobar funcionamiento](#comprobar-funcionamiento)
+- [Metasploitable](#metasploitable)
+  - [Configurar](#configurar)
+  - [Comprobación](#comprobación)
+- [Ubuntu-Red_Interna](#ubuntu-red_interna)
+  - [Configurar](#configurar-1)
+  - [Comprobar](#comprobar)
+- [Parrot](#parrot)
+  - [Configurar](#configurar-2)
+  - [Comprobar](#comprobar-1)
+
+
 </details>
 
 ---
