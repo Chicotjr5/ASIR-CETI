@@ -1,11 +1,17 @@
 <details>
   <summary><h2>Índice</h2></summary>
   
- - [Introducción](#introducción)
- - 
- - 
- - 
- - 
+- [Introducción](#introducción)
+- [Modo promiscuo](#modo-promiscuo)
+- [Función principal](#función-principal)
+- [Cambiar fecha y hora](#cambiar-fecha-y-hora)
+- [Filtros predeterminados](#filtros-predeterminados)
+- [Conversación](#conversación)
+- [Estadísticas](#estadísticas)
+- [Usar herramientas externas](#usar-herramientas-externas)
+- [Capturar tráfico HTTP](#capturar-tráfico-http)
+- [Capturar tráfico HTTPS](#capturar-tráfico-https)
+
 </details>
 
 ---
