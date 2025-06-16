@@ -36,7 +36,9 @@ Se estima que se comprometieron los datos de  **34.418.270 millones de conductor
 
 Con toda esta información los atacantes podrían realizar otro tipo de ataques contra los afectados como suplantación de identidad, estafas etc. 
 Tras conocerse este hecho, la DGT se puso en contacto con la Guardia Civil y con el CCN-CERT. 
-Además cuestionaron la veracidad de esa filtración, argumentando que el nº de conductores en España es menor, aunque según la siguiente [fuente](https://es.statista.com/estadisticas/653847/conductores-con-permiso-de-conducir-espana/) el nº de personas con permiso de conducir asciende hasta casi los 28 millones de conductores en el año 2023
+Además cuestionaron la veracidad de esa filtración, argumentando que el nº de conductores en España es menor, aunque según la siguiente [fuente](https://es.statista.com/estadisticas/653847/conductores-con-permiso-de-conducir-espana/) el nº de personas con permiso de conducir asciende hasta casi los 28 millones de conductores en el año 2023.
+
+![image](https://github.com/user-attachments/assets/18bf718c-a84d-4223-a931-d1ecd53b8050)
 
 
 Pero es que el nº de vehículos en España es de casi 38 millones de unidades a fecha de 2023 - [Enlace](https://motor.elpais.com/actualidad/cuantos-coches-hay-en-espana-el-parque-de-automoviles-se-acerca-a-una-cifra-historica/)
