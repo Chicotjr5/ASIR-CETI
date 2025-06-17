@@ -2,6 +2,13 @@
   <summary><h2>Índice</h2></summary>
   
  - [Introducción](#introducción)
+ - [Preparar máquina](#preparar-máquina)
+ - [Configurar Kali Linux](#configurar-kali-linux)
+ - [Acceso a la interfaz gráfica](#acceso-a-la-interfaz-gráfica)
+ - [Implementación de mecanismos de seguridad para:](#implementación-de-mecanismos-de-seguridad-para:)
+   - [Bloquear IPs maliciosas mediante listas negras públicas](#bloquear-ips-maliciosas-mediante-listas-negras-públicas)
+   - [Restringir el acceso a sitios web específicos](#restringir-el-acceso-a-sitios-web-específicos)
+
 </details>
 
 ---
