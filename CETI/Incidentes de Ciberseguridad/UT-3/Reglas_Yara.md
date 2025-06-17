@@ -2,7 +2,12 @@
   <summary><h2>Índice</h2></summary>
   
  - [Introducción](#introducción)
- - 
+ - [Obtener malware](#obtener-malware)
+ - [Investigar malware](#investigar-malware)
+ - [Creación de las reglas yara](#creación-de-las-reglas-yara)
+ - [YARA en internet](#yara-en-internet)
+ - [Trinity](#trinity)
+ - [Crear regla para malware](#crear-regla-para-malware)
 </details>
 
 ---
