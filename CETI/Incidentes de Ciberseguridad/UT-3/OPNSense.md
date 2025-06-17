@@ -5,7 +5,7 @@
  - [Preparar máquina](#preparar-máquina)
  - [Configurar Kali Linux](#configurar-kali-linux)
  - [Acceso a la interfaz gráfica](#acceso-a-la-interfaz-gráfica)
- - [Implementación de mecanismos de seguridad para:](#implementación-de-mecanismos-de-seguridad-para:)
+ - [Implementación de mecanismos de seguridad para](#implementación-de-mecanismos-de-seguridad-para)
    - [Bloquear IPs maliciosas mediante listas negras públicas](#bloquear-ips-maliciosas-mediante-listas-negras-públicas)
    - [Restringir el acceso a sitios web específicos](#restringir-el-acceso-a-sitios-web-específicos)
 
@@ -131,7 +131,7 @@ Al acabar, nos sale le panel de control, donde vemos información del sistema, e
 
 ---
 
-### Implementación de mecanismos de seguridad para: 
+### Implementación de mecanismos de seguridad para
 
 #### Bloquear IPs maliciosas mediante listas negras públicas. 
 
