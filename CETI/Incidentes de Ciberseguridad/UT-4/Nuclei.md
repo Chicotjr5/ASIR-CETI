@@ -2,7 +2,10 @@
   <summary><h2>Índice</h2></summary>
   
  - [Introducción](#introducción)
- - 
+ - [Escaneo controlado](#escaneo-controlado)
+ - [Plantillas](#plantillas)
+ - [Comparación](#comparación-con-nmap)
+ - [Escaneo real](escaneo-real)
 </details>
 
 ---
