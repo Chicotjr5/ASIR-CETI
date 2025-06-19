@@ -53,7 +53,7 @@ Sacará el resultado por el OUTPUT y finalizará el programa.
 Es un programa muy sencillo, pero puede haber una serie de fallos / amenazas:
 
 
-***Externas al programa***
+**Externas al programa**
 
 
 
