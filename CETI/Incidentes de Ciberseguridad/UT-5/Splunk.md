@@ -7,7 +7,7 @@
  - [Caso práctico](#caso-práctico)
   - [Versiones](#versiones)
   - [Instalación](#instalación)
-  - [Iniciar sesión y prueba:](#iniciar-sesión-y-prueba)
+  - [Iniciar sesión y prueba](#iniciar-sesión-y-prueba)
     - [Creación de un dashboard](#creación-de-un-dashboard)
     - [Desde dónde está obteniendo Splunk la información](#desde-dónde-está-obteniendo-splunk-la-información)
     - [Eventos](#eventos)
@@ -169,7 +169,7 @@ bin/splunk start --accept-license
 
 ---
 
-### Iniciar sesión y prueba:
+### Iniciar sesión y prueba
 
 Accedemos a través del navegador: **http://kali:8000**
 
