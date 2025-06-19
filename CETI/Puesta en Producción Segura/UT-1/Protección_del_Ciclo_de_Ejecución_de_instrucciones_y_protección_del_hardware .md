@@ -73,24 +73,24 @@ INP
 STA 33 
 LDA 32 
 ADD 33 
-BRP POSITIVE  ; Si el resultado es positivo, continúa 
-BRA NEGATIVE  ; Si el resultado es negativo, maneja el error 
+BRP POSITIVE  # Si el resultado es positivo, continúa 
+BRA NEGATIVE  # Si el resultado es negativo, maneja el error 
 POSITIVE OUT 
 HLT 
-NEGATIVE HLT  ; Manejar el error de resultado negativo 
+NEGATIVE HLT  # Manejar el error de resultado negativo 
 #Otra solución sería la de poner una validación de entrada, haciendo que los valores ingresados estén dentro de un rango permitido. 
 #Se podría hacer comprobando el valor de la celda de memoria nº32 y hacer que no se puedan ingresar #números que, al sumarlos con el valor de la celda nº32 superen el valor 999. 
-LDA 32 ; Cargar el valor de la celda 32 
-INP ; Leer el número ingresado por el usuario 
-ADD 32 ; Sumar el valor ingresado al valor de la celda 32 
-BRP VALID ; Si el resultado es positivo, continúa 
-BRA INVALID ; Si el resultado es negativo, maneja el error 
-VALID   STA 33 ; Almacenar el número ingresado en la dirección 33 
-LDA 32 ; Cargar el valor de la celda 32 nuevamente 
-ADD 33 ; Sumar el valor de la celda 33 
-OUT ; Mostrar el resultado 
-HLT ; Detener el programa 
-INVALID HLT ; Manejar el error de entrada no válida
+LDA 32 # Cargar el valor de la celda 32 
+INP # Leer el número ingresado por el usuario 
+ADD 32 # Sumar el valor ingresado al valor de la celda 32 
+BRP VALID # Si el resultado es positivo, continúa 
+BRA INVALID # Si el resultado es negativo, maneja el error 
+VALID   STA 33 # Almacenar el número ingresado en la dirección 33 
+LDA 32 # Cargar el valor de la celda 32 nuevamente 
+ADD 33 # Sumar el valor de la celda 33 
+OUT # Mostrar el resultado 
+HLT # Detener el programa 
+INVALID HLT # Manejar el error de entrada no válida
 ```
 
 
