@@ -1,7 +1,22 @@
 <details>
   <summary><h2>Índice</h2></summary>
   
- - [Introducción](#introducción)
+- [Introducción](#introducción)
+- [Qué es un sandbox](#qué-es-un-sandbox)
+  - [Tipos de sandbox](#tipos-de-sandbox)
+    - [Según su propósito](#según-su-propósito)
+    - [Según su implementación técnica](#según-su-implementación-técnica)
+    - [Según el nivel de aislamiento](#según-el-nivel-de-aislamiento)
+    - [Sandbox de software](#sandbox-de-software)
+    - [Sandbox virtuales](#sandbox-virtuales)
+    - [Sandbox en la nube](#sandbox-en-la-nube)
+    - [Comparación](#comparación)
+- [Ejemplos de uso](#ejemplos-de-uso)
+  - [Windows 10](#windows-10)
+  - [Kali Linux](#kali-linux)
+  - [Ubuntu](#ubuntu)
+
+
 </details>
 
 ---
