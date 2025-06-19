@@ -2,6 +2,17 @@
   <summary><h2>Índice</h2></summary>
   
  - [Introducción](#introducción)
+   - [Qué es Splunk](#qué-es-splunk)
+   - [Donde y cómo se usa](#donde-y-cómo-se-usa)
+ - [Caso práctico](#caso-práctico)
+  - [Versiones](#versiones)
+  - [Instalación](#instalación)
+  - [Iniciar sesión y prueba:](#iniciar-sesión-y-prueba)
+    - [Creación de un dashboard](#creación-de-un-dashboard)
+    - [Desde dónde está obteniendo Splunk la información](#desde-dónde-está-obteniendo-splunk-la-información)
+    - [Eventos](#eventos)
+    - [Creación de reglas](#creación-de-reglas)
+
 </details>
 
 ---
