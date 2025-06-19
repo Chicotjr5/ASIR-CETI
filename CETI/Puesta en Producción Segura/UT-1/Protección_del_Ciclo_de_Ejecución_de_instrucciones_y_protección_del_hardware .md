@@ -18,7 +18,6 @@ Para esta práctica se utilizará el siguiente [recurso](https://peterhigginson.
 A continuación, se muestran las diferentes instrucciones simples que se pueden utilizar en Little Man Computer:  
 
 | 1XX | ADD XX | Sumar                    | Suma el valor de la dirección XX al acumulador                                             |
-| --- | ------ | ------------------------ | ------------------------------------------------------------------------------------------ |
 | 2XX | SUB XX | Restar                   | Resta el valor de la dirección XX al acumulador                                            |
 | 3XX | STA XX | Almacenar                | Almacena el valor del acumulador en la dirección XX                                        |
 | 5XX | LDA XX | Cargar                   | Carga el valor de la dirección XX en el acumulador                                         |
