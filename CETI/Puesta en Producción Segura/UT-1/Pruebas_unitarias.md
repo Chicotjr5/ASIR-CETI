@@ -2,6 +2,13 @@
   <summary><h2>Índice</h2></summary>
   
  - [Introducción](#introducción)
+ - [Prueba 1](#prueba-1)
+ - [Prueba 2](#prueba-2)
+ - [Prueba 3](#prueba-3)
+ - [Prueba 4](#prueba-4)
+ - [Prueba 5](#prueba-5)
+ - [Prueba 6](#prueba-6)
+ - [Prueba 7](#prueba-7)
 </details>
 
 ---
@@ -79,7 +86,7 @@ Pero en este caso, se ejecuta de forma correcta y el resultado que nos saca es e
 
 ---
 
-## Prueba
+## Prueba 5
 
 ![image](https://github.com/user-attachments/assets/1be5a283-f92b-4e3a-84c2-b4f8bdeb907a)
 
