@@ -1,71 +1,121 @@
+<details>
+  <summary><h2>Índice</h2></summary>
+  
+ - [Introducción](#introducción)
+</details>
 
-## Índice
-- [[Practica 1#Índice|Índice]]
-- [[Practica 1#Algoritmos|Algoritmos]]
-- [[Practica 1#Ejercicio de paginación|Ejercicio de paginación]]
-- [[Practica 1#Ejercicio de segmentación|Ejercicio de segmentación]]
+---
+
+## Introducción
+
+En esta práctica se realizarán pruebas unitarias sencillas para entender el concepto.  
+Para ello se deberá instalar eclipse e importar el proyecto aportado por el profesor. 
+Se realizarán las pruebas sobre una clase que calcula distintas medidas estadísticas (Moda, Varianza, Media Aritmética y Media Geométrica). 
+
+---
+
+## Prueba 1
+
+![image](https://github.com/user-attachments/assets/6d5d8078-c272-4509-803b-e9878b982983)
+
+Este código:
+
+- Declara un array de enteros con unos valores (en este ejemplo no hay valores).
+- Declara una variable llamada **estadisticas** de tipo **EstadisticasArray**.
+- Crea una nueva instancia del objeto **EstadisticasArray** y asigna esa instancia a la variable **estadísticas**.
+- Llamamos a la función **rellenaVector** del objeto **estadisticas** y se le pasa el array **"arrayprueba".** 
+- Copia los valores de **arrayprueba** al array "vector" dentro del objeto **estadisticas**.
+- Texto que saca por pantalla y a que funciones está llamando
+- Comprueba que el resultado de la operación es 15.25.
+
+En este caso, al pasarle un array vacío, nos da el error **NaN (Not a Number)** 
+
+![image](https://github.com/user-attachments/assets/dd9e3042-0589-4da0-9a46-bc18dd4d5398)
+
+---
+
+## Prueba 2
+
+![image](https://github.com/user-attachments/assets/f593bf95-4611-4f6f-b0a6-d580e59f45a2)
+
+En esta prueba se comprueba que la media geométrica de los valores (positivos) del array es la correcta.
+
+En el caso del array de la prueba, la media geométrica proporciona muchos decimales, así que pongo una tolerancia de errores de 0.01, así para que el resultado sea correcto, deberá de estar entre los valores 7.61 y 7.63.
+
+Al ejecutarlo sale todo correcto. 
+
+![image](https://github.com/user-attachments/assets/14a5711f-c809-425f-90a8-1369b1cd0f74)
+
+↓
+
+![image](https://github.com/user-attachments/assets/1630f1c7-8c14-4383-8f33-fd9510bd29ea)
+
+---
+
+## Prueba 3
+
+![image](https://github.com/user-attachments/assets/e3a8d328-e3e8-4ee8-8175-8544ec10a9e5)
+
+Al ejecutarlo, nos sale un **NaN**, así que es otro error del programa porque no esta función procesa números negativos.
+
+![image](https://github.com/user-attachments/assets/626b2a4a-79f9-4e91-b294-f151bc2a499d)
+
+---
+
+## Prueba 4
+
+![image](https://github.com/user-attachments/assets/6f9fb82e-eefb-4299-b0c6-61941a4e7063)
 
 
-### Algoritmos
+En esta prueba se ve si el programa es capaz de ejecutarse correctamente aun habiendo números negativos. 
+Anteriormente se ha visto que no puede. 
+Pero en este caso, se ejecuta de forma correcta y el resultado que nos saca es el correcto. 
 
+![image](https://github.com/user-attachments/assets/bc21b45e-c987-4d5e-bee8-ddb503442fd0)
 
+↓
 
-### Ejercicio de paginación
+![image](https://github.com/user-attachments/assets/23870fec-0dcf-42f1-bd1d-714d23dc0155)
 
-Tenemos un sistema operativo de 32 bits en el que la asignación de memoria se realiza mediante paginación. 
-Cada página/marco ocupa 1 MB. De los 32 bits de la dirección de memoria, se usan 12 bits para especificar la página. 
-Se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de páginas:
+---
 
-| Página | Marco |
-| ------ | ----- |
-| 0x59B  | 0x123 |
-| 0x59C  | 0xA05 |
-| 0x59D  | 0x59F |
-| 0x59E  | 0x799 |
-| 0x59F  | 0xF8B |
-| 0x59A0 | 0x22D |
+## Prueba
 
-Dada la dirección lógica 0x59F2A5A0, obtener la dirección física correspondiente:
-- 0xF8B2A5A0
+![image](https://github.com/user-attachments/assets/1be5a283-f92b-4e3a-84c2-b4f8bdeb907a)
 
-Dada la dirección lógica 0x5A02A59F, obtener la dirección física correspondiente.
-- 0x22DA59F
+En esta prueba, se calcula la mediana de los números que se encuentran en el array. 
+El nº de valores del array es par, así que la mediana se calculará de manera distinta a que si fuera impar. 
+Se ejecuta y no nos da ningún error, además de que saca el resultado correcto.
 
-Dada la dirección lógica 0x59C4DE87, obtener la dirección física correspondiente
-- 0xA054DE87
+![image](https://github.com/user-attachments/assets/1ec25779-6dcf-4b23-ae0b-8a6b1cc23a24)
 
-### Ejercicio de segmentación
+↓
 
-En un sistema de de 32 bits se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de segmentos (el tamaño viene expresado de forma relativa la base):
+![image](https://github.com/user-attachments/assets/45a60036-5f2c-40ea-b68b-894000250509)
 
-| Segmento | Base       | Tamaño     | Límite     |
-| -------- | ---------- | ---------- | ---------- |
-| 0xA321   | 0x85434520 | 0x00005218 | 0x85439738 |
-| 0xA322   | 0xBA41002E | 0x00003FD1 | 0xBA413FFF |
-| 0xA323   | 0x226A5722 | 0x00004D3D | 0x226AA45F |
-| 0xA324   | 0xF01809AC | 0x00000053 | 0xF01809FF |
-| 0xA325   | 0x226CA460 | 0x0000AAFF | 0x226D4F5F |
-| 0xA326   | 0x4951B4D8 | 0x0000F424 | 0x4952A8FC |
+---
 
-**Obtener las direcciones físicas absolutas donde termina cada segmento**
+## Prueba 6 
 
-**Dada la dirección lógica 0xA3231265, obtener la dirección física correspondiente.**
+![image](https://github.com/user-attachments/assets/bc868e45-d33e-4589-90b9-9fd929c944f2)
 
-- 4D3D-1265= 15064 Está dentro del segmento 
-- 226A5722+1265 = 226A6987 
-- Su dirección física sería 0x226A6987
+Esta prueba es similar a la anterior, solo que esta vez, el nº de valores del array es impar, así que la mediana se calcula de forma diferente. 
+Antes la mediana daba 7 y ahora da 9, aunque la suma de los valores de ambos arrays da el mismo resultado. 
+Como el resultado da 9, modificare el assertEquals para que el resultado ahora sea 9 y que el código no de ningún error. 
 
-**Dada la dirección lógica 0xA3240265, obtener la dirección física correspondiente.**
+![image](https://github.com/user-attachments/assets/9470aa3f-e330-4b7d-92c1-edd27da70f43)
 
-- 53-0265= -212 
-- Se sale del segmento
+---
 
-**Dada la dirección lógica 0xA325AAFA, obtener la dirección física correspondiente.**
+## Prueba 7
 
-- AAFF – AAFA = 5 Esta dentro del segmento 
-- 226CA460 + AAFA = 226D 4F5A 
-- Su dirección física sería 0x226D4F5A
+![image](https://github.com/user-attachments/assets/376dd5fc-04f5-4af8-a3a6-4a26051cd20e)
 
+En esta última prueba se comprobará si el programa es capaz de soportar números negativos a la hora de realizar la media geométrica, para ello, se le pasa 1 número negativo a través del array. 
+
+Al ejecutarlo, sacará el error NaN (Not a Number) así que no es capaz de procesar números negativos. 
+
+![image](https://github.com/user-attachments/assets/c246e977-1d28-46ba-9d1f-57ccbd0a3d37)
 
 
 
