@@ -151,7 +151,7 @@ La muestra de los resultados se hace desde la interfaz del programa y desde el t
 
 ![image](https://github.com/user-attachments/assets/d3cc36ea-8ab7-437d-bca9-bb81f493de58)
 
-#### Ubuntu
+### Ubuntu
 
 Y por último, en Ubuntu la interfaz se ve de forma correcta y se muestra el resultado de los cálculos en la terminal y en la interfaz. 
 
