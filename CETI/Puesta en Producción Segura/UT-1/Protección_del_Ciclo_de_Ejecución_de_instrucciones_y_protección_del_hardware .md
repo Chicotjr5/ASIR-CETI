@@ -1,15 +1,17 @@
 <details>
   <summary><h2>Índice</h2></summary>
   
- - [Introducción](#introducción)
+ - [Ejercicio 1](#ejercicio-1)
+ - [Ejercicio 2](#ejercicio-2)
+ - [Ejercicio 3](#ejercicio-3)
 </details>
 
 ---
 
 ## Ejercicio 1
 
-Realiza un programa simple parecido al visto en clase e indica que fallos o amenazas podrían causar que no se desarrolle correctamente el programa. 
-¿Habría alguna forma de solucionarlo con las instrucciones existentes? 
+*Realiza un programa simple parecido al visto en clase e indica que fallos o amenazas podrían causar que no se desarrolle correctamente el programa. 
+¿Habría alguna forma de solucionarlo con las instrucciones existentes?*
 
 Para este ejercicio se utilizará el siguiente [recurso](https://peterhigginson.co.uk/lmc/?F5=19-Jun-25_16:11:29). 
 A continuación, se muestran las diferentes instrucciones simples que se pueden utilizar en Little Man Computer:  
@@ -93,18 +95,99 @@ HLT # Detener el programa
 INVALID HLT # Manejar el error de entrada no válida
 ```
 
+---
+
+### Ejercicio 2
+
+*Investiga sobre las amenazas relacionadas con el hardware de los equipos informáticos.*
 
 
+**Fuente de alimentación**
+
+- Que al tener una subida/bajada de tensión, la fuente de alimentación al no ser de calidad fallé, provocando un cortocircuito de la placa base.
+
+- No tenemos cuidado al tomar nuestro café mañanero y se nos cae, cayendo el líquido sobre el cable de alimentación, provocando un cortocircuito.
+
+**RAM**
+
+- Puede ocurrir el **Rowhammer** el cual pasa cuando las celdas de memoria se activan espontáneamente, debido a impulsos eléctricos de celdas adyacentes, llevando a una corrupción de los datos.
+
+**Refrigeración**
+
+- Falta de limpieza en los equipos / no tener un sistema de refrigeración óptimo provocando un sobrecalentamiento del equipo, reduciendo su rendimiento o que algunas piezas fallen. 
+
+**Acceso al equipo no autorizado**
+
+- Si un atacante accede a nuestro equipo, puede insertar un USB Killer y acabar con la vida de nuestro ordenador.
+- También podría abrir el ordenador, robar los discos duros y de paso romper algunos componentes, dejando inservible e irrecuperable el equipo. 
+
+---
+
+### Ejercicio 3
+
+*¿Qué es BitLocker? Explica la vulnerabilidad CVE-2024-20666 de forma detallada.*
 
 
+Bitlocker es una herramienta de cifrado de discos, la cual fue desarrollada por Microsoft. 
+
+Esta herramienta protege todo el contenido del disco, previniendo el acceso no autorizado a los datos. 
+
+En caso de problemas, proporciona opciones para recuperar el acceso a los datos. 
+
+Las claves de cifrado se guardan en el TPM. 
+
+**¿Y qué es el TPM?**
+
+Este es un chip de seguridad, el cual se encuentra en la mayoría de los ordenadores modernos. 
+
+Este chip se encarga de crear, guardar y gestionar las claves criptográficas, verificando la integridad del sistema, asegurándose de que el software no ha sido alterado. 
+
+Pero, el 9/1/2024 este sistema fue vulnerado 
+
+**Vulnerabilidad CVE-2024-20666**
+
+Esta vulnerabilidad permite a un atacante omitir ciertas características de seguridad de BitLocker, lo que podría darles acceso no autorizado a los datos cifrado. 
+
+Esta vulnerabilidad se explota manipulando la forma en la que Bitlocker analiza y valida los datos de entrada.
+
+Al crear una cadena de entrada específica, se desencadenan una serie de eventos, que llevan a la omisión de las características de seguridad. 
 
 
+Microsoft nos ofrece en la siguiente [página](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-20666) diferentes métricas para medir el impacto de esta vulnerabilidad. 
 
+Algunas de esas métricas son: 
 
+**Vector de ataque**
 
+- Es el contexto en el que es posible la explotación de la vulnerabilidad
+- **Físico**, puesto que el atacante debe manipular físicamente el componente.
 
+**Complejidad del ataque**
 
+- Son las condiciones (más allá del control del atacante) que deben existir para explotar la vulnerabilidad
+- **Baja**, puesto que no existen condiciones / circunstancias especiales para realizar el ataque.
 
+**Interacción del usuario **
+
+- Quiere decir que si es necesaria la participación de otro usuario para llevar a cabo el ataque.
+- **Ninguna**, puesto que el sistema puede ser vulnerado sin la intervención del usuario.
+
+**Integridad**
+
+- Mide el impacto en la integridad (confiabilidad y veracidad de la información) cuando la vulnerabilidad es explotada con éxito
+- **Alta**, debido a que el atacante puede modificar todos los archivos que estén cifrados.
+
+Estos serían las métricas base, ahora vamos con las métricas temporales.
+
+**Nivel de remediación**
+
+- Este es un factor importante a la hora de la priorización de la vulnerabilidad. A medida que se van publicando soluciones temporales / parches, este nivel va bajando, hasta que se pública una solución definitiva.
+- **Solución oficial** puesto que Microsoft ya ha desarrollado una actualización la cual corrige este error.
+
+**Informe de confianza**
+
+- Mide el grado de confianza en la existencia de la vulnerabilidad y la credibilidad de los detalles técnicos conocidos.
+- Confirmada, puesto que existen detalles detallados, además de una reproducción funcional del ataque. 
 
 
 
