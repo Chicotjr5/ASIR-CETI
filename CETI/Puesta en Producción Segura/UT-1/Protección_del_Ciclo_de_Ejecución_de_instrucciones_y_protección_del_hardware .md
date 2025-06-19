@@ -97,7 +97,7 @@ INVALID HLT # Manejar el error de entrada no válida
 
 ---
 
-### Ejercicio 2
+## Ejercicio 2
 
 *Investiga sobre las amenazas relacionadas con el hardware de los equipos informáticos.*
 
@@ -123,7 +123,7 @@ INVALID HLT # Manejar el error de entrada no válida
 
 ---
 
-### Ejercicio 3
+## Ejercicio 3
 
 *¿Qué es BitLocker? Explica la vulnerabilidad CVE-2024-20666 de forma detallada.*
 
