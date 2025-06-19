@@ -29,3 +29,5 @@ In the future I will translate the content into English.
 08/06/2025 -> Finalizar CETI > Bastionado de Redes y Sistemas
 
 12/06/2025 -> Finalizar CETI > Hacking Ético
+
+19/06/2025 -> Finalizar CETI > Incidentes de Ciberseguridad
