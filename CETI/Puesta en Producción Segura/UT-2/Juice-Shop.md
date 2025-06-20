@@ -2,6 +2,22 @@
   <summary><h2>Índice</h2></summary>
   
  - [Introducción](#introducción)
+ - [Instalar y acceder a JuiceShop](#ínstalar-y-acceder-a-juiceshop)
+ - [Identificar y describir 3 vulnerabilidades de OWASP TOP TEN](#identificar-y-describir-3-vulnerabilidades-de-owasp-top-ten)
+   - [INJECTION](#injection)
+   - [BROKEN ACCESS CONTROL](#broken-access-control)
+   - [SECURE MISCONFIGURATION](#secure-misconfiguration)
+   - [NULL BYTE INJECTION](#null-byte-injection)
+ - [Explotar cada vulnerabilidad](#explotar-cada-vulnerabilidad)
+   - [INJECTION](#injection-1)
+   - [BROKEN ACCESS CONTROL](#broken-access-control-1)
+   - [SECURE MISCONFIGURATION](#secure-misconfiguration-1)
+   - [NULL BYTE INJECTION](#null-byte-injection-1)
+ - [Proponer una solucion](#proponer-una-solución)
+   - [INJECTION](#injection-2)
+   - [BROKEN ACCESS CONTROL](#broken-access-control-2)
+   - [SECURE MISCONFIGURATION](#secure-misconfiguration-2)
+   - [NULL BYTE INJECTION](#null-byte-injection-2)
 </details>
 
 ---
@@ -13,7 +29,7 @@ En esta práctica se va a instalar y utilizar Juice-Shop, la cual es una aplicac
 
 ---
 
-### Instalar y acceder a Juice-Shop
+### Instalar y acceder a JuiceShop
 
 La instalación de mi juice-shop la realice con docker y es muy sencilla: 
 
@@ -253,7 +269,7 @@ Y con esto he logrado completar 3 desafíos:
 
 ---
 
-### Proporner una solución para cada
+### Proporner una solución 
 
 #### INJECTION
 
