@@ -1,14 +1,14 @@
 <details>
   <summary><h2>Índice</h2></summary>
   
- - [Introducción](#introducción)
- - [SHODAN](#shodan)
+- [Introducción](#introducción)
+- [SHODAN](#shodan)
   - [Descripción detallada](#descripción-detallada)
   - [Finalidad y propósito principal](#finalidad-y-propósito-principal)
   - [Datos que permite obtener y analizar](#datos-que-permite-obtener-y-analizar)
   - [Tipos de usuarios que podrían usarla](#tipos-de-usuarios-que-podrían-usarla)
   - [Disponibilidad](#disponibilidad)
-  - [Rival - CENSYS](#rival---censys)
+  - [Rival](#rival)
   - [Uso práctico](#uso-práctico)
 
 - [Maltego](#maltego)
@@ -17,7 +17,7 @@
   - [Datos que permite obtener y analizar](#datos-que-permite-obtener-y-analizar-1)
   - [Tipos de usuarios que suelen utilizarla](#tipos-de-usuarios-que-suelen-utilizarla)
   - [Disponibilidad](#disponibilidad-1)
-  - [Rival – SpiderFoot](#rival--spiderfoot)
+  - [Rival](#rival-1)
   - [Uso práctico](#uso-práctico-1)
 
 - [Exif-Tool](#exif-tool)
@@ -26,7 +26,7 @@
   - [Datos que permite obtener y analizar](#datos-que-permite-obtener-y-analizar-2)
   - [Tipos de usuarios que suelen utilizarla](#tipos-de-usuarios-que-suelen-utilizarla-1)
   - [Disponibilidad](#disponibilidad-2)
-  - [Rival – Metagoofil](#rival--metagoofil)
+  - [Rival](#rival-2)
   - [Uso práctico](#uso-práctico-2)
 
 </details>
@@ -74,7 +74,7 @@ Shodan recopila y muestra información técnica como:
   - Impresoras
 - Certificados SSL/TLS y detalles de configuración
 
-### tipos de ususarios que podrían usarlas
+### Tipos de ususarios que podrían usarlas
 
 - Profesionales de ciberseguridad
   - Para identificar riesgos en redes propìas o de clientes
@@ -87,7 +87,7 @@ Shodan recopila y muestra información técnica como:
 - Atacantes maliciosos
   - Explorar dispositivos vulnerables
  
-### Disposibilidad
+### Disponibilidad
 
 Shodan opera bajo un modelo **freemium**
 
@@ -104,7 +104,7 @@ Shodan opera bajo un modelo **freemium**
   - Licencias educativas
     - Descuentas para instituciones académicas
 
-### Rival  - CENSYS
+### Rival
 
 **Censys**, es una herramienta de se enfoca en el análisis de infraestructura de red, especialmente en certificados digitales, servidores y configuraciones de seguridad.  
 
@@ -256,9 +256,9 @@ Maltego opera bajo un modelo freemium con licencias comerciales:
 - Opciones para gobiernos y empresas
   - Licencias personalizadas con integraciones a medida.
  
-### Rival – SpiderFoot
+### Rival 
 
-Herramienta que cuenta tanto con una interfaz web como un software enfocándose en la automatización de recopilación de datos OSINT de forma masiva. 
+SpiderFoot es una herramienta que cuenta tanto con una interfaz web como un software enfocándose en la automatización de recopilación de datos OSINT de forma masiva. 
 
 Realiza escaneos masivos sobre IPs, dominios, correos, leaks, vulnerabilidades, etc y es más adecuado para auditorías de seguridad y monitoreo de amenazas. 
 
@@ -394,7 +394,7 @@ ExifTool es completamente gratuito y de código abierto.
 No tiene versiones de pago ni restricciones en su funcionalidad. 
 
 
-### Rival – Metagoofil 
+### Rival
 
 Metagoofil es una herramienta más enfocada en la extracción de metadatos de documentos públicos. 
 
