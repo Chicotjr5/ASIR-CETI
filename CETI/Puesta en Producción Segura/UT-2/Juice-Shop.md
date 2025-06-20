@@ -13,7 +13,7 @@ En esta práctica se va a instalar y utilizar Juice-Shop, la cual es una aplicac
 
 ---
 
-### Instalar 6y acceder a Juice-Shop
+### Instalar y acceder a Juice-Shop
 
 La instalación de mi juice-shop la realice con docker y es muy sencilla: 
 
