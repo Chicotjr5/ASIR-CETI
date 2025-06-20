@@ -31,3 +31,5 @@ In the future I will translate the content into English.
 12/06/2025 -> Finalizar CETI > Hacking Ético
 
 19/06/2025 -> Finalizar CETI > Incidentes de Ciberseguridad
+
+20/06/2025 -> Finalizar CETI > Puesta en Producción Segura
