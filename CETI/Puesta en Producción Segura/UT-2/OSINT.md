@@ -2,7 +2,33 @@
   <summary><h2>Índice</h2></summary>
   
  - [Introducción](#introducción)
- - 
+ - [SHODAN](#shodan)
+  - [Descripción detallada](#descripción-detallada)
+  - [Finalidad y propósito principal](#finalidad-y-propósito-principal)
+  - [Datos que permite obtener y analizar](#datos-que-permite-obtener-y-analizar)
+  - [Tipos de usuarios que podrían usarla](#tipos-de-usuarios-que-podrían-usarla)
+  - [Disponibilidad](#disponibilidad)
+  - [Rival - CENSYS](#rival---censys)
+  - [Uso práctico](#uso-práctico)
+
+- [Maltego](#maltego)
+  - [Descripción detallada](#descripción-detallada-1)
+  - [Finalidad y propósito principal](#finalidad-y-propósito-principal-1)
+  - [Datos que permite obtener y analizar](#datos-que-permite-obtener-y-analizar-1)
+  - [Tipos de usuarios que suelen utilizarla](#tipos-de-usuarios-que-suelen-utilizarla)
+  - [Disponibilidad](#disponibilidad-1)
+  - [Rival – SpiderFoot](#rival--spiderfoot)
+  - [Uso práctico](#uso-práctico-1)
+
+- [Exif-Tool](#exif-tool)
+  - [Descripción detallada](#descripción-detallada-2)
+  - [Finalidad y propósito principal](#finalidad-y-propósito-principal-2)
+  - [Datos que permite obtener y analizar](#datos-que-permite-obtener-y-analizar-2)
+  - [Tipos de usuarios que suelen utilizarla](#tipos-de-usuarios-que-suelen-utilizarla-1)
+  - [Disponibilidad](#disponibilidad-2)
+  - [Rival – Metagoofil](#rival--metagoofil)
+  - [Uso práctico](#uso-práctico-2)
+
 </details>
 
 ---
