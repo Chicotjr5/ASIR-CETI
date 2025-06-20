@@ -4,7 +4,7 @@
  - [Introducción](#introducción)
  - [Explica qué son los modelos de permisos en sistemas operativos móviles y cómo protegen al usuario.](#explica-qué-son-los-modelos-de-permisos-en-sistemas-operativos-móviles-y-cómo-protegen-al-usuario)
  - [Qué diferencias clave existen entre el modelo de permisos de Android y iOS](#qué-diferencias-clave-existen-entre-el-modelo-de-permisos-de-Android-y-ios)
- - [Explica detalladamente qué es, para qué sirve y qué elementos componen el AndroidManifest.xml](#explica-detalladamente-qué-es-para-qué-sirve-y-qué-elementos-componen-el-androidmanifest.xml)
+ - [Explica detalladamente qué es para qué sirve y qué elementos componen el AndroidManifest.xml](#explica-detalladamente-qué-es-para-qué-sirve-y-qué-elementos-componen-el-androidmanifest.xml)
  - [Descarga una aplicación desde un repositorio confiable como FDroid o APKMirror](#descarga-una-aplicación-desde-un-repositorio-confiable-como-fdroid-o-apkmirror)
  - [Extrae y analiza su archivo AndroidManifest.xml utilizando herramientas como APKTool o JADX.](#extrae-y-analiza-su-archivo-androidmanifest.xml-utilizando-herramientas-como-apktool-o-jadx)
  - [Clasifica los permisos detectados](#clasifica-los-permisos-detectados)
