@@ -2,17 +2,16 @@
   <summary><h2>Índice</h2></summary>
   
  - [Introducción](#introducción)
- - [](url)
- - [](url)
- - [](url)
- - [](url)
- - [](url)
- - [](url)
- - [](url)
- - [](url)
- - [](url)
- - [](url)
- - [](url)
+ - [Explica qué son los modelos de permisos en sistemas operativos móviles y cómo protegen al usuario.](#explica-qué-son-los-modelos-de-permisos-en-sistemas-operativos-móviles-y-cómo-protegen-al-usuario)
+ - [Qué diferencias clave existen entre el modelo de permisos de Android y iOS](#qué-diferencias-clave-existen-entre-el-modelo-de-permisos-de-Android-y-ios)
+ - [Explica detalladamente qué es, para qué sirve y qué elementos componen el AndroidManifest.xml](#explica-detalladamente-qué-es-para-qué-sirve-y-qué-elementos-componen-el-androidmanifest.xml)
+ - [Descarga una aplicación desde un repositorio confiable como FDroid o APKMirror](#descarga-una-aplicación-desde-un-repositorio-confiable-como-fdroid-o-apkmirror)
+ - [Extrae y analiza su archivo AndroidManifest.xml utilizando herramientas como APKTool o JADX.](#extrae-y-analiza-su-archivo-androidmanifest.xml-utilizando-herramientas-como-apktool-o-jadx)
+ - [Clasifica los permisos detectados](#clasifica-los-permisos-detectados)
+ - [Valora si los permisos son coherentes con la funcionalidad ofrecida por la aplicación](#valora-si-los-permisos-son-coherentes-con-la-funcionalidad-ofrecida-por-la-aplicación)
+ - [Lanza un análisis con la herramienta MobSF](#lanza-un-análisis-con-la-herramienta-mobsf)
+ - [Identifica al menos dos vulnerabilidades documentando qué y cómo se han encontrado y explica los riesgos](#identifica-al-menos-dos-vulnerabilidades-documentando-qué-y-cómo-se-han-encontrado-y-explica-los-riesgos)
+ 
 </details>
 
 ---
@@ -23,7 +22,7 @@ En esta práctica se va a hablar sobre las aplicaciones en Android, los tipos de
 
 ---
 
-## Explica qué son los modelos de permisos en sistemas operativos móviles y cómo protegen al usuario.
+## Explica qué son los modelos de permisos en sistemas operativos móviles y cómo protegen al usuario
 
 Son mecanismos de seguridad que controlan el acceso de las aplicaciones a 
 recursos sensibles del dispositivo, como:
@@ -45,7 +44,7 @@ El usuario deberá aceptar o denegar cada permiso, si se deniegan varios, la app
 
 ---
 
-## ¿Qué diferencias clave existen entre el modelo de permisos de Android y iOS?
+## Qué diferencias clave existen entre el modelo de permisos de Android y iOS
 
 Una de las principales diferencias de cada modelo de servicios, es el como se gestiona el acceso a los recursos (cámara, micrófono, ubicación etc) y su transparencia. 
 
@@ -71,7 +70,7 @@ la App Store.
 
 ---
 
-## Explica detalladamente qué es, para qué sirve y qué elementos componen el AndroidManifest.xml 
+## Explica detalladamente qué es para qué sirve y qué elementos componen el AndroidManifest.xml 
 
 Es el archivo más importante de la aplicación, donde se: 
 
@@ -127,7 +126,7 @@ Sus componentes principales son los siguientes:
 
 ---
 
-## Descarga una aplicación desde un repositorio confiable como F-Droid o APKMirror 
+## Descarga una aplicación desde un repositorio confiable como FDroid o APKMirror 
 
 En mi caso he descargado la siguiente [apk](https://www.apkmirror.com/apk/jam-city-inc/bingo-pop-play-live-online/bingo-pop-play-live-online-10-11-11-release/bingo-pop-play-live-online-10-11-11-android-apk-download/) la cual es un juego de bingo online:
 
@@ -135,7 +134,7 @@ En mi caso he descargado la siguiente [apk](https://www.apkmirror.com/apk/jam-ci
 
 ---
 
-## Extrae y analiza su archivo AndroidManifest.xml utilizando herramientas como APKTool o JADX.
+## Extrae y analiza su archivo AndroidManifest.xml utilizando herramientas como APKTool o JADX
 
 Después de descargar la APK, la he descompilado usando apktool y el siguiente comando: 
 
@@ -149,7 +148,7 @@ Esto genera un directorio con todos los componentes de la aplicación, entre ell
 
 ![image](https://github.com/user-attachments/assets/38f096e9-51f3-4654-ab9e-52b9212272a6)
 
-## Clasifica los permisos detectados (normales, de firma o especiales). 
+## Clasifica los permisos detectados 
 
 Los permisos que requiere la aplicación son los siguientes:
 
@@ -196,7 +195,7 @@ Estos requiren la configuracion manual del usuario o un acceso privilegiado:
 
 ---
 
-## Valora si los permisos son coherentes con la funcionalidad ofrecida por la aplicación.
+## Valora si los permisos son coherentes con la funcionalidad ofrecida por la aplicación
 
 Todos los permisos que necesita la APK son necesarios para el correcto funcionamiento de la aplicación y no hay ninguno que este poco relacionado con el contexto de la APK. 
 
@@ -229,7 +228,7 @@ Al acabar, genera un reporte
 
 ---
 
-## Identifica al menos dos vulnerabilidades, documenta qué y cómo se ha encontrado y explica los riesgos.
+## Identifica al menos dos vulnerabilidades documentando qué y cómo se han encontrado y explica los riesgos
 
 Lo primero que vemos a la hora de abrir el reporte es lo siguiente: 
 
