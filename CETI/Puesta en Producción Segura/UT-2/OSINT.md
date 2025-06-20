@@ -56,7 +56,7 @@ Usos comunes incluyen:
 - Detectar fugas de información en servidores
 - Localizar sistemas sin parches de seguridad
 - Monitorear infraestructuras críticas (Sistemas industriales SCADA)
-- Investigaci´çon en ciberseguridad y pentesting
+- Investigación en ciberseguridad y pentesting
 
 ### Datos que permite obtener y analizar 
 
