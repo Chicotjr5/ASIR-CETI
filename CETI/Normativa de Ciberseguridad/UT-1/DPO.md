@@ -1,70 +1,199 @@
+<details>
+  <summary><h2>Índice</h2></summary>
+  
+ - [Introducción](#introducción)
+ - [](url)
+</details>
 
-## Índice
-- [[Practica 1#Índice|Índice]]
-- [[Practica 1#Algoritmos|Algoritmos]]
-- [[Practica 1#Ejercicio de paginación|Ejercicio de paginación]]
-- [[Practica 1#Ejercicio de segmentación|Ejercicio de segmentación]]
+---
+
+## Introducción
+
+En esta práctica se va a hablar sobre la figura del DPO
+
+## Qué es un DPO
+
+El **DPO** o **Delegado de Protección de Datos** es aquella persona responsable de realizar la supervisión de realizar la supervisión y monitorización (de forma independiente y confidencial) del cumplimiento de la normativa en materia de 
+protección de datos personales en una empresa. 
+
+Además de esto, ofrecerá todo tipo de asesoramiento que se le solicite y colaborará con la autoridad de control correspondiente que, en España, es la **Agencia de Protección de Datos**. 
+
+## Formación de un DPO 
+
+Al no existir una titulación específica, la **AEPD** ha optado por promover un **Esquema de Certificación** de DPO que permite certificar a aquellos profesionales que reúnen la cualificación profesional y los conocimientos requeridos para ejercer como **DPO**. 
+
+Para poder certificarse como **DPO** se deberán cumplir los siguientes **prerrequisitos**: 
+
+- Formación mínima reconocida de 60-100-180 horas en relación con las materias incluidas en el programa del esquema. 
+
+- Experiencia en proyectos/actividades relacionadas con las funciones del DPO.
+
+La valoración se realizará teniendo en cuenta que los 2-3 o 5 años exigidos de experiencia deben ser completos
+
+Estos prerrequisitos se pueden cumplir de 4 formas: 
+
+- 5 años de experiencia
+- 3 años de experiencia *+ 60 horas de formación reconocida
+- 2 años de experiencia + 100 horas de formación reconocida
+- 180 horas de formación reconocida
+
+Además, para poder ejercer como DPO es posible hacerlo desde 2 ámbitos diferentes:
+
+- Derecho
+- Seguridad informática
+
+## Quienes han de designar un DPO
+
+**Organismos públicos**
+
+**Organizaciones que traten de forma habitual y sistemática con grandes volúmenes de datos personales.**
+
+- Sector bancario
+- Aseguradoras
+- Medios de comunicación
+- Empresas de marcadotecnia
+- Compañias dedicadas a la vigilancia
+
+**Aquellas entidades que traten con datos especialmente sensibles o datos relativos a condenas e infracciones penales**
+
+- Partidos políticos
+- Sindicatos
+- Hospitales
+- Iglesias
+- Colegios profesionales
+
+## Qué debe considerar una empresa a la hora de designar un DPO
+
+**Cualificación del personal**
+
+- Aunque no haya una titulación específica para ser DPO, si resultan indispensables conocimientos en derecho, así como la experiencia en legislación relativa a protección de datos.
+
+**Conocimientos específicos en protección de datos **
+
+- El responsable de esta área ha de comprender perfectamente las operaciones de tratamiento de información que se llevan a cabo en la empresa para hacer frente a cualquier problemática.
+
+**Habilidades específicas**
+
+- Dotes comunicativas
+- Empatía
+- Conocimiento de idiomas
+- Gestión de riesgos
+
+## Que debería de hacer un DPO en una empresa como Canon
+
+**Cumplimiento normativo**
+
+Asegurar que Canon cumpla con leyes como el GPDR y otras normativas de protección de datos en todas las regiones donde opera.
+
+**Gestión de riesgos**
+
+Realizar evaluaciones de impacto (DPIA) y mitigar riesgos relacionados con el tratamiento de datos personales. 
+
+**Respuesta a incidentes**
+
+Supervisar y gestionar las brechas de seguridad, notificando a autoridades y afectados si es necesario.
+
+**Capacitación y concienciación**
+
+Formar a empleados y fomentar una cultura de privacidad en la empresa.
+
+**Interacción con autoridades**
+
+Servir de enlace con reguladores y auditar contratos para garantizar el tratamiento adecuado de datos. 
+
+**Supervisión de datos**
+
+Vigilar como se recopilan, usan y comparten los datos personales, garantizando los derechos de los interesados. 
 
 
-### Algoritmos
 
 
 
-### Ejercicio de paginación
 
-Tenemos un sistema operativo de 32 bits en el que la asignación de memoria se realiza mediante paginación. 
-Cada página/marco ocupa 1 MB. De los 32 bits de la dirección de memoria, se usan 12 bits para especificar la página. 
-Se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de páginas:
 
-| Página | Marco |
-| ------ | ----- |
-| 0x59B  | 0x123 |
-| 0x59C  | 0xA05 |
-| 0x59D  | 0x59F |
-| 0x59E  | 0x799 |
-| 0x59F  | 0xF8B |
-| 0x59A0 | 0x22D |
 
-Dada la dirección lógica 0x59F2A5A0, obtener la dirección física correspondiente:
-- 0xF8B2A5A0
 
-Dada la dirección lógica 0x5A02A59F, obtener la dirección física correspondiente.
-- 0x22DA59F
 
-Dada la dirección lógica 0x59C4DE87, obtener la dirección física correspondiente
-- 0xA054DE87
 
-### Ejercicio de segmentación
 
-En un sistema de de 32 bits se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de segmentos (el tamaño viene expresado de forma relativa la base):
 
-| Segmento | Base       | Tamaño     | Límite     |
-| -------- | ---------- | ---------- | ---------- |
-| 0xA321   | 0x85434520 | 0x00005218 | 0x85439738 |
-| 0xA322   | 0xBA41002E | 0x00003FD1 | 0xBA413FFF |
-| 0xA323   | 0x226A5722 | 0x00004D3D | 0x226AA45F |
-| 0xA324   | 0xF01809AC | 0x00000053 | 0xF01809FF |
-| 0xA325   | 0x226CA460 | 0x0000AAFF | 0x226D4F5F |
-| 0xA326   | 0x4951B4D8 | 0x0000F424 | 0x4952A8FC |
 
-**Obtener las direcciones físicas absolutas donde termina cada segmento**
 
-**Dada la dirección lógica 0xA3231265, obtener la dirección física correspondiente.**
 
-- 4D3D-1265= 15064 Está dentro del segmento 
-- 226A5722+1265 = 226A6987 
-- Su dirección física sería 0x226A6987
 
-**Dada la dirección lógica 0xA3240265, obtener la dirección física correspondiente.**
 
-- 53-0265= -212 
-- Se sale del segmento
 
-**Dada la dirección lógica 0xA325AAFA, obtener la dirección física correspondiente.**
 
-- AAFF – AAFA = 5 Esta dentro del segmento 
-- 226CA460 + AAFA = 226D 4F5A 
-- Su dirección física sería 0x226D4F5A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
