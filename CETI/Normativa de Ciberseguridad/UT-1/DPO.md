@@ -2,8 +2,11 @@
   <summary><h2>Índice</h2></summary>
   
  - [Introducción](#introducción)
- - [](url)
- - 
+ - [Qué es un DPO](#qué-es-un-dpo)
+ - [Formación de un DPO](#formación-de-un-dpo)
+ - [Quienes han de designar un DPO](#quienes-han-de-designar-un-dpo)
+ - [Qué debe considerar una empresa a la hora de designar un DPO](qué-debe-considerar-una-empresa-a-la-hora-de-designar-un-dpo)
+ - [Qué debería de hacer un DPO en una empresa como Canon](#qué-debería-de-hacer-un-dpo-en-una-empresa-como-canon)
 </details>
 
 ---
@@ -80,7 +83,7 @@ Además, para poder ejercer como DPO es posible hacerlo desde 2 ámbitos diferen
 - Conocimiento de idiomas
 - Gestión de riesgos
 
-## Que debería de hacer un DPO en una empresa como Canon
+## Qué debería de hacer un DPO en una empresa como Canon
 
 **Cumplimiento normativo**
 
