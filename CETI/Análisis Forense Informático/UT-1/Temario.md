@@ -467,8 +467,6 @@ Todos estos datos se convierten a un formato estándar
 	- Registros de acceso a la red
 	- Registros de eventos de seguridad
 
-![[Pasted image 20250115194007.png]]
-
 
 ## DISPOSITIVOS DE ALMACENAMIENTO
 
@@ -575,14 +573,16 @@ Contiene el MBC - Master Boot Code cuya función es identificar el 1º cluster d
 Para obtenerlo en Linux
 - dd if /dev/sda of mbr.bak bs=512 count=1
 
-![[Pasted image 20250121190256.png]]
+![image](https://github.com/user-attachments/assets/538fc4a5-4711-4623-8a89-dda6a6e52617)
+
 
 ### GPT - Global Unique Identifier Partition Table
 La GPT sustituye a la MBR y elimina las restricciones de la MBR con la tabla de particiones
 Ocupa un tamaño de 32 bloques de 512B - 16KB
 Contiene un MBR de protección para equipos antiguos
 
-![[Pasted image 20250121190652.png]]
+![image](https://github.com/user-attachments/assets/8f52884c-b9f2-4a40-8a29-798e9f82e4ce)
+
 
 #### GUID - Globar Unique Identifier
 
@@ -601,7 +601,6 @@ Inicializa el el hardware y encuentra el gestor de arranque
 La EFI carga y entrega el control al kernel del SO.
 El kernel inicializa los recursos necesarios para arrancar el SO.
 
-![[Pasted image 20250121191316.png]]
 
 ### Sistema de ficheros
 
@@ -617,10 +616,6 @@ Otras características son:
 - Journalist el cual registra las operaciones realizadas antes de llevarlas a cabo
 - ACL
 - Cuotas de usuario
-
-A la hora de extraer evidencias:
-![[Pasted image 20250121192337.png]]
-
 
 #### Windows
 
