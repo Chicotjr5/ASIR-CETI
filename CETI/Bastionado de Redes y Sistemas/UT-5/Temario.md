@@ -1,331 +1,579 @@
-### Artículo 197 bis
+## SEGURIDAD PERIMETRAL - Firewall de próxima generación
 
-El que por cualquier medio o procedimiento, vulnerando las medidas de seguridad establecidas para impedirlo, y sin estar debidamente autorizado, acceda o facilite a otro el acceso al conjunto o una parte de un sistema de información o se mantenga en él en contra de la voluntad de quien tenga el legítimo derecho a excluirlo, será castigado con pena de prisión de seis meses a dos años.
+### Principales requisitos de seguridad aplicables
 
-----
+- **Identificación de las aplicaciones y no de los puertos**
+	- Clasifica el tráfico que genera y que llegara al cortafuegos
+	- Se determina la identidad de la app sin importar 
+		- Protocolo del tráfico
+		- Cifrado
+		- Táctica evasiva 
+- **Vinculación del uso de apps con los usuarios**
+	- Se vincula el uso de la aplicación por el usuario y no por la IP o puerto usado
+- **Prevención de amenazas**
+	- Se ha de analizar el tráfico y ofrecer una protección automática frente amenazas
+		- Conocimiento de Exploits y vulnerabilidades
+			- Malware
+			- Spyware
+			- URL maliciosas
+- **Simplificar la administración de las políticas**
+	- Uso de herramientas gráficas
+	- Unificación de políticas, plantillas y grupos de dispositivos
 
-El que mediante la utilización de artificios o instrumentos técnicos, y sin estar debidamente autorizado, intercepte transmisiones no públicas de datos informáticos que se produzcan desde, hacia o dentro de un sistema de información, incluidas las emisiones electromagnéticas de los mismos, será castigado con una pena de prisión de tres meses a dos años o multa de tres a doce meses
+**FwBuilder**
+
+- Ayuda a entender el orden de las reglas y su aplicación.
+- Permite realizar pequeñas simulaciones de funcionamiento
+
+#### Firewalls de 1º GEN
+
+Las reglas atienden a criterios de las capas 3 y 4 (red y transporte) y el 
+filtrado se basa en:
+- IP
+- Protocolos
+- ToS - Tipo de servicio
+- Puerto TCP / UDP
+- Flags TCP
+	- SYN, ACK, FIN
+
+Estas reglas se aplican de una forma secuencial, osease, si se cumple una, no busca más
+
+**Incovenientes**
+- Cuantas más reglas, más probabilidades de colisión entre las reglas
+- No protegen los ataques de la capa de aplicación
+	- SQL INJECTION
+- No gestionan ataques TCP SYN o  ARP Spoofing
+- Logs limitados
+
+#### Firewalls de 2º gen
+**Características**
+- Están basados en el estado 
+- Tienen en cuenta la colocación de cada paquete individual dentro de una serie de paquetes.
+	- Indica si un paquete es parte de una nueva o existente conexión, o si es erróneo 
+- Mantiene registros de todas las conexiones que pasan por el Firewall
+	- Si una conexión es rara, la bloquea
+- Actua en las capas 3, 4, y 5
+
+**Inconvenientes**
+- Más complejos
+- No analiza las conexiones cifradas
+- Ralentización del tráfico de la red
+- Inseguro ante DoS o DDoS y MiTM
+
+#### Firewall de 3º gen
+
+**Características**
+- IPS
+- DPI - Inspección profunda del paquete
+	- Analiza cabecera y cuerpo de cada paquete
+- Conocimiento y control de las aplicaciones
+	- Identifica y bloquea el tráfico según las apps a las que se dirige el tráfico
+- Identifica flujos de amenazas recientes
+- Actúa sobre la capa 7, permitiendo entender 
+	- FTP
+	- HTTP
+	- SMTP etc
+#### Firewall como servicio - FWaaS
+
+Cortafuegos alojados y ejecutados en la nube, pero no en un dispositivo físico.
+Son usados en la computación en la nube
+**Ejemplos**
+- AWS WAF
+	- FW para apps web
+- AWS Shield
+	- Protección contra DDoS
+#### Medidas a tomar desde el punto de vista del bastionado de redes
+
+- Proteger el descubrimiento de la infraestructura de red
+	- Bloquear protocolo ICMP pero permitiéndolo en x tareas
+- Aplicar reglas según las políticas de seguridad de la organización
+- Mayor fortalecimiento de la DMZ
+	- Actualizaciones
+	- Copias de seguridad
+	- Gestión de incidentes
+	- Registros de eventos
+- Reglas de tráfico
+- Controlar la conexión a servidores DNS externos 
+- Denegar todo el tráfico y crear reglas 
+
+## Soluciones WAF - Web Application Firewall
+
+Los WAF protegen el back-end de los servidores web, analziando los paquetes HTTP y HTTPS.
+
+Este examina cada petición enviada al servidor antes de que llegue a la app web, asegurándose de que la petición cumple con las reglas.
+Supervisa, filtra y bloquea el tráfico HTTP hacia y desde una app web.
+A diferencia del Firewall, este permite filtrar el contenido de app web específicas, mientras que el firewall solo protege eñ tráfico entre servidores.
+
+
+## Seguridad del puesto de trabajo y endpoint
+
+### APT - Amenaza persistente avanzada
+
+Es la posibilidad de que un atacante pueda tener la capacidad , intención y conocimiento para realizar ataques contra objetivos variados, con el objetivo de poner en peligro los sistemas que dependan de este.
+
+**Fases**
+- Definir objetivo
+- Encontrar cómplices
+- Adquirir herramientas
+- Investigar al objetivo
+- Pentesting
+- Desplegarse
+- Realizar una intrusión inicial
+- Iniciar conexión saliente
+- Ampliar el acceso y obtener credenciales
+- Fortalecer el punto de apoyo
+- Exfiltrar datos
+- Cubrir las pistas y permanecer sin ser detectado.
+
+El objetivo consiste en permanecer en el dispositivo vulnerado y obtener todos los datos e información posibles, además de intentar acceder a otros equipos y servidores.
+
+Los endpoints son el punto más débil de una infraestructura de red.
+
+### Herramientas
+
+**Gophis**
+- Permite realizar phising controlado sobre los empleados
+- Sirve para formarlos 
+
+**Osquery**
+- Permite realziar consultas de sucesos o cambios que se han realizado en x momento
+- Toda la información se manda a una BD SQLite
+
+**Herramientas anti-APT**
+- Orientadas a recopilar información puntual sobre un equipo de trabajo.
+- Permiten aislar ese equipo en caso de ataque.
+
+
+### Tipos de malware que afectan a los endpoints
+
+**ADWARE**
+- Software que ofrece publicidad no deseada
+**SPWARE**
+- Recopila información del usuario y del equipo en general
+- Keylogger es un ejemplo
+**GUSANOS**
+- Se replican a través de la red
+**TROYANOS**
+- Se hacen pasar por software legítimo
+**RANSOMWARE**
+- Cifra los datos del equipo y pide un rescate por ellos
+**BOTNETS**
+- El equipo se usa para provocar ataques organizados
+**APPS y WEB MALICIOSAS**
+- Web y apps que parecen legítimas pero que no lo son 
+
+### Síntomas de infección
+
+- Equipo lento
+- Apps se bloquean o fallan
+- El equipo tiene un comportamiento fuera de lo común 
+- Antivirus zzz
+- Archivos desaparecidos o bloqueados
+- Se recibe correos irregulares
+
+## Seguridad en entornos Cloud - Soluciones CASB
+
+CASB - Cloud Access Security Broker
+
+Software que actúa como punto de control de las políticas de seguridad entre consumidores y proveedores de los servicios en la nube.
+
+El objetivo de estas herramientas consiste en controlar y gestionar el uso de servicios alojados en la nube, permitiendo realizar un seguimiento de los datos que se transfieren.
+
+**Gestiones**
+- Monitorización de seguridad
+- Prevención de la exfiltración de información
+- Gestión de usuarios y perfiles 
+- Gestión de incidentes
+- Gestión de copias de seguridad
+- Protocolos de actuación para la recuperación de datos ante desastres
+- Actuación según el RGPD
+- Integración con servicios de la organización
+	- DNS
+	- SIEM
+	- Correo
+	- FW
+
+Uno de los principales problemas de esto es la deslocalización de las infraestructuras de la nube, debido a que estas pueden estar en diferentes países, haciendo que los proveedores de estos servicios se rijan por las leyes implantadas la localización de los servidores de la nube.
+
+
+## Seguridad en correo electrónico
+
+
+**Peligros**
+- Enlaces maliciosos
+- Archivos adjuntos al correo
+- Correo basura
+
+**Mitigaciones**
+- Actualizaciones del SO y políticas de seguridad
+- Uso de herramientas antimalware en el equipo
+- Firewall y políticas de seguridad
+- Restricciones de acceso
+- Apagado de equipos cuando no son necesarios
+- Usar HTTPS
+- Cerrar sesión de correo
+
+
+## Soluciones DLP - Data Loss Prevention
+
+La perdida de información es un problema muy importante que puede acarrear la perdida de reputación de una empresa.
+Para ello, están las herramientas DLP.
+Estas constan de 2 partes
+- Control desde el servidor
+	- Donde se configuran las políticas de seguridad
+- Agentes en cada equipo cliente
+
+**Ventajas**
+- Identificación de las posibles amenazas que se producen en los equipos de la organización
+- Cumplimiento normativo
+- Definición de roles y perfiles de usuarios
+
+Un caso a parte son los BYOD debido a que no se pueden realizar accesos intrusivos, así que a estos dispositivos se les ha de asignar privilegios mínimos.
+
+
 
 ---
-### Puntos principales de aplicación para un correcto cumplimiento normativo
 
-#### Introducción al cumplimento normativo / **Compliance** 
-**Cae en examen**
-La función del **Compliance** se vincula a la prevención de delitos para evitar la responsabilidad penal de la persona jurídica.
+## Herramientas de almacenamiento de logs
 
-Es una autorregulación fundamentada en la necesidad de convertir a las organizaciones / empresas en **"Buenos ciudadanos cumplidores"** ya que al igual que las personas físicas, tienen derechos y obligaciones.
+En Windows se pueden ver con el visor de eventos y se encuentran en:
+- %SystemRoot%\System32\Winevt\Logs\
 
-Se basan en 
-- Ética empresarial
-- Buen gobierno corporativo
-- Responsabilidad social corporativa
+En Linux por su parte no hay un gestor de logs, todos se almacenan en **/var/log**
 
-#### Compliance officer
+Estos logs recogen información sobre:
+- Sistemas operativos
+- Aplicaciones y servicios del SO o de apps de 3º
+- BD
+- Herramientas de seguridad
+- Dispositivos de red
 
-Persona que se asegura de que una empresa cumpla con: 
-- Requisitos legales y reglamentarios externos
-- Políticas y estatutos internos
-- Normas, reglamentos, procesos que dicen la forma en que las empresas han de realizar sus negocios.
+**Desventajas**
+- Mucha información
+- En caso de ataque, hay un retraso en al recopilación de los logs
+- Por ley se obliga a almacenar estos logs para usarlos como evidencias.
 
-Su función es promover una conducta ética y han de estar al tanto de las últimas leyes, reglamentos y tendencias comerciales y a de ser capaz de explicarlos a la empresa.
+### Linux
 
-#### Relaciones con 3º partes dentro del Compliance
+Gnome / activity-log-manager es un visor de eventos del sistema que permite revisar
+todos los sucesos / mensajes que envían los paquetes / servicios que crean logs.
 
-El código penal establece que la persona jurídica es responsable de x hechos delictivos realizados por sus representantes legales.
+#### Logwatch
+Otro es el paquete **Logwatch** el cual genera un informe donde se unifica toda la actividad del servidor.
+Además, este informe puede ser entregado por cli o por correo electrónico.
 
-Para una empresa esto se extiende y es que no solo se aplica la responsabilidad sobre sus representantes legales / empleados, si no también a los terceros:
-	- Autónomos
-	- Subcontratados
-	- Clientes
-	- Proveedores
+Sus archivos de configuración se encuentran en:
+- /usr/share/logwatch/default.conf/*
+- /etc/logwatch/conf/dist.conf/*
+- etc/logwatch/conf/*
 
-Así que las empresas han de conseguir que sus 3º también cumplan con los compromisos legales y éticos.
+#### Herramientas para usar con registros
 
-Aquí es donde entra la **diligencia debida** (due diligence).
-Esta trata de prevenir estos riesgos, evitando comportamiento de los 3º contrarios a los principios del cumplimiento normativo.
+**GoAccess**
+- Analiza de registros web en tiempo real.
+- Proporciona estadísticas de presentación web bien organizadas para que los administradores tengan un informe sobre el servidor en tiempo real
+**Rsylog**
+- Reenvía mensajes de registro dentro de una red.
+- Es como un Syslog pero remoto 
 
-**Etapas del procedimiento:**
-- Adecuada selección del 3º con el que la empresa se va a relacionar
-- Correcta formalización de la relación a través de un contrato.
-- Seguimiento de la evolución del 3º
 
-#### Sistemas de Gestión de Compliance
+## Protección ante DDoS
 
-Los Sistemas de Gestión de Compliance sirven para gestionar y controlar diversos riesgos, como por ejemplo:
-- Protección de datos
-- Corrupción
-- Violaciones a
-	-  Regulaciones antimonopolio
-	- Carácter laboral
-	- Seguridad y salud en el trabajo
+DDoS es un ataque donde se realizan muchas peticiones a un mismo punto/objetivo desde muchos equipos, con el objetivo de dejar inoperativo el objetivo.
 
-Los Sistemas de Gestión de Compliance son requeridos por las siguientes razones:
-- Asegurar que los empleados actúan según las leyes
-- Asegurar que en caso de incumplimiento, las organizaciones no sean sancionadas o que la implementación de los SGC se consideren un factor atenuante
+Estos ataques se diferencian según su capa de ataque
+- Capa 3 - Red
+- Capa 4 - Transporte
+- Capa 6 - Presentación
+- Capa 7 - Aplicación
 
----
+### Ataques
 
-### Legislación y jurisprudencia en materia de protección de datos
-**Cae en examen**
-#### Principio de protección de datos
+**Syn Flood**
+- Se usa el método de apertura de conexión TCP en 3 pasos, dejando sin acabar el último paso (envío ACK por parte del cliente) haciendo que el servidor se quede a la espera y consuma recursos
+- Nmap y hping permiten este tipo de ataques.
 
-Artículo 5 del reglamento (UE) 2016/679 General de Protección de Datos
-Ley Orgánica 3/2018 de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD).
+**Connextion Flood**
+- Se realiza un número elevado de petición es a un servicio
 
-Los principios son
-- Licitud
-- Lealtad
-- Transparencia
-- Limitación de la finalidad
-- Minimización de los datos
-- Exactitud
-- Limitación del plazo de conservación
-- Integridad y confidencialidad
-- Responsabilidad Proactiva
+**UDP Flood**
+- Se realizan un nº elevado de peticiones sobre le protocolo UDP.
+- Cuando un equipo envía una petición a un puerto UDP cerrado, el servidor responde con un paquete ICMP sin destino.
+- Para realizar el ataque se usan IP falsas.
 
+### Protección
 
----
+**Reducción del área expuesta**
+- Mover el equipamiento no imprescindible para el funcionamiento de los servicios externos (web, ftp) se cambie de zona o poner medidas para dificultar su acceso.
+	- Usar un Firewall o ACLs
+	- Restringir el tráfico directo de internet a zonas de la infraestructura
 
-#### Delegado de Protección de Datos
-**Cae en examen**
-Es aquella persona responsable en el seno de una organización de  **realizar la supervisión**  **monitorización** de forma independiente y confidencial para ver si se esta cumpliendo la normativa en materia de protección de datos personales
+**Escalado de la infraestructura**
+- Capacidad del ancho de banda
+	- Se ha de conocer el ancho de banda y el nº de conexione máximas que puede soportar la red para que cuando se llegue al máximo se paren x transacciones o se desvíen a otros servidores externos
+- Capacidad del servidor
+	- El uso de balanceadores de carga permitiría aliviar al servidor 
+- Cortafuegos específicos
+	- WAF
+	- Firewall de 3º gen etc
 
-Además de que ofrecerá todo el asesoramiento que se le solicite y colaborará con la autoridad de control (En España - **Agencia Española de Protección de Datos **).
+## Configuración segura de 
 
-Para ser DPO se necesita
-- Ser designado por una organización, atendiendo a sus cualidades profesionales y a sus conocimientos especializados en Derecho.
-- Aunque no se obliga contar con una certificación, esta es fundamental para probar los conocimientos
+### Cortafuegos
 
-LA AEPD ha optado por promover un Esquema de certificación de DPO que permite certificar que los DPD reúnen la cualificación profesional y los conocimientos requeridos para ejercer la profesión.
+Estos se encuentran en una red, haciendo de "intermediarios" entre dispositivos o tambien se encuentran en los propios equipos.
 
----
-### Normativa vigente de ciberseguridad en el ámbito nacional e internacional
+Se filtra la información de entrada y salida, revisando si cada paquete cumple las reglas impuestas.
 
-**Cae en examen**
-#### ¿Qué es un SGSI?
 
-Un SGSI es un conjunto de políticas y procedimientos para administrar la información de una empresa / organismo cumpliendo una serie de requisitos, garantizando a **confidencialidad , integridad y disponibilidad** 
+#### Políticas de FW
 
-#### Sistema de Gestión de Seguridad de la Información (internacional)
+**Denegar**
 
-La ISO 27001 es una norma internacional de Seguridad de la Información que pretende asegurar la **confidencialidad, integridad y disponibilidad** de la información de una organización, además de los sistemas y aplicaciones que la usan.
+```bash
+iptables -P INPUT DROP
+iptables -P OUTPUT DROP
+iptables -P FORWARD DROP
+```
+
+**Impedir conexiones remotas pero permitir navegar**
+
+```bash
+iptables -P INPUT DROP 
+iptables -P OUTPUT ACCEPT 
+iptables -P FORWARD ACCEPT 
+iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+```
+
+**Usar puerto 22 para SSH**
+```bash
+- iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+```
 
-Esta norma define de manera genérica como se planifica, implanta, verifica y controla un SGSI a partir de un análisis de riesgos y la planificación de la respuesta a los mismos.
-Osease, cualquier empresa puede desplegar un SGSI siguiendo este estándar.
+#### Conntrack
 
-##### Gestión de calidad PDCA
-La ISO 27001 se basa en la teoría de gestión de calidad **PDCA** (También conocida como ciclo de Deming)
+Paquete que permite observar el estado y detalles de las comunicaciones establecidas.
 
-Se estructura de la siguiente forma:
+#### Objetivos de los fireweall
 
-- **Planificar**
-	- Etapa inicial del diseño del SGSI donde se realiza una identificación inicial de los riesgos asociados con la Seguridad de la Información
-- **Hacer**
-	- Implantación y operación del Sistema de Gestión de Seguridad de la Información que se ha definido y desarrollado
-- **Verificar**
-	- Revisar y evaluar su eficacia y eficiencia
-	- Si el desempeño no es el esperado, analizar el pq y determinar mejorar
-- **Actuar**
-	- Mejora continua del SGSI
-
----
-### Esquema Nacional de Seguridad
-**Cae en examen**
-La finalidad del **ENS** es la creación de la confianza en el uso de los medios electrónicos a través de medidas para garantizar la seguridad de los sistemas, datos, comunicaciones, servicios electrónicos etc., que permita a los  ciudadanos y a las Administraciones públicas el cumplimiento de deberes a través de estos medios.
-
-En 2022 se acuerda un nuevo **ENS** para cumplir 3 objetivos:
-- Alinear el ENS con el marco normativo y el contexto estratégico existente para garantizar la seguridad en la administración digital.
-- Introducir la capacidad de ajustar los requerimientos del ENS para garantizar su adaptación a la realidad de ciertos colectivos o tipos de sistemas.
-- Facilitar una mejor respuesta a las tendencias de ciberseguridad, reducir vulnerabilidades y promover la vigilancia continua mediante la revisión de los principios básicos, requisitos mínimos y las medidas de seguridad.
-
-#### Planes de Continuidad de Negocio
-**Cae en examen**
-La **ISO 22301:2019** es una normativa internacional para **Sistemas de Gestión de la Continuidad del Negocio (SGCN)**.
-
-Su principal función es proporcionar un marco de actuación para que las empresas puedan mitigar el daño que una emergencia pueda llegar a causar.
-Esta norma es aplicable a cualquier tipo de organización 
-
-##### Focos de atención de la normativa
-
-- Nivel de responsabilidad de la alta dirección
-- Correcta planificación de los recursos y preparación para hacer frente a riesgos que puedan cesar de manera temporal el negocio.
-- Como actuar frente a los proveedores, clientes y otras cadenas de suministro si no se puede desarrollar sus operaciones.
-
-##### ¿Qué es un SGCN?
-
-Identifica los efectos que puede tener una interrupción de la actividad de una organización y establece medidas de actuación en caso de que ocurra.
-Debe tener en cuenta todos los factores y agentes que deben actuar en una situación de riesgo.
-
-El modelo de continuidad del negocio basado en ISO 22301:2019 debe estar completamente alineado con la política corporativa de cada organización, si no, no cumplirá su función.
-
-##### Puntos y estructura de ISO 22301
-
-- Alcance de la aplicación
-- Referencias normativas
-- Términos y definiciones
-- Contexto de la organización
-- Liderazgo y compromiso
-- Planificación de acciones y definición de los objetos
-- Soporte
-- Evaluación de desempeño
-- Mejora continuada
-
-##### Como implementar y mantener un SGCN
-
-Primero, hay que entender como funciona un SGCN y analizar los actores de la organización - personal, tecnología, bases de datos, espacios físicos etc.
-
-Así se podrá establecer un plan de actuación que permita volver a la rutina.
-
-##### Aspectos clave para implementar ISO 22301
-
-- Conocer y comprender los planes de recuperación
-- Presupuesto para desarrollar y mejoras los planes de continuidad.
-- Creación de procedimientos fáciles de entender
-- Realizar simulacros.
-
-##### Ventajas de un SGCN
-
-- Mejora la gestión de los riesgos
-- Reconocimiento por parte de proveedores y clientes
-- Solidez empresarial
-- Ahorro en costes y tiempo
-
----
-### Directivas
-**Cae en examen**
-#### NIST
-
-National Insitute OF Standards and Technology
-
-- Origen
-	- EEUU
-- Propósito
-	- Proporcionar estándares, directrices y buenas prácticas en diversas áreas tecnológicas.
-- Alcance
-	- Sectores críticos de EEUU, como defensa y tecnología, además de muchas organizaciones privadas
-- Componentes
-	- NIST Cybersecurity Framework
-	- NIST SP 800-53 y 800-171
-	- SP 800-63B
-- Aplicación fuera de EEUU
-	- Muchas empresas y organizaciones internacionales adoptan estos estándares gracias a su efectividad y cobertura en ciberseguridad,
-
-#### NIS
-Network and Information Systems Directive
-
-- Origen
-	- Unión Europea
-- Propósito
-	- Mejorar el nivel de seguridad de las redes y sistemas de información
-- Alcance
-	- Obligatorio para todos los países miembros de la UE aplicado a sectores críticos como
-		- Energía
-		- Salud
-		- Transporte
-		- Agua
-		- Proveedores de servicios digitales
-- Componentes principales
-	- Requiere que los países miembros adopten legislaciones nacionales para establecer medidas de seguridad y capacidades de respuesta
-	- Establece la obligatoriedad de notificar incidentes de ciberseguridad a las autoridades de cada país.
-- Limitaciones
-	- Excluía sectores de importancia como la economía digital, así que ha tenido que ser revisada.
-
-#### NIS2
-Revised NIS Directive
-
-- Origen
-	- UE
-- Propósito
-	- Expandir y actualizar la directiva NIS 
-- Alcance
-	- Obligatorio para los miembros de la UE y abarca más sectores
-		- Administración pública
-		- Gestión de residuos
-		- Fabricación de dispositivos médicos
-		- Espacio
-		- Proveedores de servicios digitales
-		- Gestión de servicios TIC
-- Componentes y mejoras clave
-	- Ampliación de sectores que debe cumplir con las directrices de seguridad
-	- Estándares de notificación de incidentes más estrictos
-	- Sanciones más severas
-	- Requisitos de resiliencia y evaluación de riesgos adicionales
-- Objetivo
-	- Establecer un estándar más alto de protección para sectores críticos y emergentes en la UE.
-
-#### Diferencias
-![[Pasted image 20250105163747.png]]
-
----
-### Legislación  sobre la protección de infraestructuras críticas
-
-#### Ley PIC (Protección de infraestructuras críticas)
-**Cae en examen**
-Dentro del marco normativo asociado a la ciberseguridad industrial, tiene especial importancia en España la Ley de Protección de Infraestructuras Críticas (Ley PIC 8/2011) complementada por el Real Decreto 704/2011
-
-**Objetivos de esta norma**
-
-- Catalogar el conjunto de infraestructuras que prestan servicios esenciales a nuestra sociedad
-- Diseñar un planteamiento que contenga medidas de prevención y protección eficaces contra las posibles amenazas hacia las infraestructuras, tanto en el plano de la seguridad física como en el de la seguridad de las tecnologías de información y comunicaciones.
-
-La **Ley PIC** define como **infraestructuras críticas** aquellas cuto funcionamiento es indispensable y no permite soluciones alternativas, por lo que su perturbación / destrucción tendría un grave impacto sobre los servicios esenciales.
-
-Y define como **Infraestructuras estratégicas** las instalaciones, redes, sistemas y equipos físicos y de tecnología de la información sobre las que descansa el funcionamiento de los servicios esenciales.
-
-##### Sectores designados como prestadores de servicios esenciales
-- Administración
-- Agua
-- Alimentación
-- Energía
-- Espacio
-- Industria
-	- Química
-	- Nuclear
-- Salud
-
-##### ¿Qué es la protección de infraestructuras críticas?
-Es el conjunto de actividades destinadas a asegurar la funcionalidad, continuidad e integridad de las infraestructuras críticas, para prevenir, paliar y neutralizar el daño causado por un ataque deliberado contra esas infraestructuras.
-
-##### Principales aportaciones de la Ley PIC
- - Crear el Sistema Nacional de Protección de Infraestructuras Críticas que contiene aquellas instituciones y empresas tanto públicos como privados con responsabilidades en el correcto funcionamiento de los servicios esenciales y la seguridad de los ciudadanos
-	 - Estos son:
-		 - CNPIC
-		 - Ministerios
-		 - CCAA
-		 - Corporaciones locales
-- Poner las bases para el Sistema de Planificación PIC
-	- Es un conjunto de textos normativos que definen las medidas para la protección de las infraestructuras críticas.
-- Se desarrollarán tantos **Planes Estrategicos Sectoriales (PEC)** como sectores se hayan definido.
-  Además, las empresas que sean designadas como operadores críticos deberán presentar un **PSO (Plan de Seguridad del Operador)** y uyn **PPE (Plan de Protección Específico)** respecto a todas sus infraestructuras críticas
-- Generar el **Catálogo Nacional de Infraestructuras Estratégicas** el cual contiene la información completa, actualizada, contrastada e informáticamente sistematizada relativa a las características de cada una de las infraestructuras estratégicas existentes en el territorio nacional.
-- Establecer el CERT para la gestión de incidentes de ciberseguridad
-
----
-### Ciberseguridad en España
-
-#### CCN
-
-- Centro Criptológico Nacional
-- Se encarga de
-	- Administraciones publicas
-	- Empresas criticas
-		- Energia
-		- Agua
-		- Teleco
-		- Bancos
-
-#### INCIBE
-
-- Instituto Nacional de Ciberseguridad
-- Se encuentra en León
-- Se encarga de
-	- Empresas privadas
-
-#### CNC
-
-- Centro Nacional de Ciberseguridad
-- Quieren ponerlo en Madrid
-- Aun no saben donde encajarlo
+- El trafico de la red interna que sale a internet ha de estar controlada por el firewall
+- Según la política de seguridad, tendrá el tráfico permitido porque ha de ser autorizado para atravesar el firewall.
+- Cualquier tipo de control de accesos (usuario, apps etc) se realiza con el control de servicios, direcciones, usuarios etc
+- Ocultar información de la red que se protege
+- Crear logs
 
+#### Tipos
 
+**Filtrado de paquetes**
+- Actúa en el nivel 3
+- Filtra los paquetes según su encabezado
+	- IP origen e IP destino
+- Los routers tienen este tipo de FW
 
+**Nivel de aplicación**
+- Se apoyan en un proxy para gestionar el tráfico
+
+**Híbridos**
+- Usan 2 tecnologías
+	- Proxy para establecimiento
+	- Filtro de paquete para la transferencia de datos
+
+**Con inspección de estado**
+- Comprueban 
+	- Ip origen y destino
+	- Puertos
+	- Protocolo usado
+	- Estado de la conexión
+	- Cantidad de tráfico
+
+**Pasarelas a nivel de circuito**
+- Se verifica el handshake TCP
+- Deniega o aprueba el tráfico rápidamente.
+- No inspecciona el paquete y si este contiene malware podría pasar por válido
+
+**Inspección total**
+- Igual al híbrido, pero aplica la verificación del handshake TCP
+
+**En la nube - FaaS**
+- Fácilmente escalable
+
+**De hardware**
+- Comprueba el tráfico antes de darle paso a la red.
+
+**De software**
+- Cualquiera implementado en un sistema local
+
+### Routers
+
+#### Medidas de protección
+- Inhabilitar 
+	- Puertos no usados y que formen parte de una VLAN
+	- Servicios que no sean necesarios
+- Usar versiones seguras de protocolos
+- Eliminar configuraciones por defecto
+- Crear usuarios y grupos según el tipo de responsabilidad de cada uno
+- Restringir accesos desde un segmento de la red.
+- Usar SSH2 para acceso remoto
+- Acortar tiempo de inactividad de los usuarios
+- Limitar nº de intentos fallidos
+- Activar la auditoría de acceso al equipo y configurarla para que lo envíe al SOC
+
+
+### Proxy
+
+#### Características
+
+- Capa 7
+	- FTP, HTTPS, SMTP
+- Almacena las peticiones de los servicios demandadas por los clientes
+- Actúa como un intermediario, él cual se conecta y recolecta información de los servidores demandados para enviársela al cliente
+- Almacena durante x tiempo información en caché, para que cuando un cliente se la pida, se la dé sin necesidad de mandar otra petición al servidor.
+#### Funciones
+
+- Filtro de contenidos
+- Memoria caché de páginas web
+- Puede actuar como un servidor DHCP
+- Firewall
+#### Tipos
+
+**NAT**
+- Ofrece un servicio de acceso a una red para dispositivos que no pueden acceder por culpa de la arquitectura TCP/IP con asignación de IP públicas.
+
+**Anónimo**
+- Se usa para saltarse las estricciones de seguridad que se aplican su red.
+
+**Web**
+- Almacena el contenido de las webs a las que ha accedido para que cuando un cliente le pida una conexión a x servidor, el proxy se la de sin mandar un apetición al servidor web.
+
+**Abierto**
+- Acepta cualquier petición de cualquier cliente
+
+**Transparente**
+- Se usa para mejorar el servicio de internet, reduciendo el ancho de banda y la latencia
+
+## VPN e IPsec
+
+
+### Acceso remoto
+
+Permite conectarse a una red privada y realizar diferentes operaciones, consultas y utilizar cualquier recurso de la res privada de forma segura a través de internet.
+
+### Infraestructura
+
+Orientado a las organizaciones que necesitan trabajar de forma privativa aunque estén separadas físicamente.
+Este tipo de VPN se basa en la comunicación a nivel de enrutamiento.
+Uno actúa como cliente y otro como enrutador, como un servidor VPN.
+
+
+El sistema de tunelización encapsula un protocolo de red sobre otro, haciendo que se genere un túnel de la red.
+Este segundo protocolo incluye una PDU dentro de otra
+Esta última no se verá afectada en el tránsito de extremo a extremo.
+
+En la capa de transporte, en la cabecera se añade una IP adicional al paquete original, la cual va encapsulada y no se extraerá hasta que no llegue a otro extremo de la VPN.
+
+
+## Monitorización de sistemas y dispositivos
+
+La monitorización delos sistemas se realiza desde un solo equipo (SOC) y a través del protocolo SNMP.
+Se ha de autorizar la salida de información desde cada equipo.
+Se asigna un permiso exclusivo de recopilación de datos a un equipo o a una red restrictiva.
+
+**Nagios**
+Software de recopilación  de datos que los equipos alcanzables de una red.
+En Linux se necesita el protocolo SNMP mientras que en Windows se necesita la aplicación **nsclient**
+
+
+Estos sistemas de monitorización se han de configurar para que sea complicado acceder a la información que recopila.
+
+## IDS e IPS
+
+Un IDS/IPS puede ser
+- Router confiugrado con un software IPS
+- Un dispositivo diseñado para protpocionar solamente estos servicios
+- Un módulo de red instalado en un dispositivo de red
+
+IDS e IPS usan firmas para detectar patrones de tráfico de red ya sean maliciosos o no.
+También se pueden usar para recopilar información.
+
+Estas tecnologías permiten detectar patrones de
+- Firma atómica
+	- Un solo paquete
+- Firma compuesta
+	- Varios paquetes
+
+**Herramientas**
+- Snort
+- Suricata
+- SELKS
+- Splunk
+- Security Onion
+- Elastic SIEM
+
+
+## NOC Y SOC
+
+
+SOC - Centros de Operaciones de Seguridad
+NOC - Centros de Operaciones de Redes
+
+
+Son centros con servicios relacionados con la seguridad que operan 24/7.
+
+
+#### NOC
+
+Se especializan en monitorizar las transacciones entre los equipos para detectar incidentes en la infraestructura de una organización.
+
+**Tareas**
+- Instalación y actualización de software
+- Resolución de problemas que afectan al acceso de servidores o a los servicios de estos
+- Crear reportes / informes de transacciones
+- Supervisar el funcionamiento de toda la infraestructura digital.
+
+
+#### SOC
+
+Estos tienen 2 partes:
+
+##### Humana
+Personal experto en atender a incidentes de seguridad informática que protegen la infraestructura de red de una organización.
+
+**Analistas de nivel 1**
+
+- Monitorizan alertas entrantes, verificando y confirmando si un incidente es verdad o falso
+- Si es verdadero lo reenvían a los analistas de nivel 2
+
+**Analistas de nivel 2**
+
+- Realizan una investigación de los incidentes y sugieren x soluciones para resolverlos
+
+**Cazador de amenazas de nivel 3**
+- Siguen el comportamiento del malware, determinando su impacto y eliminándolo.
+- Implementan herramientas de detección y eliminación de estas amenazas
+- Buscan amenazas que están presentes en al red pero no han sido detectadas.
+
+**Administrador del SOC**
+- Administra el SOC y coordina el resto de equipos.
+
+
+##### Operativo
+
+Para el funcionamiento del SOC, se recopila información en tiempo real de todos los sistemas y redes que forman parte de la infraestructura de la organización.
+Toda esta información se centraliza en un único punto.
+###### Fases
+
+- Preparación y prevención
+	- Formación del personal en el uso de herramientas y detección de amenazas
+- Identificación
+	- El personal cualificado detecta incidentes 
+- Contención
+	- Se reducen las consecuencias de un incidente de seguridad, además de recoger evidencias digitales
+- Mitigación
+	- Eliminación del incidente
+		- Desconexión de equipos
+		- Controles de acceso
+		- Revisión de la infraestructura
+- Recuperación
+	- Se devuelve a la normalidad a todos los sistemas
+- Post-incidente
+	- Se registra todo el procedimiento del incidente
