@@ -1,16 +1,3 @@
-<details>
-  <summary><h2>Índice</h2></summary>
-  
- - [Introducción](#introducción)
- - [Qué es un DPO](#qué-es-un-dpo)
- - [Formación de un DPO](#formación-de-un-dpo)
- - [Quienes han de designar un DPO](#quienes-han-de-designar-un-dpo)
- - [Qué debe considerar una empresa a la hora de designar un DPO](qué-debe-considerar-una-empresa-a-la-hora-de-designar-un-dpo)
- - [Qué debería de hacer un DPO en una empresa como Canon](#qué-debería-de-hacer-un-dpo-en-una-empresa-como-canon)
-</details>
-
----
-
 ### Artículo 197 bis
 
 El que por cualquier medio o procedimiento, vulnerando las medidas de seguridad establecidas para impedirlo, y sin estar debidamente autorizado, acceda o facilite a otro el acceso al conjunto o una parte de un sistema de información o se mantenga en él en contra de la voluntad de quien tenga el legítimo derecho a excluirlo, será castigado con pena de prisión de seis meses a dos años.
