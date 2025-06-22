@@ -12,7 +12,7 @@ Cerebro del procesador, encargado de dirigir y coordinar la ejecución de todas 
 Componente que lleva a cabo las operaciones matemáticas y lógicas
 
 - **Operaciones aritméticas**
-	- + - * / <>
+	- / <> + - * 
 	  
 - **Operaciones lógicas**
 	- OR XOR AND NOT
