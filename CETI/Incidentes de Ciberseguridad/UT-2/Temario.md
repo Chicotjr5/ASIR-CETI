@@ -1,331 +1,412 @@
-### Artículo 197 bis
+## Auditorías de incidentes de ciberseguridad
+
+### Introducción
+
+Un incidente de ciberseguridad se define como una situación en la que no se cumple la política de seguridad
+
+**Fases**
+- Preparación
+	- Reúne las actividades proactivas que permiten una mejor atención y respuesta ante un incidente
+		- Procedimientos
+		- Herramientas
+		- Entrenamiento
+- Identificación
+	- Capacidad de identificar un incidente
+		- Monitorización
+		- Recolección de información
+- Contención
+	- Medidas para limitar y aislar el impacto del incidente sobre los recursos / información de la organización
+- Solución
+	- Medidas para limitar / aislar el impacto del incidente sobre los recursos de la organización.
+- Recuperación
+	- Procedimientos para volver a un estado normal y estable
+- Actividades post-incidentes
+	- Identificar e implementar medidas de mejora
+		- Sistema de copias de seguridad
+		- Auditorías
+
+Las auditorías tienen como finalidad conocer si los sistemas de información de la organización cumplen con los requisitos de seguridad o si hay algún error, debilidad o algún punto de mejora
+
+Estas auditorías se han de planificar de forma periódica y nunca ha de pasar más de 2 años entre una y otra.
+
+### Taxonomía de incidentes de seguridad
+
+#### Contenido abusivo
+- **SPAM**
+	- Correo electrónico masivo no solicitado
+- **Delito de odio**
+	- Contenido difamatorio o discriminatorio
+- **CP, contenido sexual o violento inadecuado**
+	- Material que represente de manera visual contenido relacionado con cp, apología a la violencia etc.
+
+#### Contenido dañino
+- **Sistema infectado**
+	- Sistema infectado con malware
+- **Servidor C&C (Mando y control)**
+	- Conexión con el C&C a través de malware o sistemas infectados
+- **Distribución de malware**
+- **Configuración de malware**
+- **Malware dominio DGA**
+	- Nombre de dominio generado mediante DGA empleado por malware para contactar con un servidor C&C
+
+#### Obtención de información
+- **Escaneo de redes - scanning**
+	- Envío de paquetes a un sistema para descubrir debilidades o cualquier tipo de información útil para un ataque
+- **Análisis de paquetes - sniffing**
+	- Observación del tráfico de redes
+- **Ingeniería social**
+	- Recopilación de información personal sin el uso de tecnología.
+
+#### Intento de intrusión
+- **Explotación de vulnerabilidades conocidas**
+	- Comprometer un sistema / interrumpir un servicio explotando vulnerabilidades conocidas
+- **Intento de acceso con vulneración de credenciales**
+- **Ataque desconocido**
+	- Ataque usando un exploit desconocido
+
+#### Intrusión
+- **Compromiso de cuenta con privilegios**
+- **Compromiso de una cuenta sin privilegios**
+- **Compromiso de aplicaciones**
+	- Comprometer una aplicación mediante la explotación de vulnerabilidades 
+- **Robo**
+	- Intrusión física
+
+#### Disponibilidad
+- **DoS**
+- **DDoS**
+- **Sabotaje**
+	- Sabotaje físisco
+- **Interrupciones**
+	- Interrupción por otras causas
+
+#### Compromiso de la información
+- **Acceso no autorizado a información**
+- **Modificación no autorizada de la información**
+- **Pérdida de datos**
+
+#### Fraude
+- **Uso no autorizado de recursos**
+- **Derechos de autor**
+- **Suplantación**
+- **Phising**
+
+#### Vulnerable
+- **Criptografía débil**
+- **Amplificador DDoS**
+	- Servicios accesibles públicamente que puedan ser empleados para la amplificación de ataques DDoS
+- **Servicios con acceso potencial no deseado**
+- **Revelación de información**
+	- Acceso público a servicios en los que se puede revelar información sensible
+- **Sistema vulnerable**
 
-El que por cualquier medio o procedimiento, vulnerando las medidas de seguridad establecidas para impedirlo, y sin estar debidamente autorizado, acceda o facilite a otro el acceso al conjunto o una parte de un sistema de información o se mantenga en él en contra de la voluntad de quien tenga el legítimo derecho a excluirlo, será castigado con pena de prisión de seis meses a dos años.
+#### Otros
+- **Otros**
+- **APT**
+	- Ataques dirigidos contra organizaciones concretas usando mecanismos muy sofisticados
+- **Ciberterrorismo**
+- **Daños informáticos PIC**
+	- Borrado, dañado, alteración, supresión o inaccesibilidad de datos, programas informáticos, documentos electrónicos de una infraestructura crítica.
 
-----
 
-El que mediante la utilización de artificios o instrumentos técnicos, y sin estar debidamente autorizado, intercepte transmisiones no públicas de datos informáticos que se produzcan desde, hacia o dentro de un sistema de información, incluidas las emisiones electromagnéticas de los mismos, será castigado con una pena de prisión de tres meses a dos años o multa de tres a doce meses
+### NTLDM
+Conjunto de protocolos de seguridad ofrecidos por Microsoft para autenticar la identidad de los usuarios y proteger la integridad y confidencialidad de su actividad.
 
----
-### Puntos principales de aplicación para un correcto cumplimiento normativo
 
-#### Introducción al cumplimento normativo / **Compliance** 
-**Cae en examen**
-La función del **Compliance** se vincula a la prevención de delitos para evitar la responsabilidad penal de la persona jurídica.
+### Controles herramientas y mecanismos de monitorización, identificación, detección y alerta de incidentes
 
-Es una autorregulación fundamentada en la necesidad de convertir a las organizaciones / empresas en **"Buenos ciudadanos cumplidores"** ya que al igual que las personas físicas, tienen derechos y obligaciones.
+En nuestra empresa debe existir un plan de contingencia donde se debe reflejar la necesidad de hacer:
 
-Se basan en 
-- Ética empresarial
-- Buen gobierno corporativo
-- Responsabilidad social corporativa
+**Análisis**
+- Documentar acciones realizadas
+- Determinar sistemas afectados
+- Averiguar vectores de ataque
 
-#### Compliance officer
+**Contención**
+- Evitar la propagación del accidente
+- Restringir accesos desde los equipos comprometidos al resto de sistemas
 
-Persona que se asegura de que una empresa cumpla con: 
-- Requisitos legales y reglamentarios externos
-- Políticas y estatutos internos
-- Normas, reglamentos, procesos que dicen la forma en que las empresas han de realizar sus negocios.
+#### IDS
+Detector de intrusiones
 
-Su función es promover una conducta ética y han de estar al tanto de las últimas leyes, reglamentos y tendencias comerciales y a de ser capaz de explicarlos a la empresa.
+Sistema de seguridad que analiza el tráfico de la red buscando posibles incidentes de seguridad
+Analiza paquetes e identifica patrones.
 
-#### Relaciones con 3º partes dentro del Compliance
+Ejemplo - Snort
 
-El código penal establece que la persona jurídica es responsable de x hechos delictivos realizados por sus representantes legales.
+#### IPS
+Prevención de intrusiones
 
-Para una empresa esto se extiende y es que no solo se aplica la responsabilidad sobre sus representantes legales / empleados, si no también a los terceros:
-	- Autónomos
-	- Subcontratados
-	- Clientes
-	- Proveedores
+Sistema diseñado para responder automáticamente a posibles incidentes de seguridad tomando medidas:
+- Bloquear el tráfico de la red
+- Poner en cuarentena los sistemas afectados
+- Cerrar conexiones maliciosas
 
-Así que las empresas han de conseguir que sus 3º también cumplan con los compromisos legales y éticos.
+Un elemento que puede funcionar de IDS/IPS es **Suricata**
 
-Aquí es donde entra la **diligencia debida** (due diligence).
-Esta trata de prevenir estos riesgos, evitando comportamiento de los 3º contrarios a los principios del cumplimiento normativo.
+### Soluciones de ciberseguridad
 
-**Etapas del procedimiento:**
-- Adecuada selección del 3º con el que la empresa se va a relacionar
-- Correcta formalización de la relación a través de un contrato.
-- Seguimiento de la evolución del 3º
+#### Antifraude
+Las soluciones antifraude están destinadas a proteger a los usuarios de ataques de ingeniería social
 
-#### Sistemas de Gestión de Compliance
+**Ejemplos**
+- Anti-Phising
+- Anti-spam
+- Filtrado de navegación
+- UTM
 
-Los Sistemas de Gestión de Compliance sirven para gestionar y controlar diversos riesgos, como por ejemplo:
-- Protección de datos
-- Corrupción
-- Violaciones a
-	-  Regulaciones antimonopolio
-	- Carácter laboral
-	- Seguridad y salud en el trabajo
+**Recomendaciones**
+- Usar certificados digitales
+- Realizar comprobaciones sobre los pedidos
+- Concienciar a los empleados
+- Detectar posibles copias o usos no autorizados de las marcas
 
-Los Sistemas de Gestión de Compliance son requeridos por las siguientes razones:
-- Asegurar que los empleados actúan según las leyes
-- Asegurar que en caso de incumplimiento, las organizaciones no sean sancionadas o que la implementación de los SGC se consideren un factor atenuante
+#### Anti-malware
+Herramientas destinadas a la protección de sistemas informáticos
 
----
+**Subcategorías**
+- Anti-virus
+- Anti-adware
+- Anti-spyware
 
-### Legislación y jurisprudencia en materia de protección de datos
-**Cae en examen**
-#### Principio de protección de datos
+**Recomendaciones**
+- Sistemas y aplicaciones actualizados y libres de malware
+- Concienciar a los empleados
+- Copias de seguridad periódicas
 
-Artículo 5 del reglamento (UE) 2016/679 General de Protección de Datos
-Ley Orgánica 3/2018 de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD).
+#### Auditoría técnica 
+Abarcan desde la revisión hasta la evaluación de la seguridad desde todos los ámbitos técnicos, tecnológicos y organizativos de la seguridad.
 
-Los principios son
-- Licitud
-- Lealtad
-- Transparencia
-- Limitación de la finalidad
-- Minimización de los datos
-- Exactitud
-- Limitación del plazo de conservación
-- Integridad y confidencialidad
-- Responsabilidad Proactiva
+**Subcategorías**
+- Análisis de log y puertos
+- Análisis de vulnerabilidades
+- Auditoria de contraseñas
+- Auditoría de sistemas y ficheros
+- Recuperación de datos
+- Testeo de software
 
+**Recomendaciones**
+- Herramientas actualizadas
+- Sistemas actualizados
+- Tener empresas y profesionales especializados que ofrezcan información contrastada sobre la situación actual de la seguridad en la organización / un incidente de ciberseguridad.
+- Concienciar a los empleados
 
----
+#### Certificación normativa
 
-#### Delegado de Protección de Datos
-**Cae en examen**
-Es aquella persona responsable en el seno de una organización de  **realizar la supervisión**  **monitorización** de forma independiente y confidencial para ver si se esta cumpliendo la normativa en materia de protección de datos personales
+Son herramientas destinadas a facilitar el cumplimiento normativo aplicable en materia de seguridad y la obtención de certificados en esas normativas.
 
-Además de que ofrecerá todo el asesoramiento que se le solicite y colaborará con la autoridad de control (En España - **Agencia Española de Protección de Datos **).
+**Subcategorías**
+- Sistemas de Gestión de la Seguridad de la Información
+- Análisis de riesgos
+- Planes y políticas de seguridad
+- Normativas de seguridad
 
-Para ser DPO se necesita
-- Ser designado por una organización, atendiendo a sus cualidades profesionales y a sus conocimientos especializados en Derecho.
-- Aunque no se obliga contar con una certificación, esta es fundamental para probar los conocimientos
+**Recomendaciones**
+- Desarrollar políticas de seguridad
+- Contar con servicios de consultoría previos a la implantación de cualquier herramienta asociada a esta categoría
+- Establecer rutinas de gestión de la seguridad y verificar su cumplimiento para minimizar riesgos de seguridad.
 
-LA AEPD ha optado por promover un Esquema de certificación de DPO que permite certificar que los DPD reúnen la cualificación profesional y los conocimientos requeridos para ejercer la profesión.
 
----
-### Normativa vigente de ciberseguridad en el ámbito nacional e internacional
+## Controles, herramientas y mecanismos de detección e identificación de incidentes
 
-**Cae en examen**
-#### ¿Qué es un SGSI?
 
-Un SGSI es un conjunto de políticas y procedimientos para administrar la información de una empresa / organismo cumpliendo una serie de requisitos, garantizando a **confidencialidad , integridad y disponibilidad** 
+### Security Operations Center SOC
 
-#### Sistema de Gestión de Seguridad de la Información (internacional)
+Implementar un SOC es un proceso complejo que implica tener una combinación de hardware, software y procesos bien definidos.
 
-La ISO 27001 es una norma internacional de Seguridad de la Información que pretende asegurar la **confidencialidad, integridad y disponibilidad** de la información de una organización, además de los sistemas y aplicaciones que la usan.
+**Requisitos iniciales**
+- Hardware
+	- Servidores para almacenar log y datos
+	- Estaciones de trabajo
+	- Dispositivos de red para monitorización
+- Software
+	- Sistema operativo
+		- Kali para estaciones de trabajo
+		- Security Onion para servidores de análisis de log
 
-Esta norma define de manera genérica como se planifica, implanta, verifica y controla un SGSI a partir de un análisis de riesgos y la planificación de la respuesta a los mismos.
-Osease, cualquier empresa puede desplegar un SGSI siguiendo este estándar.
+**Herramientas de monitorización**
+- Monitorizar la red - Wireshark
+- Detectar intrusiones - Snort / Suricata
+- Análisis de logs - ELK (ElasticSearch, Logtash, Kibana)
 
-##### Gestión de calidad PDCA
-La ISO 27001 se basa en la teoría de gestión de calidad **PDCA** (También conocida como ciclo de Deming)
+**Gestión de incidentes**
+- Implementación de un Sistema de Gestión de Incidentes (SIEM) como **Security Onion**, **Splunk** o **ELK**
+- Definición de procesos y procedimientos para la implementación, clasificación, respuesta y recuperación de incidentes de seguridad
 
-Se estructura de la siguiente forma:
+**Seguridad perimetral**
+- Configurar firewall e IPS
+- Usar herramientas de escaneo de vulnerabilidades como **Nessus**
 
-- **Planificar**
-	- Etapa inicial del diseño del SGSI donde se realiza una identificación inicial de los riesgos asociados con la Seguridad de la Información
-- **Hacer**
-	- Implantación y operación del Sistema de Gestión de Seguridad de la Información que se ha definido y desarrollado
-- **Verificar**
-	- Revisar y evaluar su eficacia y eficiencia
-	- Si el desempeño no es el esperado, analizar el pq y determinar mejorar
-- **Actuar**
-	- Mejora continua del SGSI
-
----
-### Esquema Nacional de Seguridad
-**Cae en examen**
-La finalidad del **ENS** es la creación de la confianza en el uso de los medios electrónicos a través de medidas para garantizar la seguridad de los sistemas, datos, comunicaciones, servicios electrónicos etc., que permita a los  ciudadanos y a las Administraciones públicas el cumplimiento de deberes a través de estos medios.
-
-En 2022 se acuerda un nuevo **ENS** para cumplir 3 objetivos:
-- Alinear el ENS con el marco normativo y el contexto estratégico existente para garantizar la seguridad en la administración digital.
-- Introducir la capacidad de ajustar los requerimientos del ENS para garantizar su adaptación a la realidad de ciertos colectivos o tipos de sistemas.
-- Facilitar una mejor respuesta a las tendencias de ciberseguridad, reducir vulnerabilidades y promover la vigilancia continua mediante la revisión de los principios básicos, requisitos mínimos y las medidas de seguridad.
-
-#### Planes de Continuidad de Negocio
-**Cae en examen**
-La **ISO 22301:2019** es una normativa internacional para **Sistemas de Gestión de la Continuidad del Negocio (SGCN)**.
-
-Su principal función es proporcionar un marco de actuación para que las empresas puedan mitigar el daño que una emergencia pueda llegar a causar.
-Esta norma es aplicable a cualquier tipo de organización 
-
-##### Focos de atención de la normativa
-
-- Nivel de responsabilidad de la alta dirección
-- Correcta planificación de los recursos y preparación para hacer frente a riesgos que puedan cesar de manera temporal el negocio.
-- Como actuar frente a los proveedores, clientes y otras cadenas de suministro si no se puede desarrollar sus operaciones.
-
-##### ¿Qué es un SGCN?
-
-Identifica los efectos que puede tener una interrupción de la actividad de una organización y establece medidas de actuación en caso de que ocurra.
-Debe tener en cuenta todos los factores y agentes que deben actuar en una situación de riesgo.
-
-El modelo de continuidad del negocio basado en ISO 22301:2019 debe estar completamente alineado con la política corporativa de cada organización, si no, no cumplirá su función.
-
-##### Puntos y estructura de ISO 22301
-
-- Alcance de la aplicación
-- Referencias normativas
-- Términos y definiciones
-- Contexto de la organización
-- Liderazgo y compromiso
-- Planificación de acciones y definición de los objetos
-- Soporte
-- Evaluación de desempeño
-- Mejora continuada
-
-##### Como implementar y mantener un SGCN
-
-Primero, hay que entender como funciona un SGCN y analizar los actores de la organización - personal, tecnología, bases de datos, espacios físicos etc.
-
-Así se podrá establecer un plan de actuación que permita volver a la rutina.
-
-##### Aspectos clave para implementar ISO 22301
-
-- Conocer y comprender los planes de recuperación
-- Presupuesto para desarrollar y mejoras los planes de continuidad.
-- Creación de procedimientos fáciles de entender
-- Realizar simulacros.
-
-##### Ventajas de un SGCN
-
-- Mejora la gestión de los riesgos
-- Reconocimiento por parte de proveedores y clientes
-- Solidez empresarial
-- Ahorro en costes y tiempo
-
----
-### Directivas
-**Cae en examen**
-#### NIST
-
-National Insitute OF Standards and Technology
-
-- Origen
-	- EEUU
-- Propósito
-	- Proporcionar estándares, directrices y buenas prácticas en diversas áreas tecnológicas.
-- Alcance
-	- Sectores críticos de EEUU, como defensa y tecnología, además de muchas organizaciones privadas
-- Componentes
-	- NIST Cybersecurity Framework
-	- NIST SP 800-53 y 800-171
-	- SP 800-63B
-- Aplicación fuera de EEUU
-	- Muchas empresas y organizaciones internacionales adoptan estos estándares gracias a su efectividad y cobertura en ciberseguridad,
-
-#### NIS
-Network and Information Systems Directive
-
-- Origen
-	- Unión Europea
-- Propósito
-	- Mejorar el nivel de seguridad de las redes y sistemas de información
-- Alcance
-	- Obligatorio para todos los países miembros de la UE aplicado a sectores críticos como
-		- Energía
-		- Salud
-		- Transporte
-		- Agua
-		- Proveedores de servicios digitales
-- Componentes principales
-	- Requiere que los países miembros adopten legislaciones nacionales para establecer medidas de seguridad y capacidades de respuesta
-	- Establece la obligatoriedad de notificar incidentes de ciberseguridad a las autoridades de cada país.
-- Limitaciones
-	- Excluía sectores de importancia como la economía digital, así que ha tenido que ser revisada.
-
-#### NIS2
-Revised NIS Directive
-
-- Origen
-	- UE
-- Propósito
-	- Expandir y actualizar la directiva NIS 
-- Alcance
-	- Obligatorio para los miembros de la UE y abarca más sectores
-		- Administración pública
-		- Gestión de residuos
-		- Fabricación de dispositivos médicos
-		- Espacio
-		- Proveedores de servicios digitales
-		- Gestión de servicios TIC
-- Componentes y mejoras clave
-	- Ampliación de sectores que debe cumplir con las directrices de seguridad
-	- Estándares de notificación de incidentes más estrictos
-	- Sanciones más severas
-	- Requisitos de resiliencia y evaluación de riesgos adicionales
-- Objetivo
-	- Establecer un estándar más alto de protección para sectores críticos y emergentes en la UE.
-
-#### Diferencias
-![[Pasted image 20250105163747.png]]
-
----
-### Legislación  sobre la protección de infraestructuras críticas
-
-#### Ley PIC (Protección de infraestructuras críticas)
-**Cae en examen**
-Dentro del marco normativo asociado a la ciberseguridad industrial, tiene especial importancia en España la Ley de Protección de Infraestructuras Críticas (Ley PIC 8/2011) complementada por el Real Decreto 704/2011
-
-**Objetivos de esta norma**
-
-- Catalogar el conjunto de infraestructuras que prestan servicios esenciales a nuestra sociedad
-- Diseñar un planteamiento que contenga medidas de prevención y protección eficaces contra las posibles amenazas hacia las infraestructuras, tanto en el plano de la seguridad física como en el de la seguridad de las tecnologías de información y comunicaciones.
-
-La **Ley PIC** define como **infraestructuras críticas** aquellas cuto funcionamiento es indispensable y no permite soluciones alternativas, por lo que su perturbación / destrucción tendría un grave impacto sobre los servicios esenciales.
-
-Y define como **Infraestructuras estratégicas** las instalaciones, redes, sistemas y equipos físicos y de tecnología de la información sobre las que descansa el funcionamiento de los servicios esenciales.
-
-##### Sectores designados como prestadores de servicios esenciales
-- Administración
-- Agua
-- Alimentación
-- Energía
-- Espacio
-- Industria
-	- Química
-	- Nuclear
-- Salud
-
-##### ¿Qué es la protección de infraestructuras críticas?
-Es el conjunto de actividades destinadas a asegurar la funcionalidad, continuidad e integridad de las infraestructuras críticas, para prevenir, paliar y neutralizar el daño causado por un ataque deliberado contra esas infraestructuras.
-
-##### Principales aportaciones de la Ley PIC
- - Crear el Sistema Nacional de Protección de Infraestructuras Críticas que contiene aquellas instituciones y empresas tanto públicos como privados con responsabilidades en el correcto funcionamiento de los servicios esenciales y la seguridad de los ciudadanos
-	 - Estos son:
-		 - CNPIC
-		 - Ministerios
-		 - CCAA
-		 - Corporaciones locales
-- Poner las bases para el Sistema de Planificación PIC
-	- Es un conjunto de textos normativos que definen las medidas para la protección de las infraestructuras críticas.
-- Se desarrollarán tantos **Planes Estrategicos Sectoriales (PEC)** como sectores se hayan definido.
-  Además, las empresas que sean designadas como operadores críticos deberán presentar un **PSO (Plan de Seguridad del Operador)** y uyn **PPE (Plan de Protección Específico)** respecto a todas sus infraestructuras críticas
-- Generar el **Catálogo Nacional de Infraestructuras Estratégicas** el cual contiene la información completa, actualizada, contrastada e informáticamente sistematizada relativa a las características de cada una de las infraestructuras estratégicas existentes en el territorio nacional.
-- Establecer el CERT para la gestión de incidentes de ciberseguridad
-
----
-### Ciberseguridad en España
-
-#### CCN
-
-- Centro Criptológico Nacional
-- Se encarga de
-	- Administraciones publicas
-	- Empresas criticas
-		- Energia
-		- Agua
-		- Teleco
-		- Bancos
-
-#### INCIBE
-
-- Instituto Nacional de Ciberseguridad
-- Se encuentra en León
-- Se encarga de
-	- Empresas privadas
-
-#### CNC
-
-- Centro Nacional de Ciberseguridad
-- Quieren ponerlo en Madrid
-- Aun no saben donde encajarlo
+**Capacitación del personal**
+- Entrenamiento constante a los analistas de seguridad
+- Familiarizarlos con las herramientas y procedimientos del SOC
 
+**Automatización**
+- De tareas para mejorar la eficiencia
+- Usar scripts y herramientas de automatización para la respuesta a incidentes.
 
+**Colaboración**
+- Entre los analistas de seguridad
+- Realización de auditorias de seguridad periódicas
 
+
+**Tipos de eventos a recoger**
+
+- Eventos simples
+	- Introducir más de 6 veces unas credenciales incorrectas en un equipo
+- Eventos complejos
+	- Una serie de incidencias que provengan al mismo tiempo desde el directorio activo 
+	- Ataques a un punto de acceso Wifi
+	- Ataques a un sistema biométrico
+
+### Reglas Sigma
+
+Formato de firma abierto y genérico creadas por **Florian Roth**.
+Son reglas fáciles de definir y permiten describir eventos de registros importantes con el objetivo de mejorar la ciberseguridad.
+Permiten a las organizaciones incorporar los métodos de identificación derivados de investigaciones.
+
+Estas reglas se aplican para archivos **Log**
+
+**Situaciones de uso**
+- Describir el método de detección en Sigma para su exportación
+- Compartir la firma en comunidades de inteligencia de amenazas para aumentar la visibilidad del proyecto y expandir la ciberseguridad.
+
+**Herramientas y aplicaciones Sigma**
+- Sigmac
+	- Convierte las reglas Sigma en entradas / consultas de los objetivos admitidos
+	- Interfaz para el repositorio Sigma que se puede integrar en otros proyectos
+- Sigma2MISP
+	- Se emplea como plataforma en la que compartir, almacenar y correlacionar indicadores de compromiso (IOCs) de ataques dirigidos para que las organizaciones puedan compartir información sobre diferentes indicadores y malware.
+- Evt2Sigma
+	- Herramienta que ayuda a crear reglas Sigma
+- Sigma2Attack
+	- Herramientasd que permite crear un mapa de calor **MITRE ATT & CK** a partir dfel directorio que contenga la regla Sigma
+
+### Reglas Yara
+
+YARA en una herramientas que identifica malware mediante la creación de descripciones que buscan determinadas características permitiendo la detección de patrones específicos en archivos que podrían indicar que el archivo es malicioso.
+
+Este tipo de reglas son para archivos normales.
+
+YARA se puede usar a través de su interfaz de comandos o a través de scripts en Python.
+
+
+Aunque estas reglas tienen una gran aceptación, todas las organizaciones han de tener en cuenta que estas reglas pueden ser insuficientes.
+Los ciberatacantes han desarrollado contramedidas que les permite generar malware lo suficientemente distinto como para que no coincida con las firmas encargadas de detección.
+
+
+### Threat Hunting
+
+Proceso de búsqueda interactiva y proactiva a través de las redes para detectar y aislar amenazas avanzadas capaces de evadir las medidas y soluciones de seguridad existentes.
+
+#### Características
+- Enfoque proactivo 
+- No es "respuesta al incidente" pero si va relacionado
+  La información que se obtiene proporciona una serie de evidencias que se usarán para establecer nuevos indicadores de ataque y compromiso.
+- No reemplaza a otras estrategias como **Threat Detection** pero si las alimenta.
+
+
+
+#### Las trazas son valiosas
+
+Para las tareas de Threat Hunting se necesitas información recogida sobre las acciones que han realizado los atacantes.
+Puntos calientes de información:
+- Huellas
+- Ataques fallidos
+- Sondas
+- Descubrir vulnerabilidades
+- Descubrir actividad antes de producirse un ataque
+
+
+## Controles, herramientas y mecanismos de monitorización, identificación, detección y alerta de incidentes a través de OSINT 
+
+**OSINT** - Hace referencia al conocimiento recopilado a partir de fuentes de acceso público.
+Este proceso se realiza antes de la auditoría debido a que proporciona mucha información sobre el objetivo, pudiendo descubrir alguna vulnerabilidad existentes, y por tanto, los vectores de ataque.
+
+Existen 2 tipos de **information gathering** 
+
+- Footprinting
+	- Recolectar información del objetivo sin necesidad de interactuar con sus sistemas
+- Fingerprinting
+	- Recolectar información interactuando directamente con el objetivo.
+
+**Tipos de OSINT**
+- HUMINT
+- SIGINT
+- GEOINT
+
+### HUMINT
+
+Abreviación de **Human Intelligence**
+Es toda aquella recolección de datos que realiza un ser humano mediante la investigación, clasificación y análisis de nuevos conocimientos
+
+### SINGINT
+Signals intelligence
+
+Técnica de recolección de información que se basa en la interceptación de señales de comunicación y redares para reunir datos de inteligencia.
+
+**Tipos de SINGINT**
+- COMINT
+	- Tipo de inteligencia basada en el análisis de señales relacionadas con las comunicaciones entre personas
+	- Incluye
+		- Interceptación de líneas telefónicas
+		- Chats
+		- Conversaciones presenciales
+
+- ELINT
+	- Recolección de información basada en señales eléctricas
+	- Se enfoca más en la comunicación entre máquinas
+
+- FISINT
+	- Se refiere a la interceptación de señales de instrumentos extranjeros, con el fin de rastrear actividades armamentísticas de otro país
+
+### GEOINT
+Geological Intelligence
+Abarca todos los aspectos de analiza imágenes geoespaciales.
+
+
+### Fases del proceso OSINT
+
+**Requisitos**
+- Fase en la que se establecen las condiciones que deben satisfacerse para conseguir el objetivo.
+
+**Identificar fuentes de información**
+- Consiste en especificar, a partir de los requisitos establecidos, las fuentes de interés.
+
+**Adquisición**
+- Se obtiene la información 
+
+**Procesamiento**
+- Dar formato a la información recopilada
+
+**Análisis**
+- El objetivo es relacionar la información de distintos orígenes buscando patrones que permitan llegar a alguna conclusión significativa
+
+**Presentación de inteligencía**
+- Consiste en presentar la información obtenida de una manera eficaz, comprensible y útil
+
+### Problemas 
+
+- Demasiada información recopilada siendo la mayoría inútil / innecesaria
+- La información se ha obtenido de fuentes poco fiables (tiktok)
+
+### Herramientas 
+
+**Buscadores**
+- Como Google, Bing, Yahoo! que nos permiten consultar toda la información que indexan
+- Permiten especificar parámetros concretos para obtener información sensible como credenciales de inicio de sesión, servicios vulnerables, datos personales etc.
+
+#### Buscadores especializados
+
+**SHODAN**
+- Permite localizar equipos, webcams, impresoras etc. basándose en la IP, ubicación geográfica, software usado etc.
+- Además en algunos casos no solo se pueden localizar equipos, si no tomar control de los mismos.
+
+**MALTEGO**
+- Herramienta que recopila información sobre un objetivo y la muestra en forma de grafo permitiéndonos analizar cómodamente las diferentes relaciones entre el objetivo.
+- Muy interesante en las fases iniciales de la recopilación de información
+
+#### Herramientas de recolección de metadatos
+
+**FOCA**
+- Herramienta gratuita de pentesting para Windows usada para la búsqueda de información contenida en los metadatos de los ficheros
