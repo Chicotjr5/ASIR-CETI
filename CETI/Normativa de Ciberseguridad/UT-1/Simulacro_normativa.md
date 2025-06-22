@@ -1,8 +1,19 @@
 <details>
   <summary><h2>Índice</h2></summary>
   
- - [Introducción](#introducción)
- - [](url)
+- [Introducción](#introducción)
+- [Análisis del cumplimiento normativo](#análisis-del-cumplimiento-normativo)
+  - [¿Qué normativas se aplican a SecureCorp y por qué?](#qué-normativas-se-aplican-a-securecorp-y-por-qué)
+  - [¿Cuáles son las principales obligaciones de la empresa bajo estas normativas?](#cuáles-son-las-principales-obligaciones-de-la-empresa-bajo-estas-normativas)
+  - [¿Qué sanciones podrían aplicarse en caso de incumplimiento?](#qué-sanciones-podrían-aplicarse-en-caso-de-incumplimiento)
+- [Identificación de riesgos](#identificación-de-riesgos)
+  - [Fuga de datos personales](#fuga-de-datos-personales)
+  - [Protección inadecuada de infraestructuras críticas](#protección-inadecuada-de-infraestructuras-críticas)
+  - [Falta de un plan de continuidad del negocio](#falta-de-un-plan-de-continuidad-del-negocio)
+  - [Transferencia de datos a EE.UU sin garantizar medidas adecuadas](#transferencia-de-datos-a-eeuu-sin-garantizar-medidas-adecuadas)
+- [Propuesta de soluciones](#propuesta-de-soluciones)
+- [Uso de la herramienta PILAR](#uso-de-la-herramienta-pilar)
+
 </details>
 
 ---
