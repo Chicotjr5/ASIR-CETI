@@ -33,3 +33,9 @@ In the future I will translate the content into English.
 19/06/2025 -> Finalizar CETI > Incidentes de Ciberseguridad
 
 20/06/2025 -> Finalizar CETI > Puesta en Producción Segura
+
+22/06/2025 -> Finalizar CETI > Normativa de ciberseguridad
+
+22/06/2025 -> Finalizar CETI > Proyecto
+
+22/06/2025 -> Finalizar CETI 
