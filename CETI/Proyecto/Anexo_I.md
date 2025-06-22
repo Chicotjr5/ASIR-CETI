@@ -1,3 +1,11 @@
+<details>
+  <summary><h2>Índice</h2></summary>
+  
+ - [Emular un móvil](#emular-un-móvil)
+</details>
+
+---
+
 ## Emular un móvil 
 
 Al abrir el software de Android Studio, esto es lo primero que vemos:
