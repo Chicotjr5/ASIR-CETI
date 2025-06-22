@@ -1,7 +1,7 @@
 ## HACKING ÉTICO
 
 Disciplina que se encarga de comprobar el nivel de seguridad de un activo / sistema informático.
-##### Hacker ético
+#### Hacker ético
 Es aquel que cuando encuentra una vulnerabilidad, la debe de poner en conocimiento del responsable de la infraestructura vulnerada, para que la vulnerabilidad sea arreglada.
 
 ### ELEMENTOS PRINCIPALES DEL HACKING ÉTICO
