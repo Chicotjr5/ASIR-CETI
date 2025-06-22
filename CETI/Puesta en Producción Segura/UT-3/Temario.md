@@ -1,331 +1,345 @@
-### Artículo 197 bis
+## WWW 
 
-El que por cualquier medio o procedimiento, vulnerando las medidas de seguridad establecidas para impedirlo, y sin estar debidamente autorizado, acceda o facilite a otro el acceso al conjunto o una parte de un sistema de información o se mantenga en él en contra de la voluntad de quien tenga el legítimo derecho a excluirlo, será castigado con pena de prisión de seis meses a dos años.
+La world wide web consistía en sitios web estáticos que solo permitían la visualización de información, sin poder interactuar con ellas.
+Solo había comunicación unidireccional - servidor->cliente
 
-----
+Tampoco había mecanismos de autenticación
 
-El que mediante la utilización de artificios o instrumentos técnicos, y sin estar debidamente autorizado, intercepte transmisiones no públicas de datos informáticos que se produzcan desde, hacia o dentro de un sistema de información, incluidas las emisiones electromagnéticas de los mismos, será castigado con una pena de prisión de tres meses a dos años o multa de tres a doce meses
+### HTTP
 
----
-### Puntos principales de aplicación para un correcto cumplimiento normativo
+Hay diferentes protocolos que permiten la comunicación entre equipos por la arquitectura de las mismas:
+- Cliente/servidor
+- P2P
+- Distribuido
 
-#### Introducción al cumplimento normativo / **Compliance** 
-**Cae en examen**
-La función del **Compliance** se vincula a la prevención de delitos para evitar la responsabilidad penal de la persona jurídica.
+**HTTP** esta basado en un modelo petición / respuesta donde el cliente envía una solicitud y el servidor responde  antes de cerrar la conexión.
+HTTP usa métodos con significado semántico
+- GET
+	- Se solicita un recurso
+- PUT
+	- Se solicita la modificación de un recurso existente
+- DELETE
+	- Se borra un elemento 
+- POST
+	- Se crea un recurso
 
-Es una autorregulación fundamentada en la necesidad de convertir a las organizaciones / empresas en **"Buenos ciudadanos cumplidores"** ya que al igual que las personas físicas, tienen derechos y obligaciones.
+**Características**
+- Definición de cabeceras personalizadas de peticiones y respuestas
+	- 200 - Conexión correcta
+	- 300
+	- 400 - Fallo en la conexión
+	- 500 - Fallo en la conexión d
+- Las comunicaciones son sin estado, ósea que no mantiene ninguna referencia a comunicaciones anteriores
 
-Se basan en 
-- Ética empresarial
-- Buen gobierno corporativo
-- Responsabilidad social corporativa
+#### Mensajes  HTTP
 
-#### Compliance officer
+1º Línea
+- Método (GET , POST)
+- Versión de HTTP
 
-Persona que se asegura de que una empresa cumpla con: 
-- Requisitos legales y reglamentarios externos
-- Políticas y estatutos internos
-- Normas, reglamentos, procesos que dicen la forma en que las empresas han de realizar sus negocios.
+En las líneas siguientes las cabeceras
+Y por último, el cuerpo del mensaje, el cual se manda en base64
 
-Su función es promover una conducta ética y han de estar al tanto de las últimas leyes, reglamentos y tendencias comerciales y a de ser capaz de explicarlos a la empresa.
+##### Mensajes de respuesta HTTP
 
-#### Relaciones con 3º partes dentro del Compliance
+- 1º Linea
+	- Versión de HTTP
+	- Código de respuesta
+	- Texto del código de respuesta
+- Cabeceras
+- Línea en blanco
+- Cuerpo de la respuesta
 
-El código penal establece que la persona jurídica es responsable de x hechos delictivos realizados por sus representantes legales.
 
-Para una empresa esto se extiende y es que no solo se aplica la responsabilidad sobre sus representantes legales / empleados, si no también a los terceros:
-	- Autónomos
-	- Subcontratados
-	- Clientes
-	- Proveedores
+#### Versiones HTTP
 
-Así que las empresas han de conseguir que sus 3º también cumplan con los compromisos legales y éticos.
+1.0
+- Cada recurso solicitado debía de abrir y cerrar una conexión
+- Muy lento
 
-Aquí es donde entra la **diligencia debida** (due diligence).
-Esta trata de prevenir estos riesgos, evitando comportamiento de los 3º contrarios a los principios del cumplimiento normativo.
+1.1
+- Conexiones persistentes
+- Mejorando el uso de la cache
 
-**Etapas del procedimiento:**
-- Adecuada selección del 3º con el que la empresa se va a relacionar
-- Correcta formalización de la relación a través de un contrato.
-- Seguimiento de la evolución del 3º
+2.0
+- Cambia el formato de texto a binario
+- Permite multiplexación
 
-#### Sistemas de Gestión de Compliance
+3.0
+- Se cambia de TCP a UDP
+- Se añade QUIC para dar más seguridad
 
-Los Sistemas de Gestión de Compliance sirven para gestionar y controlar diversos riesgos, como por ejemplo:
-- Protección de datos
-- Corrupción
-- Violaciones a
-	-  Regulaciones antimonopolio
-	- Carácter laboral
-	- Seguridad y salud en el trabajo
+### Tecnologias WEB
 
-Los Sistemas de Gestión de Compliance son requeridos por las siguientes razones:
-- Asegurar que los empleados actúan según las leyes
-- Asegurar que en caso de incumplimiento, las organizaciones no sean sancionadas o que la implementación de los SGC se consideren un factor atenuante
+- HTML - Esqueleto
+- CSS - Piel
+- JavaScript - Cerebro
 
----
+#### HTML
 
-### Legislación y jurisprudencia en materia de protección de datos
-**Cae en examen**
-#### Principio de protección de datos
+Usa etiquetas con significado que le servidor envía e cliente y este las muestra en pantalla
+Puede ser explotado de diferentes formas:
 
-Artículo 5 del reglamento (UE) 2016/679 General de Protección de Datos
-Ley Orgánica 3/2018 de 5 de diciembre, de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD).
+##### Ataques
 
-Los principios son
-- Licitud
-- Lealtad
-- Transparencia
-- Limitación de la finalidad
-- Minimización de los datos
-- Exactitud
-- Limitación del plazo de conservación
-- Integridad y confidencialidad
-- Responsabilidad Proactiva
+**XSS - Cross-Site Scripting**
+Vulnerabilidad cuando se inyecta codigo malicioso dentro del código HTML.
 
+Tipos
+- XSS Reflejado
+- Almacenado
+- en el DOM
 
----
+**Clickjacking**
 
-#### Delegado de Protección de Datos
-**Cae en examen**
-Es aquella persona responsable en el seno de una organización de  **realizar la supervisión**  **monitorización** de forma independiente y confidencial para ver si se esta cumpliendo la normativa en materia de protección de datos personales
+Se superpone un iframe sobre un elemento legítimo para engañar la usuario (la x en los anuncios)
 
-Además de que ofrecerá todo el asesoramiento que se le solicite y colaborará con la autoridad de control (En España - **Agencia Española de Protección de Datos **).
+**Inyección de atributos maliciosos**
 
-Para ser DPO se necesita
-- Ser designado por una organización, atendiendo a sus cualidades profesionales y a sus conocimientos especializados en Derecho.
-- Aunque no se obliga contar con una certificación, esta es fundamental para probar los conocimientos
+Algunos atributos de HTML pueden ejecutar código de manera inesperada 
 
-LA AEPD ha optado por promover un Esquema de certificación de DPO que permite certificar que los DPD reúnen la cualificación profesional y los conocimientos requeridos para ejercer la profesión.
 
----
-### Normativa vigente de ciberseguridad en el ámbito nacional e internacional
+#### CSS
 
-**Cae en examen**
-#### ¿Qué es un SGSI?
+Lenguaje que permite manejar el diseño de las páginas HTML de una forma eficiente.
 
-Un SGSI es un conjunto de políticas y procedimientos para administrar la información de una empresa / organismo cumpliendo una serie de requisitos, garantizando a **confidencialidad , integridad y disponibilidad** 
+##### Ataques
 
-#### Sistema de Gestión de Seguridad de la Información (internacional)
+**CSS injection**
+Ocurren cuando una app web permite a los usuarios ingresar / modificar estilos CSS sin validarlos.
+Si no se validan, un atacante podrían ejecutar x código malicioso a través de CSS.
 
-La ISO 27001 es una norma internacional de Seguridad de la Información que pretende asegurar la **confidencialidad, integridad y disponibilidad** de la información de una organización, además de los sistemas y aplicaciones que la usan.
+Lo más habitual es que los atacantes te reenvían a una página maliciosa
 
-Esta norma define de manera genérica como se planifica, implanta, verifica y controla un SGSI a partir de un análisis de riesgos y la planificación de la respuesta a los mismos.
-Osease, cualquier empresa puede desplegar un SGSI siguiendo este estándar.
+**Data Exfiltration**
+Un atacante puede espiar que sitios ha visitado el usuario o filtrar informacion basada en estilos aplicados
 
-##### Gestión de calidad PDCA
-La ISO 27001 se basa en la teoría de gestión de calidad **PDCA** (También conocida como ciclo de Deming)
 
-Se estructura de la siguiente forma:
+**Clickjacking CSS**
+Similar al de HTML, pero esta vez se usna las propiedades **opacity:0** o **visibility:hidden** para hacer invisible un iframe
 
-- **Planificar**
-	- Etapa inicial del diseño del SGSI donde se realiza una identificación inicial de los riesgos asociados con la Seguridad de la Información
-- **Hacer**
-	- Implantación y operación del Sistema de Gestión de Seguridad de la Información que se ha definido y desarrollado
-- **Verificar**
-	- Revisar y evaluar su eficacia y eficiencia
-	- Si el desempeño no es el esperado, analizar el pq y determinar mejorar
-- **Actuar**
-	- Mejora continua del SGSI
-
----
-### Esquema Nacional de Seguridad
-**Cae en examen**
-La finalidad del **ENS** es la creación de la confianza en el uso de los medios electrónicos a través de medidas para garantizar la seguridad de los sistemas, datos, comunicaciones, servicios electrónicos etc., que permita a los  ciudadanos y a las Administraciones públicas el cumplimiento de deberes a través de estos medios.
-
-En 2022 se acuerda un nuevo **ENS** para cumplir 3 objetivos:
-- Alinear el ENS con el marco normativo y el contexto estratégico existente para garantizar la seguridad en la administración digital.
-- Introducir la capacidad de ajustar los requerimientos del ENS para garantizar su adaptación a la realidad de ciertos colectivos o tipos de sistemas.
-- Facilitar una mejor respuesta a las tendencias de ciberseguridad, reducir vulnerabilidades y promover la vigilancia continua mediante la revisión de los principios básicos, requisitos mínimos y las medidas de seguridad.
-
-#### Planes de Continuidad de Negocio
-**Cae en examen**
-La **ISO 22301:2019** es una normativa internacional para **Sistemas de Gestión de la Continuidad del Negocio (SGCN)**.
-
-Su principal función es proporcionar un marco de actuación para que las empresas puedan mitigar el daño que una emergencia pueda llegar a causar.
-Esta norma es aplicable a cualquier tipo de organización 
-
-##### Focos de atención de la normativa
-
-- Nivel de responsabilidad de la alta dirección
-- Correcta planificación de los recursos y preparación para hacer frente a riesgos que puedan cesar de manera temporal el negocio.
-- Como actuar frente a los proveedores, clientes y otras cadenas de suministro si no se puede desarrollar sus operaciones.
-
-##### ¿Qué es un SGCN?
-
-Identifica los efectos que puede tener una interrupción de la actividad de una organización y establece medidas de actuación en caso de que ocurra.
-Debe tener en cuenta todos los factores y agentes que deben actuar en una situación de riesgo.
-
-El modelo de continuidad del negocio basado en ISO 22301:2019 debe estar completamente alineado con la política corporativa de cada organización, si no, no cumplirá su función.
-
-##### Puntos y estructura de ISO 22301
-
-- Alcance de la aplicación
-- Referencias normativas
-- Términos y definiciones
-- Contexto de la organización
-- Liderazgo y compromiso
-- Planificación de acciones y definición de los objetos
-- Soporte
-- Evaluación de desempeño
-- Mejora continuada
-
-##### Como implementar y mantener un SGCN
-
-Primero, hay que entender como funciona un SGCN y analizar los actores de la organización - personal, tecnología, bases de datos, espacios físicos etc.
-
-Así se podrá establecer un plan de actuación que permita volver a la rutina.
-
-##### Aspectos clave para implementar ISO 22301
-
-- Conocer y comprender los planes de recuperación
-- Presupuesto para desarrollar y mejoras los planes de continuidad.
-- Creación de procedimientos fáciles de entender
-- Realizar simulacros.
-
-##### Ventajas de un SGCN
-
-- Mejora la gestión de los riesgos
-- Reconocimiento por parte de proveedores y clientes
-- Solidez empresarial
-- Ahorro en costes y tiempo
-
----
-### Directivas
-**Cae en examen**
-#### NIST
-
-National Insitute OF Standards and Technology
-
-- Origen
-	- EEUU
-- Propósito
-	- Proporcionar estándares, directrices y buenas prácticas en diversas áreas tecnológicas.
-- Alcance
-	- Sectores críticos de EEUU, como defensa y tecnología, además de muchas organizaciones privadas
-- Componentes
-	- NIST Cybersecurity Framework
-	- NIST SP 800-53 y 800-171
-	- SP 800-63B
-- Aplicación fuera de EEUU
-	- Muchas empresas y organizaciones internacionales adoptan estos estándares gracias a su efectividad y cobertura en ciberseguridad,
-
-#### NIS
-Network and Information Systems Directive
-
-- Origen
-	- Unión Europea
-- Propósito
-	- Mejorar el nivel de seguridad de las redes y sistemas de información
-- Alcance
-	- Obligatorio para todos los países miembros de la UE aplicado a sectores críticos como
-		- Energía
-		- Salud
-		- Transporte
-		- Agua
-		- Proveedores de servicios digitales
-- Componentes principales
-	- Requiere que los países miembros adopten legislaciones nacionales para establecer medidas de seguridad y capacidades de respuesta
-	- Establece la obligatoriedad de notificar incidentes de ciberseguridad a las autoridades de cada país.
-- Limitaciones
-	- Excluía sectores de importancia como la economía digital, así que ha tenido que ser revisada.
-
-#### NIS2
-Revised NIS Directive
-
-- Origen
-	- UE
-- Propósito
-	- Expandir y actualizar la directiva NIS 
-- Alcance
-	- Obligatorio para los miembros de la UE y abarca más sectores
-		- Administración pública
-		- Gestión de residuos
-		- Fabricación de dispositivos médicos
-		- Espacio
-		- Proveedores de servicios digitales
-		- Gestión de servicios TIC
-- Componentes y mejoras clave
-	- Ampliación de sectores que debe cumplir con las directrices de seguridad
-	- Estándares de notificación de incidentes más estrictos
-	- Sanciones más severas
-	- Requisitos de resiliencia y evaluación de riesgos adicionales
-- Objetivo
-	- Establecer un estándar más alto de protección para sectores críticos y emergentes en la UE.
-
-#### Diferencias
-![[Pasted image 20250105163747.png]]
-
----
-### Legislación  sobre la protección de infraestructuras críticas
-
-#### Ley PIC (Protección de infraestructuras críticas)
-**Cae en examen**
-Dentro del marco normativo asociado a la ciberseguridad industrial, tiene especial importancia en España la Ley de Protección de Infraestructuras Críticas (Ley PIC 8/2011) complementada por el Real Decreto 704/2011
-
-**Objetivos de esta norma**
-
-- Catalogar el conjunto de infraestructuras que prestan servicios esenciales a nuestra sociedad
-- Diseñar un planteamiento que contenga medidas de prevención y protección eficaces contra las posibles amenazas hacia las infraestructuras, tanto en el plano de la seguridad física como en el de la seguridad de las tecnologías de información y comunicaciones.
-
-La **Ley PIC** define como **infraestructuras críticas** aquellas cuto funcionamiento es indispensable y no permite soluciones alternativas, por lo que su perturbación / destrucción tendría un grave impacto sobre los servicios esenciales.
-
-Y define como **Infraestructuras estratégicas** las instalaciones, redes, sistemas y equipos físicos y de tecnología de la información sobre las que descansa el funcionamiento de los servicios esenciales.
-
-##### Sectores designados como prestadores de servicios esenciales
-- Administración
-- Agua
-- Alimentación
-- Energía
-- Espacio
-- Industria
-	- Química
-	- Nuclear
-- Salud
-
-##### ¿Qué es la protección de infraestructuras críticas?
-Es el conjunto de actividades destinadas a asegurar la funcionalidad, continuidad e integridad de las infraestructuras críticas, para prevenir, paliar y neutralizar el daño causado por un ataque deliberado contra esas infraestructuras.
-
-##### Principales aportaciones de la Ley PIC
- - Crear el Sistema Nacional de Protección de Infraestructuras Críticas que contiene aquellas instituciones y empresas tanto públicos como privados con responsabilidades en el correcto funcionamiento de los servicios esenciales y la seguridad de los ciudadanos
-	 - Estos son:
-		 - CNPIC
-		 - Ministerios
-		 - CCAA
-		 - Corporaciones locales
-- Poner las bases para el Sistema de Planificación PIC
-	- Es un conjunto de textos normativos que definen las medidas para la protección de las infraestructuras críticas.
-- Se desarrollarán tantos **Planes Estrategicos Sectoriales (PEC)** como sectores se hayan definido.
-  Además, las empresas que sean designadas como operadores críticos deberán presentar un **PSO (Plan de Seguridad del Operador)** y uyn **PPE (Plan de Protección Específico)** respecto a todas sus infraestructuras críticas
-- Generar el **Catálogo Nacional de Infraestructuras Estratégicas** el cual contiene la información completa, actualizada, contrastada e informáticamente sistematizada relativa a las características de cada una de las infraestructuras estratégicas existentes en el territorio nacional.
-- Establecer el CERT para la gestión de incidentes de ciberseguridad
-
----
-### Ciberseguridad en España
-
-#### CCN
-
-- Centro Criptológico Nacional
-- Se encarga de
-	- Administraciones publicas
-	- Empresas criticas
-		- Energia
-		- Agua
-		- Teleco
-		- Bancos
-
-#### INCIBE
-
-- Instituto Nacional de Ciberseguridad
-- Se encuentra en León
-- Se encarga de
-	- Empresas privadas
-
-#### CNC
-
-- Centro Nacional de Ciberseguridad
-- Quieren ponerlo en Madrid
-- Aun no saben donde encajarlo
+Este es diferente al de HTML
 
+#### Javascript
 
+Lenguaje de programación  usado para realziar tareas dinamicas en sitios web
+- Calculos
+- Operaciones
+- Adiciones de imagenes
 
+Es uno de los lenguajes más populares .
+
+Para prevenir riesgos hay que validar y sanear los datos de entrada y salida
+Cuanto más seguro queramos que sea un sistema, se suele deshabilitar javascript aunque puede afectar a la funcionalidad de los sitios web.
+Tor desactiva javascript
+
+
+##### Ataques
+
+**XSS**
+Se inyecta código malicioso en una página web para que esta la ejecute 
+
+Pasos
+- El sitio web acepta los datos proporcionados por el usuario
+- Estos datos se insertan en la página sin ser sanitizados, por lo que se ejecuta el código malicioso
+
+
+**CSRF**
+
+Ataque en el que un usuario autenticado es engañado para realizar una accion no deseada en la app web
+
+**Robo de Cookies y almacenamiento total**
+
+Javascript puede acceder a las cookies del usario con **document.cookie** lo cual puede ser explotado con XSS para robar datos de sesión.
+Además los atacantes puedne obtener información almacenada en localstorage o session storage que muchas apps usan para guardar tokens de autenticación.
+
+
+**Uso inseguro de eval()**
+
+Permite ejecutar código javascript a partir de una cadena de texto
+Si se usa con datos no controlados puede llevar a una inyección de código y  permitir que el atacante ejecute comandos en el navegador.
+
+
+**Keylogging**
+
+Se registran las pulsaciones del teclado de un usuario.
+
+### Desarrollo seguro de aplicaciones web 
+
+A la hora de desarrollar una app web es necesario garantizar e integrar unos niveles mínimos de seguridad, los cuales dependen del tipo de aplicación y su sector.
+
+Esta integración se fundamente en 2 elementos:
+
+**Casos de prueba**
+- Se definen, implementan, prueban y documentan las pruebas realizaras a la app web.
+- Según las pruebas superadas, se determinará/medirá lo segura/insegura que es una app web
+**Conocimiento técnico de las app web**
+- Se deberá de tener algo de conocimiento sobre el funcionamiento de las tecnologías, ataques y vulnerabilidades.
+
+
+Dentro de los conocimientos, tenemos:
+- HTTP
+- HTML CSS
+- Lenguajes de cliente
+	- JavaScript
+- Programación asíncrona
+- Lenguajes de servidor
+	- PHP, PYTHON, JavaScript, node.js
+- SQL
+- Configuración avanzada de servidores web
+- Herramientas informáticas
+	- Curl
+	- Postman
+
+Dentro del mercado laboral se encuentran varios perfiles:
+
+**Desarrollador Back-End**
+- Arquitectura y código del servidor
+**Desarrollador Front-End**
+- Desarrollo de la parte gráfica en el cliente
+**Administrador de BD**
+- Gestiona el almacenamiento de los datos de la app
+**Administrador de sistemas**
+- Se encarga de la configuración de la infraestructura necesaria para la ejecución del back-end
+**Testeador**
+- Desarrolla
+- Implementa
+- Prueba los casos de prueba del software
+
+
+
+### Entrada basada en formularios, Inyección, Validación de la entrada
+
+Los formularios de las páginas web contiene una serie de etiquetas HTTP las cuales permiten introducir datos.
+
+Estos formularios son puntos de entrada para ataques del OWASP TOP TEN.
+E necesario un tratamiento de los datos que se obtienen de los formularios para que al recibir datos maliciosos, no afecten al servidor y no se exponga información sensible o se realicen acciones no autorizadas.
+
+
+### Estándares de autenticación y autorización
+
+#### Elementos de un sistema de autorización y autenticación básico
+
+En un principio HTTP no tenía implementado un sistema de autenticación y autorización nativo, hasta que aparecieron las **cookies**.
+
+##### Explicación del concepto y uso de Cookies
+
+Gracias a las cookies se puede obtener información del servidor asociada a un unico usuario yu limitar el acceso con CGI, PHP etc.
+
+
+**Limitaciones**
+- Robo de la galleta que identifica la sesión
+- Codificación de la galleta
+- Identificación ante terceros
+- Sistema de gestión de permisos no estandarizado
+- Uso exclusivo en apps web.
+
+
+Aún con estas limitantes, las cookies se siguen usando y gestionan la autenticación y autorización de muchos entornos de trabajo.
+Esta gestión se puede desarrollar de 0 o con frameworks
+
+Los elementos se esquematizan en:
+- Punto de entrada
+	- Permite entrar en el sistema presentando las credenciales del usuario
+- Punto de comprobación de autenticación y autorización previo al acceso al recurso
+	- Al solicitar un recurso, se envía una cookie que permite al servidor acceder a la sesión creada para el usuario y después se comprueba si el usuario autenticado tiene la autorización para acceder a x recurso.
+
+#### Estándares
+
+**Certificados digitales**
+El servidor es quien presenta su certificado al cliente, el cual lo comprueba, verificando que este emitido por una entidad certificadora reconocida.
+
+**Tokens**
+El estandar más extendido es el JWT el cual se basa en los algoritmos
+- RS256
+- ES51
+- HMACSHA256 - El más usado
+	- Hashea 2 veces
+
+Un token JWT, independientemente de su algorimto de cifrado, se compone de:
+- Cabecera
+	- Indica el algorimo de la firma
+- Payload
+	- Almacena la información que se va a transmitir
+	- Registros recomendados
+	- Elementos públicos
+	- Elementos privados
+- Firma
+	- Garantiza la identidad del emisor.
+
+La validación con tokens se basa en que la información de la sesión pasa del servidor al cliente y en cada petición se envía el Token.
+La información se encuentra encriptada y solo el servidor puede descodificar la información almacenada en ese token.
+
+**OATH**
+
+Parecido al token, pero esta vez se incluyen más agenten en la conexión cli-serv:
+- Propietario del recurso
+	- Entidad que otorga el acceso a un recurso protegido
+- Cliente
+	- Es la Aplicación que solicita el acceso a un recurso
+- Servidor de recursos
+	- Servidor en el que se encuentra el recurso al que el cliente quiere acceder
+- Servidor de autorización
+	- Elemento que autentica al propietario del recurso, solicitando el permiso de este.
+	- En caso de ser afirmativo, emite un token para el cliente
+
+OATH admite diferentes tipos y formatos de token
+- Revocación
+- Renovación
+- Acceso
+
+
+**Openld Connect**
+
+Protocolo de autenticación con base **OAuth 2.0**:
+- Se usa en app web y móviles parea la autenticación basada en tokens SAML.
+- Basada en xml
+- Común en entornos empresariales
+
+Permite la autenticación federada de forma que es posible obtener información del usuario de un proveedor externo conocido (Amazon, Facebook, Google).
+
+Los mensajes se definen en JSON ofreciendo una API Rest que permite analizar dichos mensajes.
+
+
+
+### Contramedidas
+
+#### HSTS - HTTP Strict Transport Security
+
+HSTS establece que todas las comunicaciones han de realizarse desde HTTPS 
+
+**Ventajas**
+- Comunicaciones HTTPS
+- Cualquier fallo en la comunicación provoca que la misma se aborte
+- Proporciona protección contra MiTM
+
+#### CSP
+
+Estándar de seguridad informática para mitigar ataques de inyección
+
+
+#### CAPTCHA
+
+Pruebas que determinan cuando el usuario es un humano o es un Bot.
+
+##### Mitiga
+- Ataque de enumeración
+- Envía automático de peticiones GET/POST
+- Creación o uso de cuentas para SPAM
+- Generación de publicaciones automáticas en blogs, foros etc
+- Registros masivos en eventos gratuitos o compra indiscriminada de artículos 
+- falsificación de consultas, votaciones o encuentas electrónicas
+
+##### Tipos
+- CAPTCHA basado en texto
+	- Gimpy
+	- EZX-Gimpy
+	- Gimpy-r
+	- Simard-s HIP
+
+- CAPTCHA basado en imágenes
+- Audio
+- Matemáticos
+- Lúdico
+- GOOGLE recaptcha
+- recaptcha invisible
