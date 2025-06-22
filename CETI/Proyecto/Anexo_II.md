@@ -1,3 +1,23 @@
+
+<details>
+  <summary><h2>Índice</h2></summary>
+  
+- [Particiones en Miui 13.0.3 – Android 12](#particiones-en-miui-1303--android-12)
+  - [Particiones de seguridad y verificación](#particiones-de-seguridad-y-verificación)
+  - [Particiones de Hardware y configuración](#particiones-de-hardware-y-configuración)
+  - [Particiones de personalización](#particiones-de-personalización)
+
+- [Particiones en EMUI 8.0 – Android 8.0](#particiones-en-emui-80--android-80)
+  - [Particiones del sistema y arranque](#particiones-del-sistema-y-arranque)
+  - [Particiones de componentes de radio / módem](#particiones-de-componentes-de-radio--módem)
+  - [Particiones personalizadas de Huawei](#particiones-personalizadas-de-huawei)
+  - [Particiones de recuperación y actualización](#particiones-de-recuperación-y-actualización)
+  - [Particiones de seguridad](#particiones-de-seguridad)
+  - [Particiones de interfaz](#particiones-de-interfaz)
+- [Estructura en MIUI 13.0.3 – Android 12](#estructura-en-miui-1303--android-12)
+- [Estructura en Android 8.0 – Emui 8.0](#estructura-en-android-80--emui-80)
+</details>
+
 ## Particiones en Miui 13.0.3 – Android 12 
 
 En MIUI 13.0.3 la cantidad de particiones crece de forma masiva:  
