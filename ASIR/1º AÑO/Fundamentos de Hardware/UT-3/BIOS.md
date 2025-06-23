@@ -1,12 +1,3 @@
-<details>
-  <summary><h2>Índice</h2></summary>
-  
- - [Introducción](#introducción)
-
-</details>
-
----
-
 ## Introducción
 
 En esta práctica se vanm a ver varias BIOS y se van a realizar diferentes actividades.
