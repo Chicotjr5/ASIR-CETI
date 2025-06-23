@@ -1,5 +1,6 @@
-## Índice
-
+<details>
+  <summary><h2>Índice</h2></summary>
+  
 - [Introducción](#introducción)
 - [Hardware de los smartphones](#hardware-de-los-smartphones)
 - [System-on-chip (SoC)](#system-on-chip-soc)
@@ -8,6 +9,7 @@
 - [Qualcomm Snapdragon](#qualcomm-snapdragon)
 - [Resumen](#resumen)
 
+</details>
 ---
 
 ## Introducción
