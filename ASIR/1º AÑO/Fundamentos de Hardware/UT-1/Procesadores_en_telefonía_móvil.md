@@ -10,6 +10,7 @@
 - [Resumen](#resumen)
 
 </details>
+
 ---
 
 ## Introducción
