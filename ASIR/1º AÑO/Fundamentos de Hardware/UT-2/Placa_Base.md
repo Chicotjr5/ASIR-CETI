@@ -1,8 +1,4 @@
-<details>
-  <summary><h2>Índice</h2></summary>
-  
- - [Análisis de Placas Base](#análisis-de-placas-base)
-</details>
+
 
 
 ## 2. Análisis de Placas Base
