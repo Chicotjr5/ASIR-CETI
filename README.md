@@ -39,3 +39,5 @@ In the future I will translate the content into English.
 22/06/2025 -> Finalizar CETI > Proyecto
 
 22/06/2025 -> Finalizar CETI 
+
+23/06/2025 -> Finalizar ASIR > 1º AÑO > Fundamentos de Hardware
