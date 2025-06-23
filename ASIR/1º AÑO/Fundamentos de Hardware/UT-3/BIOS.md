@@ -1,70 +1,357 @@
+<details>
+  <summary><h2>Índice</h2></summary>
+  
+ - [Introducción](#introducción)
 
-## Índice
-- [[Practica 1#Índice|Índice]]
-- [[Practica 1#Algoritmos|Algoritmos]]
-- [[Practica 1#Ejercicio de paginación|Ejercicio de paginación]]
-- [[Practica 1#Ejercicio de segmentación|Ejercicio de segmentación]]
+</details>
+
+---
+
+## Introducción
+
+En esta práctica se vanm a ver varias BIOS y se van a realizar diferentes actividades.
+
+---	
 
 
-### Algoritmos
+# Estudio BIOS set-up
+
+![image](https://github.com/user-attachments/assets/27b9f52d-b004-4a36-972a-d9bb108cfd4a)
+
+El apartado de favoritos permite que asignes opciones favoritas para así poder acceder más fácilmente a estas mismas.
+
+## Easy Mode
+
+Este modo, nos permite ver la información básica del sistema y hacer algunos ajustes simples. 
+El modo avanzado se activa presionando F2 y nos sale el menú anterior, donde podemos hacer y ver muchas mas cosas.
+
+![image](https://github.com/user-attachments/assets/d677400a-a7a0-45cb-8510-b839ab12d3b8)
+
+## Tweaker 
+
+Este menú nos permite manipular la velocidad a la que queremos que trabaje nuestra CPU y nuestra memoria RAM.
+
+![image](https://github.com/user-attachments/assets/656358ef-18c4-4743-b12b-fdb7067de5a0)
+
+**ADVANCED CPU SETTINGS**
+
+En la sub ventana de configuración avanzada de CPU nos encontramos con ajustes para la CPU que nos permiten desde maximizar la velocidad de la CPU hasta que se ralentice cuando note que está sobrecalentada.
+
+**ADVANCED MEMORY SETTINGS**
+
+Esta sub ventana de configuración avanzada de memoria RAM nos permite desde configurar manualmente la frecuencia de reloj de esta misma hasta que el propio sistema te mande una alerte cuando la memoria RAM no esté instalada en el canal más optimo.
+
+## Settings
+
+Este menú nos dirige a las configuraciones generales.
+
+![image](https://github.com/user-attachments/assets/1c1a81e5-0996-48e0-8683-b30bd26d62ef)
+
+**PLATFORM POWER**
+
+En esta sub ventana podemos configurar desde un ahorro de energía en los dispositivos PCI Express que estén activos en ese momento hasta que debe hacer el sistema una vez vuelve la energía después de un corte de corriente súbito.
+
+**IO PORTS**
+
+En esta sub ventana podemos configurar desde que la cantidad de memoria que puede usar la tarjeta grafica hasta configurar los controladores VMD (controlador de almacenamiento con lógica).
+
+**MISCELLANEOUS**
+
+En esta sub ventana podemos configurar desde si queremos que los leds de la placa estén encendidos o no hasta activar o desactivar el TPM (Trusted Platform Module: un microcontrolador dedicado diseñado para proteger el hardware a través de claves criptográficas integradas). 
+
+**PC HEALTH ESTATUS**
+
+Permite ver el estado de los componentes hardware y el voltaje de la CPU. 
+
+## System Info
+
+Este menú provee información de la placa madre y de la versión de la BIOS. 
+
+![image](https://github.com/user-attachments/assets/5924e2dd-8a16-4139-a0b7-5b19e70bd6bc)
+
+**PLUG IN DEVICES INFO**
+
+Muestra información del PCI Express y si esta instalado de los servicios M.2. 
+
+## Boot
+
+Este es el menú de configuración de arranque, este nos permite ver desde las contraseñas de administradores y usuarios hasta el S.O que tenemos.
+
+![image](https://github.com/user-attachments/assets/54b5f4f9-c0b2-4462-a86f-cfc7fd144e9f)
+
+**SECURE BOOT**
+
+Permite activar, desactivar y configurar el arranque seguro pero solo si antes deshabilitamos el soporte CSM.
+
+ ## Save and Exit
+
+Este menú sirve para guardar los cambios realizados en la BIOS o salir de ella sin guardarlos. 
+También podemos cargar la configuración por defecto de la BIOS 
+Además también sirve para iniciar desde la unidad que nos sale en el apartado Boot Override.
+
+![image](https://github.com/user-attachments/assets/43bc03c3-05d5-494e-999d-fb67d861c9ce)
+
+# Procesos del POST 
+
+![image](https://github.com/user-attachments/assets/4661e169-a347-4ccc-a7a2-c472f8306f84)
+
+Durante el POST, pueden darse errores, los cuales serán informados a 
+través de una serie de sonidos y mensajes que aparecerán por pantalla.
+
+#
 
 
 
-### Ejercicio de paginación
 
-Tenemos un sistema operativo de 32 bits en el que la asignación de memoria se realiza mediante paginación. 
-Cada página/marco ocupa 1 MB. De los 32 bits de la dirección de memoria, se usan 12 bits para especificar la página. 
-Se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de páginas:
 
-| Página | Marco |
-| ------ | ----- |
-| 0x59B  | 0x123 |
-| 0x59C  | 0xA05 |
-| 0x59D  | 0x59F |
-| 0x59E  | 0x799 |
-| 0x59F  | 0xF8B |
-| 0x59A0 | 0x22D |
 
-Dada la dirección lógica 0x59F2A5A0, obtener la dirección física correspondiente:
-- 0xF8B2A5A0
 
-Dada la dirección lógica 0x5A02A59F, obtener la dirección física correspondiente.
-- 0x22DA59F
 
-Dada la dirección lógica 0x59C4DE87, obtener la dirección física correspondiente
-- 0xA054DE87
 
-### Ejercicio de segmentación
 
-En un sistema de de 32 bits se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de segmentos (el tamaño viene expresado de forma relativa la base):
 
-| Segmento | Base       | Tamaño     | Límite     |
-| -------- | ---------- | ---------- | ---------- |
-| 0xA321   | 0x85434520 | 0x00005218 | 0x85439738 |
-| 0xA322   | 0xBA41002E | 0x00003FD1 | 0xBA413FFF |
-| 0xA323   | 0x226A5722 | 0x00004D3D | 0x226AA45F |
-| 0xA324   | 0xF01809AC | 0x00000053 | 0xF01809FF |
-| 0xA325   | 0x226CA460 | 0x0000AAFF | 0x226D4F5F |
-| 0xA326   | 0x4951B4D8 | 0x0000F424 | 0x4952A8FC |
 
-**Obtener las direcciones físicas absolutas donde termina cada segmento**
 
-**Dada la dirección lógica 0xA3231265, obtener la dirección física correspondiente.**
 
-- 4D3D-1265= 15064 Está dentro del segmento 
-- 226A5722+1265 = 226A6987 
-- Su dirección física sería 0x226A6987
 
-**Dada la dirección lógica 0xA3240265, obtener la dirección física correspondiente.**
 
-- 53-0265= -212 
-- Se sale del segmento
 
-**Dada la dirección lógica 0xA325AAFA, obtener la dirección física correspondiente.**
 
-- AAFF – AAFA = 5 Esta dentro del segmento 
-- 226CA460 + AAFA = 226D 4F5A 
-- Su dirección física sería 0x226D4F5A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
