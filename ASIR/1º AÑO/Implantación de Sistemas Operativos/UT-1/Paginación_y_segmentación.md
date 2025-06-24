@@ -1,14 +1,4 @@
-
-## Índice
-- [Algoritmos](algoritmos)
-- [[Practica 1#Algoritmos|Algoritmos]]
-- [[Practica 1#Ejercicio de paginación|Ejercicio de paginación]]
-- [[Practica 1#Ejercicio de segmentación|Ejercicio de segmentación]]
-
-
-### Algoritmos
-
-
+## Algoritmos
 
 ### Ejercicio de paginación
 
