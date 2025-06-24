@@ -41,18 +41,18 @@ En un sistema de de 32 bits se tiene un proceso, P1 del que podemos ver el sigui
 
 **Dada la dirección lógica 0xA3231265, obtener la dirección física correspondiente.**
 
-- 4D3D-1265= 15064 Está dentro del segmento 
+- 4D3D-1265= **15064** Está dentro del segmento 
 - 226A5722+1265 = 226A6987 
 - Su dirección física sería 0x226A6987
 
 **Dada la dirección lógica 0xA3240265, obtener la dirección física correspondiente.**
 
-- 53-0265= -212 
+- 53-0265= **-212** 
 - Se sale del segmento
 
 **Dada la dirección lógica 0xA325AAFA, obtener la dirección física correspondiente.**
 
-- AAFF – AAFA = 5 Esta dentro del segmento 
+- AAFF – AAFA = **5** Esta dentro del segmento 
 - 226CA460 + AAFA = 226D 4F5A 
 - Su dirección física sería 0x226D4F5A
 
