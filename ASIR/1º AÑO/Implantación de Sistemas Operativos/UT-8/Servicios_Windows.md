@@ -87,7 +87,7 @@ Y al ir al administrador de tareas, veremos que el proceso se está ejecutando e
 
 ### Con Powershell
 
-Para crear un proceso con Powershell, usaremos el  **cmdlet START PROCESS** y el nombre del proceso.
+Para crear un proceso con Powershell, usaremos el  cmdlet **START PROCESS** y el nombre del proceso.
 
 
 
