@@ -1,179 +1,346 @@
-### Programa las siguientes tareas en Linux, usando crontab 
+### Crea un nuevo archivo llamado pruebapermisos
 
-**Los días de diario (de lunes a viernes), cada hora, hace un volcado del listado de archivos del directorio de tu usuario a un archivo llamado volcadoarchivos que se localice en tu directorio personal.**
+Para comenzar, crearemos un nuevo archivo llamada pruebapermisos
 
-Para poder hacer esta tarea, ejecutaremos la orden: 
-
-```bash
-crontab -e
-```
-
-![image](https://github.com/user-attachments/assets/0e172c09-78a2-45d0-aaa5-06564f3eec66)
-
-Dentro de él especificaremos la orden a ejecutar y cada cuanto tiempo lo hará. 
-
-Especificaremos que haga un listado de los directorios de nuestro directorio de usuario y ese resultado, lo redirigiremos al archivo volcadoarchivo.  
-
-Y que lo haga cada hora a en punto,  de Lunes a Viernes
-
-![image](https://github.com/user-attachments/assets/bb37975b-8dc6-42d7-b080-68557aebb9cd)
-
-**Los lunes, jueves y domingos, excepto los de los meses de julio y agosto, abre una ventana con el mensaje “Te toca hacer la colada”, a las 2 y 25 de la tarde **
-
-En el mismo fichero, pondremos la siguiente tarea: 
-
-A las 14:25 de cada Lunes, Jueves y Domigo (menos de los de Julio y Agosto) se abrirá una ventana con el mensaje “Te toca hacer la colada” 
-
-![image](https://github.com/user-attachments/assets/50113c78-8234-496d-8a7e-5a5840c9d191)
-
-**Todos los viernes a las 9 de la tarde se apaga automáticamente el ordenador. Recuerda que las órdenes de apagado las debe ejecutar root.**
-
-Seguimos en el mismo fichero y ahora especificaremos la siguiente tarea: 
-
-A las 9 de la noche, los Viernes, se apagará el ordenador.
-
-![image](https://github.com/user-attachments/assets/7d01e9ee-43d7-4514-b5ac-6ea184750ad5)
-
-**Elimina todos los programas creados. Para los programas de tu usuario personal.**
-
-Para poder borrar todas las tareas que hemos creado con nuestro usuario, usaremos el comando: 
-
-```bash
-contrab -r
-```
-
-![image](https://github.com/user-attachments/assets/5ee11636-2769-45b0-8527-048c981d0b2e)
-
-↓
-
-![image](https://github.com/user-attachments/assets/9feb97a8-348e-4bbd-8ace-0cc5c58974fa)
+![image](https://github.com/user-attachments/assets/4b2e151a-8144-403e-9d8d-d8f7fafa2b8e)
 
 ---
 
-### Usando anacron, haz que se cree un volcado como el apartado a del ejercicio anterior pero una vez por semana, de forma que si el equipo estuviera apagado en ese momento, se ejecute al arrancarlo. 
+### Establece los siguientes permisos sobre el archivo pruebapermisos usando la sintaxis de texto
 
-Para poder crear tareas con anacon, deberemos editar el archivo **/etc/anacrontab**
+**Establece para todos los tipos de usuario que no tengan ningún permiso.**
 
-![image](https://github.com/user-attachments/assets/c411d433-9b5c-41df-853d-73fc5abe705f)
-
-Dentro de este fichero, crearemos la tarea programada: 
-
-![image](https://github.com/user-attachments/assets/a4e48165-7753-479e-9c28-68099502411a)
-
-Como podemos ver, se ejecutara una vez a la semana (podríamos haber usado el alias @weekly) y con un retraso de 1 minuto después de iniciarse
-
-### Con at
-
-**Programa un volcado de la lista de los archivos de tu directorio de usuario a un archivo, para que se realice el 15 de julio de este año a las cinco y cuarto de la tarde. Hazlo escribiendo la orden en un archivo y pasándole ese archivo como parámetro a at**
-
-Primero, crearemos un archivo con la orden a ejecutar:
-
-![image](https://github.com/user-attachments/assets/fb84ffb4-fdce-457b-96c6-c259fe63a23a)
-
-Y en el siguiente paso, ejecutaremos el comando:
+Para poder **establecer** un permiso con sintaxis de texto, usaremos el símbolo = y como queremos que no tengan ningún permiso, no pondremos ningún permiso, usando la siguiente orden: 
 
 ```bash
-at -f comando.sh 17:15 1023-07-15 
+chmod u=,g=,o= pruebapermisos 
 ```
 
-![image](https://github.com/user-attachments/assets/044c1075-d52d-40c6-bf9d-18bb3019c2c9)
+![image](https://github.com/user-attachments/assets/9f921fec-2184-4f55-8330-ff23fe2dd20d)
 
-**Programa la misma tarea para que se ejecute dentro de 3 horas. En esta pregunta deberás escribir la orden en la entrada estándar.**
+**Añádele todos los permisos al usuario, establece lectura y ejecución para el grupo y añade lectura para otros**
 
-Ahora, en vez de pasar la orden a través de un archivo, lo haremos a través de la entrada estándar, poniendo primero la orden y redirigiéndola al comando at, al cual, diremos que se ejecute dentro de 3 horas
+```bash
+chmod u+rwx,g+rx,o+r pruebapermisos
+```
 
-![image](https://github.com/user-attachments/assets/2d343453-4d36-4406-acce-f4c6c5d69e43)
+![image](https://github.com/user-attachments/assets/d4cc483e-e573-4952-b10e-11065b0fab82)
 
-**Observa la lista de tareas programadas**
+**Quita el permiso de ejecución para el usuario y el grupo. **
 
-Usaremos el comando atq, el cual permite ver las tareas programadas con el comando at:
+```bash
+chmod u-x,g-x pruebapermisos 
+```
 
-![image](https://github.com/user-attachments/assets/a1d35a60-dbcc-48ae-a2c5-a9f5034d69b7)
-
-**Cancela las tareas que has programado**
-
-Usaremos la orden **atms** y le pasaremos el nº de la tarea como parámetro para poder eliminarla.
-
-![image](https://github.com/user-attachments/assets/b9691aa1-21d8-4625-b2d3-c4ca68e5dd52)
+![image](https://github.com/user-attachments/assets/2ab05244-8419-4027-acc8-2e7aff515bae)
 
 ---
 
-### Utilizando cpio y cron, programa un sistema de copias de seguridad en el que se realice una copia completa cada domingo y una copia incremental el resto de los días. Puedes utilizar scripts y archivos para almacenar las fechas de las copias. 
+### Usando la sintaxis numérica, establece permisos para el archivo pruebapermisos para que el usuario tenga lectura y escritura, el grupo lectura y ejecución y los otros solo lectura. 
 
-Lo que haremos en esta pregunta, será crear unos scripts, los cuales contendrán las órdenes para poder crear las copias de seguridad. 
+Ahora usaremos una sintaxis numérica, así que calcularemos el nº a establecer.
 
-![image](https://github.com/user-attachments/assets/39900ace-cb7a-4057-b250-66b6d02efbfe)
+|             | R   | W   | X   | Resultado |
+| ----------- | --- | --- | --- | --------- |
+| Propietario | 1   | 1   |     | 6         |
+| Grupos      | 1   |     | 1   | 5         |
+| Otros       | 1   |     |     | 4         |
 
-Seguido, a estos archivos les daremos permisos de ejecución, para que podamos ejecutarlos. 
 
-![image](https://github.com/user-attachments/assets/4178fddf-cf51-403d-8940-6301b88a47d7)
+El nº que deberemos de poner en la orden es el 654.
+Usaremos la siguiente orden:
 
-El siguiente paso, será crear una tarea programada, para que ejecute el script (y por tanto se haga la copia de seguridad). 
+![image](https://github.com/user-attachments/assets/cf0b0a73-ccb4-4eb3-b1b8-6a3831d2c683)
 
-Entraremos dentro del archivo **/etc/crontab** y escribiremos la programación de cada tarea.
+Para poder ver la máscara, usaremos la orden:
 
-![image](https://github.com/user-attachments/assets/cd86b5f3-abeb-47df-a951-5844ab13906b)
+```bash
+umask
+```
 
-↓
+![image](https://github.com/user-attachments/assets/6ee45894-d38c-4890-bf71-d24cefe7d4fb)
 
-![image](https://github.com/user-attachments/assets/dab81e26-af28-4559-954e-770d6a4c0bef)
+Para poder cambiarla, usaremos la orden umask estableciéndole como parámetro el nuevo valor que debe tomar. 
 
-Como especifica el enunciado, las copias completas se harán cada domigo, mientras que las incrementales se harán el resto de días. 
+Si creamos un nuevo archivo, veremos que sus permisos establecidos de forma predeterminada son: 
 
-Las horas son a gusto del administrador.
+- Propietario - rw
+- Grupo - r
+- Otros - r
+
+![image](https://github.com/user-attachments/assets/0d25a008-1156-4c64-a9f8-68b2e8450d46)
 
 ---
 
-### Haz lo mismo que en la pregunta anterior, pero usando tar en lugar de cpio. Debes utilizar las opciones de tar para copias incrementales en vez de archivos propios con fechas. 
+### Créate una copia del ejecutable de la orden cat (/bin/cat) a tu directorio de usuario para trabajar ahora sobre ella. 
 
-Ahora, usaremos la orden tar para hacer las copias en vez de cpio, así que el script variará un poquito, aunque haremos más o menos lo mismo para poder hacer este sistema de copias de seguridad. Primero será crear los scripts con las órdenes para poder realizar las copias de seguridad. 
+Para poder hacer una copia del ejecutable catm, usaremos la orden:
 
-![image](https://github.com/user-attachments/assets/59bc3e40-5eed-49a0-b251-1f6035edace9)
+```bash
+cp /bin/cat cat2
+```
 
-Lo siguiente, será darles permisos de ejecución:
+![image](https://github.com/user-attachments/assets/5f364bdd-53ff-46ad-bd45-723d28560780)
 
-![image](https://github.com/user-attachments/assets/22dc4b5d-5f17-49de-a8ca-75a0d962974d)
+---
 
-Y por último, programar las tareas para que se ejecuten cuando les toque
+### Intenta utilizar cat2 para visualizar el contenido de /etc/shadow con permisos de usuario normal (sin ser root ni usar sudo)
 
-![image](https://github.com/user-attachments/assets/fddfade5-4e93-4978-bf26-cc8821f6122d)
+Si intentamos hacer un cat sobre /etc/shadow con la copia recientemente creada, nos dirá que no podemos
+
+![image](https://github.com/user-attachments/assets/6b0f581f-d2aa-4d75-b078-f678161def2d)
+
+**¿Qué permisos y propietario tiene el archivo /etc/shadow?**
+
+```bash
+ls –l /etc/shadow
+```
+
+![image](https://github.com/user-attachments/assets/c7407ce8-2bff-490f-ac12-28aa7e6d0ac3)
+
+Tiene de propietario al usuario root, que tiene permisos de escritura y lectura. 
+Para el grupo, solo tiene de lectura y para el resto de usuarios, no tenemos ningún permiso.
+
+**¿Qué propietario y grupo tiene el archivo cat2?**
+**¿Qué permisos tiene el archivo cat2?**
+
+```bash
+ls -l cat2
+```
+
+Vemos que su propietario y grupo son root y que tiene permisos de **lectura**, **escritura y lectura** para **root**, **lectura y ejecución para su grupo y otros usuarios**.
+
+![image](https://github.com/user-attachments/assets/15d978f7-8136-4a14-accb-89fdcbec19f4)
+
+---
+
+### Realiza lo siguiente sobre el archivo cat2 
+
+**Cambia el propietario y el grupo a root**
+
+Para poder cambiarle el propietario y el grupo, usaremos la orden
+
+```bash
+chown root ./cat2
+chgrp root ./cat2 
+```
+
+![image](https://github.com/user-attachments/assets/3c36e3f9-448f-41cc-a9dc-ddc70570d155)
+
+**Asegúrate de que los usuarios clasificados como “otros” tengan permisos de lectura y ejecución *
+
+```bash
+ls -l cat2
+```
+
+![image](https://github.com/user-attachments/assets/e5c022a0-2bc9-4046-86f4-4bb46c9371a4)
+
+**Utiliza el bit SUID para que todos los usuarios puedan utilizar cat2 para visualizar el contenido de /etc/shadow**
+
+Para poder establecer el bit SUID, usaremos la orden:
+
+```bash
+sudo chmod 4755 cat2
+```
+
+| SUID | SGID | Sticky B | Resultado |
+| ---- | ---- | -------- | --------- |
+| 1    | 0    | 0        | 4         |
+| 0    | 1    | 0        | 2         |
+| 0    | 0    | 1        | 1         |
 
 
+![image](https://github.com/user-attachments/assets/7f1b2c7c-1339-4cfd-b79f-0dcf730adffe)
+
+**Comprueba, sin utilizar permisos de root (sin ser root ni usar sudo) que un usuario normal puede ver el contenido de /etc/shadow usando cat2**
+
+Ahora, si que podemos ver el contenido del fichero **/etc/shadow**
 
 
+![image](https://github.com/user-attachments/assets/a1bb14fe-912d-4ae0-bfcc-1142dd02d367)
+
+---
+
+### Crea el directorio /tmp/pruebasgid. Dale permisos de escritura a todos los usuarios. Comprueba el usuario y grupo propietarios del directorio
+
+Primero, crearemos el directorio **/tmp/pruebasgid**, dándole permisos de escritura a todos los usuarios. 
+
+Posteriormente, veremos su propietario y grupo propietario, el cuál es el usuario que lo creó y el grupo principal del usuario que lo creó.
+
+![image](https://github.com/user-attachments/assets/42ab6bbe-c017-4d2f-8259-f706c22104c7)
+
+---
+
+### Cambia a un usuario diferente y crea un archivo dentro de /tmp/pruebasgid
+
+Si cambiamos a otro usuario e intentamos crear un archivo, veremos que podemos crearlo, puesto tenemos permiso de escritura para todos los usuarios. 
+
+![image](https://github.com/user-attachments/assets/8488d698-3a41-41cf-b230-d2a8e3084a9e)
+
+---
+
+### Comprueba que el usuario y grupo propietarios son los del usuario que has utilizado
+
+![image](https://github.com/user-attachments/assets/676e3a20-d296-426f-b652-cbd51ea34257)
+
+---
+
+### Activa el bit sgid a /tmp/pruebasgid. Crea un nuevo archivo con el mismo usuario que antes. El usuario será el mismo pero conservará el mismo grupo que el directorio
+
+Para poder activar el bit SGID, usaremos la misma orden que para activar el bit SUID, pero en vez de poner un 4, pondremos un 2 
+
+| SUID | SGID | Sticky B | Resultado |
+| ---- | ---- | -------- | --------- |
+| 1    | 0    | 0        | 4         |
+| 0    | 1    | 0        | 2         |
+| 0    | 0    | 1        | 1         |
+
+La orden será:
+
+```bash
+chmod 2777 /tmp/pruebasgid
+```
+
+![image](https://github.com/user-attachments/assets/b97615d5-232e-4c92-bc30-a9a0ab5f4327)
+
+Si creamos un nuevo archivo, el grupo del archivo será el grupo del directorio. 
+
+![image](https://github.com/user-attachments/assets/2a900458-f2d9-499f-b85d-9c55ca3efc80)
+
+---
+
+### Crea el directorio /tmp/pruebasticky. Dale permisos de escritura a todos los usuarios. 
+
+Volveremos a crear otro directorio dentro de **TMP**, este lo usaremos para poder **activar el Sticky B** y poder ver su funcionalidad. 
+
+Volveremos a dar permisos de escritura a todos los usuarios.
 
 
+![image](https://github.com/user-attachments/assets/5eff4275-e345-4131-ac4f-01e3cddcec0e)
+
+---
+
+### Con un usuario, crea un archivo dentro. Cambia a otro usuario y borra el archivo que había creado el primer usuario. Te debería dejar sin problemas. 
+
+Cambiaremos de usuario y crearemos dentro un archivo. 
+Como vemos, su usuario y grupo propietarios, son los del usuario creador.
+
+![image](https://github.com/user-attachments/assets/20512f41-d06f-497b-a8fa-f780487d5cb1)
+
+Volveremos a entrar con otro usuario y borraremos el archivo.
+
+![image](https://github.com/user-attachments/assets/73388ae8-5aea-4eed-98cc-8f81ac1467a2)
+
+---
+
+### Activa el sticky bit en el directorio /tmp/pruebasticky. 
+
+```bash
+sudo chmod 1777 tmp/pruebasticky
+```
+
+| SUID | SGID | Sticky B | Resultado |
+| ---- | ---- | -------- | --------- |
+| 1    | 0    | 0        | 4         |
+| 0    | 1    | 0        | 2         |
+| 0    | 0    | 1        | 1         |
 
 
+![image](https://github.com/user-attachments/assets/a54c84d2-0578-43e6-991e-6f4a3d25fc26)
+
+---
+
+### Vuelve a hacer lo mismo que en el paso 13. En esta ocasión no debería dejarte eliminar los archivos de otros usuarios 
+
+Una vez tenemos el sticky b activado, procederemos a crear otro archivo.
+
+![image](https://github.com/user-attachments/assets/dd11cf63-9e95-4d23-80ad-ca2a4071c0fa)
+
+Procederemos a cambiar de usuario e intentar borrar el archivo. 
+Pero veremos que no podemos. 
+
+![image](https://github.com/user-attachments/assets/8555e8d6-f729-4b5e-b544-9a3a2daaf7d0)
+
+Esta es la función principal del Sticky B, la cual no permite que un usuario pueda borrar archivos que no le pertenecen (siempre y cuando el archivo este dentro de un directorio con este permiso activado.) 
+
+---
+
+### Crea el directorio /tmp/pruebaacl
+
+```bash
+mkdir /tmp/pruebaacl 
+```
 
 
+![image](https://github.com/user-attachments/assets/954158f5-706a-4463-a9e6-48c6cdef75ae)
+
+---
+
+### Deja todos los permisos para el usuario propietario y ninguno tanto para el grupo como para otros 
+
+Ahora, daremos todos los permisos al usuario propietario, pero no daremos ninguno al grupo ni al resto de usuarios.
+
+```bash
+sudo chmod 700 /tmp/pruebaacl 
+```
+
+![image](https://github.com/user-attachments/assets/ed241e13-c329-4d19-a6e3-8999bdc079ab)
+
+---
+
+### Con otro usuario, intenta entrar en el directorio y/o crear un archivo dentro. Dado que no tiene permisos, no te lo permitirá 
+
+Entraremos con otro usuario e intentaremos crear un archivo dentro del directorio, sin éxito. 
+
+![image](https://github.com/user-attachments/assets/aea8db15-fe5f-4560-8595-2741db6dad05)
+
+---
+
+### Crea una entrada en la ACL del directorio, dale permisos de lectura, escritura y ejecución para ese usuario.
+
+```bash
+getfacl /tmp/pruebaacl 
+```
+
+Podemos observar, que los usuarios y el grupo no tienen ningún tipo de permiso
 
 
+![image](https://github.com/user-attachments/assets/6c2755a8-589f-4d18-b110-1880de2a5566)
 
+Ahora, procederemos a crear una entrada para a ACL, en la cual, daremos todos los permisos al usuario **marcos_estandar**.
 
+Para ello, usaremos la orden setfacl con la opción -m, la cual nos permite modificar/añadir una entrada
 
+```bash
+setfacl -m marcos_estandar:rwx /tmp/pruebaacl
+```
 
+![image](https://github.com/user-attachments/assets/8c1d6f2b-980a-4e1d-97c0-d411388e2311)
 
+---
 
+### Consulta la ACL del archivo, comprueba que está el usuario que has especificado y con esos permisos 
 
+Volveremos a usar la orden **getfacl** para consultar los cambios realizados. 
 
+![image](https://github.com/user-attachments/assets/c55f4a14-d4a9-47fa-a397-f9ec15b91ce5)
 
+**Comprueba, además, que al hacer ls –l aparece un símbolo + tras los permisos**
 
+![image](https://github.com/user-attachments/assets/e98de600-b485-4c48-b8fb-b291b49b4cb9)
 
+---
 
+### Comprueba que el usuario puede entrar en el directorio y crear archivos dentro
 
+Entramos como el usuario y creamos un nuevo archivo, obviamente, nos deja crearlo. 
 
+![image](https://github.com/user-attachments/assets/1f8cf2c0-b889-4cf0-9d56-099e3d2d8b24)
 
+---
 
+### Comprueba, con un tercer usuario (ni el propietario ni el usuario al que has metido en la ACL) que no tiene permisos. 
 
+Si entramos con otro usuario e intentamos crear otro archivo, veremos que no podemos, puesto que no tenemos permisos para este usuario
 
-
-
-
-
-
-
-
-
-
-
+![image](https://github.com/user-attachments/assets/77491658-0e32-49a0-9368-d4bb890d493c)
