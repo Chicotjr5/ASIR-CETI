@@ -2,7 +2,7 @@
 
 ### Archivo 1
 
-```bash
+```xml
 1. <?xml version="1.0" encoding="UTF-8"?> 
 2. <pelicula> 
 3.   <titulo>Con faldas y a lo loco</titulo> 
@@ -17,7 +17,7 @@
 
 **Correción**
 
-```bash
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 <peliculas><!--faltaba elemento raiz-->
     <pelicula>
@@ -51,7 +51,7 @@
 
 **Correción**
 
-```bash
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
  <deportistas>
       <deportista>
@@ -69,7 +69,7 @@
 
 ### Archivo 3
 
-```bash
+```xml
 1. <?xml version="1.0" encoding="UTF-8"?> 
 2. <texto> 
 3.   <Titulo>XML explicado a los niños</titulo> 
@@ -83,7 +83,7 @@
 
 **Correción**
 
-```bash
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
  <texto>
     <Titulo>XML explicado a los niños</Titulo><!--mal escrito-->
@@ -103,122 +103,109 @@
 ### Archivo 4
 
 ```xml
-
+1. <?xml version="1.0" encoding="UTF-8"?> 
+2. <geografia mundial> 
+3.   <pais> 
+4.     <pais>España</pais> 
+5.     <continente>Europa</continente> 
+6.     <capital>Madrid</capital> 
+7.   </pais> 
+8. </geografia mundial> 
 ```
 
 **Correción**
 
 ```xml
-
+<?xml version="1.0" encoding="UTF-8"?>
+ <geografiamundial><!--mal escrito-->
+    <pais>
+        <Nombre>España</Nombre><!--puede tener el mismo nombre-->
+        <continente>Europa</continente>
+        <capital>Madrid</capital>
+    </pais>
+ </geografiamundial>
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+---
+
+### Archivo 5
+
+```xml
+1. <?xml version="1.0" encoding="UTF-8"?> 
+2. <programas> 
+3.   <programa nombre="Firefox" licencia="GPL" licencia="MPL" /> 
+4.   <programa nombre="OpenOffice.org" licencia=LGPL /> 
+5.   <programa nombre="Inkscape" licencia="GPL" /> 
+6. </programas> 
+```
+
+**Correción**
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+ <programas>
+    <programa>
+      <nombre>
+      Firefox
+      </nombre>
+      <licencias>
+      GPL y MPL
+      </licencias>
+    </programa>
+    <programa nombre="OpenOffice.org" licencia="LGPL"/>
+     <programa nombre="Inkscape" licencia="GPL" />
+</programas><!--apunte personal: recuerda que al cerrar una etiqueta es el / al principio y al cerrar una etiqueta vacia es / al final-->
+<!--no repetir atributos-->
+```
+
+---
+
+### Archivo 6
+
+```xml
+1. <?xml version="1.0" encoding="UTF-8"?> 
+2. <mundiales-de-futbol> 
+3.   <mundial> 
+4.     
+<pais="España" /> 
+5.     
+<1982 /> 
+6.   </mundial> 
+7. </mundiales-de-futbol> 
+```
+
+**Correción**
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+ <mundiales-de-futbol>
+ <mundial>
+    <pais>España</pais><!--corregir-->
+    <año>1982</año><!--empieza por numero-->
+ </mundial>
+ </mundiales-de-futbol>
+```
+
+---
+
+### Archivo 7
+
+```xml
+1. <?xml version="1.0" encoding="UTF-8"?> 
+2. <mediosDeTransporte> 
+3.   <bicicleta velocidad="v<100km/h" /> 
+4.   <patinete velocidad maxima="50 km/h" 
+5. </mediosDeTransporte> 
+```
+
+**Correción**
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+ <mediosDeTransporte>
+    <bicicleta velocidad="v&lt;100km/h"/><!--el menor estaba mal, habia que poner una entidad predefinida-->
+    <patinete velocidadmaxima="50km/h"/><!--sin cerrar--><!--el nombre no puede tener espacios-->
+ </mediosDeTransporte>
+```
+
+---
