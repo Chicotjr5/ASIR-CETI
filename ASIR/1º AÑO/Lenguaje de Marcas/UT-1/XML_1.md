@@ -1,70 +1,222 @@
+## Corregir los posibles errores que tengan los siguientes archivos: 
 
-## Índice
-- [[Practica 1#Índice|Índice]]
-- [[Practica 1#Algoritmos|Algoritmos]]
-- [[Practica 1#Ejercicio de paginación|Ejercicio de paginación]]
-- [[Practica 1#Ejercicio de segmentación|Ejercicio de segmentación]]
+### Archivo 1
+
+```bash
+1. <?xml version="1.0" encoding="UTF-8"?> 
+2. <pelicula> 
+3.   <titulo>Con faldas y a lo loco</titulo> 
+4.   <director>Billy Wilder</director> 
+5. </pelicula> 
+6. <pelicula> 
+7.   <director>Leo McCarey</director> 
+8.   <titulo>Sopa de ganso</titulo> 
+9. </pelicula> 
+10. <autor />alumno</autor> 
+```
+
+**Correción**
+
+```bash
+<?xml version="1.0" encoding="UTF-8"?>
+<peliculas><!--faltaba elemento raiz-->
+    <pelicula>
+      <titulo>Con faldas y a lo loco</titulo>
+      <director>Billy Wilder</director>
+    </pelicula>
+    <pelicula>
+      <director>Leo McCarey</director>
+      <titulo>Sopa de ganso</titulo>
+    </pelicula>
+    <autor>alumno<autor/> <!--estaba mal cerrado-->
+ </peliculas>
+```
+
+---
+
+### Archivo 2
+
+```xml
+1. <?xml version="1.0" encoding="UTF-8"?> 
+2. <deportistas> 
+3.   <deportista> 
+4.     <deporte Atletismo /> 
+5.     <nombre>Jesse Owens</nombre> 
+6.   <deportista> 
+7.     <deporte Natación /> 
+8.     <nombre>Mark Spitz</nombre> 
+9.   </deportista> 
+10. </deportistas>
+```
+
+**Correción**
+
+```bash
+<?xml version="1.0" encoding="UTF-8"?>
+ <deportistas>
+      <deportista>
+          <deporte id="Atletismo"/>
+          <nombre>Jesse Owens</nombre>
+          </deportista><!--faltaba cerrar-->
+      <deportista>
+          <deporte id="Natación"/>
+          <nombre>Mark Spitz</nombre>
+    </deportista>
+ </deportistas>
+```
+
+---
+
+### Archivo 3
+
+```bash
+1. <?xml version="1.0" encoding="UTF-8"?> 
+2. <texto> 
+3.   <Titulo>XML explicado a los niños</titulo> 
+4.   <párrafo>El <abreviatura>XML</abreviatura>define cómo crear  
+5.   lenguajes de marcas.</párrafo> 
+6.   <párrafo>Las marcas se añaden a un documento de texto  
+7.   para añadir información.</párrafo> 
+8.   <http://>www.example.org</http://> 
+9. </texto> 
+```
+
+**Correción**
+
+```bash
+<?xml version="1.0" encoding="UTF-8"?>
+ <texto>
+    <Titulo>XML explicado a los niños</Titulo><!--mal escrito-->
+      <párrafo>El
+        <abreviatura>XML</abreviatura>
+        define cómo crear  lenguajes de marcas.
+        </párrafo>
+      <párrafo>
+      Las marcas se añaden a un documento de texto para añadir información.
+      </párrafo>
+    <http:>www.example.org</http:><!--malescrito(//)-->
+ </texto>
+```
+
+---
+
+### Archivo 4
+
+```xml
+
+```
+
+**Correción**
+
+```xml
+
+```
 
 
-### Algoritmos
 
 
 
-### Ejercicio de paginación
 
-Tenemos un sistema operativo de 32 bits en el que la asignación de memoria se realiza mediante paginación. 
-Cada página/marco ocupa 1 MB. De los 32 bits de la dirección de memoria, se usan 12 bits para especificar la página. 
-Se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de páginas:
 
-| Página | Marco |
-| ------ | ----- |
-| 0x59B  | 0x123 |
-| 0x59C  | 0xA05 |
-| 0x59D  | 0x59F |
-| 0x59E  | 0x799 |
-| 0x59F  | 0xF8B |
-| 0x59A0 | 0x22D |
 
-Dada la dirección lógica 0x59F2A5A0, obtener la dirección física correspondiente:
-- 0xF8B2A5A0
 
-Dada la dirección lógica 0x5A02A59F, obtener la dirección física correspondiente.
-- 0x22DA59F
 
-Dada la dirección lógica 0x59C4DE87, obtener la dirección física correspondiente
-- 0xA054DE87
 
-### Ejercicio de segmentación
 
-En un sistema de de 32 bits se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de segmentos (el tamaño viene expresado de forma relativa la base):
 
-| Segmento | Base       | Tamaño     | Límite     |
-| -------- | ---------- | ---------- | ---------- |
-| 0xA321   | 0x85434520 | 0x00005218 | 0x85439738 |
-| 0xA322   | 0xBA41002E | 0x00003FD1 | 0xBA413FFF |
-| 0xA323   | 0x226A5722 | 0x00004D3D | 0x226AA45F |
-| 0xA324   | 0xF01809AC | 0x00000053 | 0xF01809FF |
-| 0xA325   | 0x226CA460 | 0x0000AAFF | 0x226D4F5F |
-| 0xA326   | 0x4951B4D8 | 0x0000F424 | 0x4952A8FC |
 
-**Obtener las direcciones físicas absolutas donde termina cada segmento**
 
-**Dada la dirección lógica 0xA3231265, obtener la dirección física correspondiente.**
 
-- 4D3D-1265= 15064 Está dentro del segmento 
-- 226A5722+1265 = 226A6987 
-- Su dirección física sería 0x226A6987
 
-**Dada la dirección lógica 0xA3240265, obtener la dirección física correspondiente.**
 
-- 53-0265= -212 
-- Se sale del segmento
 
-**Dada la dirección lógica 0xA325AAFA, obtener la dirección física correspondiente.**
 
-- AAFF – AAFA = 5 Esta dentro del segmento 
-- 226CA460 + AAFA = 226D 4F5A 
-- Su dirección física sería 0x226D4F5A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
