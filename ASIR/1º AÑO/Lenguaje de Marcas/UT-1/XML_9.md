@@ -1,72 +1,161 @@
+## Comprobar si están bien formados y corregirlos en caso contrario 
 
-## Índice
-- [[Practica 1#Índice|Índice]]
-- [[Practica 1#Algoritmos|Algoritmos]]
-- [[Practica 1#Ejercicio de paginación|Ejercicio de paginación]]
-- [[Practica 1#Ejercicio de segmentación|Ejercicio de segmentación]]
+### Fichero 1
 
+```xml
+<?xml version="1.0" encoding="UTF-8"> 
+< frutas > 
+< fruta > 
+< nombre >cereza< nombre \> 
+< fruta \> 
+< fruta > 
+< nombre >naranja< nombre \> 
+< fruta \> 
+< frutas \>
+```
 
-### Algoritmos
+**Correción**
 
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<frutas>
+       <fruta>
+          <nombre>cereza</nombre><!--Mal cerrada-->
+       </fruta><!--Mal cerrado-->
+       <fruta>
+          <nombre>naranja</nombre><!--Mal cerrado-->
+       </fruta><!--Mal cerrado-->
+</frutas><!--Mal cerrado--> <!--Todas las etiquetas tenían un espacio-->
+```
 
+---
 
-### Ejercicio de paginación
+### Fichero 2
 
-Tenemos un sistema operativo de 32 bits en el que la asignación de memoria se realiza mediante paginación. 
-Cada página/marco ocupa 1 MB. De los 32 bits de la dirección de memoria, se usan 12 bits para especificar la página. 
-Se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de páginas:
+```xml
+!-- Documento XML con errores de sintaxis. --!> 
+<? xml versión="1.0" encodin = "UTF-8" > 
+<terrestres> 
+<vehiculo>bicicleta<vehiculo> 
+<vehiculo>coche<vehiculo> 
+<vehiculo>tractor<vehiculo> 
+<acuaticos> 
+<vehiculo>canoa<vehiculo> 
+<aereos> 
+<vehiculo>avioneta<vehiculo> 
+<vehiculo>helicóptero<vehiculo>
+```
 
-| Página | Marco |
-| ------ | ----- |
-| 0x59B  | 0x123 |
-| 0x59C  | 0xA05 |
-| 0x59D  | 0x59F |
-| 0x59E  | 0x799 |
-| 0x59F  | 0xF8B |
-| 0x59A0 | 0x22D |
+**Correción**
 
-Dada la dirección lógica 0x59F2A5A0, obtener la dirección física correspondiente:
-- 0xF8B2A5A0
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<Vehículos><!--No tenía una etiqueta raíz-->
+    <terrestres>
+         <vehiculo>bicicleta</vehiculo>
+         <vehiculo>coche</vehiculo>
+         <vehiculo>tractor</vehiculo>
+    </terrestres><!--Etiquetas sin cerrar-->
+    <acuaticos>
+          <vehiculo>canoa</vehiculo>
+    </acuaticos><!--Etiquetas sin cerrar-->
+    <aereos>
+         <vehiculo>avioneta</vehiculo>
+         <vehiculo>helicóptero</vehiculo>
+    </aereos><!--Etiquetas sin cerrar-->
+</Vehículos>
+<!--Tenía un comentario encima de la primera línea que estaba mal esrito y mal cerrado, además la primera línea estaba mal escrita-->
+```
 
-Dada la dirección lógica 0x5A02A59F, obtener la dirección física correspondiente.
-- 0x22DA59F
+---
 
-Dada la dirección lógica 0x59C4DE87, obtener la dirección física correspondiente
-- 0xA054DE87
+### Fichero 3
 
-### Ejercicio de segmentación
+```xml
+<?xml version="1.0" encoding="UTF-8"?> 
+<figuras>  
+<figura plana> 
+<nombre>cuadrado</nombre> 
+</lados 4> 
+</figura> 
+<figura plana> 
+<nombre>triángulo</nombre> 
+</lados 3> 
+</figura> 
+<figura tridimensional> 
+<nombre>cubo</nombre> 
+</aristas 12> 
+</caras 6> 
+</figura> 
+</figuras> 
+```
 
-En un sistema de de 32 bits se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de segmentos (el tamaño viene expresado de forma relativa la base):
+**Correción**
 
-| Segmento | Base       | Tamaño     | Límite     |
-| -------- | ---------- | ---------- | ---------- |
-| 0xA321   | 0x85434520 | 0x00005218 | 0x85439738 |
-| 0xA322   | 0xBA41002E | 0x00003FD1 | 0xBA413FFF |
-| 0xA323   | 0x226A5722 | 0x00004D3D | 0x226AA45F |
-| 0xA324   | 0xF01809AC | 0x00000053 | 0xF01809FF |
-| 0xA325   | 0x226CA460 | 0x0000AAFF | 0x226D4F5F |
-| 0xA326   | 0x4951B4D8 | 0x0000F424 | 0x4952A8FC |
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<tarjeta_visita>
+     <apellido>DEL VALLE</apellido><nombre>Cristobal</nombre><!--No estaba bien formulada la etiqueta nombre-->
+     <sociedad/>
+     <profesión>Doctor</profesión>
+     <dirección>
+         <número>19</número>
+         <calle>C/ Florida</calle>
+         <código_postal>18080</código_postal>
+         <población>MADRID</población>
+     </dirección>
+     <número_teléfono>123456789</número_teléfono><!--Tenían distinto nombre-->
+     <número_movil/><!--Tenia una etiqueta sin nombre-->
+     <número_fax/>
+     <correo_electrónico/>
+</tarjeta_visita>
+```
 
-**Obtener las direcciones físicas absolutas donde termina cada segmento**
+---
 
-**Dada la dirección lógica 0xA3231265, obtener la dirección física correspondiente.**
+### Fichero 4
 
-- 4D3D-1265= 15064 Está dentro del segmento 
-- 226A5722+1265 = 226A6987 
-- Su dirección física sería 0x226A6987
+```xml
+<?Xml version="1,0" encoding="UTF8"?> 
+<triangulo base="7"altura="5"> 
+<triangulo base="2"altura="6"> 
+<triangulo base="3"altura="3"> 
+```
 
-**Dada la dirección lógica 0xA3240265, obtener la dirección física correspondiente.**
+**Correción**
 
-- 53-0265= -212 
-- Se sale del segmento
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<Triángulos><!--No tenía una etiqueta raíz-->
+    <triangulo base="7" altura="5"/><!--Atributos mal puestos y etiqueta sin cerrar-->
+    <triangulo base="2" altura="6"/><!--Atributos mal puestos y etiqueta sin cerrar-->
+    <triangulo base="3" altura="3"/><!--Atributos mal puestos y etiqueta sin cerrar-->
+</Triángulos>
+<!--La X de XML era mayuscula y en 1.0 tenía una , en vez de un .-->
+```
 
-**Dada la dirección lógica 0xA325AAFA, obtener la dirección física correspondiente.**
+---
 
-- AAFF – AAFA = 5 Esta dentro del segmento 
-- 226CA460 + AAFA = 226D 4F5A 
-- Su dirección física sería 0x226D4F5A
+### Fichero 5
 
+```xml
+<?xml version="1.0" encoding="UTF-8"?> 
+<numeros> 
+   <1 letra="u" letra="n" letra="o">1</> 
+   <2 letra="d" letra="o" letra="s">22</> 
+   <6 letra="s" letra="e" letra="i" letra="s">666666</> 
+</numeros> 
+```
 
+**Correción**
 
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<Números>
+     <n1 Primeraletra="u" Segundaletra="n" Terceraletra="o">1</n1><!--La etiqueta no puede empezar por número y tiene que estar bien cerrada, además de que no se puede repetir un atributo dentro de una etiqueta-->
+     <n2 Primeraletra="d" Segundaletra="o" Terceraletra="s">22</n2><!--La etiqueta no puede empezar por número y tiene que estar bien cerrada, además de que no se puede repetir un atributo dentro de una etiqueta-->
+     <n6 Primeraletra="s" Segundaletra="e" Terceraletra="i" Cuartaletra="s">666666</n6><!--La etiqueta no puede empezar por número y tiene que estar bien cerrada, además de que no se puede repetir un atributo dentro de una etiqueta-->
+</Números>
+```
 
-
+---
