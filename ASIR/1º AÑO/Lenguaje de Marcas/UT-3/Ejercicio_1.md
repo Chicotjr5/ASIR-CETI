@@ -1,3 +1,10 @@
+## Determinar el código HTML necesario para crear la tabla que se muestra en la siguiente imagen 
+## Utilizar la primera fila como  las celdas de cabecera y añadir todos los atributos posibles.
+
+![image](https://github.com/user-attachments/assets/d90e6384-0ecd-4187-a2d9-c90c54a7abd1)
+
+
+ ```html
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
  <!-- plantilla para paginas web-->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
@@ -41,3 +48,4 @@
 	</table>
   </body>
 </html>
+```
