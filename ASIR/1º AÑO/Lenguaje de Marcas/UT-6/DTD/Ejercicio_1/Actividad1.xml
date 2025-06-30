@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE libro SYSTEM "Actividad1.dtd">
+<libro>
+	<capitulo>
+		<titulo>Introduccion</titulo>
+	</capitulo>
+	<capitulo>
+		<titulo>Historia</titulo>
+		<subcapitulo>
+			<titulo>Parte 1</titulo>
+		</subcapitulo>
+		<subcapitulo>
+			<titulo>Parte 2</titulo>
+		</subcapitulo>
+	</capitulo>
+	<capitulo>
+		<titulo>Index</titulo>
+	</capitulo>
+</libro>

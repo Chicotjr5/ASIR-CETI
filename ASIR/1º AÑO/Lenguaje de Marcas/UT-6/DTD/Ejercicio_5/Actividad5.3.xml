@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE aeropuertos [
+	<!ELEMENT aeropuertos (aeropuerto*)> 
+	<!ELEMENT aeropuerto (nombre)*> 
+	<!ELEMENT nombre (#PCDATA)> 
+]>
+<aeropuertos>
+	<aeropuerto>
+		<nombre>Berlín Schönefeld (SFX)</nombre>
+	</aeropuerto>
+	<aeropuerto>
+		<nombre>Berlín Tempelhof (THF)</nombre>
+	</aeropuerto>
+</aeropuertos>
+
+<!-- La etiqueta cerrado no esta presente en el XML, asi que la eliminamos, además de que nombre esta presente varias veces -->

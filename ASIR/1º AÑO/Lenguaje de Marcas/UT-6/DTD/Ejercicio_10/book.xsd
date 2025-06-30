@@ -1,0 +1,45 @@
+﻿<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="book">
+        <xs:ComplexType>
+          <xs:sequence>
+            <xs:element ref="title"/>
+            <xs:element ref="author" MaxOccurs="unbounded"/>
+            <xs:element ref="section" MaxOccurs="unbounded"/>
+          </xs:sequence>
+        </xs:ComplexType>
+	</xs:element>
+	
+	<xs:element name="titulo" type="xs:string"/>
+	<xs:element name="author" type="xs:string"/>
+	<xs:element name="section">
+		<xs:ComplexType>
+			<xs:sequence>
+				<xs:element ref="title"/>
+				<xs:element ref="p"/>
+				<xs:element ref="section" MaxOccurs="unbounded" MinOccurs="0"/>
+				<xs:element ref="figure" MinOccurs="0"/>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:string" use="optional"/>
+			<xs:attribute name="difficulty" type="xs:string" use="optional"/>
+		</xs:ComplexType>
+	</xs:element>
+	
+	<xs:element name="p" type="xs:string"/>
+	<xs:element name="figure">
+		<xs:ComplexType>
+			<xs:sequence>
+				<xs:element ref="title"/>
+				<xs:element ref="image"/>
+			</xs:sequence>
+			<xs:attribute name="height" type="xs:int" use="Required"/>
+			<xs:attribute name="width" type="xs:int" use="Required"/>
+		</xs:ComplexType>
+	</xs:element>
+	
+	
+	<xs:element name="image">
+		<ComplexType>
+			<xs:attribute name="source" type="xs:string" use="Required"/>
+		</ComplexType>
+	</xs:element>
+</xs:schema>

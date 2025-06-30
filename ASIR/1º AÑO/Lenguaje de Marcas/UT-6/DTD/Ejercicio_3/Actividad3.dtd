@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT Pedido (Destino, Ordenante, Observaciones, Contenido)>
+	<!ATTLIST Pedido xmlns CDATA #REQUIRED>
+	<!ATTLIST Pedido fecha CDATA #REQUIRED>
+	
+<!ELEMENT Destino (Nombre, Direccion, Ciudad, CodPostal)+>
+	<!ELEMENT Nombre (#PCDATA)>
+	<!ELEMENT Direccion (#PCDATA)>
+	<!ELEMENT Ciudad (#PCDATA)>
+	<!ELEMENT CodPostal (#PCDATA)>
+	<!ELEMENT Cantidad (#PCDATA)>
+	<!ELEMENT Precio (#PCDATA)>
+	
+<!ELEMENT Ordenante (Nombre, Direccion, Ciudad, CodPostal)+>
+<!ELEMENT Observaciones (#PCDATA)>
+<!ELEMENT Contenido (Producto+)>
+<!ELEMENT Producto (Nombre, Cantidad, Precio, Observaciones?)+>
+	<!ATTLIST Producto codigo CDATA #REQUIRED>
+	
+<!-- Se pueden hacer ATTLIST de varias formas
+Una es la que hice yo y la otra es asi:
+<!ATTLIST Pedido xmlns CDATA #REQUIRED
+				 fecha CDATA #REQUIRED> -->
+	
+	
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT empleados (empleado+)>
+<!ELEMENT empleado (nombre*, apellidos*, puesto*, permanencia*, proyectos?)>
+
+<!ELEMENT nombre (#PCDATA)>
+
+<!ELEMENT apellidos (#PCDATA)>
+
+<!ELEMENT puesto (#PCDATA)>
+<!ATTLIST puesto categoria (senior | auxiliar | medico) #REQUIRED>
+
+<!ELEMENT permanencia EMPTY>
+<!ATTLIST permanencia tiempo CDATA #REQUIRED>
+
+<!ELEMENT proyectos (proyecto+)>
+<!ELEMENT proyecto (#PCDATA)>
+<!ATTLIST proyecto tipo CDATA #REQUIRED> 
+<!-- recuerda que para los atributos hay que poner attlist y cuando sean muchos datos, poner CDATA sin parentesis, cuando sean pocos y los quieras poner tu, entre parentesis y separados de tuberias-->
+
+<!--
+ATTLIST ES PARA PONER ATRIBUTOS
+PRIMERO DIGO LA ETIQUETA, LUEGO EL ATRIBUTO, LOS POSIBLES VALORES DE ESE
+ATRIBUTO (si no se cuantos tiene o cuales van a ser, puedo poner CDATA, notation etc) Y SI SON OBLIGATORIOS O NO
+-->

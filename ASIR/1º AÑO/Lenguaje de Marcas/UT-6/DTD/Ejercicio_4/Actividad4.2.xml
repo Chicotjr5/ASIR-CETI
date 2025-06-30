@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE letras [
+ <!ELEMENT letras (letra)>
+ <!ELEMENT letra (#PCDATA)>]>
+<letras>
+ <letra>uve doble m</letra>
+</letras>
+
+<!--Solo me permite tener una etiqueta letra-->

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reyesEspañoles [
+	<!ELEMENT reyesEspañoles (rey | reina)+> 
+	<!ELEMENT rey (nombre, padre, madre)> 
+		<!ELEMENT nombre (#PCDATA)> 
+		<!ELEMENT padre (#PCDATA)> 
+		<!ELEMENT madre (#PCDATA)> 
+	<!ELEMENT reina (nombre, padre, madre)>]>
+<reyesEspañoles>
+	<rey>
+		<nombre>Felipe III</nombre>
+		<padre>Felipe II</padre>
+		<madre>Ana de Austria</madre>
+	</rey>
+	<reina>
+		<nombre>Juana la Loca</nombre>
+		<padre>Fernando el Católico</padre>
+		<madre>Isabel la Católica</madre>
+	</reina>
+	<rey>
+		<nombre>Carlos I</nombre>
+		<padre>Felipe el Hermoso</padre>
+		<madre>Juana la Loca</madre>
+	</rey>
+	
+	
+</reyesEspañoles>
+
+<!-- La etiqueta reina no esta definida y tenemos que usar una tuberia y decir que rey y reina pueden estar las veces que sean -->

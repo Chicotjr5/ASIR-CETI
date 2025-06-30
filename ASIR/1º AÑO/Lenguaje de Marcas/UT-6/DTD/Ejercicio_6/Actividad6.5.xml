@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE jugadoresFutbol [
+	<!ELEMENT jugadoresFutbol (jugador*)> 
+	<!ELEMENT jugador EMPTY> 
+	<!ATTLIST jugador   
+		nombre	NMTOKENS	#REQUIRED
+	> 
+	<!ATTLIST jugador   
+		codigo	ID	#REQUIRED
+	> 
+]>
+<jugadoresFutbol>
+	<jugador nombre="Alfredo Di Stéfano" codigo="uno"/>
+	<jugador nombre="Edison Arantes do Nascimento Pelé" codigo="dos"/>
+	<jugador nombre="Diego Armando Maradona" codigo="tres"/>
+	<jugador nombre="Johan Cruyff" codigo="cuatro"/>
+</jugadoresFutbol>
+
+<!-- Un ID no puede ser un nº, además de que solo se pueden usar caracteres, no signos de puntuación-->

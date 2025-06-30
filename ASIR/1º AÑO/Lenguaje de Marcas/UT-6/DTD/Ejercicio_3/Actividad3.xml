@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE Pedido SYSTEM "Actividad3.dtd">
+<Pedido xmlns="http://www.miempresa.org/pedidos" fecha="10-12">
+	<Destino>
+		<Nombre>Alicia Abad</Nombre>
+		<Direccion>Plaza de la Duquesa 12</Direccion>
+		<Ciudad>Albacete</Ciudad>
+		<CodPostal>05020</CodPostal>
+	</Destino>
+	<Ordenante>
+		<Nombre>Roberto Movilla</Nombre>
+		<Direccion>General Ricardos 56</Direccion>
+		<Ciudad>Madrid</Ciudad>
+		<CodPostal>28055</CodPostal>
+	</Ordenante>
+	<Observaciones>Es urgente, el césped está muy alto</Observaciones>
+	<Contenido>
+		<Producto codigo="872-AA">
+			<Nombre>Cortadora de cesped</Nombre>
+			<Cantidad>1</Cantidad>
+			<Precio>148.95</Precio>
+			<Observaciones>Confirmar que es eléctrica</Observaciones>
+		</Producto>
+		<Producto codigo="926-FH">
+			<Nombre>Podadora</Nombre>
+			<Cantidad>3</Cantidad>
+			<Precio>7.98</Precio>
+		</Producto>
+	</Contenido>
+</Pedido>

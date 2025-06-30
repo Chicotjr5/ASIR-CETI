@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Partidos[
+	<!ELEMENT Partidos (Partido)+>
+		<!ELEMENT Partido (NombreEL, GolesEL, NombreEV, GolesEV)>
+		<!ELEMENT GolesEL (#PCDATA)>
+		<!ELEMENT GolesEV (#PCDATA)>
+		<!ELEMENT NombreEL (#PCDATA)>
+		<!ELEMENT NombreEV (#PCDATA)>
+]>
+
+<Partidos>
+	<Partido>
+		<NombreEL> Nottingham Presa</NombreEL>
+			<GolesEL>0</GolesEL>
+		<NombreEV> Inter de Mitente:</NombreEV>
+			<GolesEV>1</GolesEV>
+	</Partido>
+	<Partido>
+		<NombreEL> Vodka Juniors</NombreEL>
+			<GolesEL>3</GolesEL>
+		<NombreEV> Sparta da Risa:</NombreEV>	
+			<GolesEV>3</GolesEV>
+	</Partido>
+	<Partido>
+		<NombreEL> Water de Munich:</NombreEL>
+			<GolesEL>4</GolesEL>
+		<NombreEV> Esteaua es del grifo:</NombreEV>			
+			<GolesEV>2</GolesEV>
+	</Partido>
+</Partidos>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- DTD generado con XMLSpy v2022 rel. 2 (x64) (http://www.altova.com) -->
+<!ELEMENT p (#PCDATA)>
+<!ELEMENT book (title, author+, section+)>
+<!ELEMENT image EMPTY>
+<!ATTLIST image
+	source (csarch.gif | graphs.gif | relations.gif) #REQUIRED
+>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT figure (title, image)>
+<!ATTLIST figure
+	height CDATA #REQUIRED
+	width CDATA #REQUIRED
+>
+<!ELEMENT section (title, p, ((figure, (p, section*)?) | section+)?)>
+<!ATTLIST section
+	id CDATA #IMPLIED
+	difficulty CDATA #IMPLIED
+>

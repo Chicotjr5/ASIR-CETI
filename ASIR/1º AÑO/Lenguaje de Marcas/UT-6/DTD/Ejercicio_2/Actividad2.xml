@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<empleados xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///E:/Juan%20de%20colonia/1%20A%C3%91O/LM/T6/Ejercicios/SCHEMA/Ejercicio2/Ejercicio2.xsd">
+	<empleado>
+		<nombre>Alejandro</nombre>
+		<apellidos>Martín Ledesma</apellidos>
+		<puesto categoria="senior">programador</puesto>
+		<permanencia tiempo="10"/>
+		<proyectos>
+			<proyecto tipo="curso">Curso XML</proyecto>
+			<proyecto tipo="web">GPM</proyecto>
+		</proyectos>
+	</empleado>
+	<empleado>
+		<nombre>Marta</nombre>
+		<apellidos>Marcos Lasa</apellidos>
+		<puesto categoria="auxiliar">programador</puesto>
+		<permanencia tiempo="0"/>
+	</empleado>
+</empleados>

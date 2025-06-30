@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE musicos [
+	<!ELEMENT musicos (musico*)> 
+	<!ELEMENT musico ((nombre | apodo), fechaNacimiento)> 
+		<!ELEMENT nombre (#PCDATA)> 
+		<!ELEMENT apodo (#PCDATA)> 
+		<!ELEMENT fechaNacimiento (#PCDATA)>]>
+<musicos>
+	<musico>
+		<nombre>Antonio Vivaldi</nombre>
+		<fechaNacimiento>4 de marzo de 1678</fechaNacimiento>
+	</musico>
+	<musico>
+		<nombre>Johann Sebastian Bach</nombre>
+		<fechaNacimiento>21 de marzo de 1685</fechaNacimiento>
+	</musico>
+</musicos>
+
+<!-- Creo que no esta bien hecho, pq el fallo es que esta la etiqueta apodo y la solucion no deberia de ser eso (creo)
+La tuberia nos dice, que es o nombre o apodo, no pueden ser las 2, asi que lo hice bien -->

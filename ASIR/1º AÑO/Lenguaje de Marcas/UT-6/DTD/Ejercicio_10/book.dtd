@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT book (title, author+, section+)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT author (#PCDATA)>
+<!ELEMENT section (title, (p|figure)*, section*)>
+	 <!ATTLIST section id CDATA #IMPLIED>
+	 <!ATTLIST section difficulty CDATA #IMPLIED>
+<!ELEMENT p (#PCDATA)>
+<!ELEMENT figure (title, image)>
+	<!ATTLIST figure height CDATA #REQUIRED>
+	<!ATTLIST figure width CDATA #REQUIRED>
+<!ELEMENT image EMPTY>
+	<!ATTLIST image source CDATA #REQUIRED>

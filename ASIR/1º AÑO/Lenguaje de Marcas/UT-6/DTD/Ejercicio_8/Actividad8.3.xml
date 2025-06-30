@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Partidos[
+	<!ELEMENT Partidos (Partido)+>
+		<!ELEMENT Partido EMPTY>
+			<!ATTLIST Partido NombreEL CDATA #REQUIRED>
+			<!ATTLIST Partido GolesEL CDATA #REQUIRED>
+			<!ATTLIST Partido NombreEV CDATA #REQUIRED>
+			<!ATTLIST Partido GolesEV CDATA #REQUIRED>
+]>
+
+<Partidos>
+	<Partido NombreEL=" Nottingham Presa" GolesEL="0" NombreEV=" Inter de Mitente" GolesEV="1"/>
+	<Partido NombreEL=" Vodka Juniors" GolesEL="3" NombreEV=" Sparta da Risa" GolesEV="3"/>
+	<Partido NombreEL=" Water de Munich" GolesEL="4" NombreEV=" Esteaua es del grifo" GolesEV="2"/>
+</Partidos>

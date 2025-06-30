@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE contabilidad [
+	<!ELEMENT contabilidad (apunte*)> 
+	<!ELEMENT apunte (ingreso*, gasto*, fecha, cantidad, concepto)>
+		<!ELEMENT ingreso EMPTY> 
+		<!ELEMENT gasto EMPTY> 
+		<!ELEMENT fecha (#PCDATA)>
+		<!ELEMENT cantidad (#PCDATA)> 
+		<!ELEMENT concepto (#PCDATA)> 
+]>
+<contabilidad>
+	<apunte>
+		<ingreso/>
+		<fecha>24 de febrero</fecha>
+		<cantidad>1800,00 €</cantidad>
+		<concepto>Salario</concepto>
+	</apunte>
+	<apunte>
+		<gasto/>
+		<fecha>28 de febrero</fecha>
+		<cantidad>74,25 €</cantidad>
+		<concepto>Recibo luz</concepto>
+	</apunte>
+</contabilidad>
+
+<!-- La etiqueta apunte no estaba definida, gasto, ingreso tampoco y las etiquetas de contabilidad estaban mal puestas, PARA INGRESO Y GASTO SE PUEDEN PONER TUBERIAS -->  
