@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Archivo XML de muestra generado con XMLSpy v2022 rel. 2 (x64) (http://www.altova.com)-->
+<Helados xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Ejercicio3.xsd">
+	<helado>
+		<sabor>limon</sabor>
+		<tipo>cono</tipo>
+		<tamaño>mediano</tamaño>
+	</helado>
+	<helado>
+		<sabor>vainilla</sabor>
+		<tipo>cono</tipo>
+		<tamaño>grande</tamaño>
+	</helado>
+	<helado>
+		<sabor>limon</sabor>
+		<tipo>cono</tipo>
+		<tamaño>pequeño</tamaño>
+	</helado>
+</Helados>

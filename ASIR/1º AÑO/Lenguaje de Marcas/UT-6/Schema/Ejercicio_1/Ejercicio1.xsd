@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="libro" type="tipolibro"/>
+	<xs:complexType name="tipolibro">
+		<xs:sequence>
+			<xs:element name="capitulo" type="capitulotipo" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+		<xs:element name="titulo" type="xs:string"/>
+		
+	<xs:complexType name="capitulotipo">
+		<xs:sequence>
+			<xs:element ref="titulo"/>
+			<xs:element name="subcapitulo" type="tiposubcapitulo" maxOccurs="unbounded" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="tiposubcapitulo">
+		<xs:sequence>
+			<xs:element ref="titulo">
+		</xs:sequence>
+	</xs:complexType>
+	
+</xs:schema>

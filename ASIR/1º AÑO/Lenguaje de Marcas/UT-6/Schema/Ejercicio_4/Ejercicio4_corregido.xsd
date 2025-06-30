@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="Libro" type="Tipolibro"/>
+	<xs:complexType name="Tipolibro">
+		<xs:sequence>
+			<xs:element ref="Titulo"/>
+			<xs:element name="Contenido">
+				<xs:complexType>
+					<xs:choice maxOccurs="unbounded">
+						<xs:element name="Capitulo" type="TipoCap"/>
+						<xs:element name="Separacion" type="tiposepa"/>
+					</xs:choice>					
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="Copyright" type="xs:string"/>
+		</xs:sequence>		
+	</xs:complexType>
+	
+	<xs:element name="Titulo" type="xs:string"/>
+	
+	<xs:complexType name="TipoCap">
+		<xs:sequence>
+			<xs:element name="Tema" type="xs:string"/>
+			<xs:element name="Seccion" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="apartados" type="xs:int" use="required"/>
+							<xs:attribute name="dificil" type="tipodifi" use="optional"/>							
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="materia" type="xs:string" use="optional"/>
+	</xs:complexType>
+	<xs:complexType name="tiposepa"/>
+	
+	<xs:simpleType name="tipodifi">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="true"/>
+			<xs:enumeration value="false"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+
+</xs:schema>

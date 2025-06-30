@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Archivo XML de muestra generado con XMLSpy v2022 rel. 2 (x64) (http://www.altova.com)-->
+<Tabla_Periodica xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="Ejercicio5.xsd">
+	<Atomo Estado="Sólido">
+		<nombre>String</nombre>
+		<Simbolo>A</Simbolo>
+		<numero_atomico>0</numero_atomico>
+		<peso_atomico>0</peso_atomico>
+		<punto_ebullicion unidades="gramos">3.141590118408203125</punto_ebullicion>
+		<densidad unidades="String">3.141590118408203125</densidad>
+	</Atomo>
+	<Atomo Estado="Sólido">
+		<nombre>String</nombre>
+		<Simbolo>A</Simbolo>
+		<numero_atomico>0</numero_atomico>
+		<peso_atomico>0</peso_atomico>
+		<punto_ebullicion unidades="centigrados">3.141590118408203125</punto_ebullicion>
+		<densidad unidades="String">3.141590118408203125</densidad>
+	</Atomo>
+	<Atomo Estado="Sólido">
+		<nombre>String</nombre>
+		<Simbolo>A</Simbolo>
+		<numero_atomico>0</numero_atomico>
+		<peso_atomico>0</peso_atomico>
+		<punto_ebullicion unidades="gramos">3.141590118408203125</punto_ebullicion>
+		<densidad unidades="String">3.141590118408203125</densidad>
+	</Atomo>
+</Tabla_Periodica>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="empleados" type="empleadostipo"/>
+		<xs:complexType name="empleadostipo">
+			<xs:sequence>
+				<xs:element name="empleado" maxOccurs="unbounded" minOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="nombre" type="xs:string"/>
+							<xs:element name="apellidos" type="xs:string"/>
+							<xs:element name="puesto" type="puestotipo"/>
+							<xs:element name="permanencia" type="permanenciatipo"/>
+							<xs:element name="proyectos" maxOccurs="1" minOccurs="0">
+								<xs:complexType>
+								<xs:sequence>
+									<xs:element name="proyecto" maxOccurs="unbounded" minOccurs="1">
+										<xs:complexType>
+											<xs:simpleContent>
+												<xs:extension base="xs:string">
+													<xs:attribute name="tipo" type="xs:string" use="required"></xs:attribute>
+												</xs:extension>
+											</xs:simpleContent>
+										</xs:complexType>
+									</xs:element>
+								</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	
+	
+	<xs:complexType name="puestotipo">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="categoria" type="xs:string" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	
+	
+	<xs:complexType name="permanenciatipo">
+		<xs:attribute name="tiempo" type="xs:int"/>
+	</xs:complexType>
+</xs:schema>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="paneles" type="tipopaneles"/>
+	<xs:complexType name="tipopaneles">
+		<xs:sequence>
+			<xs:element name="evento" type="tipoevento" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="tipoevento">
+		<xs:sequence>
+			<xs:element name="via" type="tipovia" minOccurs="1"/>
+			<xs:element name="pk" type="tpk" minOccurs="1"/>
+			<xs:element name="sentido" type="tiposentido" minOccurs="1"/>
+			<xs:element name="retencion" type="tiporetencion" minOccurs="0"/>
+			<xs:element name="carrilescortados" type="tipocortado" minOccurs="0"/>
+		</xs:sequence>
+		<xs:attribute name="tipo" type="tipotipo" use="required"/>
+		<xs:attribute name="fecha" type="xs:dateTime" use="required"/>		
+	</xs:complexType>
+	
+	<xs:complexType name="tipovia">
+		<xs:sequence>
+			<xs:element name="nombre" type="tiponombre" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="ref" type="tiporef" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="origen" type="tiporigenydestino" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="destino" type="tiporigenydestino" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="doble" type="xs:string" minOccurs="0" maxOccurs="1"/>
+			<xs:element name="carriles" type="xs:string" minOccurs="0" maxOccurs="1"/>
+		</xs:sequence>	
+	</xs:complexType>
+	
+	<xs:simpleType name="tpk">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="3"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="tiposentido">
+		<xs:restriction base="xs:float">
+			<xs:enumeration value="-1"/>
+			<xs:enumeration value="0"/>
+			<xs:enumeration value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="tiporigenydestino">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="30"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="tipodestino">
+		<xs:restriction base="xs:string"></xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="tiponombre">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="50"></xs:maxLength>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:simpleType name="tiporef">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[A-Z]{1,3}-\d{1,4}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="tiporetencion">
+		<xs:attribute name="long" type="tpk" use="optional"/>
+	</xs:complexType>
+	
+	<xs:simpleType name="tipotipo">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Accidente"/>
+			<xs:enumeration value="Retención"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="tipocortado">
+		<xs:attribute name="valor" type="cortadosimple"></xs:attribute>
+	</xs:complexType>
+	
+	<xs:simpleType name="cortadosimple">
+		<xs:restriction base="xs:int">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="8"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>

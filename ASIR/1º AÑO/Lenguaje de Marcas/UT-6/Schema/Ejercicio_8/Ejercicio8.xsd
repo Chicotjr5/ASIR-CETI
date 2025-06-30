@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<xs:element name="resultado" type="tiporesultado"/>
+
+<xs:complexType name="tiporesultado">
+	<xs:sequence>
+		<xs:element name="libreria" type="tipolibreria" maxOccurs="unbounded"/>
+	</xs:sequence>	
+	<xs:attribute name="tema" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="tipolibreria">
+	<xs:sequence>
+		<xs:element name="libro" type="tipolibro" maxOccurs="unbounded"/>
+	</xs:sequence>
+	<xs:attribute name="nombre" type="xs:string" use="required"/>
+	<xs:attribute name="web" type="xs:string" use="required"/>
+</xs:complexType>
+
+<xs:complexType name="tipolibro">
+	<xs:sequence>
+		<xs:element name="titulo" type="xs:string"/>
+		<xs:element name="autores" type="tipoautores"/>
+		<xs:element name="editorial" type="xs:string"/>
+		<xs:element name="anyo" type="xs:int"/>
+		<xs:element name="web" type="xs:string"/>
+		<xs:element name="precio" type="tipoprecio"/>
+	</xs:sequence>
+	<xs:attribute name="isbn" type="xs:string"/>
+	<xs:attribute name="nivel" type="xs:string"/>
+</xs:complexType>
+
+<xs:complexType name="tipoautores">
+	<xs:sequence>
+		<xs:element name="autor" type="xs:string" maxOccurs="unbounded"/>
+	</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="tipoprecio">
+	<xs:simpleContent>
+		<xs:extension base="xs:float">
+			<xs:attribute name="moneda" type="tipomoneda" use="optional"/>
+		</xs:extension>
+	</xs:simpleContent>
+</xs:complexType>
+
+<xs:simpleType name="tipomoneda">
+	<xs:restriction base="xs:string">
+		<xs:enumeration value="Dolar"/>
+		<xs:enumeration value="Euro"/>
+		<xs:enumeration value="Yen"/>
+	</xs:restriction>
+</xs:simpleType>
+</xs:schema>

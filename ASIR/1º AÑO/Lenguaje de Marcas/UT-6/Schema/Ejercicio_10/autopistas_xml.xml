@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<paneles xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="file:///E:/Juan%20de%20colonia/1%20A%C3%91O/LM/T6/Ejercicios/SCHEMA/Ejercicio10/Ejercicio10.xsd">
+	<evento tipo="Accidente" fecha="2021-02-01T23:00:00+01:00">
+		<via>
+			<nombre>Autopista del Cantabrico</nombre>
+			<ref>A-49</ref>
+			<origen>Irun</origen>
+			<destino>Baamonde</destino>
+			<doble/>
+			<carriles>4</carriles>
+		</via>
+		<pk>42.200</pk>
+		<sentido>1</sentido>
+		<retencion long="8.000"/>
+		<carrilescortados valor="1"/>
+	</evento>
+	<evento tipo="Retención" fecha="2021-02-01T13:43:01+01:00">
+		<via>
+			<nombre>Autovía de Andalucía</nombre>
+			<ref>A-4</ref>
+			<origen>Madrid</origen>
+			<destino>Cádiz</destino>
+			<doble/>
+			<carriles>4</carriles>
+		</via>
+		<pk>550.000</pk>
+		<sentido>-1</sentido>
+		<retencion long="3.000"/>
+	</evento>
+</paneles>

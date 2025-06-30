@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="CD" type="CDtipo"/>
+	<xs:complexType name="CDtipo">
+		<xs:sequence>
+			<xs:element name="artista" type="xs:string"/>
+			<xs:element name="titulo" type="xs:string"/>
+			<xs:element name="sello" type="xs:string"/>
+			<xs:element name="referencia" type="xs:string"/>
+			<xs:element name="anyo" type="xs:int"/>
+			<xs:element name="pais" type="xs:string"/>
+			<xs:element name="formato" type="xs:string"/>
+			<xs:element name="observaciones" type="xs:string"/>
+			<xs:element name="genero" type="xs:string" maxOccurs="unbounded"/>
+			<xs:element name="estilo" type="xs:string" maxOccurs="unbounded"/>
+			<xs:element name="canciones" type="tipocanciones"></xs:element>
+		</xs:sequence>		
+	</xs:complexType>
+	
+	<xs:complexType name="tipocanciones">
+		<xs:sequence>
+			<xs:element name="contenido_cd">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="cancion" type="tipocancion" maxOccurs="unbounded"/>
+					</xs:sequence>
+					<xs:attribute name="numero" type="xs:int" use="required"/>
+				</xs:complexType>				
+			</xs:element>
+		</xs:sequence>
+		
+	</xs:complexType>
+	
+	<xs:complexType name="tipocancion">
+		<xs:sequence>
+			<xs:element name="titulo" type="xs:string"/>
+			<xs:element name="duracion" type="tipoduracion"/>
+		</xs:sequence>
+			<xs:attribute name="numero" type="xs:int" use="required"/>
+	</xs:complexType>
+	
+	<xs:complexType name="tipoduracion">
+		<xs:sequence>
+			<xs:element name="minutos" type="xs:int"/>
+			<xs:element name="segundos" type="xs:int"/>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

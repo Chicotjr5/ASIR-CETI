@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="factura" type="tfact"/>
+	
+	<xs:complexType name="tfact">
+		<xs:sequence>
+			<xs:element name="emision" type="xs:string" minOccurs="1"/>
+			<xs:element name="vendedor" type="tvender" minOccurs="1"/>
+			<xs:element name="cliente" type="tcliente" minOccurs="1"/>
+			<xs:element name="articulo" type="tarticulo" minOccurs="1" maxOccurs="unbounded"/>
+			<xs:element name="descuento" type="tipodesc" minOccurs="1"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="tipoid"/>		
+	</xs:complexType>
+	
+	<xs:simpleType name="tipoid">
+		<xs:restriction base="xs:int">
+			<xs:pattern value="\d{1,4}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="tvender">
+		<xs:sequence>
+			<xs:element name="nombre" type="xs:string" minOccurs="1"/>
+		</xs:sequence>	
+		<xs:attribute name="id" type="tipoid" use="required"/>
+	</xs:complexType>
+	
+	<xs:complexType name="tarticulo">
+		<xs:sequence>
+			<xs:element name="denominacion" type="xs:string" minOccurs="1"/>
+			<xs:element name="precio" type="xs:float" minOccurs="1"/>
+			<xs:element name="cantidad" type="xs:int" minOccurs="1"/>
+		</xs:sequence>	
+		<xs:attribute name="id" type="tipoid" use="required"/>
+		<xs:attribute name="iva" type="xs:int" use="required"/>
+	</xs:complexType>
+	
+	<xs:simpleType name="tipodesc">
+		<xs:restriction base="xs:int">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
+	<xs:complexType name="tcliente">
+		<xs:sequence>
+			<xs:element name="nombre" type="xs:string" minOccurs="1"/>
+			<xs:element name="direccion" type="directipo" minOccurs="1"/>
+			<xs:element name="telefono" type="tipotel" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:attribute name="id" type="tipoid"/>
+	</xs:complexType>
+	
+	<xs:complexType name="directipo">
+		<xs:sequence>
+			<xs:element name="via" type="xs:string"/>
+			<xs:element name="cp" type="xs:int"/>
+			<xs:element name="localidad" type="xs:string"/>
+			<xs:element name="provincia" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="tipotel">
+		<xs:attribute name="num"></xs:attribute>
+	</xs:complexType>
+
+</xs:schema>

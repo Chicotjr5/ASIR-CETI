@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!ELEMENT libro (capitulo+)>
-<!ELEMENT capitulo (titulo, subcapitulo*)>
-<!ELEMENT subcapitulo (titulo)>
-<!ELEMENT titulo (#PCDATA)>
-
