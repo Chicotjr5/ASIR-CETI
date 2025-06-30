@@ -1,4 +1,12 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+### Determinar el código HTML necesario para crear la tabla que se muestra en la siguiente imagen. Poner el titulo de la tabla con caption. 
+### Utilizar el atributo abbr. En la imagen utilizar alt Utilizar las celdas de cabecera donde sea necesario y añadir todos los atributos posibles. 
+### En la información de los datos hacer que sean enlaces y como title: Ver más información sobre…  y comprar Almacenar las imágenes en una carpeta Imagenes
+
+![image](https://github.com/user-attachments/assets/228bf613-8d6a-4c4a-b09d-9229124fedb2)
+
+ 
+ ```html
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
  <!-- plantilla para paginas web-->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
   <head>
@@ -37,3 +45,4 @@
 	</table>
   </body>
 </html>
+```
