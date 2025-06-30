@@ -1,4 +1,10 @@
-﻿	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+## Determinar el código HTML necesario para crear el formulario que se muestra en la siguiente imagen: 
+
+![image](https://github.com/user-attachments/assets/f61be81a-45de-414b-8e0b-d67d8ef3d984)
+
+
+```html
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
  <!-- plantilla para paginas web-->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
   <head>
@@ -46,3 +52,4 @@
 		<form/>
   </body>
 </html>
+```
