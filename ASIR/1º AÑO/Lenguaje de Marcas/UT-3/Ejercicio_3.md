@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+### Determinar el código HTML necesario para crear la tabla que se muestra en la siguiente imagen:    Emplear las etiquetas <table>, <tr>, <td>, <th>, <caption> y los atributos colspan, rowspan 
+ 
+![image](https://github.com/user-attachments/assets/d1ef6135-bb70-411d-b92d-37638d2c87d8)
+
+ ```html
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
  <!-- plantilla para paginas web-->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
   <head>
@@ -45,3 +50,4 @@
 		</table>
   </body>
 </html>
+````
