@@ -1,4 +1,12 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+## A partir del fichero euclides_sinformato.htlm convertir en listas para que aparezca la página de la siguiente forma: 
+
+
+![image](https://github.com/user-attachments/assets/000dda0e-e192-4d2e-9302-56e15068eef4)
+
+ 
+ 
+ ```html
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
  <!-- plantilla para paginas web-->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
   <head>
@@ -61,3 +69,4 @@
 	<i>Extraido del libro "Elementos. Libros I-IV". Euclides. Biblioteca Clásica Gredos. Madrid, 1991. ISBN 84-249-1464-3. Traducción de María Luisa Puerta Castaños.</i>
   </body>
 </html>
+```
