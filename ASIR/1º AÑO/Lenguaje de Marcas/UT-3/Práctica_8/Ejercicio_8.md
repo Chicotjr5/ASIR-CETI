@@ -1,9 +1,4 @@
-## Realizar una página web que tenga el siguiente aspecto, es una tabla que contiene imágenes y fusiona columnas:
-
-![image](https://github.com/user-attachments/assets/34e3ff04-68bc-4778-8f52-b8b63f017fba)
-
-Pinchando en cada imagen debe ir a una dirección de internet con información sobre el 
-tema. 
+## Crear un sitio web para una empresa de alquiler de coches, que contenga lo siguiente: crear una carpeta para el sitio, y dentro carpetas para imágenes y otra carpeta para las paginas secundarias.
 
 ```html 
  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
