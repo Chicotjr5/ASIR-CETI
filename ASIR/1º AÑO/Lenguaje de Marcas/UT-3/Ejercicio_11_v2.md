@@ -1,4 +1,7 @@
-﻿	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+## Hacer una segunda versión con las provincias ordenadas en Comunidades autónomas. 
+
+```html  
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
  <!-- plantilla para paginas web-->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
   <head>
@@ -144,6 +147,7 @@
 						</select>
 					</label>
 				Suscribirme al boletin de novedades <input type="checkbox" name="boletin" value="dato" checked="checked"/>
+```
 			</fieldset><br/><br/>
 		<input type="submit" name="Guardar" value="Enviar datos"/><input type="reset" name="limpia" value="Borrar datos introducidos"/><br/>
 		<form/>
