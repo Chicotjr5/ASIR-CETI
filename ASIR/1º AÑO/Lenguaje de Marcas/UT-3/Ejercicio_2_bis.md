@@ -1,4 +1,16 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+### Determinar el código HTML necesario para crear la pagina que se muestra .
+
+![image](https://github.com/user-attachments/assets/0e921611-0925-4579-a475-7f1870ebac00)
+ 
+Al pinchar en El Camino lleva a la [siguiente página](https://es.wikipedia.org/wiki/El_camino_(novela)) 
+Las tres imágenes de abajo están en una tabla sin borde 
+Al pinchar en la imagen de Cela lleva a otra página
+
+![image](https://github.com/user-attachments/assets/12be3d55-4577-4a74-868e-b069a6c207b7)
+
+
+```html
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
  <!-- plantilla para paginas web-->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
   <head>
@@ -79,3 +91,4 @@
 	</table>
   </body>
 </html>
+```
