@@ -64,3 +64,43 @@ solicitándoles que realicen sus métodos por sí mismos..</p>
 { font-weight: bold; } 
 
 ```
+
+**Código realizado:**
+
+```html
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/ 
+xhtml1/DTD/xhtml1-transitional.dtd"> <htmlxmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"/>
+	<link rel="stylesheet" type="text/css" href="css_P1.css" media="screen"/>
+	<title>Ejercicio de selectores</title></head>
+<body>
+	<div id="primero">
+		<p>Los mÃ©todos (comportamiento) y atributos (estado) estÃ¡n 
+			estrechamente relacionados por la propiedad de conjunto. Esta propiedad 
+			destaca que una clase requiere de mÃ©todos para poder tratar los atributos 
+			con los que cuenta. El <a href="#">programador</a> debe pensar 
+			indistintamente en ambos conceptos, sin separar ni darle mayor 
+			importancia a ninguno de ellos, hacerlo podrÃ­a producir el <em>hÃ¡bito 
+			errÃ³neo</em>, de crear clases contenedoras de informaciÃ³n por un lado y 
+			clases con mÃ©todos que manejen a las primeras por el otro.</p>
+	</div>
+	<div class="normal">
+		<p>De esta manera se estarÃ­a realizando una <span><a href="#">programaciÃ³n 
+		estructurada</a></span>, camuflada en un lenguaje de programaciÃ³n
+		orientado a objetos.</p>
+		
+		<p>Esto difiere de la <em class="especial">programaciÃ³n 
+		estructurada</em> tradicional, en la que los datos y los procedimientos estÃ¡n 
+		separados y sin relaciÃ³n, ya que lo Ãºnico que se busca es el procesamiento de 
+		unos datos de entrada para obtener otros de salida. La programaciÃ³n 
+		estructurada anima al programador a pensar sobre todo en tÃ©rminos de 
+		procedimientos o funciones, y en segundo lugar en las estructuras de datos que 
+		esos procedimientos manejan. En la programaciÃ³n estructurada sÃ³lo se escriben 
+		funciones que procesan datos. Los programadores que emplean Ã©ste nuevo 
+		paradigma, en cambio, primero definen objetos para luego enviarles mensajes 
+		solicitÃ¡ndoles que realicen sus mÃ©todos por sÃ­ mismos..</p>
+	</div>
+</body>
+</html>
+```
