@@ -1,0 +1,6 @@
+body{background-color:#FFEFB3; color:#4A00B4;}
+h1{background-color:#FFDD5D; text-align:center; text-transform:uppercase;}
+h2{background-color:#FFE893; font-style:oblique;}
+.der{float:right; margin-left:20px;}
+.izq{float:left; margin-right:20px;}
+hr{clear:both; width:30%; height:5px; background:#4A00B4;}

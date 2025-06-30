@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1" />
+	  <title>Encuesta informática.</title>
+	  <link href="practica15_alu.css" rel="stylesheet" type="text/css"/>
+	</head>
+	<body>
+			<h1>Encuesta informática</h1>
+			<form action="" method="post">
+			<fieldset>
+			  <legend>Datos personales</legend>
+			  <ul class="flota">
+					<li>Edad: <input type="text" name="edad" maxlength="2" size="3"/></li>
+					<li>Sexo: 
+					   <input type="radio" name="sexo" value="hombre"/>Hombre
+					   <input type="radio" name="sexo" value="mujer"/>Mujer
+					</li>
+					<li>Estás estudiando: 
+					  <select name="estudios">
+						<option value="-1" selected="selected"></option>
+						<option value="primaria">Primaria</option>
+						<option value="secundaria">Secundaria</option>
+						<option value="bachillerato">Bachillerato</option>
+						<option value="modulo medio">Módulo grado medio</option>
+						<option value="modulo superior">Módulo grado superior</option>
+						<option value="diplomatura">Diplomatura</option>
+						<option value="licenciatura">Licenciatura</option>
+						<option value="doctorado">Doctorado</option>
+					  </select>
+					</li>
+			  </ul>
+			</fieldset>
+			<fieldset>
+			  <legend>Preguntas generales</legend>
+			  <ul class="borde">
+				<li>¿Tienes ordenador en tu casa? 
+					<input type="radio" name="radio" value="si" />Si
+					<input type="radio" name="radio" value="no" />No
+				</li>
+				<li>¿Lo utilizas sólo tú o lo compartes con otras personas?
+				   <input type="radio" name="radio2" value="propio" />Propio
+				  <input type="radio" name="radio2" value="compartido"/>Compartido
+				</li>
+				<li>En períodos de clase:
+				  <ul>
+					<li class="puntos">¿Cuántos días a la semana sueles encender el ordenador? 
+					  <select name="menu1">
+						<option value="-1" selected="selected"></option>
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+					  </select>
+					</li>
+					<li class="puntos">¿Cuántas horas diarias sueles gastar el ordenador (cada día)? 
+					  <select name="menu2">
+						<option value="-1" selected="selected"></option>
+						<option value="1">menos de 1 hora</option>
+						<option value="2">entre 1 y 2 horas</option>
+						<option value="3">entre 2 y 3 horas</option>
+						<option value="4">más de 3 horas</option>
+					  </select>
+					</li>
+				  </ul>
+				</li>
+				<li>En períodos de vacaciones:
+				  <ul>
+					<li class="puntos">¿Cuántos días a la semana sueles encender el ordenador? 
+					  <select name="menu3">
+						<option value="-1" selected="selected"></option>
+						<option value="0">0</option>
+						<option value="1">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+					  </select>
+					</li>
+					<li class="puntos">¿Cuántas horas diarias sueles gastar el ordenador (cada día)? 
+					  <select name="menu4">
+						<option value="-1" selected="selected"></option>
+						<option value="1">menos de 1 hora</option>
+						<option value="2">entre 1 y 2 horas</option>
+						<option value="3">entre 2 y 3 horas</option>
+						<option value="4">más de 3 horas</option>
+					  </select>
+					</li>
+				  </ul>
+				</li>
+				<li>¿A qué dedicas tu tiempo en el ordenador?
+				  <table>
+					  <tr>
+						<td><input type="checkbox" name="uso1"/>Escribir</td>
+						<td><input type="checkbox" name="uso2"/>Dibujar</td>
+						<td><input type="checkbox" name="uso3"/>Programar</td>
+						<td><input type="checkbox" name="uso4" />Hacer música</td>
+						<td><input type="checkbox" name="uso5" />Retoque fotográfico</td>
+					  </tr>
+					  <tr>
+						<td><input type="checkbox" name="uso6" />Jugar</td>
+						<td><input type="checkbox" name="uso7" />Ver páginas web</td>
+						<td><input type="checkbox" name="uso8"/>Chatear</td>
+						<td><input type="checkbox" name="uso9" />Intercambiar música</td>
+						<td><input type="checkbox" name="uso10" />Intercambiar  películas/series</td>
+					  </tr>
+				  </table>
+				  <p>Otras actividades (especifica): 
+					  <input type="text" name="acti1" />
+					  <input type="text" name="acti2" />
+					  <input type="text" name="acti3"/></p>
+				  
+				</li>
+			  </ul>
+			</fieldset>
+			<fieldset>
+			  <legend>Descripción</legend>
+			   <ul class="borde">
+				<li>Tipo: <input type="radio" name="c4" value="1"/>Sobremesa -
+                    <input type="radio" name="c4" value="1"/>Portátil -
+                    <input type="radio" name="c4" value="1"/>Tablet PC
+                </li>
+				<li>Antigüedad: 
+				  <select name="c1">
+					<option value="-1" selected="selected"></option>
+					<option value="1">menos de 1 año</option>
+					<option value="2">entre 1 y 2 años</option>
+					<option value="3">entre 2 y 4 años</option>
+					<option value="4">más de 4 años</option>
+				  </select>
+				</li>
+				<li><input type="radio" name="c2" value="1" />Sin marca
+				  <input type="radio" name="c2" value="2" />De marca
+				  (especificar):<input type="text" name="c3" />
+                </li>
+				<li>Procesador: Marca: 
+				  <select name="c4">
+					<option value="-1" selected="selected"></option>
+					<option value="1">Intel</option>
+					<option value="2">AMD</option>
+					<option value="3">Otros</option>
+				  </select>
+				   - Modelo: 
+				  <select name="c5">
+					<option value="-1" selected="selected"></option>
+					<optgroup label="Intel">
+					  <option value="1">Pentium III o anterior</option>
+					  <option value="2">Pentium IV</option>
+					  <option value="3">Pentium Core2</option>
+					  <option value="4">Celeron</option>
+					  <option value="5">Otro</option>
+					</optgroup>
+					<optgroup label="AMD">
+					  <option value="6">Athlon XP o anterior</option>
+					  <option value="7">Athlon 64</option>
+					  <option value="8">Athlon 64 X2</option>
+					  <option value="9">Sempron</option>
+					  <option value="10">Duron</option>
+					  <option value="11">Otro</option>
+					</optgroup>
+					<option value="12">Otras marcas</option>
+				  </select>
+				   - Velocidad: 
+				  <select name="c6">
+					<option value="-1" selected="selected"></option>
+					<option value="1">menos de 1,5 GHz</option>
+					<option value="2">1,5 GHz o más</option>
+					<option value="3">2 GHz o más</option>
+					<option value="4">2,5 GHz o más</option>
+				  </select>
+				</li>
+				<li>Memoria RAM: 
+				  <select name="c7">
+					<option value="-1" selected="selected"></option>
+					<option value="1">menos de 4 GB</option>
+					<option value="2">4 GB o más</option>
+					<option value="3">8 GB o más</option>
+					<option value="4">12 GB o más</option>
+				  </select>
+				</li>
+				<li>Disco duro: 
+				  <select name="c8">
+					<option value="-1" selected="selected"></option>
+					<option value="1">menos de 250 GB</option>
+					<option value="2">250 GB o más</option>
+					<option value="3">500 GB o más</option>
+				  </select>
+				</li>
+				<li>CD/DVD: <input type="checkbox" name="c8" />CD-ROM-
+				  <input type="checkbox" name="c8" />CD-RW -
+				  <input type="checkbox" name="c8" />DVD-ROM - 
+				  <input type="checkbox" name="c8" />DVD-RW y/o +RW
+				</li>
+				<li>Monitor: Tipo <input type="radio" name="c10" value="1"/>CRT - 
+					<input type="radio" name="c10" value="1"/>TFT -
+					Tamaño: <input type="radio" name="c11" value="1"/>Menos de 17" -
+					<input type="radio" name="c11" value="1" />17" - 
+					<input type="radio" name="c11" value="1" />19" -
+					<input type="radio" name="c11" value="1" />más de 19"
+				</li>
+				<li>Acceso a Internet: 
+				  <select name="c4">
+					<option value="-1" selected="selected"></option>
+					<option value="1">Módem</option>
+					<option value="2">ADSL</option>
+					<option value="3">Cable</option>
+					<option value="4">Otros</option>
+				  </select>
+				</li>
+			  </ul>
+			</fieldset>
+			</form>
+			<p></p>
+
+			<p></p>
+
+			<p></p>
+	</body>
+</html>

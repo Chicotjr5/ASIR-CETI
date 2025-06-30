@@ -1,0 +1,21 @@
+body{background:#B1283B;}
+
+#integrantes img{border:2px solid #2974BD;}
+#ultima{margin-right:401px;}
+
+#integrantes{background:#999999; border:4px solid #66DB01;}
+
+caption{font-size:45px; color:white; font-family:verdana; font-weight:bold; margin-bottom:10px;}
+
+.articulo{background:#C68B3C; border:3px solid white; margin-bottom:3px; width:70%; float:left;}
+
+
+#canciones{border: 2px solid black; background:#004444; float:right; margin-right:50px;}
+#canciones td{background:white; font-size:13px; border:2px solid black;}
+
+#canciones td.titulo{background:#33CC33; border:2px solid black; color:white; font-size:24px; text-transform:uppercase;}
+
+#crest{float:right; margin-right:70px; margin-top:165px;}
+
+#componentes{color:white; font-size:30px;}
+

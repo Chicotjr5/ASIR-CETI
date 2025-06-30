@@ -1,0 +1,38 @@
+body{background:#FFCB99;}
+
+.precio_2{color:green; font-size:39px;}
+
+#Nano{background:#4675FD;}
+
+#R25, #R26{background:white; border: 3px solid #F59D6E; float:left; margin:5px; width:40%;}
+
+h1{color:purple; font-weight:bold; font-family:sans-serif;}
+
+caption{color:blue; font-weight:bold; font-size:20px;}
+
+#menu{color:black; font-weight:bold;}
+
+a{font-family:arial;}
+
+
+#Carta{background:#99CCCD; font-family:sans-serif;}
+#carta_1{color:blue; font-size:90px; font-family:sans-serif;}
+.carta{color:red; font-size:30px; font-family:sans-serif;}
+#loquesea .fotos {width:364px; height:199px;}
+
+
+.Recetas{border:5px solid #009c8c; float:left; width:65%; margin:2px;}
+
+.Recetados{color:#e31c79; font-weight:bold;}
+
+#Lasagnas{ text-transform:upppercase; color:#ca01ff; background:blue; font-size:50px; font-family:sans-serif;}
+
+.preparar{font-weight:bold;}
+
+div{font-family:sans-serif;}
+
+imagen{float:right; width:25%; margin:30px;}
+
+#link{float:right; width:25%; margin:30px;}
+
+

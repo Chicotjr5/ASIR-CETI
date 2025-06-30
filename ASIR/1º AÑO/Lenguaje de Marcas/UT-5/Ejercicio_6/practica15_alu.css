@@ -1,0 +1,16 @@
+fieldset{border-color:#BBBBBB; border-top-style:solid; border-bottom-style:dotted; border-right-style:dashed; border-left-style:dashed;
+		border-width:2px; margin-bottom:20px;	}
+		
+legend{background:#BBBBBB; color:white; font-weight:bold; padding-bottom:4px; padding-top:4px; font-family:sans-serif;}
+
+li {background:#EEEEEE; margin-bottom:5px; list-style:none;}
+
+ul{margin:0px; padding:0px;}
+
+.flota{float:left;}
+
+.flota>li{float:left; margin-left:5px;}
+
+.puntos{list-style-type:disc; margin-left:50px;}
+
+.borde{list-style-type:none;}
