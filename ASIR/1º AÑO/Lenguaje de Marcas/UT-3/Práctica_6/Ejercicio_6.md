@@ -1,4 +1,10 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+## Realiza una página web con el siguiente aspecto 
+
+![image](https://github.com/user-attachments/assets/29aad5ca-8eb3-4004-aad4-2ca55e6c2797)
+
+
+ ```html
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
  <!-- plantilla para paginas web-->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
   <head>
@@ -105,3 +111,4 @@ Fue admitido, pero nunca llegó a entrar en combate. Cuando terminó su entrenam
  <a href="#Inicio">Volver al inicio de la página</a>
   </body>
 </html>
+```
