@@ -1,4 +1,9 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+## Realizar una página web que tenga el siguiente aspecto, es una tabla que contiene imágenes y fusiona columnas:
+
+ ![image](https://github.com/user-attachments/assets/4cfb3994-5df3-4831-90ea-3bb217838bc5)
+
+ 
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
  <!-- plantilla para paginas web-->
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="es" lang="es">
   <head>
