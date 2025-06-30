@@ -1,72 +1,66 @@
+## A partir del código HTML y CSS que se muestra, añadir los selectores CSS que faltan para aplicar los estilos deseados. 
+## Cada regla CSS incluye un comentario en el que se explica los elementos a los que debe aplicarse:
 
-## Índice
-- [[Practica 1#Índice|Índice]]
-- [[Practica 1#Algoritmos|Algoritmos]]
-- [[Practica 1#Ejercicio de paginación|Ejercicio de paginación]]
-- [[Practica 1#Ejercicio de segmentación|Ejercicio de segmentación]]
+**Código a decorar**
 
+```html
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/ 
+xhtml1/DTD/xhtml1-transitional.dtd"> 
+<htmlxmlns="http://www.w3.org/1999/xhtml"><head> 
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" /> 
+<title>Ejercicio de selectores</title></head> 
+<body> 
+<div id="primero"> 
+<p> Los métodos (comportamiento) y atributos (estado) están 
+estrechamente relacionados por la propiedad de conjunto. Esta propiedad 
+destaca que una clase requiere de métodos para poder tratar los atributos 
+con los que cuenta. El <a href="#">programador
+ </a> debe pensar 
+indistintamente en ambos conceptos, sin separar ni darle mayor 
+importancia a ninguno de ellos, hacerlo podría producir el <em>hábito 
+erróneo</em>,  de crear clases contenedoras de información por un lado y 
+clases con métodos que manejen a las primeras por el otro.</p> 
+</div> 
+<div class="normal"> 
+<p>De esta manera se estaría realizando una <span><a href="#">programación 
+estructurada
+ </a></span>, camuflada en un lenguaje de programación 
+orientado a objetos.</p> 
+<p>Esto 
+difiere 
+estructurada
+ de 
+la 
+<emclass="especial">programación 
+</em> tradicional, en la que los datos y los procedimientos están 
+separados y sin relación, ya que lo único que se busca es el procesamiento de 
+unos datos de entrada para obtener otros de salida. La programación 
+estructurada anima al programador a pensar sobre todo en términos de 
+procedimientos o funciones, y en segundo lugar en las estructuras de datos que 
+esos procedimientos manejan. En la programación estructurada sólo se escriben 
+funciones que procesan datos. Los programadores que emplean éste nuevo 
+paradigma, en cambio, primero definen objetos para luego enviarles mensajes 
+solicitándoles que realicen sus métodos por sí mismos..</p> 
+</div> 
+</body></html>
+```
 
-### Algoritmos
+**CSS a aplicar**
 
+```css
+/* Todos los elementos de la pagina */ 
+{ font: Arial, Helvetica, sans-serif; } 
+/* Todos los parrafos de la pagina */ 
+{ color: #555; } 
+/* Todos los párrafos contenidos en #primero */ 
+{ color: #336699; } 
+/* Todos los enlaces la pagina */ 
+{ color: #CC3300; } 
+/* Los elementos "em" contenidos en #primero */ 
+{ background: #FFFFCC; padding: .1em; } 
+/* Todos los elementos "em" de clase "especial" en toda la pagina */ 
+{ background: #FFCC99; border: 1px solid #FF9900; padding: .1em; } 
+/* Elementos "span" contenidos en .normal */ 
+{ font-weight: bold; } 
 
-
-### Ejercicio de paginación
-
-Tenemos un sistema operativo de 32 bits en el que la asignación de memoria se realiza mediante paginación. 
-Cada página/marco ocupa 1 MB. De los 32 bits de la dirección de memoria, se usan 12 bits para especificar la página. 
-Se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de páginas:
-
-| Página | Marco |
-| ------ | ----- |
-| 0x59B  | 0x123 |
-| 0x59C  | 0xA05 |
-| 0x59D  | 0x59F |
-| 0x59E  | 0x799 |
-| 0x59F  | 0xF8B |
-| 0x59A0 | 0x22D |
-
-Dada la dirección lógica 0x59F2A5A0, obtener la dirección física correspondiente:
-- 0xF8B2A5A0
-
-Dada la dirección lógica 0x5A02A59F, obtener la dirección física correspondiente.
-- 0x22DA59F
-
-Dada la dirección lógica 0x59C4DE87, obtener la dirección física correspondiente
-- 0xA054DE87
-
-### Ejercicio de segmentación
-
-En un sistema de de 32 bits se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de segmentos (el tamaño viene expresado de forma relativa la base):
-
-| Segmento | Base       | Tamaño     | Límite     |
-| -------- | ---------- | ---------- | ---------- |
-| 0xA321   | 0x85434520 | 0x00005218 | 0x85439738 |
-| 0xA322   | 0xBA41002E | 0x00003FD1 | 0xBA413FFF |
-| 0xA323   | 0x226A5722 | 0x00004D3D | 0x226AA45F |
-| 0xA324   | 0xF01809AC | 0x00000053 | 0xF01809FF |
-| 0xA325   | 0x226CA460 | 0x0000AAFF | 0x226D4F5F |
-| 0xA326   | 0x4951B4D8 | 0x0000F424 | 0x4952A8FC |
-
-**Obtener las direcciones físicas absolutas donde termina cada segmento**
-
-**Dada la dirección lógica 0xA3231265, obtener la dirección física correspondiente.**
-
-- 4D3D-1265= 15064 Está dentro del segmento 
-- 226A5722+1265 = 226A6987 
-- Su dirección física sería 0x226A6987
-
-**Dada la dirección lógica 0xA3240265, obtener la dirección física correspondiente.**
-
-- 53-0265= -212 
-- Se sale del segmento
-
-**Dada la dirección lógica 0xA325AAFA, obtener la dirección física correspondiente.**
-
-- AAFF – AAFA = 5 Esta dentro del segmento 
-- 226CA460 + AAFA = 226D 4F5A 
-- Su dirección física sería 0x226D4F5A
-
-
-
-
-
+```
