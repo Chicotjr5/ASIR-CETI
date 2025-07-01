@@ -1,0 +1,32 @@
+body
+ {
+ 
+   background-color:#CCCCCC;
+   padding:20px;
+ }
+table
+ {
+  
+   width:300px;
+   background-color:#333333;
+   color:#FFFFFF;
+   font-family:Tahoma;
+   font-size:12pt;
+   padding:2px;
+ }
+
+tr
+ {
+
+   background-color:#ff2000;
+   color:#000000;
+   font-family:Tahoma;
+   font-size:10pt;
+   padding:2px;
+ }
+
+th
+{
+  background-color:#F69;
+}
+

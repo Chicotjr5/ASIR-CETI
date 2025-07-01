@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ejer2_copia.xslt"?>
+<listaCD>
+	<cd>
+		<tituloAlbum>Lorca</tituloAlbum>
+		<nombreInterprete>Tim Buckley</nombreInterprete>
+		<pista>
+			<num>1</num>
+			<titulo>Lorca</titulo>
+			<duracion>9:53</duracion>
+		</pista>
+		<pista>
+			<num>2</num>
+			<titulo>Anonymous Proposition</titulo>
+			<duracion>7:43</duracion>
+		</pista>
+		<pista>
+			<num>3</num>
+			<titulo>I had a talk with my Woman</titulo>
+			<duracion>5:55</duracion>
+		</pista>
+		<pista>
+			<num>4</num>
+			<titulo>Driftin</titulo>
+			<duracion>8:10</duracion>
+		</pista>
+		<pista>
+			<num>5</num>
+			<titulo>Nobody Walking</titulo>
+			<duracion>7:30</duracion>
+		</pista>
+	</cd>
+	<cd>
+		<tituloAlbum>The Queen Is Dead</tituloAlbum>
+		<nombreInterprete>The Smiths</nombreInterprete>
+		<pista>
+			<num>1</num>
+			<titulo>The Queen Is Dead</titulo>
+			<duracion>6:23</duracion>
+		</pista>
+		<pista>
+			<num>2</num>
+			<titulo>Franckly, Mr Shankly</titulo>
+			<duracion>2:17</duracion>
+		</pista>
+		<pista>
+			<num>3</num>
+			<titulo>I Know It s Over</titulo>
+			<duracion>5:48</duracion>
+		</pista>
+		<pista>
+			<num>4</num>
+			<titulo>Never had no one ever</titulo>
+			<duracion>3:36</duracion>
+		</pista>
+		<pista>
+			<num>5</num>
+			<titulo>Cemetry Gates</titulo>
+			<duracion>2:39</duracion>
+		</pista>
+		<pista>
+			<num>6</num>
+			<titulo>Bigmouth Strikes Again</titulo>
+			<duracion>3:12</duracion>
+		</pista>
+		<pista>
+			<num>7</num>
+			<titulo>The Boy with the Thorn in his Side</titulo>
+			<duracion>3:15</duracion>
+		</pista>
+		<pista>
+			<num>8</num>
+			<titulo>Vicar In a Tutu</titulo>
+			<duracion>2:21</duracion>
+		</pista>
+		<pista>
+			<num>9</num>
+			<titulo>There is a Light that never goes out</titulo>
+			<duracion>4:02</duracion>
+		</pista>
+		<pista>
+			<num>10</num>
+			<titulo>Some Girls are bigger than others</titulo>
+			<duracion>3:14</duracion>
+		</pista>
+	</cd>
+</listaCD>

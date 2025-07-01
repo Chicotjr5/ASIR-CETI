@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!--<?xml-stylesheet type="text/xsl" href="ejer8_1.xslt"?>-->
+<!--<?xml-stylesheet type="text/xsl" href="ejer8_2.xslt"?>-->
+<!--<?xml-stylesheet type="text/xsl" href="ejer8.xslt"?>-->
+<?xml-stylesheet type="text/xsl" href="ejer8_2_copia.xslt"?>
+<universidad>
+	<alumnos>
+		<alumno>
+			<nombre>Pepe</nombre>
+			<apellido>Pinillos</apellido>
+			<pasaporte>434235</pasaporte>
+			<pais>España</pais>
+			<fechanacimiento>
+				<dia>10</dia>
+				<mes>4</mes>
+				<anio>1995</anio>
+			</fechanacimiento>
+			<matriculado asignatura="F89" nota="NT"/>
+		</alumno>		
+		<alumno>
+			<nombre>Guadalupe</nombre>
+			<apellido>Lotas</apellido>
+			<DNI>54368436</DNI>
+			<fechanacimiento>
+				<dia>17</dia>
+				<mes>10</mes>
+				<anio>1993</anio>
+			</fechanacimiento>
+			<matriculado asignatura="A990" nota="SS"/>
+			<matriculado asignatura="F89" nota="SB"/>
+		</alumno>
+		<alumno>
+			<nombre>Gustavo</nombre>
+			<apellido>Debasica</apellido>
+			<DNI>1312234</DNI>
+			<fechanacimiento>
+				<dia>12</dia>
+				<mes>12</mes>
+				<anio>1995</anio>
+			</fechanacimiento>
+			<matriculado asignatura="A9" nota="NT"/>
+			<matriculado asignatura="F8" nota="NT"/>
+		</alumno>
+	</alumnos>
+	<profesores>
+		<profesor despacho="6" asignaturas="F89 A990 ">
+			<nombre>Rubén</nombre>
+			<apellido>Sánchez</apellido>
+			<apellido>Pelegrín</apellido>
+			<DNI/>
+			<fechanacimiento>
+				<dia>23</dia>
+				<mes>12</mes>
+				<anio>1989</anio>
+			</fechanacimiento>
+			<tutoria>
+				<inicio>12</inicio>
+				<fin>14</fin>
+			</tutoria>
+		</profesor>
+		<profesor despacho="1" asignaturas="F8 A9 ">
+			<nombre>Maria</nombre>
+			<apellido>Tejerina</apellido>
+			<apellido>Sanchez</apellido>
+			<DNI/>
+			<fechanacimiento>
+				<dia>3</dia>
+				<mes>2</mes>
+				<anio>1970</anio>
+			</fechanacimiento>
+			<tutoria>
+				<inicio>12</inicio>
+				<fin>14</fin>
+			</tutoria>
+		</profesor>
+	</profesores>
+	<asignaturas>
+		<asignatura codigo="F89">
+			<titulo>Lenguaje  de Marcas</titulo>
+			<carrera>I. Superior de Informática</carrera>
+			<creditos>4.5</creditos>
+			<curso>OP</curso>
+		</asignatura>
+		<asignatura codigo="A990" >
+			<titulo>Programacion Web</titulo>
+			<carrera>I. Superior de Informática</carrera>
+			<creditos>4.5</creditos>
+			<curso>seminario</curso>
+		</asignatura>
+		<asignatura codigo="F8">
+			<titulo>Diseño Industrial</titulo>
+			<carrera/>
+			<creditos>5</creditos>
+			<curso/>
+		</asignatura>
+		<asignatura codigo="A9">
+			<titulo>Materiales y construccion</titulo>
+			<carrera/>
+			<creditos>5</creditos>
+			<curso/>
+		</asignatura>
+	</asignaturas>
+</universidad>

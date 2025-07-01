@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--<?xml-stylesheet type="text/css" href="antologia.css"?>-->
+<?xml-stylesheet type="text/xsl" href="ejer12_copia.xslt"?>
+<antologia>
+	<poema añodepublicacion="1905" idioma="de">
+		<autor>
+			<nombre>Rainer Maria</nombre>
+			<apellido>Rilke</apellido>
+		</autor>
+		<titulo>Der Panther</titulo>
+		<subtitulo>Im Jardin des Plantes, Paris</subtitulo>
+		<estrofa>
+			<verso>Sein Blick ist vom Vorübergehn der Stäbe</verso>
+			<verso>so müd geworden, daß er nichts mehr hält.</verso>
+			<verso>Ihm ist, als ob es tausend Stäbe gäbe</verso>
+			<verso> und hinter tausend Stäben keine Welt.</verso>
+		</estrofa>
+		<estrofa>
+			<verso>Der weiche Gang geschmeidig starker Schritte,</verso>
+			<verso> der sich im allerkleinsten Kreise dreht,</verso>
+			<verso> ist wie ein Tanz von Kraft um eine Mitte,</verso>
+			<verso>in der betäubt ein großer Wille steht.</verso>
+		</estrofa>
+		<estrofa>
+			<verso> Nur manchmal schiebt der Vorhang der <negrilla>Pupille</negrilla>
+			</verso> 
+			<verso>sich lautlos auf -. Dann geht ein Bild hinein,</verso>
+			<verso> geht durch der <negrilla>Glieder</negrilla> angespannte Stille -</verso>
+			<verso>und hört im <negrilla>Herzen</negrilla> auf zu sein.</verso>
+		</estrofa>
+	</poema>
+	
+	<poema añodepublicacion="1945" idioma="de">
+		<autor>
+			<nombre>Berthold </nombre>
+			<apellido>Brecht</apellido>
+		</autor>
+		<titulo>Die Moritat von Mackie Messer</titulo>
+		<estrofa>
+			<verso>Und der Haifisch, der hat <negrilla>Zähne</negrilla>
+			</verso>
+			<verso>Und die trägt er im <negrilla>Gesicht</negrilla>
+			</verso>
+			<verso>Und Macheath, der hat ein Messer</verso>
+			<verso>Doch das Messer sieht man nicht.</verso>
+		</estrofa>
+		<estrofa>
+			<verso>Und es sind des Haifischs <negrilla>Flossen</negrilla>
+			</verso>
+			<verso>Rot, wenn dieser Blut vergiesst</verso>
+			<verso>Mackie Messer trägt'nen Handschuh</verso>
+			<verso>Drauf man keine Untat liest.</verso>
+		</estrofa>
+		<estrofa>
+			<verso>An der Themse grünem Wasser</verso>
+			<verso>Fallen plötzlich Leute um</verso>
+			<verso>Es ist weder Pest noch Cholera</verso>
+			<verso>Doch es heisst: Mackie geht um.</verso>
+		</estrofa>
+		<estrofa>
+			<verso>An'nem schönen blauen Sonntag</verso>
+			<verso>Liegt ein toter Mann am Strand</verso>
+			<verso>Und ein Mensch geht um die Ecke</verso>
+			<verso>Den man Mackie Messer nennt.</verso>
+		</estrofa>
+		<estrofa>
+			<verso>Und Schmul Meier bleibt versochwunden</verso>
+			<verso>Und so mancher reiche Mann</verso>
+			<verso>Und sein Geld hat Mackie Messer</verso>
+			<verso>Dem man nichts beweisen kann.</verso>
+		</estrofa>
+		<estrofa>
+			<verso>Jenny Towler ward gefunden</verso>
+			<verso>Mit'nem Messer in der <negrilla>Brust</negrilla>
+			</verso>
+			<verso>Und am Kai geht Mackie Messer</verso>
+			<verso>Der von allem nichts gewusst.</verso>
+		</estrofa>
+		<estrofa>
+			<verso>Wo ist Alfons gleich, der Fuhrherr?</verso>
+			<verso>Kommt das je ans Sonnenlicht?</verso>
+			<verso>Wer es immer wissen könnte</verso>
+			<verso>Mackie Messer weiss es nicht.</verso>
+		</estrofa>
+		<estrofa>
+			<verso>Und das grosse Feuer in Soho</verso>
+			<verso>Sieben Kinder und ein Greis</verso>
+			<verso>In der Menge Mackie Messer, den</verso>
+			<verso>Man nicht fragt, und der nichts weiss.</verso>
+		</estrofa>
+		<estrofa>
+			<verso>Und die minderjähr'ge Witwe</verso>
+			<verso>Deren Namen jeder weiss</verso>
+			<verso>Wachte auf und war geschändet</verso>
+			<verso>Mackie welches war dein Preis?</verso>
+		</estrofa>
+	</poema>
+	<poema añodepublicacion="1890" idioma="de">
+		<autor>
+			<nombre>Heinrich Christian Wilhelm</nombre>
+			<apellido>Busch</apellido>
+		</autor>
+		<titulo> Pst!</titulo>
+		<estrofa>
+			<verso>Es gibt ja leider Sachen und Geschichten,</verso>
+			<verso>Die reizend und pikant,</verso>
+			<verso>Nur werden sie von Tanten und von Nichten</verso>
+			<verso>Niemals genannt.</verso>
+		</estrofa>
+		<estrofa>
+			<verso>Verehrter Freund, so sei denn nicht vermessen,</verso>
+			<verso>Sei zart und schweig auch du.</verso>
+			<verso>Bedenk: Man liebt den Käse wohl, indessen</verso>
+			<verso>Man deckt ihn zu.</verso>
+		</estrofa>
+	</poema>
+	<poema añodepublicacion="-750" idioma="el">
+		<autor>
+			<nombre/>
+			<apellido>Όμηρος</apellido>
+		</autor>
+		<titulo>Ιλιάδα</titulo>
+		<estrofa>
+			<verso>Μῆνιν ἄειδε, θεὰ, Πηληιάδεω Ἀχιλῆος</verso>
+			<verso>οὐλομένην, ἣ μυρί’ Ἀχαιοῖς ἄλγε’ ἔθηκε,</verso>
+			<verso>πολλὰς δ’ ἰφθίμους ψυχὰς Ἄϊδι προῒαψεν</verso>
+			<verso>ἡρώων, αὐτοὺς δὲ ἑλώρια τεῦχε κύνεσσιν</verso>
+			<verso>οἰωνοῖσί τε πᾶσι• Διὸς δ’ ἐτελείετο βουλή</verso>
+			<verso>ἐξ οὗ δὴ τὰ πρῶτα διαστήτην ἐρίσαντε</verso>
+			<verso>Ἀτρεΐδης τε ἄναξ ἀνδρῶν καὶ δῖος Ἀχιλλεύς.</verso>
+		</estrofa>
+	</poema>
+</antologia>

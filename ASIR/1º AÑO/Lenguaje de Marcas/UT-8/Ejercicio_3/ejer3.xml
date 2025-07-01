@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ejer3_copia.xslt"?>
+<editoriales>
+	<editorial>
+		<nombre>Prentice Hall</nombre>
+		<email>prenticehall@computersciences.com</email>
+		<homepage>http://www.prentice_hall.com/</homepage>
+		<direccion>170 West 74th St. NY NY 10023</direccion>
+		<tfno>212-362-8900</tfno>
+		<fax>212-874-8605</fax>
+	</editorial>
+	<editorial>
+		<nombre>Universidad de Málaga</nombre>
+		<email>edicion@publicaciones.uma.es</email>
+		<homepage>http://www.uma.es/publicaciones</homepage>
+		<direccion>Biblioteca General. Campus de Teatinos, s/n</direccion>
+		<tfno>952139999</tfno>
+		<fax>952131313</fax>
+	</editorial>
+</editoriales>

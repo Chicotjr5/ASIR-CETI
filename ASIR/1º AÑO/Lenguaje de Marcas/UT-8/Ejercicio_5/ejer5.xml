@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ejer5_copia.xslt"?>
+<clase>
+	<alumno>
+		<nombre>Juan</nombre>
+		<apellidos>Ramos Lopez</apellidos>
+		<notas>
+			<eva1>4</eva1>
+			<eva2>6</eva2>
+			<eva3>7</eva3>
+		</notas>
+	</alumno>
+	<alumno>
+		<nombre>Ana Maria</nombre>
+		<apellidos>Barrios Martín</apellidos>
+		<notas>
+			<eva1>9</eva1>
+			<eva2>8</eva2>
+			<eva3>9</eva3>
+		</notas>
+	</alumno>
+	<alumno>
+		<nombre>Juan Carlos</nombre>
+		<apellidos>Marin Palacios</apellidos>
+		<notas>
+			<eva1>5</eva1>
+			<eva2>3</eva2>
+			<eva3>4</eva3>
+		</notas>
+	</alumno>
+	<alumno>
+		<nombre>Pedro</nombre>
+		<apellidos>Barrios Martín</apellidos>
+		<notas>
+			<eva1>1</eva1>
+			<eva2>5</eva2>
+			<eva3>3</eva3>
+		</notas>
+	</alumno>
+</clase>

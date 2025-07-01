@@ -1,0 +1,88 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="ejer9_copia.xslt"?>
+<enlaces>
+	<tematica>
+		<tema>Clubs de fútbol</tema>
+		<enlace>
+			<url>http://www.athletic-club.net</url>
+			<com>Periódico  mensual en PDF</com>
+		</enlace>
+		<enlace>
+			<url>http://www.fcbarcelona.com</url>
+			<com>Todos los equipos del club (baloncesto, balonmano,etc)</com>
+		</enlace>
+		<enlace>
+			<url>http://www.realmadrid.es</url>
+			<com>Gran cantidad de contenido multimedia</com>
+		</enlace>
+		<enlace>
+			<url>http://www.realzaragoza.com</url>
+			<com>Contenido muy escaso</com>
+		</enlace>
+	</tematica>
+	<tematica>
+		<tema>Humor</tema>
+		<enlace>
+			<url>http://www.elrellano.com</url>
+			<com>Actualidad desternillante</com>
+		</enlace>
+		<enlace>
+			<url>http:/www.eljueves.es</url>
+			<com>Tiras cómicas animadas</com>
+		</enlace>
+		<enlace>
+			<url>http://www.soniguales.com</url>
+			<com>Parejas sorprendentes</com>
+		</enlace>
+		<enlace>
+			<url>http://www.paisdelocos.com</url>
+			<com>La realidad supera a la ficción</com>
+		</enlace>
+		<enlace>
+			<url>http://www.gomaespuma.com</url>
+			<com>20 años provocando risas</com>
+		</enlace>
+	</tematica>
+	<tematica>
+		<tema>Recursos informáticos</tema>
+		<enlace>
+			<url>http://www.download.com</url>
+			<com>Descarga de programas</com>
+		</enlace>
+		<enlace>
+			<url>http://www.manualesgratis.com</url>
+			<com>Instrucciones de hardware y software</com>
+		</enlace>
+		<enlace>
+			<url>http://www.solodrivers.com</url>
+			<com>Catálogo de controladores</com>
+		</enlace>
+		<enlace>
+			<url>http://www.wapers.com</url>
+			<com>Fondos de escritorio</com>
+		</enlace>
+		<enlace>
+			<url>http://www.recursosgratis.com</url>
+			<com>Todo tipo de recursos informáticos</com>
+		</enlace>
+	</tematica>
+	<tematica>
+		<tema>Cursos</tema>
+		<enlace>
+			<url>http://www.programacion.com</url>
+			<com>Todos los lenguajes de programación</com>
+		</enlace>
+		<enlace>
+			<url>http://www.internautas.com</url>
+			<com>Expertos en seguridad y conexiones de red</com>
+		</enlace>
+		<enlace>
+			<url>http://www.apuntesonline.com</url>
+			<com>Para los que no asisten a clases</com>
+		</enlace>
+		<enlace>
+			<url>http://aulacibernet.com</url>
+			<com>Gran cantidad de cursos informáticos</com>
+		</enlace>
+	</tematica>
+</enlaces>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ejer7_copia.xslt"?>
+<horario>
+	<dia>
+		<numdia>1</numdia>
+		<tarea prioridad="media">
+			<hora-ini>10:30</hora-ini>
+			<hora-fin>12:10</hora-fin>
+			<nombre>Bases de datos</nombre>
+		</tarea>
+		<tarea prioridad="media">
+			<hora-ini>8:30</hora-ini>
+			<hora-fin>10:30</hora-fin>
+			<nombre>Programación</nombre>
+		</tarea>
+	</dia>
+	<dia>
+		<numdia>5</numdia>
+		<tarea prioridad="alta">
+			<hora-ini>12:30</hora-ini>
+			<hora-fin>14:10</hora-fin>
+			<nombre>Lenguajes de marcas</nombre>
+		</tarea>
+		<tarea>
+			<hora-ini>10:30</hora-ini>
+			<hora-fin>12:10</hora-fin>
+			<nombre>Redes</nombre>
+		</tarea>
+	</dia>
+	<dia>
+		<numdia>2</numdia>
+		<tarea prioridad="alta">
+			<hora-ini>10:30</hora-ini>
+			<hora-fin>12:10</hora-fin>
+			<nombre>Bases de datos</nombre>
+		</tarea>
+		<tarea prioridad="alta">
+			<hora-ini>12:30</hora-ini>
+			<hora-fin>14:10</hora-fin>
+			<nombre>Programación</nombre>
+		</tarea>
+		<tarea prioridad="alta">
+			<hora-ini>8:30</hora-ini>
+			<hora-fin>10:10</hora-fin>
+			<nombre>Sistemas operativos</nombre>
+		</tarea>
+	</dia>
+	<dia>
+		<numdia>4</numdia>
+		<tarea prioridad="alta">
+			<hora-ini>10:30</hora-ini>
+			<hora-fin>12:10</hora-fin>
+			<nombre>Lenguajes de marcas</nombre>
+		</tarea>
+		<tarea>
+			<hora-ini>8:30</hora-ini>
+			<hora-fin>10:10</hora-fin>
+			<nombre>Redes</nombre>
+		</tarea>
+		<tarea prioridad="alta">
+			<hora-ini>12:30</hora-ini>
+			<hora-fin>14:10</hora-fin>
+			<nombre>Sistemas Operativos</nombre>
+		</tarea>
+	</dia>
+	<dia>
+		<numdia>3</numdia>
+		<tarea prioridad="alta">
+			<hora-ini>8:30</hora-ini>
+			<hora-fin>10:10</hora-fin>
+			<nombre>Bases de datos</nombre>
+		</tarea>
+		<tarea prioridad="alta">
+			<hora-ini>12:30</hora-ini>
+			<hora-fin>14:10</hora-fin>
+			<nombre>F.O.L.</nombre>
+		</tarea>
+	</dia>
+</horario>

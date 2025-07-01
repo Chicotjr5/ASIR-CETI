@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="ejer13.xslt"?>
+<tienda>
+	<nombre>La tiendecilla </nombre>
+	<telefono>953871223</telefono>
+	<url etiqueta="URL: ">http://www.tiendecilla.es </url>
+	<url prefijo="mailto:" etiqueta="Informacion: ">info@tiendecilla.es </url>
+	<producto>
+		<codigo>92 </codigo>
+		<cantidad>10 </cantidad>
+		<articulo>Radio-Casette  </articulo>
+		<seccion>Electrónica</seccion>
+		<marca>Sony  </marca>
+		<modelo>MKJ-800  </modelo>
+		<caracteristicas>
+			<linea>Auto-reverse      </linea>
+			<linea>Dolby-sorround      </linea>
+			<linea>Doble pletina      </linea>
+			<linea>Ecualizador de cinco bandas      </linea>
+			<linea>Garantia de 9 meses.      </linea>
+		</caracteristicas>
+		<precio moneda="euro">90  </precio>
+	</producto>
+	<producto>
+		<codigo>103  </codigo>
+		<cantidad>50  </cantidad>
+		<articulo>Reloj Cocina  </articulo>
+		<seccion>Electrónica</seccion>
+		<marca>Kenwood  </marca>
+		<modelo>Blue ONE  </modelo>
+		<caracteristicas>
+			<linea>Varios diseños      </linea>
+			<linea>Garantia de 6 meses.      </linea>
+		</caracteristicas>
+		<opciones nombre="color" tipo="unica">
+			<opcion valor="rojo"/>
+			<opcion valor="azul"/>
+			<opcion valor="blanco"/>
+		</opciones>
+		<opciones nombre="forma" tipo="unica">
+			<opcion valor="cuadrado"/>
+			<opcion valor="triangular"/>
+			<opcion valor="redondo"/>
+		</opciones>
+		<precio moneda="euro">12  </precio>
+	</producto>
+	<producto>
+		<codigo>1312 </codigo>
+		<cantidad>3 </cantidad>
+		<articulo>Sofá  </articulo>
+		<seccion>Muebles</seccion>
+		<marca> </marca>
+		<modelo>Almeria  </modelo>
+		<caracteristicas>
+			<linea>Acabado en microfibra      </linea>
+			<linea>Reposacabezas movil    </linea>
+			<linea>Tres plazas   </linea>
+			<linea>Regalo de cojines a juego      </linea>
+			<linea>Garantia de 1 año    </linea>
+		</caracteristicas>
+		<opciones nombre="color" tipo="unica">
+			<opcion valor="estampado"/>
+			<opcion valor="azul"/>
+			<opcion valor="blanco"/>
+		</opciones>
+		<precio moneda="euro">1250  </precio>
+	</producto>
+	<producto>
+		<codigo>12 </codigo>
+		<cantidad>1 </cantidad>
+		<articulo>Impresora </articulo>
+		<seccion>Informática</seccion>
+		<marca>Canon </marca>
+		<modelo>BJC-4200  </modelo>
+		<caracteristicas>
+			<linea>Impresion a color     </linea>
+			<linea>10 ppm en B/N 6ppm en color    </linea>
+			<linea>Alimentacion automatica  </linea>
+			<linea>Garantia de 1 año    </linea>
+		</caracteristicas>
+		<opciones nombre="color" tipo="unica">
+			<opcion valor="blanco"/>
+			<opcion valor="negro"/>
+		</opciones>
+		<precio moneda="euro">1250  </precio>
+	</producto>
+	<producto>
+		<codigo>1313 </codigo>
+		<cantidad>6 </cantidad>
+		<articulo>Sofa</articulo>
+		<seccion>Muebles</seccion>
+		<marca> </marca>
+		<modelo>malaga  </modelo>
+		<caracteristicas>
+			<linea>Acabado en cuero     </linea>
+			<linea>Dos +Tres plazas   </linea>
+			<linea>Garantia de 3 año    </linea>
+		</caracteristicas>
+		<opciones nombre="color" tipo="unica">
+			<opcion valor="negro"/>
+			<opcion valor="marron"/>
+			<opcion valor="blanco"/>
+		</opciones>
+		<opciones nombre="acabado" tipo="unica">
+			<opcion valor="brillo"/>
+			<opcion valor="mate"/>
+		</opciones>
+		<precio moneda="euro">3500  </precio>
+	</producto>
+	<producto>
+		<codigo>72</codigo>
+		<cantidad>10 </cantidad>
+		<articulo>Televisor</articulo>
+		<seccion>Electrónica</seccion>
+		<marca>Daewoo </marca>
+		<modelo>DW SplitFire </modelo>
+		<caracteristicas>
+			<linea>28"     </linea>
+			<linea>Teletexto</linea>
+			<linea>99 canales   </linea>
+			<linea>Sonido stereo   </linea>
+			<linea>Euroconector y HMDI </linea>
+			<linea>Altavoces laterales  </linea>
+			<linea>Garantia 18 meses   </linea>
+		</caracteristicas>
+		<precio moneda="euro">500  </precio>
+	</producto>
+	<producto>
+		<codigo>271</codigo>
+		<cantidad>4 </cantidad>
+		<articulo>Televisor</articulo>
+		<seccion>Electrónica</seccion>
+		<marca>Samnsung </marca>
+		<modelo>870/1 </modelo>
+		<caracteristicas>
+			<linea>40"     </linea>
+			<linea>Teletexto  </linea>
+			<linea>199 canales   </linea>
+			<linea>Sonido stereo   </linea>
+			<linea>Euroconector y HMDI </linea>
+			<linea>Garantia 2 años   </linea>
+		</caracteristicas>
+		<precio moneda="euro">2300  </precio>
+	</producto>
+</tienda>
