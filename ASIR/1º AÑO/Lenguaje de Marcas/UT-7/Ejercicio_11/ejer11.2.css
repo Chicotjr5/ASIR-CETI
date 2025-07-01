@@ -1,0 +1,22 @@
+clase{background:#F5DA81;}
+id:before{content:"C.I.F.P. Juan de Colonia";}
+id{font-size:2em; text-align:center; display:block;}
+
+modulos:before{content:"MODULOS"; text-decoration:underline; font-weight:bold;}
+profesor:before{content:"	-->";}
+modulos{background:#ADD8E6; display:table; border:2px solid brown; width:28%; padding:5px; margin-top:50px; float:left; border-spacing:3px;}
+modulo{display:table-row;}
+profesor{display:table-cell;}
+
+alumnos::before{content:"ALUMNOS"; text-decoration:underline; font-weight:bold; padding-bottom:3px;}
+alumnos{background:#90EE90; display:table; border:2px solid brown; width:20%; float:right; margin-right:500px; margin-top:50px; 
+		padding-left:7px;}
+alumno modulo{display:none;}
+alumno persona{display:table-cell; display:list-item; list-style:inside; padding:3px;}
+/* 
+modulo nombre, modulo profesor{display:table-cell;} 
+modulos{display:inline-table;}
+alumnos{display:inline-table;}
+modulo, alumno{display:table-row;}
+
+ */

@@ -1,0 +1,10 @@
+artista{background:#FF6633; border:solid 3px red; font-size:33px; font-family:arial; padding:10px; text-align:center; display:block; font-weight:bold; margin-bottom:15px; margin-left:9px;}
+CD>titulo{display:block; background:#885544; text-align:center; color:white; margin-bottom:15px; margin-left:9px; padding:15px; font-size:20px;}
+canciones{background:#FFFF99; display:block; text-align:center; border:1px solid black; border-spacing:5px; font-family:arial;}
+cancion{display:table-row; margin-bottom:5px; }
+cancion>titulo{background:red; border:1px solid black; padding:6px; color:white; display:table-cell; font-weight:bold;}
+cancion>duracion{background:white; border:1px solid black; display:table-cell; padding:3px;}
+
+segundos:before{content:": ";}
+
+sello, referencia, anyo, genero, estilo, formato, observaciones, pais{display:none;}

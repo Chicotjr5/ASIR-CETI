@@ -1,0 +1,7 @@
+textos{background:#00FFFF; counter-reset:messi 3;}
+ESTROFA{background:#3095BC; border:2px dashed white; display:block; margin-bottom:10px; width:30%; counter-reset:cris 0; margin-left:35%; padding:10px;}
+ESTROFA:before{content:"ESTROFA: " counter(messi, upper-roman); counter-increment:messi 1; display:block; padding-left:5px;}
+		
+VERSO:before{content:counter(cris) " . "; counter-increment:cris 1;}
+POEMA:after{content:"RUBEN DARIO"; display:block; text-align:center;}
+VERSO{display:block;}

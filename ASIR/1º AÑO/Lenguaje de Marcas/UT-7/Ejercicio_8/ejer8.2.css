@@ -1,0 +1,6 @@
+textos{background:#00FFFF; counter-reset:c2 3;}
+ESTROFA:before{content:"Estrofa.				" counter(c2, upper-roman); counter-increment:c2 1; font-size:20px; padding-left:15px;}
+ESTROFA{background:#33AAFF; display:block; margin:10px; margin-left:25%; width:50%; border:dashed 3px white; counter-reset:c1 0; padding:15px;}
+VERSO:before{content:counter(c1) ".		"; counter-increment:c1 1;}
+VERSO{display:block;}
+POEMA:after{content:"RUBÉN DARÍO Prosas Profanas y otros poemas"; text-align:center; display:block;}

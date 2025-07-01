@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>  
+<?xml-stylesheet href="ejer5_copia.css" type="text/css"?>
+<resultado tema="XML" >
+	 <libreria nombre="casa del libro" web="www.casadellibro.com">
+		<libro isbn="ISBN9788493272074" nivel="avanzado">
+			<titulo>SERIE DESARROLLADORES: APLICACIONES XML CON XML SUITE</titulo>
+			<autores>
+				<autor>varios autores</autor>
+			</autores>
+			<editorial>DANYSOFT 2016</editorial>
+			<anyo>2016</anyo>
+			<web>
+            http://www.casadellibro.com/libro-serie-desarrolladores-aplicaciones-xml-con-xml-suite/1096337/2900001128466 
+         </web>
+			<precio>50.96</precio>
+		</libro>
+		<libro isbn="ISBN9782746049581" nivel="avanzado">
+			<titulo>LIBROS - XML PRACTICO. BASES ESENCIALES, CONCEPTOS Y CASOS PRACTICOS</titulo>
+			<autores>
+				<autor>BOULANGER, THIERRY</autor>
+			</autores>
+			<editorial>ENI</editorial>
+			<anyo>2019</anyo>
+			<web>
+            http://www.casadellibro.com/libro-xml-practico-bases-esenciales-conceptos-y-casos-practicos/1261538/2900001325392
+         </web>
+			<precio>26.95</precio>
+		</libro>
+		<libro isbn="ISBN9788441525924" nivel="intermedio">
+			<titulo>DESARROLLO DE APLICACIONES WEB DINAMICAS XML Y JAVA</titulo>
+			<autores>
+				<autor>PARSONS, DAVID</autor>
+			</autores>
+			<editorial>ANAYA</editorial>
+			<anyo>2010</anyo>
+			<web>
+            http://www.casadellibro.com/libro-desarrollo-de-aplicaciones-web-dinamicas-xml-y-java-incluye-cd-programacion/1260111/2900001323752
+         </web>
+			<precio>52.70</precio>
+		</libro>
+		<libro isbn="ISBN9788441524255" nivel="avanzado">
+			<titulo>SERIE DESARROLLADORES: APLICACIONES XML CON XML SUITE</titulo>
+			<autores>
+				<autor>PARSONS, DAVID</autor>
+			</autores>
+			<editorial>ANAYA</editorial>
+			<anyo>2018</anyo>
+			<web>
+           http://www.casadellibro.com/libro-indesign-con-xml-para-disenadores-diseno-y-creatividad/1205682/2900001260950
+         </web>
+			<precio>25.60</precio>
+		</libro>
+	</libreria>
+	<libreria nombre="Amazon" web="www.amazon.com">
+		<libro isbn="ISBN9780231559678" nivel="avanzado">
+			<titulo>XML: Visual QuickStart Guide (2nd Edition)</titulo>
+			<autores>
+				<autor>Kevin Howard Goldberg</autor>
+			</autores>
+			<editorial>PEACHPIT PRESS</editorial>
+			<anyo>2019</anyo>
+			<web>
+           http://www.amazon.com/XML-Visual-QuickStart-Guide-2nd
+         </web>
+			<precio moneda="Dolar">23.09</precio>
+		</libro>
+		<libro isbn="ISBN9780470114872" nivel="avanzado">
+			<titulo>Beginning XML, 4th Edition</titulo>
+			<autores>
+				<autor>David Hunter</autor>
+				<autor>Jeff Rafter</autor>
+				<autor>Joe Fawcett</autor>
+				<autor>Eric van der Vlist</autor>
+				<autor>Danny Ayers</autor>
+				<autor>Jon Duckett</autor>
+				<autor>Andrew Watt</autor>
+				<autor>Linda McKinnon</autor>
+			</autores>
+			<editorial>Wiley Publishing</editorial>
+			<anyo>2007</anyo>
+			<web>
+         http://www.amazon.com/Beginning-XML-4th-Programmer/
+         </web>
+			<precio moneda="Dolar">26.39</precio>
+		</libro>
+		<libro isbn="ISBN9780596004200" nivel="avanzado">
+			<titulo>Learning XML, Second Edition</titulo>
+			<autores>
+				<autor>Erik Ray</autor>
+			</autores>
+			<editorial>O'Reilly</editorial>
+			<anyo>2013</anyo>
+			<web>
+        http://www.amazon.com/Learning-XML-Second-Erik-Ray/
+         </web>
+			<precio moneda="Dolar">21.50</precio>
+		</libro>
+	</libreria>
+</resultado>

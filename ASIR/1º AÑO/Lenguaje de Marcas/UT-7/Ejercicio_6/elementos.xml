@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="ejer6_copia.css" type="text/css"?>  
+<Tabla>
+	  <atomo estado="gaseoso">
+		    <nombre>Hidrogeno</nombre>
+		    <simbolo>H</simbolo>
+		    <numero_atomico >1</numero_atomico>
+		    <peso_atomico>1.00794</peso_atomico>
+		    <punto_ebullicion unidades="kelvin">20.28</punto_ebullicion>
+        <densidad unidades="gramoscentimetroscubicos">0.0899</densidad>
+	  </atomo>
+	  <atomo estado="gaseoso">
+		     <nombre>Helio</nombre>
+	  	    <simbolo>He</simbolo>
+		      <numero_atomico >2</numero_atomico>
+         <peso_atomico>4.0026</peso_atomico>
+          <punto_ebullicion unidades="kelvin">4.216</punto_ebullicion>
+          <densidad unidades="gramos/centimetroscubicos">0.1785</densidad>
+    </atomo>
+    <atomo estado="gaseoso">
+		     <nombre>Litio</nombre>
+	  	    <simbolo>Li</simbolo>
+		      <numero_atomico >3</numero_atomico>
+         <peso_atomico>6.941</peso_atomico>
+          <punto_ebullicion unidades="kelvin">453.7</punto_ebullicion>
+          <densidad unidades="gramos/centimetroscubicos">0.53</densidad>
+    </atomo>
+       <atomo estado="gaseoso">
+		     <nombre>Berilio</nombre>
+	  	    <simbolo>Be</simbolo>
+		      <numero_atomico >4</numero_atomico>
+         <peso_atomico>9.01218</peso_atomico>
+          <punto_ebullicion unidades="kelvin">1560</punto_ebullicion>
+          <densidad  unidades="gramos/centimetroscubicos">1.85 </densidad>
+    </atomo>
+          <atomo estado="gaseoso">
+		     <nombre>Boro</nombre>
+	  	    <simbolo>B</simbolo>
+		      <numero_atomico >5</numero_atomico>
+         <peso_atomico>10.811</peso_atomico>
+          <punto_ebullicion unidades="kelvin">2365</punto_ebullicion>
+          <densidad unidades="gramos/centimetroscubicos"> 2.34 </densidad>
+    </atomo>
+            <atomo estado="solido">
+		     <nombre>Carbono</nombre>
+	  	    <simbolo>C</simbolo>
+		      <numero_atomico >6</numero_atomico>
+         <peso_atomico>12.011</peso_atomico>
+          <punto_ebullicion unidades="kelvin">2365</punto_ebullicion>
+          <densidad unidades="gramos/centimetroscubicos">  2.26 </densidad>
+    </atomo>
+
+</Tabla>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="ejer9_copia.css" type="text/css"?>
+<palabras>
+	<palabra>
+		<espa>perro</espa>
+		<fran>chien</fran>
+	</palabra>
+	<palabra>
+		<espa>gato</espa>
+		<ing>cat</ing>
+	</palabra>
+	<palabra>
+		<espa>león</espa>
+		<fran>lion</fran>
+		<ing>lion</ing>
+	</palabra>
+</palabras>

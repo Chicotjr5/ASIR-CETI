@@ -1,0 +1,9 @@
+helado{background:lightgreen;  border:2px solid green; display:inline-block; margin:20px; padding:12px;}
+
+helado:first-letter{color:red; text-transform:uppercase;}
+tamaño::first-letter{color:red; text-transform:uppercase;}
+tipo::first-letter{color:red; text-transform:uppercase;}
+
+sabor{display:block; background:pink; color:blue; text-transform:uppercase; border:1px solid black; padding-right:10px;}
+tipo{display:block; padding-left:10px;}
+tamaño{display:block; padding-left:10px;}

@@ -1,0 +1,10 @@
+libreria{background:#15a100; display:table; border:solid 1px black; margin-bottom:9px;} 
+libro{display:table-row; border:solid 1px black;}
+titulo{display:table-cell; border:solid 1px black; padding:8px; text-align:center;}
+autores{display:table-cell; border:solid 1px black; padding:8px; text-align:center;}
+editorial{display:table-cell; border:solid 1px black; padding:8px; text-align:center;}
+anyo{display:table-cell; border:solid 1px black; padding:8px; text-align:center;}
+web{display:none; border:solid 1px black; padding:8px; text-align:center;}
+precio{display:table-cell; border:solid 1px black; padding:8px; text-align:center; font-weight:bold;}
+autor{display:block; padding:3px;}
+

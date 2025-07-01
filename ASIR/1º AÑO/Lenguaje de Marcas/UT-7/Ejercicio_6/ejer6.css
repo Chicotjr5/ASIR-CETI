@@ -1,0 +1,20 @@
+atomo{background:#99FFFF; 
+	border:solid 3px black; 
+	display:inline-table;
+	margin:5px; 
+	font-family:arial; 
+	margin-right:30px; 
+	padding:10px;}
+
+peso_atomico, punto_ebullicion, densidad{display:none;}
+
+nombre{font-size:14px; 
+		display:table-header-group;}
+		
+simbolo{padding:15px; 
+		text-align:center; 
+		font-size:24px; 
+		display:block;}
+		
+numero_atomico{font-size:14px; display:table-footer-group;}
+

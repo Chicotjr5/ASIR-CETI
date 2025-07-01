@@ -1,0 +1,6 @@
+textos{background:#FFC0CB; counter-reset:messi 0;}
+POEMA:before{content:"SONATINA"; color:red; display:block; text-align:center; font-size:33px;}
+ESTROFA:before{content:counter(messi, upper-roman); counter-increment:messi 1; display:block; text-align:center;}
+ESTROFA:after{content:'-------------------------'; text-align:center; display:block;}
+VERSO{display:block; text-align:center;}
+POEMA:after{display:block; text-align:right; content:'RUBEN DARIO';}

@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type='text/css' href='ejer11.2_copia.css'?>
+<clase>
+	<id>
+		<curso>1</curso>
+		<ciclo>DAW</ciclo>
+	</id>
+	<modulos>
+	 <modulo>
+		<nombre>Bases de Datos</nombre>
+		<profesor sustituto="si">
+			<persona>
+				<tratamiento>Don</tratamiento>
+				<nombre>Carlos</nombre>
+				<apellidos>Alonso Ávila</apellidos>
+			</persona>
+		</profesor>
+	</modulo>
+	 <modulo>
+		<nombre>Sistemas Operativos</nombre>
+		<profesor>
+			<persona>
+				<tratamiento>Don</tratamiento>
+				<nombre>Alberto</nombre>
+				<apellidos>Suárez Marijuan</apellidos>
+			</persona>
+		</profesor>
+	</modulo>
+
+	 <modulo>
+		<nombre>Lenguaje de Marcas</nombre>
+		<profesor coordinador="si">
+			<persona>
+				<tratamiento>Doña</tratamiento>
+				<nombre>Laura</nombre>
+				<apellidos>Robles Sagredo</apellidos>
+			</persona>
+		</profesor>
+	</modulo>
+   </modulos>
+
+<alumnos>
+	<alumno>
+		<persona>
+			<tratamiento>Don</tratamiento>
+			<nombre>Carlos Luis</nombre>
+			<apellidos>Torres Taboada</apellidos>
+		</persona>
+		<notas>
+			<modulo>
+				<nombre>Bases de Datos</nombre>
+				<parcial>3.4</parcial>
+				<parcial>2.5</parcial>
+				<parcial></parcial>
+				<parcial></parcial>
+				<final>2.5</final>
+				<calificacion>Suspenso</calificacion>
+			</modulo>
+			
+			<modulo>
+				<nombre>Sistemas Operativos</nombre>
+				<parcial>6.7</parcial>
+				<parcial>7.2</parcial>
+				<parcial>7.3</parcial>
+				<parcial></parcial>
+				<final>6.5</final>
+				<calificacion>Notable</calificacion>
+			</modulo>
+			
+			
+			<modulo>
+				<nombre>Lenguaje de Marcas</nombre>
+				<parcial>4.2</parcial>
+				<parcial>7.2</parcial>
+				<parcial>5.3</parcial>
+				<parcial></parcial>
+				<final>6.5</final>
+				<calificacion>Aprobado</calificacion>
+			</modulo>
+		</notas>
+	</alumno>
+	
+	
+	<alumno>
+		<persona>
+			<tratamiento>Doña</tratamiento>
+			<nombre>Leticia</nombre>
+			<apellidos>Sagredo Zarate</apellidos>
+		</persona>
+		<notas>
+			<modulo>
+				<nombre>Bases de Datos</nombre>
+				<parcial>8.4</parcial>
+				<parcial>7.5</parcial>
+				<parcial></parcial>
+				<parcial></parcial>
+				<final>9.5</final>
+				<calificacion>Sobresaliente</calificacion>
+			</modulo>
+			
+			<modulo>
+				<nombre>Sistemas Operativos</nombre>
+				<parcial>8.5</parcial>
+				<parcial>7.2</parcial>
+				<parcial>8.5</parcial>
+				<parcial></parcial>
+				<final>9.0</final>
+				<calificacion>Sobresaliente</calificacion>
+			</modulo>
+			
+			
+			<modulo>
+				<nombre>Lenguaje de Marcas</nombre>
+				<parcial>7</parcial>
+				<parcial>7.8</parcial>
+				<parcial>8.5</parcial>
+				<parcial></parcial>
+				<final>8.2</final>
+				<calificacion>Sobresaliente</calificacion>
+			</modulo>
+			
+		</notas>
+	</alumno>
+		
+	<alumno>
+		<persona>
+			<tratamiento>Don</tratamiento>
+			<nombre>Jaime</nombre>
+			<apellidos>Valle Rodríguez</apellidos>
+		</persona>
+		<notas>
+			<modulo>
+				<nombre>Bases de Datos</nombre>
+				<parcial>0.4</parcial>
+				<parcial>2.5</parcial>
+				<parcial></parcial>
+				<parcial></parcial>
+				<final>2.5</final>
+				<calificacion>Suspenso</calificacion>
+			</modulo>
+			<modulo>
+				<nombre>Sistemas Operativos</nombre>
+				<parcial>4.4</parcial>
+				<parcial>3.2</parcial>
+				<parcial>3.3</parcial>
+				<parcial></parcial>
+				<final>5.8</final>
+				<calificacion>Aprobado</calificacion>
+			</modulo>
+			
+			
+			<modulo>
+				<nombre>Lenguaje de Marcas</nombre>
+				<parcial>4</parcial>
+				<parcial>4.2</parcial>
+				<parcial>1.3</parcial>
+				<parcial></parcial>
+				<final>1.5</final>
+				<calificacion>Suspenso</calificacion>
+			</modulo>
+			
+		</notas>
+	</alumno>
+	
+
+	
+	<alumno>
+		<persona>
+			<tratamiento>Don</tratamiento>
+			<nombre>Alberto</nombre>
+			<apellidos>Ramirez Vázquez</apellidos>
+		</persona>
+		<notas>
+			<modulo>
+				<nombre>Bases de Datos</nombre>
+				<parcial>5.4</parcial>
+				<parcial>5.5</parcial>
+				<parcial></parcial>
+				<parcial></parcial>
+				<final>6.5</final>
+				<calificacion>Aprobado</calificacion>
+			</modulo>
+			
+			<modulo>
+				<nombre>Sistemas Operativos</nombre>
+				<parcial>3.4</parcial>
+				<parcial>7.2</parcial>
+				<parcial>7.3</parcial>
+				<parcial></parcial>
+				<final>6.8</final>
+				<calificacion>Notable</calificacion>
+			</modulo>
+			
+			
+			<modulo>
+				<nombre>Lenguaje de Marcas</nombre>
+				<parcial>8</parcial>
+				<parcial>8.5</parcial>
+				<parcial>7.2</parcial>
+				<parcial></parcial>
+				<final>8</final>
+				<calificacion>Sobresaliente</calificacion>
+			</modulo>
+			
+		</notas>
+	</alumno>
+	
+
+</alumnos>
+</clase>
+

@@ -1,0 +1,7 @@
+Nombre{background:#E67E22; font-weight:bold; font-family:arial; padding-right:400px; display:block; border:solid 3px black; padding:8px; 
+		margin:10px;}
+
+Origen{color:red; display:block;}
+Ingredientes{background:#1ABC9C; width:80%; font-weight:bold; font-size:18px;}
+Paso{display:list-item; list-style:disc inside; margin-left:15px;}
+Referencia{display:inline;}

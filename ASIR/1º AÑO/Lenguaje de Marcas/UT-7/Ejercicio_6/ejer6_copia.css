@@ -1,0 +1,5 @@
+atomo{display:inline-table; background:lightblue; border:3px solid black; margin:20px;}
+nombre{display:block; padding:9px;}
+simbolo{display:block; text-align:center; padding:9px; font-size:24px; padding-left:10px; padding-right:10px;}
+numero_atomico{display:block; padding:9px;}
+peso_atomico, punto_ebullicion, densidad{display:none;}

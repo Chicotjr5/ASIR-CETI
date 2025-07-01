@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>  
+<?xml-stylesheet href="ejer4_copia.css" type="text/css"?>
+<CD>
+	<artista>ABC (2)</artista>
+	<titulo>The Collection</titulo>
+	<sello>KARUSELL INTERNATIONAL</sello>
+	<referencia>551 831-2</referencia>
+	<anyo>1996</anyo>
+	<pais>Germany</pais>
+	<formato>CD - Compilation</formato>
+	<observaciones>Licensed from Mercury Records Ltd (London)</observaciones>
+	<genero>Funck</genero>
+	<genero>Soul</genero>
+	<genero>Electronic</genero>
+	<estilo>Funk disco</estilo>
+	<estilo>Synth Pop</estilo>
+	<canciones>
+		<contenido_cd numero="1">
+			<!-- para el caso de CD's com más de un disco -->
+			<cancion numero="01">
+				<titulo>Poison Arrow</titulo>
+				<duracion>
+					<minutos>03</minutos>
+					<segundos>23</segundos>
+				</duracion>
+			</cancion>
+			<cancion numero="02">
+				<titulo>The Look Of Love (Part One)</titulo>
+				<duracion>
+					<minutos>03</minutos>
+					<segundos>29</segundos>
+				</duracion>
+			</cancion>
+			<cancion numero="03">
+				<titulo>The Night You Murdered Love</titulo>
+				<duracion>
+					<minutos>04</minutos>
+					<segundos>53</segundos>
+				</duracion>
+			</cancion>
+			<cancion numero="04">
+				<titulo>Tears Are Not Enough</titulo>
+				<duracion>
+					<minutos>03</minutos>
+					<segundos>29</segundos>
+				</duracion>
+			</cancion>
+			<cancion numero="05">
+				<titulo>Be Near Me</titulo>
+				<duracion>
+					<minutos>03</minutos>
+					<segundos>37</segundos>
+				</duracion>
+			</cancion>
+			<cancion numero="06">
+				<titulo>I'm In Love With You</titulo>
+				<duracion>
+					<minutos>04</minutos>
+					<segundos>35</segundos>
+				</duracion>
+			</cancion>
+			<cancion numero="07">
+				<titulo>The Real Thing</titulo>
+				<duracion>
+					<minutos>04</minutos>
+					<segundos>54</segundos>
+				</duracion>
+			</cancion>
+			<cancion numero="08">
+				<titulo>Love's A Dangerous Laguage</titulo>
+				<duracion>
+					<minutos>03</minutos>
+					<segundos>40</segundos>
+				</duracion>
+			</cancion>
+			<cancion numero="09">
+				<titulo>The Greatest Love Of All</titulo>
+				<duracion>
+					<minutos>05</minutos>
+					<segundos>34</segundos>
+				</duracion>
+			</cancion>
+			<cancion numero="10">
+				<titulo>When Smokey Sings</titulo>
+				<duracion>
+					<minutos>04</minutos>
+					<segundos>18</segundos>
+				</duracion>
+			</cancion>
+			<cancion numero="11">
+				<titulo>One Better World</titulo>
+				<duracion>
+					<minutos>05</minutos>
+					<segundos>38</segundos>
+				</duracion>
+			</cancion>
+			<cancion numero="12">
+				<titulo>Vanity Kills</titulo>
+				<duracion>
+					<minutos>03</minutos>
+					<segundos>29</segundos>
+				</duracion>
+			</cancion>
+			<cancion numero="13">
+				<titulo>Bite The Hand</titulo>
+				<duracion>
+					<minutos>03</minutos>
+					<segundos>07</segundos>
+				</duracion>
+			</cancion>
+			<cancion numero="14">
+				<titulo>Chicago (Abridged)</titulo>
+				<duracion>
+					<minutos>03</minutos>
+					<segundos>40</segundos>
+				</duracion>
+			</cancion>
+			<cancion numero="15">
+				<titulo>Minneapolis</titulo>
+				<duracion>
+					<minutos>02</minutos>
+					<segundos>57</segundos>
+				</duracion>
+			</cancion>
+			<cancion numero="16">
+				<titulo>Think Again</titulo>
+				<duracion>
+					<minutos>03</minutos>
+					<segundos>39</segundos>
+				</duracion>
+			</cancion>
+			<cancion numero="17">
+				<titulo>Never More Than Now</titulo>
+				<duracion>
+					<minutos>06</minutos>
+					<segundos>03</segundos>
+				</duracion>
+			</cancion>
+			<cancion numero="18">
+				<titulo>All Of my Heart</titulo>
+				<duracion>
+					<minutos>04</minutos>
+					<segundos>49</segundos>
+				</duracion>
+			</cancion>
+		</contenido_cd>
+	</canciones>
+</CD>

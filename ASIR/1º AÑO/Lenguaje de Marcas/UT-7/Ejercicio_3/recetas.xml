@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>  
+<?xml-stylesheet href="ejer3_copia.css" type="text/css"?>
+<Recetario>
+	<Autor>Carlos Arguiñano </Autor>
+	<Receta dificultad="fácil" coste="Bajo" NivelCalorias="bajo">
+		<Nombre>Crema de puerros</Nombre>
+		<Origen>Cocina española</Origen>
+		<Ingredientes>
+			<Ingrediente medida="gramos">
+				<NombreI>puerros</NombreI>
+				<Cantidad>2500</Cantidad>
+			</Ingrediente>
+			<Ingrediente medida="piezas">
+				<NombreI>patatas</NombreI>
+				<Cantidad>3</Cantidad>
+			</Ingrediente>
+			<Ingrediente medida="cucharadas">
+				<NombreI>arroz</NombreI>
+				<Cantidad>3</Cantidad>
+			</Ingrediente>
+			<Ingrediente medida="gramos">
+				<NombreI>pechuga de pollo</NombreI>
+				<Cantidad>250</Cantidad>
+			</Ingrediente>
+			<Ingrediente medida="cucharadas">
+				<NombreI>mantequilla</NombreI>
+				<Cantidad>1</Cantidad>
+			</Ingrediente>
+			<Ingrediente medida="gramos">
+				<NombreI>nata líquida</NombreI>
+				<Cantidad>5</Cantidad>
+			</Ingrediente>
+			<Ingrediente>
+				<NombreI>pimienta molida</NombreI>
+				<Cantidad>
+            </Cantidad>
+			</Ingrediente>
+			<Ingrediente>
+				<NombreI>nuez moscada</NombreI>
+				<Cantidad>
+            </Cantidad>
+			</Ingrediente>
+		</Ingredientes>
+		<Elaboracion>
+			<Paso>Hervir 1/2 hora en la olla los puerros, las patatas, el arroz y el pollo.</Paso>
+			<Paso>Añadir una cucharada de mantequilla, pasarlo por la batidora y colarlo.</Paso>
+			<Paso>Añadir pimienta molida y nuez moscada rallada al gusto.</Paso>
+			<Paso>Mezclar nata líquida 1 caja, dejando un poco para adornar las tazas al servir junto con un poco de la pechuga muy menudita.</Paso>
+		</Elaboracion>
+	</Receta>
+	<Receta tipo="Postre" dificultad="fácil" coste="Bajo" NivelCalorias="alto">
+		<Nombre>Blinis</Nombre>
+		<Origen>Cocina rusa</Origen>
+		<Ingredientes>
+			<Ingrediente medida="vasos">
+				<NombreI>harina</NombreI>
+				<Cantidad>1,5</Cantidad>
+			</Ingrediente>
+			<Ingrediente medida="cucharadas">
+				<NombreI>leche entera</NombreI>
+				<Cantidad>4</Cantidad>
+			</Ingrediente>
+			<Ingrediente medida="cucharadas">
+				<NombreI>levadura</NombreI>
+				<Cantidad>4</Cantidad>
+			</Ingrediente>
+			<Ingrediente>
+				<NombreI>huevos</NombreI>
+				<Cantidad>3</Cantidad>
+			</Ingrediente>
+			<Ingrediente medida="cucharadas de café">
+				<NombreI>sal</NombreI>
+				<Cantidad>1</Cantidad>
+			</Ingrediente>
+			<Ingrediente>
+				<NombreI>mantequilla derretida</NombreI>
+				<Cantidad>5</Cantidad>
+			</Ingrediente>
+		</Ingredientes>
+		<Referencia><![CDATA[www.platodeldia.com/recetas/?id=8805]]></Referencia>
+	</Receta>
+	<Receta tipo="verdura" dificultad="fácil" coste="Bajo" NivelCalorias="medio">
+		<Nombre>Berenjenas al Imán</Nombre>
+		<Origen>Cocina bizantina</Origen>
+		<Ingredientes>
+			<Ingrediente medida="piezas">
+				<NombreI>berenjenas pequeñas</NombreI>
+				<Cantidad>4</Cantidad>
+			</Ingrediente>
+			<Ingrediente>
+				<NombreI>aceite oliva</NombreI>
+				<Cantidad>
+            </Cantidad>
+			</Ingrediente>
+			<Ingrediente medida="pieza">
+				<NombreI>cebollas</NombreI>
+				<Cantidad>1</Cantidad>
+			</Ingrediente>
+			<Ingrediente medida="piezas">
+				<NombreI>dientes de ajo</NombreI>
+				<Cantidad>2</Cantidad>
+			</Ingrediente>
+			<Ingrediente medida="piezas">
+				<NombreI>tomates</NombreI>
+				<Cantidad>2</Cantidad>
+			</Ingrediente>
+			<Ingrediente>
+				<NombreI>sal</NombreI>
+				<Cantidad>
+            </Cantidad>
+			</Ingrediente>
+			<Ingrediente>
+				<NombreI>pimienta</NombreI>
+				<Cantidad>
+            </Cantidad>
+			</Ingrediente>
+			<Ingrediente>
+				<NombreI>tomillo</NombreI>
+				<Cantidad>
+            </Cantidad>
+			</Ingrediente>
+			<Ingrediente>
+				<NombreI>perejil</NombreI>
+				<Cantidad>
+            </Cantidad>
+			</Ingrediente>
+			<Ingrediente medida="cucharada de café">
+				<NombreI>mantequilla</NombreI>
+				<Cantidad>1</Cantidad>
+			</Ingrediente>
+			<Ingrediente>
+				<NombreI>agua</NombreI>
+				<Cantidad>
+            </Cantidad>
+			</Ingrediente>
+		</Ingredientes>
+		<Elaboracion>
+			<Paso>Se lavan las berenjenas y se pelan en bandas longitudinales.</Paso>
+			<Paso>Las peladuras, de un centímetro de ancho, deben alternarse con la pulpa, también de un centrímetro de grosor.</Paso>
+			<Paso>Hacemos en las berenjenas una incisión lateral a través de la cual se extraer, con ayuda de una cucharilla, un cuarto de su pulpa.</Paso>
+			<Paso>Se doran las berenjenas en aceite caliente durente 3 minutos y se retiran.</Paso>
+			<Paso>En el mismo aceite se rehogan la cebollas y los ajos picados.</Paso>
+			<Paso>Se añaden los tomates, pelados y troceados, la pulpa de las berenjenas, el perejil y tomillo.</Paso>
+			<Paso>Salpimentar y cocer durante 15 minutos. Se rellenan las berenjenas con esta mezcla y se disponen en una fuente, con el lado relleno hacia arriba y cubiertas con un poco de mantequilla y agua.</Paso>
+			<Paso>Se hornea durante 20 minutos y listo para servir.</Paso>
+		</Elaboracion>
+	</Receta>
+	<Receta tipo="entrante" dificultad="fácil" coste="Bajo" NivelCalorias="medio">
+		<Nombre>Crepes de Espárragos</Nombre>
+		<Origen>Cocina española</Origen>
+		<Ingredientes>
+			<Ingrediente medida="manojo">
+				<NombreI>espárragos trigueros</NombreI>
+				<Cantidad>1</Cantidad>
+			</Ingrediente>
+			<Ingrediente medida="litro">
+				<NombreI>leche</NombreI>
+				<Cantidad>1/4</Cantidad>
+			</Ingrediente>
+			<Ingrediente medida="cucharadas soperas">
+				<NombreI>mantequilla</NombreI>
+				<Cantidad>3</Cantidad>
+			</Ingrediente>
+			<Ingrediente medida="cucharadas">
+				<NombreI>harina</NombreI>
+				<Cantidad>6</Cantidad>
+			</Ingrediente>
+			<Ingrediente>
+				<NombreI>huevos</NombreI>
+				<Cantidad>3</Cantidad>
+			</Ingrediente>
+			<Ingrediente medida="cucharada de café">
+				<NombreI>coñac</NombreI>
+				<Cantidad>1</Cantidad>
+			</Ingrediente>
+			<Ingrediente>
+				<NombreI>salsa bechamel</NombreI>
+				<Cantidad>
+            </Cantidad>
+			</Ingrediente>
+			<Ingrediente>
+				<NombreI>sal</NombreI>
+				<Cantidad>
+            </Cantidad>
+			</Ingrediente>
+		</Ingredientes>
+		<Elaboracion>
+			<Paso>Mezclar la leche con 2 cucharadas soperas de mantequilla derretida, la harina, los huevos y el coñac.</Paso>
+			<Paso>Sazonar con sal y dejar reposar durante 30 min.</Paso>
+			<Paso>Cortar la parte tierna de los espárragos en trozos pequeños y rehogar en el resto de mantequilla durante 10 min.</Paso>
+			<Paso>Mezclar con la masa de las crepes.</Paso>
+			<Paso>Derretir un poco de mantequilla en una sartén pequeña, echar 2 cucharadas de la masa de crepes y cuando esté cocida darle la vuelta para que quede dorada por ambos lados.</Paso>
+			<Paso>Preparar el resto de las crepes del mismo modo, enrollarlas y servirlas con salsa besamel.</Paso>
+		</Elaboracion>
+	</Receta>
+	<Receta>
+		<Nombre>Crepes suzettes</Nombre>
+		<Origen>
+      </Origen>
+		<Ingredientes>
+			<Ingrediente medida="mitades de vaso">
+				<NombreI>harina</NombreI>
+				<Cantidad>3</Cantidad>
+			</Ingrediente>
+			<Ingrediente>
+				<NombreI>huevos</NombreI>
+				<Cantidad>2</Cantidad>
+			</Ingrediente>
+			<Ingrediente medida="mitades de cucharada sopera">
+				<NombreI>leche</NombreI>
+				<Cantidad>5</Cantidad>
+			</Ingrediente>
+			<Ingrediente medida="cucharadas soperas">
+				<NombreI>aceite oliva</NombreI>
+				<Cantidad>2</Cantidad>
+			</Ingrediente>
+			<Ingrediente>
+				<NombreI>sal</NombreI>
+				<Cantidad>
+            </Cantidad>
+			</Ingrediente>
+			<Ingrediente>
+				<NombreI>pimienta molida</NombreI>
+				<Cantidad>
+            </Cantidad>
+			</Ingrediente>
+			<Ingrediente medida="cucharadas soperas">
+				<NombreI>mantequilla</NombreI>
+				<Cantidad>8</Cantidad>
+			</Ingrediente>
+			<Ingrediente medida="naranjas">
+				<NombreI>zumo de naranja</NombreI>
+				<Cantidad>2</Cantidad>
+			</Ingrediente>
+			<Ingrediente medida="cucharadas soperas">
+				<NombreI>azúcar</NombreI>
+				<Cantidad>6</Cantidad>
+			</Ingrediente>
+			<Ingrediente medida="vaso">
+				<NombreI>licor de Grand Marnier</NombreI>
+				<Cantidad>1/3</Cantidad>
+			</Ingrediente>
+		</Ingredientes>
+		<Elaboracion>
+			<Paso>Batir la harina para crepes, los huevos, el aceite y la sal.</Paso>
+			<Paso>Añadir la leche y 1/2 cucharada sopera de agua sin dejar de batir.</Paso>
+			<Paso>Cuando la masa esté homegénea, dejar de batir y echar en un recipiente.</Paso>
+			<Paso>Dejar que repose durante 1 h.</Paso>
+			<Paso>Repartir la masa en medidas de 1 cazo y freir en dos sartenes al mismo tiempo.</Paso>
+			<Paso>A medida que se vayan haciendo, reservar calientes, preferiblemente al baño María.</Paso>
+			<Paso>Tapar con papel de aluminio.</Paso>
+			<Paso>Para el sirope, derretir la mantequilla en un cazo con el azúcar, el zumo de naranja y unas cuantas ralladuras de naranja y la mitad del Grand Marnier.</Paso>
+			<Paso>Calentar la otra mitad en otro cazo.</Paso>
+			<Paso>Cuando se vaya a servir, calentar el sirope y el Grand Marnier.</Paso>
+			<Paso>Echar las crepes dobladas en una sartén.</Paso>
+			<Paso>Regar con el sirope hirviendo y el Grand Marnier.</Paso>
+			<Paso>Flambear.</Paso>
+		</Elaboracion>
+	</Receta>
+	<Fecha>26 de Abril</Fecha>
+</Recetario>

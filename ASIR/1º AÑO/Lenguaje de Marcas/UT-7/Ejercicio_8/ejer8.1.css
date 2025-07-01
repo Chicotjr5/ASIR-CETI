@@ -1,0 +1,4 @@
+textos{background-image:url("fondoflors.jpg"); font-size:20px;}
+
+ESTROFA{display:inline-table; margin:15px; padding:25px;}
+VERSO{display:table-row; background:#7F8000; text-align:center;}

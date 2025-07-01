@@ -1,0 +1,5 @@
+Autor{display:block;}
+Nombre{display:block; background:#FF6633; border:2px solid; font-size:23px; margin:7px; padding:7px; font-weight:bold;}
+Origen{color:red; display:block;}
+Ingrediente{background:#6DAEC9; font-weight:bold; font-size:23px; display:inline;}
+Paso{display:list-item; list-style-type:disc inside; margin-left:19px;}

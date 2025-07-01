@@ -1,0 +1,5 @@
+biblioteca{background:lightgrey;}
+libro{background:lightgreen; display:block; border:2px solid black; margin:5px; font-family:arial;}
+titulo{display:block; font-weight:bold; background:white;}
+autor{display:block;}
+fechapubliacion{ display:block;}

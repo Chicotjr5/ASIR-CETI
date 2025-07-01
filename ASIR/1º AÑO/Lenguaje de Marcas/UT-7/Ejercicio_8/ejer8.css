@@ -1,0 +1,6 @@
+textos{background:#FFC0CB; counter-reset: contraestrofa 0;}
+ESTROFA:before{content:counter(contraestrofa, upper-roman); text-align:center; display:block; counter-increment:contraestrofa 1;}
+VERSO{display:block; text-align:center;}
+POEMA:before{content:"SONATINA"; text-align:center; color:red; display:block; font-size:30px;}
+ESTROFA:after{content:"-----------------------------------------"; text-align:center; display:block;}
+POEMA:after{content:"RUBÉN DARÍO"; text-align:right; display:block; margin-right:30px;}

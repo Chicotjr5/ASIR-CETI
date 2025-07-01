@@ -1,0 +1,24 @@
+clase{background:#FF9966; font-family:arial; counter-reset:messi 0;}
+id:before{content:"CURSO: ";}
+id{background:#B97419;  font-size:24px; display:block;}
+
+modulos:before{content:"Modulos del curso"; margin-left:10px;}
+modulos{display:block;}
+modulo{display:list-item; background:#99FF99; list-style-type:disc; margin-left:15px; list-style-position:inside; width:70%;}
+
+profesor>persona:before{content:"(";color:red;}
+persona{color:red;}
+
+profesor>persona:after{content:")"; color:red;}
+
+alumnos:before{content:"Alumnos:"; margin-left:12px;}
+alumnos{display:block;}
+alumno>persona:before{content: counter(messi) "."; counter-increment:messi 1; }
+alumno{display:block; margin-bottom:10px; margin-left:10px; background:#33CCFF; width:70%;}
+alumno>persona{text-decoration:underline; color:black;}
+
+notas>modulo{margin-left:114px;}
+notas>modulo>nombre{color:blue;}
+calificacion:before{content:" : ";}
+calificacion{color:black; font-weight:bold;}
+tratamiento, parcial, final{display:none;}

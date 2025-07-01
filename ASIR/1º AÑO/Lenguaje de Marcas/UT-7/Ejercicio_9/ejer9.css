@@ -1,0 +1,5 @@
+palabra{border:5px solid; display:inline-table; padding:15px; margin-right:10px;}
+espa{border:4px solid red; padding:5px; display:block; margin-bottom:5px;}
+espa::first-letter {color:red;}
+fran{border:4px solid blue; padding:5px; display:block; margin-bottom:5px;}
+ing{border:4px solid green; padding:5px; display:block;}

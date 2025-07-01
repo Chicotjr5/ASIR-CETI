@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<?xml-stylesheet href="ejer10.css"  type="text/css"?>
+<heladeria> 
+	<helado>
+		<sabor>chocolate</sabor>
+		<tipo>cono</tipo>
+		<tamaño >grande</tamaño>
+	</helado>
+	<helado>
+		<sabor>fresa</sabor>
+		<tipo>tarrina</tipo>
+		<tamaño >mediano</tamaño>
+	</helado>
+	<helado>
+		<sabor>vainilla</sabor>
+		<tipo>tarrina</tipo>
+		<tamaño>pequeño</tamaño>
+	</helado>
+	<helado>
+		<sabor>fresa</sabor>
+		<tipo>cono</tipo>
+		<tamaño>grande</tamaño>
+	</helado>
+</heladeria>

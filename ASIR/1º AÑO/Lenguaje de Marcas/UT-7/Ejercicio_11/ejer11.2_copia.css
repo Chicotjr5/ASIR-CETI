@@ -1,0 +1,18 @@
+clase{background:#F5DA81;}
+id:before{content:"C.I.F.P. Juan de colonia"; display:inline; text-align:center; font-size:30px;}
+id{display:block; text-align:center; font-size:30px;}
+
+modulos{background:#ADD8E6; border:2px solid red; display:table; padding:10px; float:left; margin-top:100px;}
+modulos:before{content:"MODULOS"; font-weight:bold; text-decoration:underline;}
+modulo{display:table-row; padding:3px; list-style-type:none;}
+profesor:before{content:"		-->  ";}
+profesor{display:table-cell;}
+notas>modulo{display:none;}
+
+alumnos:before{content:"ALUMNOS"; font-weight:bold; text-decoration:underline;}
+alumnos{background:#90EE90; border:2px solid red; display:block; width:20%; padding:3px; float:right; margin-right:300px; margin-top:100px;}
+alumno{display:list-item; margin-left:20px; list-style-type:square; }
+
+
+
+alumno>persona>tratamiento{display:none;}

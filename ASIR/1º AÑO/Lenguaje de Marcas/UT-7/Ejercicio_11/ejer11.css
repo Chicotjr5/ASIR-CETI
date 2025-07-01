@@ -1,0 +1,21 @@
+clase{background:#FF9966;counter-reset:a1 0;}
+id:before{content:"Curso:";}
+id{background:#B47219; font-size:30px;  display:block;}
+
+modulos:before{content:"Modulos del curso:"; margin-left:20px;}
+modulos{display:block;}
+modulo{display:list-item; list-style:inside; width:50%; margin-left:20px; background:#9F9;}
+persona{color:red; text-decoration:underline;}
+tratamiento{display:none;}
+profesor:before{content:"("; color:red;}
+profesor:after{content:")"; color:red;}
+
+
+alumnos:before{content:"Alumnos:"; display:block; margin-left:22px;}
+alumno{background:#3CF; display:block; width:51%; margin-bottom:20px; margin-left:20px; }
+alumno persona:before{content:counter(a1); counter-increment:a1 1;}
+alumno persona{display:block; color:black; text-decoration:underline; }
+notas modulo{display:list-item; list-style:inside; width:40%; margin-left:70px;}
+notas modulo nombre{color:blue;}
+parcial, final{display:none;}
+calificacion{font-weight:bold; color:black; text-decoration:none;}
