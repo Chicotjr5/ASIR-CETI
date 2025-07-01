@@ -1,72 +1,47 @@
+## Comprobar que la dirección MAC de tu tarjeta de red es unicast
 
-## Índice
-- [[Practica 1#Índice|Índice]]
-- [[Practica 1#Algoritmos|Algoritmos]]
-- [[Practica 1#Ejercicio de paginación|Ejercicio de paginación]]
-- [[Practica 1#Ejercicio de segmentación|Ejercicio de segmentación]]
+Para comprobarlo, nos vamos al CMD y ejecutamos el comando:
 
+```bash
+ipconfig /all
+```
 
-### Algoritmos
+que nos mostrará todas las tarjetas de red del equipo y todas sus características. 
 
+Vamos donde sale nuestra tarjeta de red y vemos su dirección MAC. 
 
+![image](https://github.com/user-attachments/assets/99360e36-7570-4623-9bfc-ee41ce80627a)
 
-### Ejercicio de paginación
+Esta dirección esta en Hexadecimal, así que la pasaremos a decimal para ver si el último bite del primer octeto es un 1.
 
-Tenemos un sistema operativo de 32 bits en el que la asignación de memoria se realiza mediante paginación. 
-Cada página/marco ocupa 1 MB. De los 32 bits de la dirección de memoria, se usan 12 bits para especificar la página. 
-Se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de páginas:
+![image](https://github.com/user-attachments/assets/5f1f7918-bd34-4006-aedf-16c02a1a6aa2)
 
-| Página | Marco |
-| ------ | ----- |
-| 0x59B  | 0x123 |
-| 0x59C  | 0xA05 |
-| 0x59D  | 0x59F |
-| 0x59E  | 0x799 |
-| 0x59F  | 0xF8B |
-| 0x59A0 | 0x22D |
+---
 
-Dada la dirección lógica 0x59F2A5A0, obtener la dirección física correspondiente:
-- 0xF8B2A5A0
+## ¿De qué fabricante es tu tarjeta?
 
-Dada la dirección lógica 0x5A02A59F, obtener la dirección física correspondiente.
-- 0x22DA59F
+Es una tarjeta **Asus**
 
-Dada la dirección lógica 0x59C4DE87, obtener la dirección física correspondiente
-- 0xA054DE87
+![image](https://github.com/user-attachments/assets/62173b43-0852-4fe3-acca-9e2862bfd8fd)
 
-### Ejercicio de segmentación
+---
 
-En un sistema de de 32 bits se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de segmentos (el tamaño viene expresado de forma relativa la base):
+## Con un software de sniffer o capturador de tramas analizar el formato de la trama Ethernet y su contenido.
 
-| Segmento | Base       | Tamaño     | Límite     |
-| -------- | ---------- | ---------- | ---------- |
-| 0xA321   | 0x85434520 | 0x00005218 | 0x85439738 |
-| 0xA322   | 0xBA41002E | 0x00003FD1 | 0xBA413FFF |
-| 0xA323   | 0x226A5722 | 0x00004D3D | 0x226AA45F |
-| 0xA324   | 0xF01809AC | 0x00000053 | 0xF01809FF |
-| 0xA325   | 0x226CA460 | 0x0000AAFF | 0x226D4F5F |
-| 0xA326   | 0x4951B4D8 | 0x0000F424 | 0x4952A8FC |
+![image](https://github.com/user-attachments/assets/3689a950-20c7-4a7e-8643-6a76f67aabfe)
 
-**Obtener las direcciones físicas absolutas donde termina cada segmento**
+↓
 
-**Dada la dirección lógica 0xA3231265, obtener la dirección física correspondiente.**
+![image](https://github.com/user-attachments/assets/de7ddbd0-064f-49b1-87cf-b6b98c87b446)
 
-- 4D3D-1265= 15064 Está dentro del segmento 
-- 226A5722+1265 = 226A6987 
-- Su dirección física sería 0x226A6987
+---
 
-**Dada la dirección lógica 0xA3240265, obtener la dirección física correspondiente.**
+## ¿De qué tipo de trama se trata, Ethernet II o Ethernet 802.3?
 
-- 53-0265= -212 
-- Se sale del segmento
+Son ambas tramas
 
-**Dada la dirección lógica 0xA325AAFA, obtener la dirección física correspondiente.**
+---
 
-- AAFF – AAFA = 5 Esta dentro del segmento 
-- 226CA460 + AAFA = 226D 4F5A 
-- Su dirección física sería 0x226D4F5A
+## Indicar la diferencia que hay entre ellas
 
-
-
-
-
+![image](https://github.com/user-attachments/assets/0f5b771e-aad3-482c-b222-586a0ba674de)
