@@ -55,15 +55,31 @@ La segunda, denegará todo el tráfico de la red 192.168.1.0 a la 192.168.2.0
 
 Y por último, permitiremos todo el tráfico para el resto de redes.
 
+![image](https://github.com/user-attachments/assets/9311044c-8ab0-446a-92b4-88e0b52619f3)
 
+Y para poder ver como ha quedado nuestra querida ACL, usamos el comando
 
+```bash
+show Access-list 
+```
 
+![image](https://github.com/user-attachments/assets/c96738f2-500e-40ac-bfa1-45cb1e634afe)
 
+---
 
+## Comprobación 
 
+Si intentamos hacer un PING desde el ordenador que se encuentra en la red 192.168.1.0/24 al ordenador y al servidor que se encuentran en la red 192.168.2.0/24, veremos que no llega el PING, pues el Router no deja que pase, debido a que este tráfico, esta bloqueado.
 
+![image](https://github.com/user-attachments/assets/8d7e4034-9509-4417-8a72-d25f1d2f6a4e)
 
+Pero el tráfico TCP no lo está para el servidor, así que si podremos conectarnos a la WEB del servidor desde el equipo de la red 192.168.1.0/24.
 
+![image](https://github.com/user-attachments/assets/b0fefdb9-b9b8-499c-8230-71e544ac3fa1)
+
+Y si hacemos PING del resto de ordenadores a la red 192.168.2.0/24, veremos que si podemos.
+
+![image](https://github.com/user-attachments/assets/23255550-0a7b-4650-8b7d-39510b02b086)
 
 
 
