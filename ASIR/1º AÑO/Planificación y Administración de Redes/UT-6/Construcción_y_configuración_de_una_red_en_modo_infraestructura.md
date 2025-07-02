@@ -1,78 +1,169 @@
-## Configura el AP para que tenga los siguientes valores  
+## Hacer un esquema gráfico que muestre la topología física y lógica de la red que se pretende montar
 
-**IP** - 192.168.0.10/24 
-**Gateway** - 192.168.0.1
-**DNS** - 8.8.8.8, 8.8.4.4
+![image](https://github.com/user-attachments/assets/eac359e5-6bda-4509-aa49-d255e3f9a990)
 
-Vamos a **Network>Ip Settings>Static** y configuramos los valores. 
+## Documentar todas las etapas seguidas para la construcción y configuración de esta red. 
 
-![image](https://github.com/user-attachments/assets/bf62f69a-d70b-48dc-a8ee-43091a55ae92)
+Antes de construir una red, necesitamos de un punto de acceso inalámbrico, al cual conectarnos. 
+Una vez estamos conectados al router, deberemos entrar en él. 
+Para ello, vamos a un buscador, **escribimos la IP del punto de acceso** y el nombre del usuario y contraseña de este (por defecto en estos routers en **admin:admin**) 
+Y entramos, visualizando la página principal
+
+![image](https://github.com/user-attachments/assets/b14aa762-d20e-4c2c-9bb4-cd816f025e57)
+
+Y entramos, visualizando la página principal 
+Una vez dentro, empezaremos a configurar nuestra red. 
+
+![image](https://github.com/user-attachments/assets/f0ac0388-2d25-44da-95e7-31463446a2ca)
+
+Primero tendremos que poner nuestro SSID, el cual es **WASIR1M-C23** 
+Para ello, vamos a **Wireless>Wireless_Settings>Wireless_Network_Name** y guardamos los cambios.
+
+![image](https://github.com/user-attachments/assets/11a5d492-461d-48f4-8104-da5b744a3882)
+
+Otro cambio que tenemos que hacer, es **deshabilitar el DHCP**, debido a que configuraremos los clientes con una IP estática.
+
+![image](https://github.com/user-attachments/assets/bdcc4dc4-f594-426a-8893-ef1ca6af8bdf)
+
+Además, de que el puerto **WAN** debe de estar **desconectado**, debido a que no estamos configurando un router inalámbrico, si no un **Punto de Acceso** .
+
+![image](https://github.com/user-attachments/assets/ed0040d9-d5f0-4de4-9984-01043e797cb7)
+
+La siguiente configuración, será la de cambiar la contraseña del Wifi. 
+Vamos a **Wireless>Wireless Security** y la configuramos
+
+![image](https://github.com/user-attachments/assets/2e70102e-b3cf-4739-89a9-46f6912fb056)
+
+El último cambio que realizaremos, será el de la IP del punto de acceso. 
+Para ello, vamos a **Network>LAN>Ip Address** y pondremos la IP **192.168.32.122/23**
+
+Y guardaremos los cambios realizados.
+
+![image](https://github.com/user-attachments/assets/f5115aad-1d61-43b3-8fe7-47069e568594)
+
+Al cambiar la IP, el router necesita reiniciarse para guardar los cambios. 
+Así que lo hace.
+
+![image](https://github.com/user-attachments/assets/f0f5c84f-cedb-4b03-b527-2a19e9d354ba)
+
+Antes de volver a entrar, cambiaremos la IP de nuestro equipo por una estática, debido a que como el DHCP esta desactivado, si no configuramos una IP que esta dentro de nuestra red, no podremos acceder al router.
+
+![image](https://github.com/user-attachments/assets/e15c9cc9-aea2-4146-a0e3-e10b2ae25f37)
+
+Una vez reiniciado, tenemos que volver a entrar en él, pero esta vez, no lo haremos con su IP antigua, si no con su nueva IP. 
+
+![image](https://github.com/user-attachments/assets/be957d46-3d1c-469e-b3e4-6fa8b26e4b46)
 
 ---
 
-## Configura la red Wifi con los siguientes valores 
+## Probar que la estación inalámbrica puede acceder a recursos de la red cableada. Documentar todas estas pruebas  
 
-Vamos a **Wireless>Wireless Settings** y ponemos lo siguientes valores:
 
-**SSID** - Wifi-Marcos 
-**SSID** - Broadcast Enable 
-**Seguridad** - WPA/PSK 
-**Encriptación** - AES 
-**Password** - Marcos12345
+Ahora, deberemos conectarnos con un ordenador a nuestro punto de acceso inalámbrico. 
 
-![image](https://github.com/user-attachments/assets/57fea7c1-c02e-4a53-81f8-ba925561d72e)
+Para ello, **debemos de instalar un adaptador USB-WIFI**. 
+
+Por suerte, **Windows cuenta con los drivers de este adaptador**, así que se instalan solos.
+Una vez tenemos el adaptador funcionando, buscaremos la red y nos conectaremos a ella. 
+
+![image](https://github.com/user-attachments/assets/06b2132b-cf09-4635-bdd0-feaf98214463)
+
+Una vez conectados, comprobaremos accesibilidad a los recursos de la red. 
+Primero, haremos un PING a un equipo de clase. 
+
+![image](https://github.com/user-attachments/assets/ede2d83e-72de-497c-9fec-052dacb817bd)
+
+Lo siguiente, será conectarnos a Internet.
+
+![image](https://github.com/user-attachments/assets/f10426b8-5855-4878-bc62-dfc7a15d1491)
 
 ---
 
-## Accede a la restricción de acceso por MAC y calendario y mira sus posibilidades
+## Instalar software para detectar redes inalámbricas y permitir realizar mediciones de calidad de señal
 
-En la restricción de acceso por MAC, nos encontramos con la siguiente pantalla. 
 
-![image](https://github.com/user-attachments/assets/832f87f5-8a4b-4ebd-a1a2-275837d70a6a)
+Instalaremos el software de **InSSiDer**, para detectar nuestra red y el resto de redes presentes. 
+En la siguiente imagen podemos ver el **SSID** de todas las redes, además de **la intensidad de su señal**, **los clientes** que están conectados, **los canales** sobre los que trabaja, **la seguridad**, el modo, y **la velocidad de transmisión**.
 
-Aquí, podemos habilitar el filtrado de MAC, crear grupos y permitir o denegar a cada grupo, el poder acceder a la red. 
+![image](https://github.com/user-attachments/assets/eda36731-d884-4440-a3b1-64b980c36422)
 
-Igual que en la restricción por calendario, solo que aquí podemos crear perfiles, los cuales podemos **definir que días y a que horas** no se podrán conectar. 
+Y si seleccionamos nuestra red, podemos ver aún más información, como la intensidad de la señal en tiempo real, la MAC del AP, la dirección MAC etc.
 
-Además de si estarán asociados con el SSID o con el AP. 
+![image](https://github.com/user-attachments/assets/b2dd973c-39d1-4dec-b02e-ad6cba507b58)
 
-![image](https://github.com/user-attachments/assets/d65eeee7-3aff-4609-b893-16e6bba0f270)
+---
+## Conectarse con un móvil a la red Wifi
 
-----
+![image](https://github.com/user-attachments/assets/e9a4434c-2331-47e0-a0bb-87547977ef04)
 
-## Acceder al menú System e indicar las opciones que te ofrece 
+↓
 
-Dentro de **System** tenemos 5 menús: 
+![image](https://github.com/user-attachments/assets/f1eb3da7-537e-4dd1-9e87-1d4e16e44f2f)
 
-**User Account**
 
-Donde podemos cambiar el nombre del usuario y la contraseña de este, para poder acceder al **router/AP**. 
+### Comprobar hasta donde llega la señal Wifi
 
-![image](https://github.com/user-attachments/assets/6704b16f-dbe4-4337-ab97-fe928f9575fc)
+Usaremos la aplicación de **Wifi Analizer** para poder ver hasta donde llega la cobertura de nuestra red. 
 
-**Time Settings**
+![image](https://github.com/user-attachments/assets/23148363-8a28-47b6-a011-c8d4f3dd023b)
 
-Podemos realizar configuraciones relacionadas con la **zona horaria, la fecha y hora del router, los servidores NTP** etc
+Captura tomada en dentro del aula, donde además podemos ver el resto de redes, junto con su intensidad, canal, frecuencia, fabricante del dispositivo etc
 
-![image](https://github.com/user-attachments/assets/ff170b4f-35e5-4777-ba60-1107954f93e4)
+![image](https://github.com/user-attachments/assets/1042c3cc-0e9a-42cc-a8d4-b09e4c3316b4)
 
-**Rebbot/Reset**
+Captura tomada en el tercer piso del centro, podemos ver que ya perdimos conectividad con nuestra red y el como el resto de redes, han perdido intensidad
 
-Sirve para reiniciar o resetear el router.
+También usaremos la aplicación de **Fing**, la cual nos permite hacer un PING a la red, para poder comprobar su intensidad. 
+Vamos a **Herramientas>Ping** y realizamos el PING 
 
-![image](https://github.com/user-attachments/assets/b9ea986a-bb4e-43f3-90ac-e33a88663751)
+![image](https://github.com/user-attachments/assets/d2eeed5a-8011-4738-b234-cb77c48636de)
 
-**Backup/Restore**
+Captura realizada en clase, como podemos ver, tenemos una conexión perfecta 
 
-Sirver para **hacer un backup** de la configuración del equipo, o para **restaurar una backup**
+![image](https://github.com/user-attachments/assets/35b06424-e85c-4d9a-b3b0-3109a58c2984)
 
-![image](https://github.com/user-attachments/assets/76a535b7-5b7d-426e-a745-ad8f49441612)
+Captura realizada en el tercer piso del centro, como podemos ver, ya no tenemos conexión, así que los PING no llegan
 
-**Firmware Update**
 
-Sirve para que podamos actualizar el firmware desde un archivo
 
-![image](https://github.com/user-attachments/assets/0146400c-e51b-4249-b497-f42847d1f888)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
