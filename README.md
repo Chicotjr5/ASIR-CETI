@@ -45,3 +45,7 @@ In the future I will translate the content into English.
 29/06/2025 -> Finalizar ASIR > 1º AÑO > Implantación de Sistemas Operativos
 
 01/07/2025 -> Finalizar ASIR > 1º AÑO > Lenguaje de Marcas
+
+02/07/2025 -> Finalizar ASIR > 1º AÑO > Planificación y Administración de Redes
+
+02/07/2025 -> Finalizar ASIR
