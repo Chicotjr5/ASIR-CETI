@@ -1,70 +1,100 @@
+## Implantación de RIPv2 sobre la topología del ejercicio 6B 
 
-## Índice
-- [[Practica 1#Índice|Índice]]
-- [[Practica 1#Algoritmos|Algoritmos]]
-- [[Practica 1#Ejercicio de paginación|Ejercicio de paginación]]
-- [[Practica 1#Ejercicio de segmentación|Ejercicio de segmentación]]
+En este ejercicio vamos a ver la implementación la RIPv2, sobre el ejercicio6B. 
+Lo primero que haremos será eliminar todas las rutas estáticas creadas. 
+Una vez eliminadas, procederemos a activar el protocolo RIP en cada uno de los routers. 
+Para poder configurar este protocolo, entraremos al modo de configuración router rip. 
+Y usaremos el comando network “IP” para añadir las redes a las que esta directamente conectado nuestros routes. 
+
+### R1 
+
+![image](https://github.com/user-attachments/assets/e66bef22-11e6-4f23-9d0d-d435f3395259)
+
+### R2
+
+![image](https://github.com/user-attachments/assets/1346ddeb-ff03-4c5d-bfa1-b43df4919c09)
+
+### R3
+
+![image](https://github.com/user-attachments/assets/0ba88a32-cd50-402b-8b4f-f3c9e994f934)
+
+Y al terminar de poner las redes, debemos de especificar la versión del protocolo RIP. 
+En mi caso, RIPv2. 
+
+Este protocolo está continuamente mandando información a los routers, por lo que si esperamos un rato, veremos que las tablas de rutas, cada vez se hacen más grandes
+
+### R1 
+
+![image](https://github.com/user-attachments/assets/06cf6c3c-eb21-4acb-8f10-598c36b7f865)
+
+### R2
+
+![image](https://github.com/user-attachments/assets/2396c950-4f6d-4ee4-9f73-4edce13f0c53)
+
+### R3
+
+![image](https://github.com/user-attachments/assets/e3abad39-ef30-4da6-b847-b60adeae1d7c)
+
+---
+
+## Comprobación
+
+Ahora veremos, como se ha realizado el encaminamiento dinámico, puesto que puedo tener conexión con todas las redes (menos las redes que están restringidas por la ACL anteriormente configurada.)
+
+### Red 1.0
+
+![image](https://github.com/user-attachments/assets/acaa83d0-a8d4-4b72-a302-2fe5e71e7cfa)
+
+### Red 2.0
+
+![image](https://github.com/user-attachments/assets/d341fd84-e41c-4e12-a6ee-f99eaaf530e1)
 
 
-### Algoritmos
 
 
 
-### Ejercicio de paginación
 
-Tenemos un sistema operativo de 32 bits en el que la asignación de memoria se realiza mediante paginación. 
-Cada página/marco ocupa 1 MB. De los 32 bits de la dirección de memoria, se usan 12 bits para especificar la página. 
-Se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de páginas:
 
-| Página | Marco |
-| ------ | ----- |
-| 0x59B  | 0x123 |
-| 0x59C  | 0xA05 |
-| 0x59D  | 0x59F |
-| 0x59E  | 0x799 |
-| 0x59F  | 0xF8B |
-| 0x59A0 | 0x22D |
 
-Dada la dirección lógica 0x59F2A5A0, obtener la dirección física correspondiente:
-- 0xF8B2A5A0
 
-Dada la dirección lógica 0x5A02A59F, obtener la dirección física correspondiente.
-- 0x22DA59F
 
-Dada la dirección lógica 0x59C4DE87, obtener la dirección física correspondiente
-- 0xA054DE87
 
-### Ejercicio de segmentación
 
-En un sistema de de 32 bits se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de segmentos (el tamaño viene expresado de forma relativa la base):
 
-| Segmento | Base       | Tamaño     | Límite     |
-| -------- | ---------- | ---------- | ---------- |
-| 0xA321   | 0x85434520 | 0x00005218 | 0x85439738 |
-| 0xA322   | 0xBA41002E | 0x00003FD1 | 0xBA413FFF |
-| 0xA323   | 0x226A5722 | 0x00004D3D | 0x226AA45F |
-| 0xA324   | 0xF01809AC | 0x00000053 | 0xF01809FF |
-| 0xA325   | 0x226CA460 | 0x0000AAFF | 0x226D4F5F |
-| 0xA326   | 0x4951B4D8 | 0x0000F424 | 0x4952A8FC |
 
-**Obtener las direcciones físicas absolutas donde termina cada segmento**
 
-**Dada la dirección lógica 0xA3231265, obtener la dirección física correspondiente.**
 
-- 4D3D-1265= 15064 Está dentro del segmento 
-- 226A5722+1265 = 226A6987 
-- Su dirección física sería 0x226A6987
 
-**Dada la dirección lógica 0xA3240265, obtener la dirección física correspondiente.**
 
-- 53-0265= -212 
-- Se sale del segmento
 
-**Dada la dirección lógica 0xA325AAFA, obtener la dirección física correspondiente.**
 
-- AAFF – AAFA = 5 Esta dentro del segmento 
-- 226CA460 + AAFA = 226D 4F5A 
-- Su dirección física sería 0x226D4F5A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
