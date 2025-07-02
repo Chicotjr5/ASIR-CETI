@@ -10,7 +10,7 @@ Este, según el manual, es un switch apilable (permite la apilación de 32 switc
 
 Además de que implementa: 
 
--24 puertos 10/100 Mbps 
+- 24 puertos 10/100 Mbps 
 - 2 Puertos 10/100/1000  
 - 2 Ranuras SFP 
 - QoS – Prioriza el tráfico de voz y video sobre el de datos 
