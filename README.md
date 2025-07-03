@@ -48,4 +48,4 @@ In the future I will translate the content into English.
 
 02/07/2025 -> Finalizar ASIR > 1º AÑO > Planificación y Administración de Redes
 
-02/07/2025 -> Finalizar ASIR
+02/07/2025 -> Finalizar ASIR > 1º AÑO
