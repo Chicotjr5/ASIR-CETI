@@ -15,7 +15,7 @@ Este comando nos instala 2 servicios:
 
 ```bash
 service smbd restart
-**service nmbd restart**
+service nmbd restart
 ```
 
 ![image](https://github.com/user-attachments/assets/c0d8968a-db9a-4625-9957-b6062c171021)
