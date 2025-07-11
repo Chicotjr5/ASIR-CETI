@@ -1,72 +1,52 @@
+## Script 1
 
-## Índice
-- [[Practica 1#Índice|Índice]]
-- [[Practica 1#Algoritmos|Algoritmos]]
-- [[Practica 1#Ejercicio de paginación|Ejercicio de paginación]]
-- [[Practica 1#Ejercicio de segmentación|Ejercicio de segmentación]]
+<img width="455" height="182" alt="image" src="https://github.com/user-attachments/assets/e0cd7938-a49d-4480-832e-05eab7226323" />
 
+## Script 2
 
-### Algoritmos
+<img width="621" height="467" alt="image" src="https://github.com/user-attachments/assets/f4af8bc0-56b2-4678-9c3c-e32975dd2c31" />
 
+## Script 3
 
+<img width="798" height="428" alt="image" src="https://github.com/user-attachments/assets/c55ccdde-8d5f-4015-9fb2-3c425794be9b" />
 
-### Ejercicio de paginación
+## Script 4
 
-Tenemos un sistema operativo de 32 bits en el que la asignación de memoria se realiza mediante paginación. 
-Cada página/marco ocupa 1 MB. De los 32 bits de la dirección de memoria, se usan 12 bits para especificar la página. 
-Se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de páginas:
+<img width="662" height="500" alt="image" src="https://github.com/user-attachments/assets/806482c9-1c61-44fa-9a08-74480d7d207a" />
 
-| Página | Marco |
-| ------ | ----- |
-| 0x59B  | 0x123 |
-| 0x59C  | 0xA05 |
-| 0x59D  | 0x59F |
-| 0x59E  | 0x799 |
-| 0x59F  | 0xF8B |
-| 0x59A0 | 0x22D |
+↓
 
-Dada la dirección lógica 0x59F2A5A0, obtener la dirección física correspondiente:
-- 0xF8B2A5A0
+<img width="456" height="709" alt="image" src="https://github.com/user-attachments/assets/0d850757-bf61-492b-b4d0-073d2b549cfc" />
 
-Dada la dirección lógica 0x5A02A59F, obtener la dirección física correspondiente.
-- 0x22DA59F
+## Script 5
 
-Dada la dirección lógica 0x59C4DE87, obtener la dirección física correspondiente
-- 0xA054DE87
-
-### Ejercicio de segmentación
-
-En un sistema de de 32 bits se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de segmentos (el tamaño viene expresado de forma relativa la base):
-
-| Segmento | Base       | Tamaño     | Límite     |
-| -------- | ---------- | ---------- | ---------- |
-| 0xA321   | 0x85434520 | 0x00005218 | 0x85439738 |
-| 0xA322   | 0xBA41002E | 0x00003FD1 | 0xBA413FFF |
-| 0xA323   | 0x226A5722 | 0x00004D3D | 0x226AA45F |
-| 0xA324   | 0xF01809AC | 0x00000053 | 0xF01809FF |
-| 0xA325   | 0x226CA460 | 0x0000AAFF | 0x226D4F5F |
-| 0xA326   | 0x4951B4D8 | 0x0000F424 | 0x4952A8FC |
-
-**Obtener las direcciones físicas absolutas donde termina cada segmento**
-
-**Dada la dirección lógica 0xA3231265, obtener la dirección física correspondiente.**
-
-- 4D3D-1265= 15064 Está dentro del segmento 
-- 226A5722+1265 = 226A6987 
-- Su dirección física sería 0x226A6987
-
-**Dada la dirección lógica 0xA3240265, obtener la dirección física correspondiente.**
-
-- 53-0265= -212 
-- Se sale del segmento
-
-**Dada la dirección lógica 0xA325AAFA, obtener la dirección física correspondiente.**
-
-- AAFF – AAFA = 5 Esta dentro del segmento 
-- 226CA460 + AAFA = 226D 4F5A 
-- Su dirección física sería 0x226D4F5A
+<img width="804" height="436" alt="image" src="https://github.com/user-attachments/assets/527964db-8c5a-4fe8-9601-f320974aeea9" />
 
 
+## Script 6
 
+<img width="729" height="373" alt="image" src="https://github.com/user-attachments/assets/cddf148a-6226-43ad-8b4d-a19342783e38" />
 
+↓
 
+<img width="330" height="122" alt="image" src="https://github.com/user-attachments/assets/f311d2c7-b6fd-4b61-8a3e-b8aeac49a79a" />
+
+## Script 7
+
+<img width="813" height="699" alt="image" src="https://github.com/user-attachments/assets/516f57e7-f794-478d-ada2-369a566fb7d3" />
+
+↓
+
+<img width="672" height="192" alt="image" src="https://github.com/user-attachments/assets/71a9f99a-a171-45e9-9cab-9eab910fc889" />
+
+↓
+
+<img width="426" height="155" alt="image" src="https://github.com/user-attachments/assets/af0fcd20-de69-48d7-a95a-aa2838556224" />
+
+↓
+
+<img width="533" height="160" alt="image" src="https://github.com/user-attachments/assets/6468a3d0-2feb-40d4-8588-323fc531b57b" />
+
+↓
+
+<img width="284" height="29" alt="image" src="https://github.com/user-attachments/assets/46b779ec-4936-487b-84a4-5cfefb994a74" />
