@@ -362,11 +362,14 @@ Primero, tenemos que meter el archivo descargado en el directorio (no hace falta
 
 **C:\Archivos de programa\Microsoft SQL SERVER\MSSQL12\MSSQL\Backup**
 
+
+
 En SQL SERVER vamos a **Bases de datos>clic derecho>Restaurar base de datos.**
 
 Se iniciará un asistente para restaurar la base de datos y elegiremos el archivo de nuestra base de datos
 
 ↓
+
 
 
 ↓
