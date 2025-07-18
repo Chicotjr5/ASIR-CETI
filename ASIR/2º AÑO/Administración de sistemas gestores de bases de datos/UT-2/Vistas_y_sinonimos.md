@@ -129,4 +129,174 @@ Otra vez, esta vista no es actualizable, debido a que contiene una función de a
 
 <img width="669" height="122" alt="image" src="https://github.com/user-attachments/assets/edcccf12-0ddb-44e2-a5dd-bb5aaa7385d4" />
 
+---
+
+## Crear una vista con los datos de todos los alumnos que tienen una nota mayor o igual a 6 y con el nombre del profesor
+
+Para poder hacer esta vista, usaremos el siguiente script:
+
+<img width="500" height="168" alt="image" src="https://github.com/user-attachments/assets/4c4fc01b-8db5-418c-886f-bfbe1042940a" />
+
+Para ver que lo hemos hecho bien, sacaremos su contenido por pantalla.
+
+<img width="312" height="391" alt="image" src="https://github.com/user-attachments/assets/5ba2d378-bf9e-4224-8900-d75f72a8cf59" />
+
+---
+
+## Ver si la vista es actualizable al insertar un nuevo alumno calificado por el profesor con id 1. ¿Alguna tabla se ha actualizado? 
+
+Si intentamos insertar algún alumno nuevo, veremos que no podemos y que no se actualiza ninguna de las tablas. 
+
+Esta vista no se puede realizar, debido a que la inserción que estamos haciendo, como bien pone en el error, afecta a varias tablas.
+
+<img width="816" height="121" alt="image" src="https://github.com/user-attachments/assets/6fed6ace-db97-46d1-a11d-62f5819d0a7a" />
+
+---
+
+## Ver si la vista es actualizable al corregir una nota de un alumno concreto.
+
+Aunque no podamos insertar nuevos alumnos, si podemos actualizar los datos de esta vista, como vemos a continuación.
+
+<img width="372" height="201" alt="image" src="https://github.com/user-attachments/assets/8f98a080-b542-46c0-b84b-c5459fe5f22a" />
+
+↓
+
+<img width="366" height="186" alt="image" src="https://github.com/user-attachments/assets/b60ea2ac-1b6f-4c65-8c28-8eb6330dea44" />
+
+---
+
+## Insertar en la vista un alumno con nota inferior a 6. ¿se ve en la vista? ¿se inserta en la tabla? 
+
+Al igual que antes, que no podíamos insertar un alumno, si ahora lo intentamos insertar, teniendo una nota inferior a 5, nos dará el mismo error.
+
+<img width="668" height="133" alt="image" src="https://github.com/user-attachments/assets/e82a78df-3dde-4ed5-ad97-a0087f9969a7" />
+
+Además, tampoco se insertará en la tabla.
+
+---
+
+## Hay algún modo de evitar que en el caso anterior no deje cambiar datos no incluidos en la vista. Justifícalo
+
+En SQL Server, como las vistas no almacenan datos, sino que solo muestran los datos de las tablas subyacentes no podemos actualizar directamente una vista que se basa en múltiples tablas o que incluye una cláusula `WHERE`. 
+Así que la solución sería crear vistas actualizables, que nos permitan realizar esos cambios, o por otra parte sería realizar estas operaciones directamente en la tabla. 
+Luego, podríamos consultar la vista para ver los datos actualizados.
+
+---
+
+## Eliminar la última vista que creaste
+
+Con un 
+
+```sql
+Drop View nombre_de_la_vista
+```
+podemos borrar cualquier vista que hayamos creado
+
+<img width="302" height="101" alt="image" src="https://github.com/user-attachments/assets/19aa5752-e1d0-4574-9a47-a9282a78c58f" />
+
+---
+
+## Busca dos ejemplos de vistas no-actualizables atendiendo cada uno a criterios diferentes. Comprueba si permite o no hacer INSERT, UPDATE y DELETE en la misma. 
+
+Ahora crearemos las siguientes vistas: 
+
+<img width="526" height="265" alt="image" src="https://github.com/user-attachments/assets/9281ef0c-cf2d-4001-887f-f091d160529e" />
+
+La primera no es actualizable, debido a que tiene una función **AVG** y la segunda, debido a que se basa en la **unión** de las tablas ALUMNOS y PROFESORES.
+
+Y ahora, vamos a comprobarlo:
+
+<img width="740" height="179" alt="image" src="https://github.com/user-attachments/assets/be7713a1-52af-464b-aba2-c12a75f04979" />
+
+↓
+
+<img width="832" height="98" alt="image" src="https://github.com/user-attachments/assets/4c552a1c-0327-4151-9b01-a4d6b7cde84b" />
+
+↓
+
+<img width="740" height="150" alt="image" src="https://github.com/user-attachments/assets/49b882dd-6162-45ba-8822-85b88d668236" />
+
+---
+
+## Prueba los sinónimos usando tablas y vistas. 
+
+Ahora vamos a pasar a usar sinónimos. 
+Los sinónimos en SQL nos permiten nombrar un objeto de la BD de una forma más simple. 
+Como por ejemplo, para la tabla **Alumnos**: 
+
+<img width="323" height="383" alt="image" src="https://github.com/user-attachments/assets/b6d742d3-91ef-4d81-8f0f-400ab2ab6829" />
+
+O para la vista **vista_alumnos** 
+
+<img width="345" height="399" alt="image" src="https://github.com/user-attachments/assets/238bc621-8d04-4691-8d37-16f0e31b707c" />
+
+---
+
+## Presentar una pantalla que despliegue todas las vistas y sinónimos actuales 
+
+<img width="407" height="493" alt="image" src="https://github.com/user-attachments/assets/14dfe0da-fc04-4adf-a162-f04aed91ce70" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
