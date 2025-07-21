@@ -51,3 +51,5 @@ In the future I will translate the content into English.
 02/07/2025 -> Finalizar ASIR > 1º AÑO
 
 14/07/2025 -> Finalizar ASIR > 2º AÑO > Administración de Sistemas Operativos
+
+20/07/2025 -> Finalizar ASIR > 2º AÑO > Administración de Sistemas Gestores de Bases de Datos
