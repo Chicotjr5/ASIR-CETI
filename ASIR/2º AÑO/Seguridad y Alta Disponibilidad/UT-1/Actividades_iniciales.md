@@ -1,70 +1,222 @@
+## Indica, para los siguientes supuestos, qué principios de la seguridad se están violando
 
-## Índice
-- [[Practica 1#Índice|Índice]]
-- [[Practica 1#Algoritmos|Algoritmos]]
-- [[Practica 1#Ejercicio de paginación|Ejercicio de paginación]]
-- [[Practica 1#Ejercicio de segmentación|Ejercicio de segmentación]]
+**Destrucción de hardware**
+
+- Disponibilidad
+
+**Robo de un portátil con información de interés de la empresa**
+
+- Confidencialidad
+
+**Robos de direcciones IP**
+
+- Disponibilidad
+
+**Escuchas electrónicas**
+
+- Confidencialidad
+
+**Modificación de los mensajes entre programas para variar su comportamiento.**
+
+- Integridad
+
+**Deshabilitar los sistemas de administración de archivos.**
+
+- Disponibilidad
+
+**Alterar la información que se transmite desde una base de datos.**
+
+- Integridad
+
+**Robos de sesiones**
+
+- Autenticación
+
+---
+
+## Especificar los activos, los daños, el impacto y vulnerabilidad para el siguiente caso
+
+Un empleado ha recibido un correo de remitente desconocido con un adjunto que resulta ser un virus, y dado que no hay un antivirus funcionando en el PC, este se infecta borrándose por completo el disco y no pudiéndose recuperar los datos de clientes 
+
+**ACTIVO**
+
+- Ordenador del empleado
+- Información del ordenador
+- Información de los clientes
+
+**VULNERABILIDAD**
+
+- Falta de antivirus en el ordenador
+- No tener un filtrado de correos
+
+**AMENAZA**
+
+- Amenaza lógica intencionada, causada por un origen externo
+- Degradación – 5
+- Probabilidad – Media 
+
+**IMPACTO**
+
+- Valor del activo - 5
+- Degradación- 5
+- TOTAL - 25
+
+---
+
+## De los siguientes mecanismos de seguridad indicar cuales son preventivos, detectores y correctores 
+
+**Cortafuegos** 
+- Preventivo 
+**Antivirus**
+- Detector 
+**Extintor**
+- Corrector 
+**Detector de humos**
+- Detector 
+**Restauración de copias de seguridad**
+- Corrector 
+**Lista de control de acceso**
+– Preventivo 
+
+---
+
+## Acceder a la WEB de INCIBE y buscar artículos y guías relacionados con las políticas de seguridad. Indica en 5 líneas un resumen de alguna política que te haya llamado la atención
+
+**Política de seguridad:**
+
+[Buenas prácticas de las redes sociales](#https://www.incibe.es/sites/default/files/contenidos/politicas/documentos/buenas_practicas_rrss.pdf)
+
+Esta política tiene como objetivos, el garantizar la seguridad de los perfiles de las empresas en las redes sociales y conocer las principales amenazas y fallos en su uso que pueden afectar a la actividad e imagen de la empresa. 
+
+Esta política incluye una serie de controles, para revisar que esta política se cumpla, los cuales se clasifican en:
+
+**B – Básico** 
+- Se puede aplicar a través del uso de funcionalidades sencillas. 
+**A – Avanzado** 
+- Se necesitan programas que requieren configuraciones complejas.
+
+Y pueden tener diferentes alcances:
+
+- Procesos – PRO: Personal de gestión. 
+- Tecnología – TEC: Personal técnico especializado. 
+- Personas – PER: A todo el personal.
+
+---
+
+## Buscar diferencia entre herramientas de pentesting y las de análisis forense.
+
+El Pentesting es un test de penetración que evalúa los posibles fallos de seguridad informática, simulando un ataque cibernético para poder identificar y evaluar las vulnerabilidades que surjan.  
+
+Mientras tanto, el análisis forense utiliza herramientas para comprender lo que sucedió en un sistema.  
+
+El pentesting se enfoca en encontrar y explotar vulnerabilidades y el análisis forense se centra en recopilar y analizar datos después de un incidente de seguridad.
+
+## Visita la [siguiente página](https://www.elladodelmal.com/search/label/An%C3%A1lisis%20Forense)
+
+### ¿Quién es el creador? ¿Por qué es famoso?
+
+El creador de la página es Chema Alonso, el cual, es un hacker español, miembro del Comité Ejecutivo de Telefónica y experto en ciberseguridad.  
+
+Es Ingeniero Técnico de Sistemas Informáticos por la Universidad Politécnica de Madrid y Doctor en Seguridad Informática por la Universidad Rey Juan Carlos. 
+
+Desde 2016, ocupa la posición de Chief Digital Officer de Telefónica.  
+
+En este cargo lidera la innovación, datos, plataformas, y productos y servicios digitales, liderando la estrategia de digitalización de los procesos de venta de productos y servicios. 
+
+Además, ha sido premiado durante 14 años por Microsoft como Most Valuable Professional (MVP) en el área de seguridad corporativa. 
+
+Además de que su blog, ha ganado en 2 ocasiones el premio bitácoras al mejor blog de seguridad informática. 
 
 
-### Algoritmos
 
 
 
-### Ejercicio de paginación
 
-Tenemos un sistema operativo de 32 bits en el que la asignación de memoria se realiza mediante paginación. 
-Cada página/marco ocupa 1 MB. De los 32 bits de la dirección de memoria, se usan 12 bits para especificar la página. 
-Se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de páginas:
 
-| Página | Marco |
-| ------ | ----- |
-| 0x59B  | 0x123 |
-| 0x59C  | 0xA05 |
-| 0x59D  | 0x59F |
-| 0x59E  | 0x799 |
-| 0x59F  | 0xF8B |
-| 0x59A0 | 0x22D |
 
-Dada la dirección lógica 0x59F2A5A0, obtener la dirección física correspondiente:
-- 0xF8B2A5A0
 
-Dada la dirección lógica 0x5A02A59F, obtener la dirección física correspondiente.
-- 0x22DA59F
 
-Dada la dirección lógica 0x59C4DE87, obtener la dirección física correspondiente
-- 0xA054DE87
 
-### Ejercicio de segmentación
 
-En un sistema de de 32 bits se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de segmentos (el tamaño viene expresado de forma relativa la base):
 
-| Segmento | Base       | Tamaño     | Límite     |
-| -------- | ---------- | ---------- | ---------- |
-| 0xA321   | 0x85434520 | 0x00005218 | 0x85439738 |
-| 0xA322   | 0xBA41002E | 0x00003FD1 | 0xBA413FFF |
-| 0xA323   | 0x226A5722 | 0x00004D3D | 0x226AA45F |
-| 0xA324   | 0xF01809AC | 0x00000053 | 0xF01809FF |
-| 0xA325   | 0x226CA460 | 0x0000AAFF | 0x226D4F5F |
-| 0xA326   | 0x4951B4D8 | 0x0000F424 | 0x4952A8FC |
 
-**Obtener las direcciones físicas absolutas donde termina cada segmento**
 
-**Dada la dirección lógica 0xA3231265, obtener la dirección física correspondiente.**
 
-- 4D3D-1265= 15064 Está dentro del segmento 
-- 226A5722+1265 = 226A6987 
-- Su dirección física sería 0x226A6987
 
-**Dada la dirección lógica 0xA3240265, obtener la dirección física correspondiente.**
 
-- 53-0265= -212 
-- Se sale del segmento
 
-**Dada la dirección lógica 0xA325AAFA, obtener la dirección física correspondiente.**
 
-- AAFF – AAFA = 5 Esta dentro del segmento 
-- 226CA460 + AAFA = 226D 4F5A 
-- Su dirección física sería 0x226D4F5A
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
