@@ -7,7 +7,7 @@ Esta clave simétrica permite descifrar los archivos que se pasen entre ellos.
 
 Vamos a hacerlo de 2 formas: 
 - Interfaz gráfica de Kleopatra gpg4win 
-- Comandos de gpg ç
+- Comandos de gpg
 
 ### Significado de los colores:
 
