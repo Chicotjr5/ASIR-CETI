@@ -44,7 +44,7 @@ Lo primero que tenemos que hacer, es crear un nuevo par de claves, las cuales te
 
 Una vez creadas nuestras claves, se nos proporcionará la huella digital de la misma. 
 
-<img width="269" height="237" alt="image" src="https://github.com/user-attachments/assets/a1121b24-9656-4411-8932-9c9e74809eba" />
+<img width="294" height="255" alt="image" src="https://github.com/user-attachments/assets/bd2b5b2d-3392-4955-a727-00abaca2fe4b" />
 
 ↓
 
@@ -56,7 +56,7 @@ Una vez creadas nuestras claves, se nos proporcionará la huella digital de la m
 
 ↓
 
-<img width="522" height="127" alt="image" src="https://github.com/user-attachments/assets/3496f20b-5cfc-40fc-9cff-54fbf5d3dcd4" />
+<img width="270" height="242" alt="image" src="https://github.com/user-attachments/assets/f2ffab5e-911f-4c16-88ac-5cbaaf96981c" />
 
 ---
 
@@ -85,11 +85,12 @@ El siguiente paso es realizar la importación de las claves públicas.
 
 ↓
 
-<img width="572" height="169" alt="image" src="https://github.com/user-attachments/assets/b47f82ed-bde6-4a01-9682-79f82b2542d0" />
+<img width="629" height="185" alt="image" src="https://github.com/user-attachments/assets/92f42752-86af-4d85-ad1a-b166732ce779" />
 
 ↓
 
-<img width="697" height="88" alt="image" src="https://github.com/user-attachments/assets/c77526f9-c0cd-4770-a825-46257738e96b" />
+<img width="655" height="81" alt="image" src="https://github.com/user-attachments/assets/5b52b2f6-0f1b-4604-a7fe-2d89333f7ad0" />
+
 
 ---
 
@@ -106,7 +107,8 @@ Esta será la clave con la que cifraremos/descifraremos los archivos que nos man
 
 ↓
 
-<img width="514" height="348" alt="image" src="https://github.com/user-attachments/assets/1369c02a-e710-47f1-9f93-b5a0c0b34d87" />
+<img width="482" height="325" alt="image" src="https://github.com/user-attachments/assets/123c0529-b93e-4416-9052-1709a1ccd399" />
+
 
 ↓
 
@@ -130,7 +132,7 @@ Como esta clave se ha cifrado con nuestras claves privadas, se puede descifrar c
 
 ↓
 
-<img width="582" height="322" alt="image" src="https://github.com/user-attachments/assets/0e8ef3ab-07ff-46e5-b5e9-361e0a42fe16" />
+<img width="547" height="301" alt="image" src="https://github.com/user-attachments/assets/19eb4c09-e220-4715-9f7f-a723bbec247c" />
 
 ↓
 
@@ -153,11 +155,11 @@ Seguiremos el mismo método que antes para cifrar la imagen, pero esta vez no la
 
 ↓
 
-<img width="475" height="305" alt="image" src="https://github.com/user-attachments/assets/196cd915-8ae9-40c7-a3df-36f3048f4cb0" />
+<img width="448" height="288" alt="image" src="https://github.com/user-attachments/assets/e4319b7f-3d00-4f73-bfa4-7b95d66d7e71" />
 
 ↓
 
-<img width="449" height="295" alt="image" src="https://github.com/user-attachments/assets/a53ef2dd-4813-48a9-8c7e-54fb21e5729d" />
+<img width="421" height="276" alt="image" src="https://github.com/user-attachments/assets/0f256682-9027-4fbd-93c0-d1398fda7e77" />
 
 ↓
 
@@ -202,7 +204,8 @@ Solo que esta vez, no descifraremos con la clave privada, si no que lo haremos c
 
 ↓
 
-<img width="670" height="286" alt="image" src="https://github.com/user-attachments/assets/ad425d0a-3f13-4047-99ec-6c656931273e" />
+<img width="633" height="270" alt="image" src="https://github.com/user-attachments/assets/41fe6542-6bf6-4367-8a9a-6a162155b998" />
+
 
 Y obtenemos la imagen descifrada.
 
@@ -228,7 +231,8 @@ gpg –full generate-key
 ```
 que nos ira mostrando diferentes opciones para crear la clave a nuestro gusto
 
-<img width="575" height="593" alt="image" src="https://github.com/user-attachments/assets/d9c1e89c-3809-48a4-b1a1-16896d1e026e" />
+<img width="580" height="426" alt="image" src="https://github.com/user-attachments/assets/e781727e-f66a-4b9c-8de8-ecac61fb8f65" />
+
 
 Una vez creadas, podemos verlas con los comandos:
 
@@ -253,11 +257,11 @@ Para poder hacerlo, usaremos el comando:
 gpg –export -a “Nombre de usuario” > clave_pub-key
 ```
 
-<img width="630" height="41" alt="image" src="https://github.com/user-attachments/assets/5fc694bc-5705-4948-a563-a95f1c38f20e" />
+<img width="631" height="38" alt="image" src="https://github.com/user-attachments/assets/b90bc1a0-db26-4aeb-a44a-95cc613c609a" />
 
 ↓
 
-<img width="628" height="36" alt="image" src="https://github.com/user-attachments/assets/6d6e2eb4-ce4e-497b-8418-5e43ca889a7d" />
+<img width="628" height="38" alt="image" src="https://github.com/user-attachments/assets/8800e78d-7681-4201-900f 95ed1aa02a5b" />
 
 Se nos generará un archivo con nuestra clave pública 
 
@@ -273,19 +277,19 @@ Se nos generará un archivo con nuestra clave pública
 
 Ahora, nos compartiremos las claves a través de correo electrónico. 
 
-<img width="442" height="204" alt="image" src="https://github.com/user-attachments/assets/417e3a68-6450-4e65-b05f-487d319ade75" />
+<img width="443" height="205" alt="image" src="https://github.com/user-attachments/assets/2c678be7-0dfe-4b49-9d34-2a115dd8087b" />
 
 ↓
 
-<img width="420" height="212" alt="image" src="https://github.com/user-attachments/assets/204577ee-c10d-41ac-80cf-e38c74ca0852" />
+<img width="421" height="208" alt="image" src="https://github.com/user-attachments/assets/e43944d2-9fc1-4d38-b78b-6843e36feddc" />
 
 Para poder importarlas, usaremos el siguiente comando. 
 
-<img width="626" height="100" alt="image" src="https://github.com/user-attachments/assets/f3fe7599-175c-45ee-bfe4-e31d870ec64a" />
+<img width="629" height="102" alt="image" src="https://github.com/user-attachments/assets/652d563d-425b-4a4b-a333-95f68dd88582" />
 
 ↓
 
-<img width="668" height="106" alt="image" src="https://github.com/user-attachments/assets/c08b0c6d-226e-45b1-935a-999e4eb8e99d" />
+<img width="667" height="108" alt="image" src="https://github.com/user-attachments/assets/2eace912-2b96-42d6-a168-68b9ccc721f0" />
 
 Ya están importadas.
 
@@ -329,7 +333,7 @@ Para poder descifrar la clave simétrica, usaremos el comando
 gpg –output clave_j.txt -d passJ.txt.gpg
 ```
 
-<img width="630" height="66" alt="image" src="https://github.com/user-attachments/assets/def0c84d-ddca-44e3-8bd1-84d67c3f8c48" />
+<img width="629" height="68" alt="image" src="https://github.com/user-attachments/assets/008665e2-bd0b-42d1-a0db-d2a2270f87b1" />
 
 Y la obtenemos
 
