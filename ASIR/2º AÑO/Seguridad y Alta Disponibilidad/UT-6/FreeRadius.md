@@ -1,6 +1,6 @@
 ## Diagrama lógico de red con todos los elementos implicados.
 
-<img width="799" height="439" alt="image" src="https://github.com/user-attachments/assets/5c04ca09-0c8e-41ef-a9db-513398088ea0" />
+<img width="798" height="440" alt="image" src="https://github.com/user-attachments/assets/8e4b263c-5d71-4a3f-a86d-9f05f4556f8b" />
 
 ---
 
