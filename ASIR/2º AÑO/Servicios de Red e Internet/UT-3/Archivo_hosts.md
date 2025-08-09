@@ -1,9 +1,13 @@
 ## Hacer una copia de los ficheros hosts de cada Máquina Virtual
 
 En esta práctica, vamos a crear un sistema de resolución de nombres planos. 
+
 Que consiste en un sistema, donde no hay ninguna jerarquía y cada equipo se identifica por su nombre y se guarda su IP para comunicarse con él. 
+
 Antes de realizar ninguna configuración, vamos a crear una copia de seguridad del archivo **hosts** de cada una de nuestras máquinas. 
+
 En Linux, este archivo se encuentra en **/etc/hosts** 
+
 Y en Windows, se encuentra en **C:\Windows\System32\drivers\etc\hosts**. 
 Entramos a cada directorio y creamos la copia.
 
