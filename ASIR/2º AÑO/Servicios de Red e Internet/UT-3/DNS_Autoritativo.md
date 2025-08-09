@@ -1,70 +1,164 @@
+## Busca en la página web de [IANA](http://www.iana.org/domains/root/db) información sobre las entidades que hacen de registro para los siguientes dominios: 
 
-## Índice
-- [[Practica 1#Índice|Índice]]
-- [[Practica 1#Algoritmos|Algoritmos]]
-- [[Practica 1#Ejercicio de paginación|Ejercicio de paginación]]
-- [[Practica 1#Ejercicio de segmentación|Ejercicio de segmentación]]
+<img width="594" height="196" alt="image" src="https://github.com/user-attachments/assets/deb4a864-c992-4b7b-a9bd-b8eb498dc599" />
 
+---
 
-### Algoritmos
+## Busca en la web del registro correspondiente, información sobre el usuario registrante y sobre el registrador de los dominios: juandecolonia.es, google.com
 
 
+Para poder llegar a estos datos, tenemos que ir a la web del registrador correspondiente, en este caso, https://www.dominios.es/es 
+Una vez en la página, buscamos el dominio juandecolonia.es, lo que nos llevará a esta [página](https://nic.es/sgnd/dominio/publicBuscarDominios.action?tDominio.nombreDominio=juandecolonia.es&flag=activado), donde podemos ver los dominios disponibles 
 
-### Ejercicio de paginación
+<img width="593" height="252" alt="image" src="https://github.com/user-attachments/assets/9099f188-fd14-48bd-8c11-16faaecbb456" />
 
-Tenemos un sistema operativo de 32 bits en el que la asignación de memoria se realiza mediante paginación. 
-Cada página/marco ocupa 1 MB. De los 32 bits de la dirección de memoria, se usan 12 bits para especificar la página. 
-Se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de páginas:
+ Si damos a **Ver Datos** en la página, tendremos que completar un captcha para acceder a los datos.
+ 
+<img width="593" height="156" alt="image" src="https://github.com/user-attachments/assets/e8c39e2b-6e8a-4890-b893-71e10623a14d" />
 
-| Página | Marco |
-| ------ | ----- |
-| 0x59B  | 0x123 |
-| 0x59C  | 0xA05 |
-| 0x59D  | 0x59F |
-| 0x59E  | 0x799 |
-| 0x59F  | 0xF8B |
-| 0x59A0 | 0x22D |
+Al completar el captcha, nos saldrá una página con los datos que estamos buscando. 
 
-Dada la dirección lógica 0x59F2A5A0, obtener la dirección física correspondiente:
-- 0xF8B2A5A0
+<img width="556" height="556" alt="image" src="https://github.com/user-attachments/assets/20d32ccc-737b-4e50-a1d5-5755c5bc44e5" />
 
-Dada la dirección lógica 0x5A02A59F, obtener la dirección física correspondiente.
-- 0x22DA59F
+Para ver los datos de Google, tenemos qur ir a la página http://www.verisigninc.com/ que es el registrador del dominio. 
+Dentro de la página, vamos a **Herramientas de dominio>Whois**
 
-Dada la dirección lógica 0x59C4DE87, obtener la dirección física correspondiente
-- 0xA054DE87
+<img width="455" height="239" alt="image" src="https://github.com/user-attachments/assets/66b64fe7-6b41-4c95-984d-475f7c43904a" />
 
-### Ejercicio de segmentación
+Nos llevará a una página, donde podemos buscar muchos otros dominios, a parte de los .com. Ponemos el dominio google.com y nos salen los siguientes datos
 
-En un sistema de de 32 bits se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de segmentos (el tamaño viene expresado de forma relativa la base):
+<img width="426" height="554" alt="image" src="https://github.com/user-attachments/assets/7368eaa8-b3f0-4c82-8551-dc82400a095c" />
 
-| Segmento | Base       | Tamaño     | Límite     |
-| -------- | ---------- | ---------- | ---------- |
-| 0xA321   | 0x85434520 | 0x00005218 | 0x85439738 |
-| 0xA322   | 0xBA41002E | 0x00003FD1 | 0xBA413FFF |
-| 0xA323   | 0x226A5722 | 0x00004D3D | 0x226AA45F |
-| 0xA324   | 0xF01809AC | 0x00000053 | 0xF01809FF |
-| 0xA325   | 0x226CA460 | 0x0000AAFF | 0x226D4F5F |
-| 0xA326   | 0x4951B4D8 | 0x0000F424 | 0x4952A8FC |
+---
 
-**Obtener las direcciones físicas absolutas donde termina cada segmento**
+## Obtener la información que devuelven de DNS con www.google.com con las tres herramientas: nslookup, dig, host
 
-**Dada la dirección lógica 0xA3231265, obtener la dirección física correspondiente.**
+Con el comando 
+```bash
+host
+```
+solo podemos ver los nombres de dominio de los DNS 
 
-- 4D3D-1265= 15064 Está dentro del segmento 
-- 226A5722+1265 = 226A6987 
-- Su dirección física sería 0x226A6987
 
-**Dada la dirección lógica 0xA3240265, obtener la dirección física correspondiente.**
+<img width="583" height="118" alt="image" src="https://github.com/user-attachments/assets/bd743a25-09af-4843-9849-ae214d4a3e6a" />
 
-- 53-0265= -212 
-- Se sale del segmento
+Con 
 
-**Dada la dirección lógica 0xA325AAFA, obtener la dirección física correspondiente.**
+```bash
+nslookup
+````
+podemos ver información sobre si es una respuesta autoritativa o no, además del servidor DNS utilizado, el dominio consultado y los servidores de nombres para el dominio
 
-- AAFF – AAFA = 5 Esta dentro del segmento 
-- 226CA460 + AAFA = 226D 4F5A 
-- Su dirección física sería 0x226D4F5A
+<img width="604" height="220" alt="image" src="https://github.com/user-attachments/assets/05dbfd0f-05f2-40ea-932e-435d20677dc0" />
+
+Con el comando 
+
+```
+dig
+```
+
+podemos ver que sale algo más de información que con los otros comandos como el tiempo que ha tardado en hacer la consulta, el servidor al que ha preguntado, cuando y el tamaño del mensaje, a parte de los nombres DNS de Google.
+
+<img width="515" height="336" alt="image" src="https://github.com/user-attachments/assets/a86c2c9e-31ca-4321-931d-5cab5ae7979b" />
+
+---
+
+## Usando dig obtener la secuencia que se sigue para resolver la dirección www.google.com.  Prueba también a hacerlo desde el Dig on-line: http://www.kloth.net/services/dig.php
+
+En la página http://www.kloth.net/services/dig.php veremos lo siguiente:
+
+<img width="562" height="646" alt="image" src="https://github.com/user-attachments/assets/7fa277e7-1d74-4f67-bc88-f9e4ec01dce0" />
+
+Vemos que se nos ha generado el siguiente comando:
+
+```bash
+dig @8.8.8.8 www.google.com A +trace 
+```
+
+Si este comando lo ponemos en un terminal de Linux, saldrá lo siguiente
+
+<img width="649" height="678" alt="image" src="https://github.com/user-attachments/assets/cc8f66dd-496d-4fe2-9493-f149123f32db" />
+
+Vemos que sacan la misma información, pero la consulta de Linux ha tardado más y los servidores donde ha preguntado son distintos. 
+
+---
+
+## Averiguar con alguna herramienta DNS la dirección del servidor de aytoburgos.es y la de sus servidores DNS autoritativos
+
+Para ver la dirección del servidor **aytoburgos.es** usaremos el comando 
+
+```bash
+nslookup aytoburgos.es
+```
+
+<img width="419" height="120" alt="image" src="https://github.com/user-attachments/assets/c9016f77-d6c4-4e4e-a340-86bce1cfe34a" />
+
+Y para ver los servidores autoritativos, usaremos el siguiente comando: 
+
+```bash
+nslookup –type=ns aytoburgos.es
+```
+
+<img width="497" height="169" alt="image" src="https://github.com/user-attachments/assets/6011389a-c908-4c3c-89cb-279fb2bf5da2" />
+
+Para poder ver la dirección del servidor de aytoburgos.es, podríamos hacerlo de 2 formas. 
+Mandando un ping, por lo que nos sacaría la dirección a donde está mandando el ping 
+O con **nslookup**.
+
+La diferencia, es que si el equipo no está encendido, **ping** no podrá mandar los paquetes al equipo, puesto está apagado. 
+En cambio, con **nslookup**, no mandamos paquetes al equipo, si no que buscamos en un registro la dirección del equipo, por lo que es más efectivo y útil 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
