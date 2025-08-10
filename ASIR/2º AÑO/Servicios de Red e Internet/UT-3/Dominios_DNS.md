@@ -257,82 +257,176 @@ Y si ahora hacemos un nslookup poniendo todo el nombre, obviamente que nos funci
 
 <img width="490" height="95" alt="image" src="https://github.com/user-attachments/assets/2b573c78-8a10-4a33-81ab-d4c7fed2998e" />
 
+Todo depende de que el sufijo DNS tenga configurado mi nombre de dominio, en mi caso, sri-03.net. 
+Como previamente lo he configurado, funciona de ambas formas. 
 
+---
 
+## Modificar el cliente Windows para que actualice dinámicamente el registro A y el PTR. Comprobar.
 
+Primero, comprobamos que nuestro cliente W7 no se encuentra en el registro de la zona.
 
+<img width="480" height="284" alt="image" src="https://github.com/user-attachments/assets/675d9baa-d2de-4983-835a-65ab8ba1f04f" />
 
+Como no está, vamos a hacer que, de forma dinámica, se cree ese registro, tanto en la zona directa como en la inversa. 
+Vamos a las propiedades de la configuración TCP/IP>DNS y tenemos que marcar la opción **Registrar en DNS las direcciones de esta conexión**. 
 
+<img width="370" height="338" alt="image" src="https://github.com/user-attachments/assets/1e3305be-9a33-4732-a2b8-d5cbfc96f7d2" />
 
+Y para guardar estos cambios, ejecutamos el comando 
 
+```bash
+ipconfig /registerdns
+```
 
+<img width="612" height="108" alt="image" src="https://github.com/user-attachments/assets/f4914e8a-f5ef-4144-b9df-8538be0fd336" />
 
+---
 
+## Modificar el cliente Windows para que actualice dinámicamente el registro A y el PTR. Comprobar.
 
+Volvemos al Servidor DNS y vemos que en la zona, se ha creado un registro para nuestro W7.
 
+<img width="674" height="27" alt="image" src="https://github.com/user-attachments/assets/25d4ee0e-a736-49cb-afcc-8ebe0283f2b9" />
 
+---
 
+## Realizar verificaciones directas e inversas con nslookup desde el cliente
 
+Vamos a realizar verificaciones directas e inversas con W7, para ver si funciona correctamente o no. 
+A un equipo aulapcXX que tiene registro directo e inverso. 
 
+<img width="422" height="180" alt="image" src="https://github.com/user-attachments/assets/b947dcda-06ca-43d6-b5e7-f49b862c235c" />
 
+A un equipo aulapcXX que tiene registro directo, pero no inverso. 
 
+<img width="582" height="163" alt="image" src="https://github.com/user-attachments/assets/8f8c5755-a689-4cfc-ba57-1a8777582fc3" />
 
+A una máquina Ubuntu de mi equipo.
 
+<img width="440" height="179" alt="image" src="https://github.com/user-attachments/assets/6ba9c548-26a0-4237-a85f-c57ce565b897" />
 
+A una máquina de mi compañero.
 
+<img width="481" height="207" alt="image" src="https://github.com/user-attachments/assets/77160634-26ae-4642-b498-231061ac1e11" />
 
+---
 
+## Configurar el cliente Linux poniendo la dirección del servidor DNS de Windows Server. 
 
+Lo primero que tenemos que hacer es configurar el archivo **/etc/netplan/01-networkmanager-all.yaml**
 
+<img width="837" height="33" alt="image" src="https://github.com/user-attachments/assets/43266936-1340-4101-bfbf-b19c45fa72b0" />
 
+El cual tendrá la siguiente configuración.
 
+<img width="505" height="357" alt="image" src="https://github.com/user-attachments/assets/97ec94dd-26d9-44f3-8660-65b5b12be32a" />
 
 
+Para guardar la configuración, ejecutamos el comando 
 
+```bash
+netplan apply.
+```
 
+Lo segundo que tenemos que hacer es editar el archivo **/etc/resolv.conf**
 
+<img width="680" height="28" alt="image" src="https://github.com/user-attachments/assets/18c68080-9e06-40bb-8897-050952fe7cb1" />
 
+Y poner la IP del servidor DNS y que busque en sri-03.net. 
 
+<img width="274" height="79" alt="image" src="https://github.com/user-attachments/assets/43d329bc-5e97-4bb5-ac3e-1ad93e967511" />
 
+---
 
+## Con nslookup probar si conoce aulapc02. Justifícalo 
 
+Otra vez nos pasa lo mismo que antes, cuando no tendría que conocer a aulapc02, si lo conoce. 
+La explicación, aunque la misma que antes, es la siguiente: 
 
+Esto ocurre porque mi sistema está configurado para buscar automáticamente en el dominio DNS especificado cuando se proporciona un nombre de dominio no completamente calificado, pudiendo resolver nombres de dominio parciales gracias a la configuración de búsqueda de DNS en tu sistema. 
 
+<img width="665" height="136" alt="image" src="https://github.com/user-attachments/assets/92d1b571-04c7-485b-9e16-38b786148430" />
 
+---
 
+## Con nslookup probar si conoce aulapc02.sri-XX.net . Justifícalo. 
 
+Otra vez la misma situación, si ha funcionado con el nombre parcial, también lo hará con el nombre completo.
 
+<img width="663" height="135" alt="image" src="https://github.com/user-attachments/assets/55d65109-1eba-415b-a6d2-c1e7c855ef3d" />
 
+Todo depende de que el sufijo DNS tenga configurado mi nombre de dominio, en mi caso, sri-03.net. 
+Como previamente lo he configurado, funciona de ambas formas. 
 
+---
 
+## Realizar verificaciones directas e inversas con nslookup desde el cliente 
 
+Verificación a equipo aulapcXX con registro directo pero no inverso
 
+<img width="498" height="161" alt="image" src="https://github.com/user-attachments/assets/761efe84-fcd5-42c3-84f8-fed7372fd728" />
 
+Verificación a equipo aulapcXX con registro directo e inverso 
 
+<img width="502" height="160" alt="image" src="https://github.com/user-attachments/assets/5ff4ea7f-95c9-49d9-9a5f-484d4a697db9" />
 
+Verificación con una máquina virtual mía.
 
+<img width="481" height="154" alt="image" src="https://github.com/user-attachments/assets/1720a234-8beb-4cac-ba84-0078030e930b" />
 
+Verificación con una máquina de mi compañero.
 
+<img width="525" height="164" alt="image" src="https://github.com/user-attachments/assets/6dde2093-700f-4cf7-a9c4-4a5225c584b3" />
 
+---
 
+## Registros DNS en el servidor de la situación actual: pantallas de la consola DNS de la zona directa e inversa. Mostrar los ficheros de texto almacenados físicamente en el servidor DNS
 
+**Zona directa**
 
+<img width="594" height="361" alt="image" src="https://github.com/user-attachments/assets/20c7c61d-6d5f-48ed-80a2-879222f4ea08" />
 
+**Zona inversa**
 
+<img width="666" height="214" alt="image" src="https://github.com/user-attachments/assets/f782709b-3ae7-4bf7-ba6a-372304125a4a" />
 
+**Archivo de zona directa**
 
+<img width="380" height="451" alt="image" src="https://github.com/user-attachments/assets/218f1624-c540-4afb-8749-61ee6c81c6ce" />
 
+**Archivo de zona inversa**
 
+<img width="537" height="379" alt="image" src="https://github.com/user-attachments/assets/1a13dd25-e974-4f06-b9a7-992e6f91170f" />
 
+---
 
+## Ver si un cliente resuelve la dirección ib05.jcolonia.local. Configurar un reenviador a 192.168.32.13 y ver si resuelve aulapc02.sri-XX.net, www.yahoo.es y ib05.jcolonia.local
 
+Usaremos el cliente W7. 
+Si hacemos un nslookup ib05.jcolonia.local, este no podrá resolver la dirección.
 
+<img width="719" height="76" alt="image" src="https://github.com/user-attachments/assets/1d92a22c-abc0-4988-8989-49f1ec962aea" />
 
+Para hacer que la resuelva, tenemos que crear un reenviador.
 
+<img width="355" height="37" alt="image" src="https://github.com/user-attachments/assets/f55c7f12-77df-40d1-806e-2f848c30ad48" />
 
+↓
 
+<img width="332" height="152" alt="image" src="https://github.com/user-attachments/assets/58cf14ed-03c2-448a-9c07-7c52aa9b0121" />
 
+Una vez creado, este ya puede resolver la dirección.
 
+Y para terminar, hacemos 2 comprobaciones más.
+
+A www.yahoo.es
+
+<img width="450" height="152" alt="image" src="https://github.com/user-attachments/assets/cb3baf4a-d967-4a61-9f98-c90568d5fa59" />
+
+Y a **aulapc02.sri-02.net**
+
+<img width="536" height="92" alt="image" src="https://github.com/user-attachments/assets/e4687cc3-907c-49b5-b770-3c25ee1055e8" />
 
 
 
