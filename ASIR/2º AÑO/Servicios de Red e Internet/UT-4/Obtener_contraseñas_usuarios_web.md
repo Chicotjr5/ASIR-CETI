@@ -1,70 +1,160 @@
+## Con un sniffer, hallar la clave de los usuarios para autentificarse en /privado 
 
-## Índice
-- [[Practica 1#Índice|Índice]]
-- [[Practica 1#Algoritmos|Algoritmos]]
-- [[Practica 1#Ejercicio de paginación|Ejercicio de paginación]]
-- [[Practica 1#Ejercicio de segmentación|Ejercicio de segmentación]]
+En esta práctica, vamos a capturar el tráfico entre la máquina cliente y el servidor, para poder vislumbrar las credenciales de autenticación de los usuarios. 
+Lo primero que tenemos que hacer, es instalar el sniffer con el que vamos a capturar el tráfico. 
 
-
-### Algoritmos
+En este caso, **Wireshark**.
 
 
+<img width="622" height="39" alt="image" src="https://github.com/user-attachments/assets/73db6119-cc35-4acd-be81-443d299326ef" />
 
-### Ejercicio de paginación
+Una vez instalado, lo iniciamos y empezamos a capturar el tráfico, filtrándolo por el **puerto 80**.
 
-Tenemos un sistema operativo de 32 bits en el que la asignación de memoria se realiza mediante paginación. 
-Cada página/marco ocupa 1 MB. De los 32 bits de la dirección de memoria, se usan 12 bits para especificar la página. 
-Se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de páginas:
 
-| Página | Marco |
-| ------ | ----- |
-| 0x59B  | 0x123 |
-| 0x59C  | 0xA05 |
-| 0x59D  | 0x59F |
-| 0x59E  | 0x799 |
-| 0x59F  | 0xF8B |
-| 0x59A0 | 0x22D |
+<img width="573" height="200" alt="image" src="https://github.com/user-attachments/assets/63ba1609-42c5-4464-839a-3d7dbf3cd767" />
 
-Dada la dirección lógica 0x59F2A5A0, obtener la dirección física correspondiente:
-- 0xF8B2A5A0
+Con el cliente, nos autenticaremos con el usuario **pedro/pedro1**.
 
-Dada la dirección lógica 0x5A02A59F, obtener la dirección física correspondiente.
-- 0x22DA59F
+Buscaremos el paquete que contiene las credenciales del usuario y las visualizamos.
 
-Dada la dirección lógica 0x59C4DE87, obtener la dirección física correspondiente
-- 0xA054DE87
 
-### Ejercicio de segmentación
+<img width="848" height="474" alt="image" src="https://github.com/user-attachments/assets/5cd3e1ab-69a5-4b04-825f-a94b77235818" />
 
-En un sistema de de 32 bits se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de segmentos (el tamaño viene expresado de forma relativa la base):
+---
 
-| Segmento | Base       | Tamaño     | Límite     |
-| -------- | ---------- | ---------- | ---------- |
-| 0xA321   | 0x85434520 | 0x00005218 | 0x85439738 |
-| 0xA322   | 0xBA41002E | 0x00003FD1 | 0xBA413FFF |
-| 0xA323   | 0x226A5722 | 0x00004D3D | 0x226AA45F |
-| 0xA324   | 0xF01809AC | 0x00000053 | 0xF01809FF |
-| 0xA325   | 0x226CA460 | 0x0000AAFF | 0x226D4F5F |
-| 0xA326   | 0x4951B4D8 | 0x0000F424 | 0x4952A8FC |
+## Usar autentificación con digest en /privado2
 
-**Obtener las direcciones físicas absolutas donde termina cada segmento**
+Ahora, vamos a hacer lo mismo, pero esta vez, con digest. 
+Con htpasswd, las contraseñas no viajan cifradas, en cambio, con digest sí. 
+Para poder utilizarlo, tenemos que habilitar el módulo **auth_digest.load** y reiniciar el servidor. 
 
-**Dada la dirección lógica 0xA3231265, obtener la dirección física correspondiente.**
 
-- 4D3D-1265= 15064 Está dentro del segmento 
-- 226A5722+1265 = 226A6987 
-- Su dirección física sería 0x226A6987
+<img width="708" height="148" alt="image" src="https://github.com/user-attachments/assets/89029f20-7a69-4ebe-9425-96db2026a16d" />
 
-**Dada la dirección lógica 0xA3240265, obtener la dirección física correspondiente.**
+Una vez habilitado, crearemos los usuarios y sus contraseñas con el siguiente comando. 
 
-- 53-0265= -212 
-- Se sale del segmento
 
-**Dada la dirección lógica 0xA325AAFA, obtener la dirección física correspondiente.**
+<img width="824" height="32" alt="image" src="https://github.com/user-attachments/assets/540414e1-25d5-4617-b199-9c6b1faf1031" />
 
-- AAFF – AAFA = 5 Esta dentro del segmento 
-- 226CA460 + AAFA = 226D 4F5A 
-- Su dirección física sería 0x226D4F5A
+Para que esta autenticación funcione, creaemos un archivo **.htpasswd** con las siguientes directivas:
+
+
+<img width="518" height="176" alt="image" src="https://github.com/user-attachments/assets/c5be9d63-3b96-4fc7-9e0b-de1256ba1032" />
+
+Y en el archivo de configuración del sitio, pondremos la directiva **AllowOverride**, para permitir el uso de estos archivos. 
+
+
+<img width="326" height="62" alt="image" src="https://github.com/user-attachments/assets/c838dc6c-a21e-470b-b407-da5222717132" />
+
+Reiniciaremos el servidor y nos autenticaremos en el sitio web.
+
+
+<img width="489" height="279" alt="image" src="https://github.com/user-attachments/assets/e8cae33c-6092-4c5b-8562-ae87102aeab9" />
+
+↓
+
+<img width="560" height="92" alt="image" src="https://github.com/user-attachments/assets/37128c13-537a-41ca-a90a-d687e22a0f59" />
+
+---
+
+## Con un sniffer, intentar capturar la clave en /privado2
+
+Si capturamos la conexión, veremos que la contraseña está cifrada y solo podemos ver el usuario del login. 
+Como bien indica en la propia captura, se usa el algoritmo **md5** para cifrar la contraseña
+
+
+<img width="573" height="471" alt="image" src="https://github.com/user-attachments/assets/41dff4d9-3fe9-4e2e-b145-884bafa55e0a" />
+
+---
+
+## ¿Por qué en digest y en Autn_Name usamos realm?
+
+El parámetro "realm" en el comando htdigest define el espacio de protección para las credenciales de autenticación en el archivo de resumen.  
+Cada "realm" representa una esfera de acceso con sus propias credenciales y usuarios autorizados. 
+
+En la directiva AuthName de Apache, "realm" se utiliza para mostrar información descriptiva al usuario al solicitar credenciales. Proporciona contexto sobre la identidad o área protegida, ayudando a los usuarios a comprender el propósito de la autenticación  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
