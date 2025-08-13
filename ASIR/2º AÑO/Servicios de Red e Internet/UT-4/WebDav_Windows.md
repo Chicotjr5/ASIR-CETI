@@ -1,72 +1,81 @@
+## Configuración de WebDav en Windows Server 2012
 
-## Índice
-- [[Practica 1#Índice|Índice]]
-- [[Practica 1#Algoritmos|Algoritmos]]
-- [[Practica 1#Ejercicio de paginación|Ejercicio de paginación]]
-- [[Practica 1#Ejercicio de segmentación|Ejercicio de segmentación]]
+### Crear usuario 
 
+En esta práctica vamos a crear un sitio web con webdav. 
+Pero antes de nada, vamos a crear un usuario, con el cual podremos conectarnos al sitio web.
 
-### Algoritmos
-
-
-
-### Ejercicio de paginación
-
-Tenemos un sistema operativo de 32 bits en el que la asignación de memoria se realiza mediante paginación. 
-Cada página/marco ocupa 1 MB. De los 32 bits de la dirección de memoria, se usan 12 bits para especificar la página. 
-Se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de páginas:
-
-| Página | Marco |
-| ------ | ----- |
-| 0x59B  | 0x123 |
-| 0x59C  | 0xA05 |
-| 0x59D  | 0x59F |
-| 0x59E  | 0x799 |
-| 0x59F  | 0xF8B |
-| 0x59A0 | 0x22D |
-
-Dada la dirección lógica 0x59F2A5A0, obtener la dirección física correspondiente:
-- 0xF8B2A5A0
-
-Dada la dirección lógica 0x5A02A59F, obtener la dirección física correspondiente.
-- 0x22DA59F
-
-Dada la dirección lógica 0x59C4DE87, obtener la dirección física correspondiente
-- 0xA054DE87
-
-### Ejercicio de segmentación
-
-En un sistema de de 32 bits se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de segmentos (el tamaño viene expresado de forma relativa la base):
-
-| Segmento | Base       | Tamaño     | Límite     |
-| -------- | ---------- | ---------- | ---------- |
-| 0xA321   | 0x85434520 | 0x00005218 | 0x85439738 |
-| 0xA322   | 0xBA41002E | 0x00003FD1 | 0xBA413FFF |
-| 0xA323   | 0x226A5722 | 0x00004D3D | 0x226AA45F |
-| 0xA324   | 0xF01809AC | 0x00000053 | 0xF01809FF |
-| 0xA325   | 0x226CA460 | 0x0000AAFF | 0x226D4F5F |
-| 0xA326   | 0x4951B4D8 | 0x0000F424 | 0x4952A8FC |
-
-**Obtener las direcciones físicas absolutas donde termina cada segmento**
-
-**Dada la dirección lógica 0xA3231265, obtener la dirección física correspondiente.**
-
-- 4D3D-1265= 15064 Está dentro del segmento 
-- 226A5722+1265 = 226A6987 
-- Su dirección física sería 0x226A6987
-
-**Dada la dirección lógica 0xA3240265, obtener la dirección física correspondiente.**
-
-- 53-0265= -212 
-- Se sale del segmento
-
-**Dada la dirección lógica 0xA325AAFA, obtener la dirección física correspondiente.**
-
-- AAFF – AAFA = 5 Esta dentro del segmento 
-- 226CA460 + AAFA = 226D 4F5A 
-- Su dirección física sería 0x226D4F5A
+<img width="370" height="337" alt="image" src="https://github.com/user-attachments/assets/3ae2dbfc-25a1-4723-92e0-e62a288c5f55" />
 
 
 
+### Crear directorio y dar permisos
+
+Creamos la carpeta donde se encontrará el sitio **webdav** y le damos permisos al usuario que acabamos de crear. 
+
+<img width="334" height="210" alt="image" src="https://github.com/user-attachments/assets/c278bf9b-953c-4aff-9d07-7588c0b2a07d" />
+
+↓
+
+<img width="403" height="463" alt="image" src="https://github.com/user-attachments/assets/a6b63d9e-4d2a-4431-bdea-805273aa52a5" />
 
 
+### Crear directorio virtual
+
+Dentro del sitio donde se encontrará el servidor webdav, crearemos un nuevo directorio virtual.
+
+
+<img width="368" height="141" alt="image" src="https://github.com/user-attachments/assets/a9fdf79e-782c-45d1-a234-5fe6deb4a460" />
+
+↓
+
+<img width="411" height="338" alt="image" src="https://github.com/user-attachments/assets/9a08cc16-d419-4e56-884b-184b0aac9746" />
+
+↓
+
+<img width="404" height="300" alt="image" src="https://github.com/user-attachments/assets/44542bf6-3715-4a33-8a43-3e25ff7318ae" />
+
+### Configurar sitio WebDav 
+
+Una vez creado el directorio virtual, podemos configurar el sitio webdav. 
+Vamos a **Reglas de creación de WebDav** dentro del directorio virtual y lo habilitamos. 
+
+
+<img width="95" height="96" alt="image" src="https://github.com/user-attachments/assets/8fa5e778-a50c-4620-a95d-e5889fbaeddf" />
+
+↓
+
+
+<img width="271" height="110" alt="image" src="https://github.com/user-attachments/assets/a79741ba-af0e-44c0-8def-87ded2e16b34" />
+
+Una vez habilitado, agregamos una regla de creación. 
+
+
+<img width="200" height="30" alt="image" src="https://github.com/user-attachments/assets/e735fa15-a923-4ca7-858c-d44ac3bd160e" />
+
+↓
+
+<img width="473" height="610" alt="image" src="https://github.com/user-attachments/assets/53167cae-63cc-4840-94e5-f9e658f3a944" />
+
+### Comprobar
+
+Una vez todo connfigurado, nos dispondremos a probar el sitio webdav. 
+Nos vamos a Linux y ponemos lo siguiente en el explorador de archivos. 
+
+
+<img width="252" height="53" alt="image" src="https://github.com/user-attachments/assets/a12a2fdc-90ab-4528-a6b5-118e3c4d727d" />
+
+Nos pedirá credenciales, así que ponemos las del suuario recientemente creado. 
+
+
+<img width="490" height="210" alt="image" src="https://github.com/user-attachments/assets/73930059-5bca-43ba-a1e8-c40be4060a17" />
+
+Entramos perfectamente y creamos un nuevo directorio.
+
+
+<img width="479" height="190" alt="image" src="https://github.com/user-attachments/assets/6caf46ed-3cc3-403b-8718-3103cf709f03" />
+
+Si volvemos a Windows Server, veremos que en la carpeta **webdav** esta el directorio que acabamos de crear.
+
+
+<img width="732" height="135" alt="image" src="https://github.com/user-attachments/assets/3c59feb5-0de8-46a0-90b1-ef832dc8d715" />
