@@ -1,70 +1,105 @@
+## T-POT 
 
-## Índice
-- [[Practica 1#Índice|Índice]]
-- [[Practica 1#Algoritmos|Algoritmos]]
-- [[Practica 1#Ejercicio de paginación|Ejercicio de paginación]]
-- [[Practica 1#Ejercicio de segmentación|Ejercicio de segmentación]]
+En la documentación, explico que es Kibana y cuáles son los principales HoneyPots que voy a usar, pero hay uno, que no le uso, pero me parece importante explicarlo, **T-POT** 
+
+Este es el Dashboard más importante, debido a que no se centra en 1 solo honeypot, o en un solo puerto/servicio, no. 
+Este **Dashboard** recoge información sobre TODOS los honeypots
+
+<img width="134" height="69" alt="image" src="https://github.com/user-attachments/assets/5274563b-10a6-42d3-81ea-1b68dab9fc0f" />
+
+Como es el más importante, he realizado algunos ataques de prueba (fuerza bruta y ddos) para ver qué datos ha recogido. 
+
+<img width="655" height="275" alt="image" src="https://github.com/user-attachments/assets/94e1357a-f1c3-4687-9fcc-d9a80890f825" />
+
+↓
+
+<img width="662" height="238" alt="image" src="https://github.com/user-attachments/assets/d43e032f-d104-4005-9873-61df7df3f929" />
+
+↓
+
+<img width="719" height="287" alt="image" src="https://github.com/user-attachments/assets/e6e6c2e0-fc49-4bf9-bf4e-ff5b405f0a31" />
+
+Lo primero que se ve es un Top-10 con los honeypots que más ataques han recibido, junto con el número de ataques/eventos recibidos.
+
+<img width="776" height="173" alt="image" src="https://github.com/user-attachments/assets/606a677e-bdf8-4e9a-a829-31330792bfe4" />
+
+Proseguimos y veo un gráfico de barras, en el cual se nos muestran los honeypots atacados y el número de ataques recibidos. 
+
+Algunos de los gráficos son repetitivos, porque nos muestran información que ya sabemos, pero de otra forma.
+
+<img width="627" height="343" alt="image" src="https://github.com/user-attachments/assets/35cceb11-2816-4940-b92f-f763de19e33f" />
+
+El siguiente gráfico es sobre el nº de ataques recibidos y el nº de IP implicadas en el ataque.
+
+<img width="607" height="327" alt="image" src="https://github.com/user-attachments/assets/4391b037-1080-4eb3-9563-9a4e0cbfeabe" />
+
+También hay un pequeño mapa, en el cual se nos muestran desde donde se han realizado los ataques al HoneyPot.
+
+<img width="690" height="383" alt="image" src="https://github.com/user-attachments/assets/7cd4272e-a283-490b-9e2f-17dfa6209c1e" />
+
+Paso a la siguiente parte y ahora vemos un histograma en el que se nos muestran los puertos atacados, el nº de ataques y el día en el que han sido atacados. 
+
+<img width="727" height="396" alt="image" src="https://github.com/user-attachments/assets/489f3d6e-6dca-410b-8aed-7235de99a4d5" />
+
+El siguiente es otro histograma similar al anterior, pero en vez de mostrarnos los puertos atacados, nos muestra los honeypots atacados. 
+
+<img width="669" height="359" alt="image" src="https://github.com/user-attachments/assets/561ea693-6592-47ea-b185-3a290eb2ce90" />
+
+El siguiente gráfico es otro sobre los honeypots, pero esta vez está distribuido en forma de Dónut (a esto me refería con lo de información repetida).
+
+<img width="484" height="372" alt="image" src="https://github.com/user-attachments/assets/6feed9c0-cebf-48e6-a0ea-f3468d1bf98d" />
+
+Este gráfico es algo más interesante, debido a que nos muestra desde que sistemas operativos se han lanzado los ataques.
+
+Podemos observar, que casi todos se han realizado desde Linux, mientras que unos pocos restantes lo han hecho desde Windows. 
+
+Esto que vemos, es la huella digital.
+
+<img width="332" height="245" alt="image" src="https://github.com/user-attachments/assets/41f61953-ce53-4dea-8d77-054bfe272dd7" />
+
+Y pasamos a la parte importante 
+Aquí podemos ver los usuarios y contraseñas que se han usado para intentar acceder al equipo. 
+Esto suele salir cuando realizamos un ataque de fuerza bruta.
+
+<img width="857" height="185" alt="image" src="https://github.com/user-attachments/assets/71765eb3-ffc6-421c-bdfb-7e62677c8875" />
+
+De hecho, si selecciono un nombre de usuario, podremos ver las contraseñas que se han intentado usar con ese usuario. 
+
+<img width="790" height="142" alt="image" src="https://github.com/user-attachments/assets/58fae93d-289e-4894-8ff5-3adebae8fe7b" />
+
+Lo único que **T-POT** no registra son los comandos que ejecuta el atacante una vez está dentro del sistema, eso lo veremos con **Cowrie**.
+
+En este panel, se puede ver las IPs y la cantidad de ataques que ha realizado cada una. 
+
+<img width="465" height="271" alt="image" src="https://github.com/user-attachments/assets/97434738-03e2-4de1-b097-3c868814f26d" />
+
+Los 2 últimos apartados son sobre las vulnerabilidades explotadas, proporcionándonos un enlace, que nos envía a una página de CVE, donde se nos explica la vulnerabilidad y el cómo han actuado.
+
+<img width="789" height="215" alt="image" src="https://github.com/user-attachments/assets/ffe1af8e-75e4-4173-83e0-93f13d1dcaee" />
+
+Como ya he dicho, T-POT es el Dashboard que más información nos da en términos generales, aunque no he acabado usándolo en el proyecto, pero, aun así, me parecía importante enseñarlo 
 
 
-### Algoritmos
 
 
 
-### Ejercicio de paginación
 
-Tenemos un sistema operativo de 32 bits en el que la asignación de memoria se realiza mediante paginación. 
-Cada página/marco ocupa 1 MB. De los 32 bits de la dirección de memoria, se usan 12 bits para especificar la página. 
-Se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de páginas:
 
-| Página | Marco |
-| ------ | ----- |
-| 0x59B  | 0x123 |
-| 0x59C  | 0xA05 |
-| 0x59D  | 0x59F |
-| 0x59E  | 0x799 |
-| 0x59F  | 0xF8B |
-| 0x59A0 | 0x22D |
 
-Dada la dirección lógica 0x59F2A5A0, obtener la dirección física correspondiente:
-- 0xF8B2A5A0
 
-Dada la dirección lógica 0x5A02A59F, obtener la dirección física correspondiente.
-- 0x22DA59F
 
-Dada la dirección lógica 0x59C4DE87, obtener la dirección física correspondiente
-- 0xA054DE87
 
-### Ejercicio de segmentación
 
-En un sistema de de 32 bits se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de segmentos (el tamaño viene expresado de forma relativa la base):
 
-| Segmento | Base       | Tamaño     | Límite     |
-| -------- | ---------- | ---------- | ---------- |
-| 0xA321   | 0x85434520 | 0x00005218 | 0x85439738 |
-| 0xA322   | 0xBA41002E | 0x00003FD1 | 0xBA413FFF |
-| 0xA323   | 0x226A5722 | 0x00004D3D | 0x226AA45F |
-| 0xA324   | 0xF01809AC | 0x00000053 | 0xF01809FF |
-| 0xA325   | 0x226CA460 | 0x0000AAFF | 0x226D4F5F |
-| 0xA326   | 0x4951B4D8 | 0x0000F424 | 0x4952A8FC |
 
-**Obtener las direcciones físicas absolutas donde termina cada segmento**
 
-**Dada la dirección lógica 0xA3231265, obtener la dirección física correspondiente.**
 
-- 4D3D-1265= 15064 Está dentro del segmento 
-- 226A5722+1265 = 226A6987 
-- Su dirección física sería 0x226A6987
 
-**Dada la dirección lógica 0xA3240265, obtener la dirección física correspondiente.**
 
-- 53-0265= -212 
-- Se sale del segmento
 
-**Dada la dirección lógica 0xA325AAFA, obtener la dirección física correspondiente.**
 
-- AAFF – AAFA = 5 Esta dentro del segmento 
-- 226CA460 + AAFA = 226D 4F5A 
-- Su dirección física sería 0x226D4F5A
+
+
 
 
 
