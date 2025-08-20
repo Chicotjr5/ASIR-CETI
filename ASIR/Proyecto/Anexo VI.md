@@ -1,70 +1,120 @@
+## ¿Qué es UFW?
 
-## Índice
-- [[Practica 1#Índice|Índice]]
-- [[Practica 1#Algoritmos|Algoritmos]]
-- [[Practica 1#Ejercicio de paginación|Ejercicio de paginación]]
-- [[Practica 1#Ejercicio de segmentación|Ejercicio de segmentación]]
+**T-POT** tiene una gran cantidad de puertos abiertos (he llegado a escanear más de 800), así que se notaría muchísimo que es un HoneyPot o algún equipo de ese estilo, por lo que los atacantes no se fijarían en él. 
+
+Si reducimos el nº de puertos abiertos, tendremos un entorno algo más realista. 
+
+Por lo que primero voy a cerrar algunos puertos usando la herramienta UFW. 
+
+**UFW** es una interfaz de gestión de firewall simplificada que se usa para simplificar el proceso de configuración de un firewall que nos ofrece una forma de configuración muy sencilla, permitiéndonos cerrar puertos, abrirlos, crear reglas de entrada y salida etc con 1 simple comando. 
+
+Es **similar a iptables**, aunque esta puede resultar algo más difícil de aprender a usar. 
+Una vez introducida la herramienta, procedo a instalarla y enseñar su funcionamiento.
+
+---
+
+## Cerrar puertos
+
+Para poder instalar UFW ejecuto el comando 
+
+```bash
+sudo apt -y install UFW
+```
+
+<img width="792" height="39" alt="image" src="https://github.com/user-attachments/assets/503b0941-1bdf-4c05-81cd-210ba025276a" />
+
+Una vez instalado, hay que hacer 3 cosas: 
+
+**Activar UFW**
+
+```bash
+ufw enable
+```
+
+**Iniciar el servicio UFW **
+
+```bash
+systemctl start ufw 
+```
+
+**Habilitar el registro de UFW **
+
+```bash
+ufw logging on
+```
+
+<img width="831" height="216" alt="image" src="https://github.com/user-attachments/assets/b6ce63df-1a97-49a4-b80a-045045047807" />
+
+Una vez habilitado realizaré la configuración por defecto de UFW, la cual es denegar todo el tráfico entrante y permitir todo el saliente:
+
+```bash
+ufw default deny incoming   Denegar tráfico entrante 
+ufw default allow outgoing   Permitir tráfico saliente
+```
+
+<img width="808" height="193" alt="image" src="https://github.com/user-attachments/assets/1ce100fd-ef09-4883-8d99-59d837e90574" />
+
+---
+
+## Escaneo de puertos 
+
+Muy bien, ya tenemos la configuración por defecto, ya solo con esto, se han cerrado más de 802 puertos y para comprobarlo, voy a realizar un escaneo de los puertos abiertos de T-POT
+
+En Kali Linux usaré nmap, ejecutando el siguiente comando: 
+
+```bash
+nmap -V -sV
+```
+
+Este comando da información sobre todos los puertos abiertos de un equipo, mostrando el servicio afectado y la versión de este. 
+Ahora voy a mostrar un antes y después del escaneo. 
+
+<img width="717" height="253" alt="image" src="https://github.com/user-attachments/assets/b3574dd7-d40b-40a6-90cd-571ce9b9d2c0" />
+
+↓
+
+<img width="562" height="582" alt="image" src="https://github.com/user-attachments/assets/6def37c8-2c62-442f-8f8a-fb9d5d33d88c" />
+
+---
+
+## Solucionar problemas
+
+Todo bien hasta aquí, pero con esta configuración tambien se han cerrado los puertos que usaba para acceder a la administración de **T-POT (64294 y 64297)** así que ya no puedo acceder. 
+
+<img width="718" height="311" alt="image" src="https://github.com/user-attachments/assets/32f698c1-8807-4d77-9308-529799e13ede" />
+
+Pero arreglar este problema es algo muy sencillo, tan solo tengo que permitir el tráfico a través de esos puertos y ya dejaría volver a conectarnos. 
+Y ya me puedo conectar de nuevo. 
+
+<img width="760" height="169" alt="image" src="https://github.com/user-attachments/assets/937998d3-cde2-4069-bda3-66fb9b40b329" />
+
+↓
+
+<img width="699" height="458" alt="image" src="https://github.com/user-attachments/assets/25d78ae2-8937-4e97-9e3a-f25ec81ed994" />
+
+---
+
+## Ver reglas
+
+Para terminar, con el comando 
+
+```bash
+ufw status
+````
+
+se pueden ver las reglas que vamos añadiendo 
+
+<img width="506" height="220" alt="image" src="https://github.com/user-attachments/assets/03d2b162-5b87-44b3-a78a-dfd7cafbc177" />
 
 
-### Algoritmos
 
 
 
-### Ejercicio de paginación
 
-Tenemos un sistema operativo de 32 bits en el que la asignación de memoria se realiza mediante paginación. 
-Cada página/marco ocupa 1 MB. De los 32 bits de la dirección de memoria, se usan 12 bits para especificar la página. 
-Se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de páginas:
 
-| Página | Marco |
-| ------ | ----- |
-| 0x59B  | 0x123 |
-| 0x59C  | 0xA05 |
-| 0x59D  | 0x59F |
-| 0x59E  | 0x799 |
-| 0x59F  | 0xF8B |
-| 0x59A0 | 0x22D |
 
-Dada la dirección lógica 0x59F2A5A0, obtener la dirección física correspondiente:
-- 0xF8B2A5A0
 
-Dada la dirección lógica 0x5A02A59F, obtener la dirección física correspondiente.
-- 0x22DA59F
 
-Dada la dirección lógica 0x59C4DE87, obtener la dirección física correspondiente
-- 0xA054DE87
-
-### Ejercicio de segmentación
-
-En un sistema de de 32 bits se tiene un proceso, P1 del que podemos ver el siguiente fragmento de su tabla de segmentos (el tamaño viene expresado de forma relativa la base):
-
-| Segmento | Base       | Tamaño     | Límite     |
-| -------- | ---------- | ---------- | ---------- |
-| 0xA321   | 0x85434520 | 0x00005218 | 0x85439738 |
-| 0xA322   | 0xBA41002E | 0x00003FD1 | 0xBA413FFF |
-| 0xA323   | 0x226A5722 | 0x00004D3D | 0x226AA45F |
-| 0xA324   | 0xF01809AC | 0x00000053 | 0xF01809FF |
-| 0xA325   | 0x226CA460 | 0x0000AAFF | 0x226D4F5F |
-| 0xA326   | 0x4951B4D8 | 0x0000F424 | 0x4952A8FC |
-
-**Obtener las direcciones físicas absolutas donde termina cada segmento**
-
-**Dada la dirección lógica 0xA3231265, obtener la dirección física correspondiente.**
-
-- 4D3D-1265= 15064 Está dentro del segmento 
-- 226A5722+1265 = 226A6987 
-- Su dirección física sería 0x226A6987
-
-**Dada la dirección lógica 0xA3240265, obtener la dirección física correspondiente.**
-
-- 53-0265= -212 
-- Se sale del segmento
-
-**Dada la dirección lógica 0xA325AAFA, obtener la dirección física correspondiente.**
-
-- AAFF – AAFA = 5 Esta dentro del segmento 
-- 226CA460 + AAFA = 226D 4F5A 
-- Su dirección física sería 0x226D4F5A
 
 
 
