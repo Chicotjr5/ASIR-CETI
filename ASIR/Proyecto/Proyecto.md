@@ -870,6 +870,402 @@ Para proteger a un equipo de este tipo de ataques, tomaríamos las siguientes me
 
 - FTP y MySQL también tiene estas carencias y es otra forma que tienen los atacantes de entrar a nuestro servidor, así que deberíamos de hacer lo mismo con este y el resto de los servicios vulnerables de nuestros servidores. 
 
+---
+
+### Ataque DoS
+
+Prosigo con el ataque **DoS**
+
+**¿En qué consiste?**
+
+Un ataque **DoS (Denial of Service)** es un tipo de ciberataque que tiene como objetivo hacer que un ordenador, red o servicio sea inaccesible para el resto de los usuarios. 
+
+Los ataques **DoS** se logran inundando el objetivo con tráfico o enviándole información que desencadena un bloqueo. 
+
+Suele haber 2 tipos de ataque **DoS**
+
+- **Ataque de desbordamiento de búfer**
+  - Ocurre cuando se envía tráfico a una dirección de red que supera las capacidades del sistema al que se ataca.
+  - Esto provoca lentitud, caídas del sistema etc, lo que provoca, la denegación del servicio.
+ 
+- **Ataques de inundación**
+  - Este se da cuando un servidor es saturado con una gran/absurda cantidad de paquetes, provocando la denegación del servicio.
+  - De hecho, es el ataque que vamos a realizar.
+
+No hay que confundirlo con el ataque DDOS puesto que no es lo mismo. 
+
+La diferencia radica en que un ataque DOS se realiza desde 1 único sistema, mientras que el ataque DDOS se realiza desde varios sistemas, los cuales han sido infectados con malware y son controlados por el atacante. 
+
+Estos últimos son más difíciles de mitigar, porque el origen del ataque no está claro, al hacerse desde múltiples direcciones.
+
+En este ataque, se están vulnerando:
+
+- **Disponibilidad**
+  - Porque dejamos a los usuarios sin acceso a un servicio.
+ 
+- **Integridad**
+  - Al sobrecargar tanto el objetivo, los datos pueden verse comprometidos y no cargarse/mostrarse de forma correcta.
+ 
+Como ya tenemos el escaneo de la red hecho, no hace falta que vuelva a realizarlo, aun así, vuelvo a poner los puertos que están abiertos para recordarlos. 
+
+<img width="491" height="655" alt="image" src="https://github.com/user-attachments/assets/e1fbdf49-a6f6-4381-b999-ca3bc9afaf54" />
+
+Esta vez, la víctima será el puerto **80** el cual es usado por el protocolo **http**. 
+
+En esta versión de **T-POT****** no hay ningún HoneyPot que se encargue de monitorizar los ataques DoS que se puedan hacer hacia este puerto, pero contamos con **Suricata** el cual es un IDS que registra TODO tipo de tráfico que hay en nuestra red. 
+
+Usaré la herramienta **slowhttptest**, la cual nos permite simular muchos ataques **DoS**, como **Slowloris, Slow HTTP POST, Slow Read o Apache Range Header**. 
+
+En esta ocasión, vamos a realizar un ataque **Sloworis/SlowHeaders** el cual consiste en abrir muchas conexiones con el servidor y mantenerlas abiertas el mayor tiempo posible, para agotar los recursos del servidor y tumbarlo. 
+
+Lo primero será instalar la herramienta, que se hace con un simple apt install slowhttptest. 
+
+<img width="372" height="55" alt="image" src="https://github.com/user-attachments/assets/fb31ce87-b31a-4b34-adb4-3575cd50e3c9" />
+
+Ya instalado, realizo el ataque, usando el siguiente comando:
+
+```bash
+slowhttptest -c 20000 -H -o slowhttp-g -i 1 -r 600 -t GET -u http://192.168.33.150:80 
+```
+
+<img width="772" height="43" alt="image" src="https://github.com/user-attachments/assets/e6d3abdd-068f-4c1c-8319-f6c201655897" />
+
+**¿Qué hace este comando?**
+
+-c 20000 
+
+- Con este parámetro especificamos el nº de conexiones concurrentes que van a ser abiertas.
+- En este caso, serán 20000 conexiones 
+
+-H 
+
+- Este parámetro indica que el ataque a realizar es un Slowloris.
+
+-o slowhttp-g 
+
+- Especifica el nombre del archivo donde se guardarán los datos del ataque
+
+-i 1 
+
+- Especifica el intervalo entre los seguimientos de las conexiones abiertas.
+- En este caso, será cada 1 segundo (aunque en verdad, lo hace cada 5). 
+
+-r 600 
+
+- Especifica la velocidad en la que se abrirán las conexiones
+- En mi caso, 600 por segundo
+
+-t GET 
+
+- Especifica el tipo de solicitud HTTP que se usará en el ataque
+- En mi caso, usaré GET.
+
+-u http://192.168.33.150:80 
+
+- IP y puertos objetivo
+
+
+Al ejecutarlo, nos saldrá una pantalla: 
+
+Donde se nos muestra, el tipo de ataque, el nº de conexiones totales, el objetivo, el tipo de mensaje HTTP, el tamaño de la cabecera de los paquetes,  el nº de conexiones por segundo, y la duración del test. 
+
+Además, de que nos informa del nº de conexiones realizadas, pendientes, cerradas y si el servicio está habilitado o no. 
+
+<img width="635" height="582" alt="image" src="https://github.com/user-attachments/assets/6af5bd93-1cb5-4023-a34d-38847fa385a3" />
+
+Esta es una captura del ataque una vez han finalizado esos 4 minutos de ataque, donde vemos que el servicio ha caído. 
+
+
+Esta versión de T-POT no tiene ningún Honeypot en específico que registre este tipo de ataque (antes estaba glastopf en la versión 16.04) y no puedo comprobar que realmente se haya caído ningún servicio, solamente lo sé porque lo pone en el resultado del ataque, pero he de decir que al entrar en Kibana para ver el Dashboard de Suricata me di cuenta de que iba muy lento el equipo. 
+
+Una vez realizado el ataque, vamos a Suricata a ver qué datos se han recogido. Suricata recoge todo tipo de eventos/paquetes que hay por la red. 
+
+Como se ha realizado un ataque DoS se han estado creando una gran cantidad de tráfico por la red y Suricata los ha detectado perfectamente. 
+
+Aquí vemos el nº de eventos, el nº de IPs implicadas y cuantos eventos a registrado en un intervalo de tiempo de 5 minutos aprox
+
+<img width="744" height="550" alt="image" src="https://github.com/user-attachments/assets/b0e42426-c11e-4ae6-b783-609f4fa85045" />
+
+Ojo, en **Suricata** los eventos no tienen por qué ser ataques.
+
+En estos paneles, podemos ver la cantidad de ataques que se han realizado, recogiendo el tipo de alerta generada (la gran mayoría son Generic Protocol Command Decode) y los puertos afectados, viendo la gran cantidad de peticiones que ha recogido el puerto 80.
+
+
+<img width="778" height="216" alt="image" src="https://github.com/user-attachments/assets/d4413f01-37b3-4da1-9e9a-1362a7860cdd" />
+
+En este gráfico de Donut podemos ver que todos los mensajes que se han lanzado han sido de tipo **GET**.
+
+
+<img width="342" height="248" alt="image" src="https://github.com/user-attachments/assets/62d4deed-4fd3-4532-b298-30ce51534d8d" />
+
+Y, por último, uno de los paneles más interesantes, el panel de **IPs origen**. 
+
+Como ya mencioné en repetidas ocasiones, aunque no hagamos nada, Suricata va a recoger información, por lo que al ver las IPs origen, me doy cuenta de que hay 2 IP que no reconozco, la IP 192.168.80.6 y la 192.168.33.164. 
+
+Al estar en la red de la empresa, habrá más equipos conectados a parte de los míos, por lo que habrán generado tráfico y suricata lo habrá detectado. 
+
+
+<img width="379" height="277" alt="image" src="https://github.com/user-attachments/assets/03cfa745-5262-4f92-b917-ad056274ac76" />
+
+Otro ataque realizado, aunque estos datos no son tan útiles como los del anterior ataque.  
+En el otro ataque teníamos contraseñas usadas, usuarios, comandos usados etc. 
+Ahora, solo se nos muestra nº y tipo de conexiones además desde que IP se ha realizado.
+
+Aunque con eso nos es más que suficiente para tomar medidas
+
+**Implantar un Firewall**
+
+- “Al igual que en el caso anterior, la implementación de un firewall robusto en nuestra red resulta en un incremento significativo en la seguridad.
+
+- Por ejemplo, podemos denegar tráfico hacia el puerto 80 u otros puertos, desde ciertas IP o solo permitir el tráfico de las IP que queramos en específico, inclusive podemos usar el mismo UFW el cual mencioné en las anteriores medidas para realizar estas acciones.
+
+**Limitar la cantidad de tráfico recibido**
+
+- Así, si nos hacen un ataque, el servidor nunca se caerá o será mucho más dificil conseguirlo
+
+**Balanceo de carga**
+
+- Esta solución es un bastante más técnica, pues consiste en tener varios servidores y distribuir el tráfico recibido en cada uno de ellos, mitigando los efectos de un ataque como este.
+
+- Esta medida es recomendable para grandes empresas, que se pueden permitir el gasto de tener varios servidores.
+
+**Redundancia**
+
+- Al igual que con el balanceo de carga, podríamos tener más servidores, para que, en caso de que caiga un servidor, otro se ponga en funcionamiento y tenga el servicio activo, hasta que pare/detengamos el ataque.
+
+- Al igual que la medida anterior, esta es recomendable para grandes empresas.
+
+**Monitorización**
+
+- Si tenemos una herramienta como Suricata, podemos ver si nos están atacando o no y tomar cartas en el asunto. 
+
+---
+
+### Ataque MiTM 
+
+**¿En qué consiste?**
+
+Este ataque consiste en que un atacante intercepta la comunicación entre 2 equipos, los cuales creen que se están comunicando de forma directa y segura. 
+
+Toda la información que envíe un equipo al otro será interceptada por el atacante, que podrá ver todos los datos que se están transfiriendo. 
+
+Esto es muy peligroso, debido a que este ataque puede detectar credenciales de inicio de sesión, datos bancarios, información sobre uno de los 2 equipos (o de ambos) además de poder modificar esa información, llegando a afectar a la integridad y al no repudio 
+
+Estos ataques suelen ser silenciosos, por lo que es muy difícil detectarlos, lo que los hacen aún más peligrosos.
+
+En este ataque, se vulnera:
+
+**Confidencialidad**
+- El atacante puede ver toda la información que se transmite.
+
+**Integridad** 
+- No solo puede ver la información, si no que, además, puede modificarla. 
+
+**No repudio** 
+- Si se modifica la información, la parte originaria no podría demostrar que el mensaje se ha alterado o no. 
+
+Este ataque ha presentado ciertos desafíos inesperados.  
+
+Habría sido preferible explorar aspectos más intrigantes, como la visualización de las credenciales de inicio de sesión de T-POT. Sin embargo, el resultado obtenido ha cumplido con las expectativas.
+
+
+La herramienta que voy a usar para realizar este ataque es **ettercap-graphical**.
+
+
+Esta es una herramienta gratuita y de código abierto usada para el análisis de red y las auditorias de seguridad. 
+No solo eso, sino que también permite realizar ataque de MiTM, incluso haciendo posible una inyección de datos en una conexión ya establecida entre 2 equipos.
+
+
+<img width="757" height="112" alt="image" src="https://github.com/user-attachments/assets/7e71065b-b614-4101-afd1-14f9eb9efff9" />
+
+Para poder usarla, se nos piden privilegios de administrador, así que ponemos la contraseña de Kali (que es Kali). 
+
+
+<img width="556" height="260" alt="image" src="https://github.com/user-attachments/assets/0cf85ae8-ee9f-4363-af2c-824fe378cbb8" />
+
+Y accedo a **Ettercap**.
+
+<img width="762" height="347" alt="image" src="https://github.com/user-attachments/assets/fa36b9aa-8b89-4e2b-9dfb-eb50c5765bad" />
+
+Para empezar este ataque, primero hay que saber que equipos vamos a atacar. 
+Hago clic sobre los 3 puntitos de la parte superior derecha y nos salen diferentes opciones: 
+
+Voy a **Hosts>Scan for hosts** 
+
+
+<img width="316" height="319" alt="image" src="https://github.com/user-attachments/assets/451fe1fd-35fb-49dd-8ae5-45aa75c6bb8f" />
+
+↓
+
+
+<img width="282" height="249" alt="image" src="https://github.com/user-attachments/assets/6dc80466-0b1e-4c63-9fa1-18cd40407299" />
+
+Este escáner lo hice con las **máquinas en modo red interna**, por eso se ven tan pocos equipos.
+
+
+<img width="720" height="73" alt="image" src="https://github.com/user-attachments/assets/59c9f0e7-dd4e-41f1-a3bf-5c13e6bdacc9" />
+
+Interceptaré la comunicación entre Kubuntu y T-POT así que los añado a los Target1 y Target2 respectivamente. 
+
+
+<img width="361" height="143" alt="image" src="https://github.com/user-attachments/assets/8bc9b2a2-a586-470f-9c7a-86460cffd17a" />
+
+↓
+
+
+<img width="169" height="34" alt="image" src="https://github.com/user-attachments/assets/d21b1952-358d-48ca-b646-b3fb955e0338" />
+
+↓
+
+<img width="157" height="37" alt="image" src="https://github.com/user-attachments/assets/2284b23c-5ee8-4305-88b6-3269c5079cbc" />
+
+↓
+
+<img width="315" height="47" alt="image" src="https://github.com/user-attachments/assets/05d37fba-e4e8-4bf1-b1ac-53adc1f2b60d" />
+
+Haremos un **ARP POISONING**  
+
+<img width="176" height="296" alt="image" src="https://github.com/user-attachments/assets/6673779b-5e6d-41ab-addb-608ccc16903c" />
+
+Al seleccionarlo saltará una última ventana, donde tendremos 2 parámetros opcionales que podemos añadir. 
+
+**Sniff remote connections**
+
+- Ettercap no suele analizar las conexiones con salidas a internet, pero con si añadimos este parámetro, pasará a hacerlo, lo cual es útil cuando queremos interceptar tráfico a través de un Gateway o route
+
+**Only posion one-way**
+
+- Fuerza a Ettercap a realizar en envenenamiento ARP en una sola dirección, es decir, de Target 1 a Target 2.
+- Es muy útil para este tipo de casos
+
+Aunque la 1º opción no nos es de mucha utilidad, también voy a seleccionarla, por si acaso. 
+
+<img width="450" height="165" alt="image" src="https://github.com/user-attachments/assets/8f99d6e4-666f-4e44-8aba-ca2b9b8c2f0b" />
+
+Y ya tenemos el ataque ejecutándose
+
+<img width="349" height="76" alt="image" src="https://github.com/user-attachments/assets/c888555d-7277-4a47-9256-ff0a22e68ec0" />
+
+Una vez he lanzado el ataque, vamos a hacer una conexión desde Kubuntu a T-POT. 
+
+Me hubiese gustado poder capturar las credenciales de inicio de sesión de la interfaz gráfica pero no sé porque, Ettercap no es capaz de capturarla. 
+
+Tampoco captura ssh, pero hay una que si la captura: FTP. 
+
+Realizo una conexión FTP de Kubuntu a T-POT poniendo las credenciales de usuario alonso alonso.
+
+<img width="413" height="236" alt="image" src="https://github.com/user-attachments/assets/cef57958-b57c-46ad-a04e-8190a4886e2a" />
+
+Si vuelvo a Kali Linux, veo lo siguiente: 
+Así es, obtuve las credenciales de usuario 
+
+<img width="489" height="127" alt="image" src="https://github.com/user-attachments/assets/f87b5679-90c8-4f64-9201-4f5f3f62eebc" />
+
+Ya tenemos las credenciales de FTP, así que habrá que hacer una conexión por FTP desde Kali Linux, al igual que hice con ssh.
+
+Abro un terminal y nos conectamos por FTP a T-POT. 
+A ver si esta vez puedo entrar al sistema y ver que hay dentro (referencia a que en ssh no pudimos).
+
+<img width="416" height="248" alt="image" src="https://github.com/user-attachments/assets/f5e73e7d-7231-47e7-a3b4-ea37e9592474" />
+
+Primero, con el comando pwd veo en que directorio estoy localizado. 
+Veo que estoy en / por lo que ahora podré realizar cualquier acción sobre el equipo, por ejemplo, un ls. 
+Pues no funciona, intentaré entrar al directorio /etc. 
+
+<img width="548" height="179" alt="image" src="https://github.com/user-attachments/assets/26d03186-83b5-4008-88f1-9853366a662d" />
+
+Una vez más, nos encontramos en una situación similar a la experimentada con SSH. En realidad, no estamos estableciendo una conexión con TPOT, sino con un entorno simulado en el que nuestros permisos son inexistentes. 
+
+Es evidente que las credenciales de T-POT no serán ‘alonso alonso’, una vez más, TPOT ha logrado engañarnos. 
+
+Vamos a T-POT y vemos los resultados. 
+Al atacar a FTP el HoneyPot que estamos atacando es Dionaea, así que nos dispondremos a ver su Dashboard.
+
+
+La verdad, es que aquí hay bastantes menos datos con los que tratar. 
+Tenemos los típicos, que nos cuentan el nº de ataques, el nº de IPs implicadas y cuando se han hecho los ataques
+
+<img width="749" height="421" alt="image" src="https://github.com/user-attachments/assets/89c3d85e-5bdc-403e-89c1-e61a7a3fc698" />
+
+Ahora tenemos 2 gráficos, donde vemos el protocolo de transporte usado y desde que puertos se ha atacado. 
+
+<img width="776" height="244" alt="image" src="https://github.com/user-attachments/assets/5af3dd94-5362-4356-bc22-52e5a9f39daf" />
+
+Proseguimos con el último gráfico (ya sé que son pocos, pero no me ha mostrado más información interesante este HoneyPot en este caso.)
+
+<img width="742" height="145" alt="image" src="https://github.com/user-attachments/assets/827e812a-866b-4a0c-a2db-22d19d8906b7" />
+
+Se ha llevado a cabo el último ataque.  
+Es imperativo considerar qué medidas preventivas deberíamos implementar para eludir este tipo de ataques en el futuro. 
+
+**Usar conexiones cifradas**
+- Si usamos conexiones cifradas, Ettercap no será capaz de detectar la información que es transmitida por los paquetes de red
+
+**Usar un Firewall o crear reglas de entrada/salida con UFW**
+- Si evitamos que cualquier equipo no autorizado entre a nuestra red, este problema ya estará solucionado.
+- Y en caso de no evitar que entre, si podemos limitar su movilidad en la red.
+
+**Realizar escaneos de red constantes**
+- Usando diferentes herramientas de monitorización, como puede ser el propio Suricata
+
+**Mantener equipos y software actualizados**
+- Así, tendremos menos vulnerabilidades en nuestro sistema
+
+---
+
+## Conclusiones finales 
+
+### Grado de cumplimiento de objetivos finales
+
+Una vez realizado el proyecto, es hora de ver si he completado los objetivos propuestos, o si, por el contrario, nos han faltado cosas. 
+Procedo a repasar cada objetivo de manera individual.
+
+**Adquirir conocimientos sobre la instalación, creación y personalización de un sitio web, usando la aplicación web Wordpress y el servidor web XAMPP.**
+
+Este objetivo se ha cumplido de forma satisfactoria. 
+En este proyecto he aprendido a instalar XAMPP de forma correcta y dentro de XAMPP, he podido instalar y hacer funcionar Wordpress (después de otros 3-4 intentos). 
+
+Y no solo eso, si no que he creado un sitio web completamente funcional, aunque podría haber sido mucho más grande y añadir más información. 
+Mis expectativas eran demasiado altas para el tiempo disponible  
+
+**La instalación y puesta en marcha de un HoneyPot, además, de aprender sobre el funcionamiento de las diferentes herramientas que vienen integradas en el mismo.**
+
+No he instalado un solo HoneyPot en específico, si no que he instalado una herramienta que contiene muchísimos HoneyPots. 
+
+Este objetivo también se ha cumplido, he instalado satisfactoriamente T-POT, he accedido a él, he podido ver todas las herramientas que incluye (aunque tan solo haya usado 1 o 2) y he hecho que funcione, pudiendo recoger diferente información sobre los ataques. 
+
+**Proponer y tomar medidas, frente diferentes ciberamenazas/ciberataques más 
+habituales, aprendiendo así, diferentes herramientas de hacking y diferentes 
+herramientas de protección de equipos vulnerables**
+
+Este objetivo se ha cumplido. 
+Todas las medidas que se han propuesto nos sirven para poder anular o prevenir los ataques que se realizan, aunque no las he tomado, debido a que mi infraestructura de red (equipos virtualizados) me impide implementar la mayoría de las medidas propuestas. 
+Y, por último, he aprendido a como realizar con éxito ataques de fuerza bruta, DoS y de MiTM
+
+Así que todos los objetivos propuestos, se han cumplido de forma satisfactoria
+
+---
+
+### Propuestas de mejora o ampliaciones futuras
+
+Aunque se hayan cumplido los objetivos, este proyecto tiene mucho más potencial 
+
+Primero, en el sitio web se podrían añadir diferentes formas de Login o añadiendo algún formulario. 
+
+Además de que se podría haber creado más páginas y tener más información dentro del sitio. 
+
+Otra cosa que se podría haber hecho, es dejar abierto T-POT para internet: 
+
+Hay un video de [s4vitar](https://www.youtube.com/@s4vitar) sobre este proyecto, pero en vez dejarlo en una red local, lo sacan a Internet para que lo ataquen, dejándolo unas semanas, para ver qué tipo de información recopilan. 
+
+Y desde el Attack Map pueden ver en vivo desde donde le están haciendo los ataques, mientras que yo, aunque los haga, no puedo verlo. 
+
+Además de eso, se podrían haber hecho muchos más ataques al T-POT para así poder usar otras herramientas o ver otros HoneyPots, pero por el contexto del proyecto (atacar a un sitio web) no he podido hacer otros ataques o usar otras herramientas específicas debido a que me he tenido que limitar a ataques que se hacen a sitios/servidores web. 
+
+Otra cosa que se podría hacer, que de hecho la explico ya en la planificación económica, es “profesionalizar” la infraestructura creada, poniendo equipos reales e instalando ahí cada uno de los sistemas operativos propuestos. 
+
+No solo eso, si no que la misma infraestructura de red se podría expandir aún más y añadir más equipos, más servidores (más vulnerabilidades).
+
 
 
 
