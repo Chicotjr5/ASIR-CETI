@@ -136,7 +136,7 @@ Y se comprobaran los requisitos previos a hacer la promoción de controlador de 
 ↓
 
 Ya tenemos el 2º controlador configurado, así que vamos a comprobar un par de cosas. 
-La 1º, es que en **Usuarios y equipos de ACDC>Domain Controllers **
+La 1º, es en **Usuarios y equipos de ACDC>Domain Controllers**
 
 <img width="746" height="147" alt="image" src="https://github.com/user-attachments/assets/0ddc45e0-fde8-4c69-9231-153c82612859" />
 
