@@ -252,10 +252,6 @@ Revised NIS Directive
 	- Requisitos de resiliencia y evaluación de riesgos adicionales
 - Objetivo
 	- Establecer un estándar más alto de protección para sectores críticos y emergentes en la UE.
-
-#### Diferencias
-![[Pasted image 20250105163747.png]]
-
 ---
 ### Legislación  sobre la protección de infraestructuras críticas
 
