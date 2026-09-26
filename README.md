@@ -9,9 +9,6 @@ Los materiales se organizan por tecnología, siguiendo las categorías de [TECHN
 - [Software y tecnologías multiplataforma](<Software y tecnologías multiplataforma/>): virtualización, análisis forense, redes, desarrollo web, bases de datos, productividad y hardware.
 - [Proyectos](<Proyectos/>): proyectos de ASIR y CETI.
 
-**Se agradece la ayuda**
-
-
 
 02/06/2025 -> Empezar
 
