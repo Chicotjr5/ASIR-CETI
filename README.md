@@ -1,7 +1,7 @@
 ## Introducción
 
 En este repositorio se encuentran todas las prácticas, trabajos y proyectos que he realizado en ASIR y en CETI en el C.I.F.P Juan de Colonia de la provincia de Burgos, España.
-Los materiales se organizan por tecnología, siguiendo las categorías de [TECHNOLOGIES.md](TECHNOLOGIES.md). Dentro de cada categoría se conserva la estructura de titulación, curso, asignatura y unidad. Los proyectos están agrupados en [Proyectos/ASIR](<Proyectos/ASIR/>) y [Proyectos/CETI](<Proyectos/CETI/>).
+Los materiales se organizan por tecnología, siguiendo las categorías de [TECHNOLOGIES.md](TECHNOLOGIES.md). Dentro de cada categoría se agrupan en carpetas temáticas y unidades, sin niveles de titulación, año ni asignatura. Los proyectos están agrupados en [Proyectos/ASIR](<Proyectos/ASIR/>) y [Proyectos/CETI](<Proyectos/CETI/>).
 
 ## Organización
 
