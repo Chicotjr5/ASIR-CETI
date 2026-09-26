@@ -1,7 +1,13 @@
 ## Introducción
 
 En este repositorio se encuentran todas las prácticas, trabajos y proyectos que he realizado en ASIR y en CETI en el C.I.F.P Juan de Colonia de la provincia de Burgos, España.
-Se encuentran clasificadas por Año>Asignatura>Unidad y en formato Markdown.
+Los materiales se organizan por tecnología, siguiendo las categorías de [TECHNOLOGIES.md](TECHNOLOGIES.md). Dentro de cada categoría se conserva la estructura de titulación, curso, asignatura y unidad. Los proyectos están agrupados en [Proyectos/ASIR](<Proyectos/ASIR/>) y [Proyectos/CETI](<Proyectos/CETI/>).
+
+## Organización
+
+- [Sistemas operativos y herramientas de plataforma](<Sistemas operativos y herramientas de plataforma/>): Windows, Ubuntu y Linux, Kali Linux, otros sistemas especializados y conceptos de sistemas operativos.
+- [Software y tecnologías multiplataforma](<Software y tecnologías multiplataforma/>): virtualización, análisis forense, redes, desarrollo web, bases de datos, productividad y hardware.
+- [Proyectos](<Proyectos/>): proyectos de ASIR y CETI.
 
 **Se agradece la ayuda**
 
@@ -50,4 +56,3 @@ Se encuentran clasificadas por Año>Asignatura>Unidad y en formato Markdown.
 21/08/2025 -> Finalizar ASIR 
 
 21/08/2025 -> Finalizar Repositorio
-
